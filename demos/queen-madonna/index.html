@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Queen Madonna Salon — Hair & Bridal Studio, Sector 31 Gurgaon</title>
+<meta name="description" content="Queen Madonna Salon, Sector 31 Gurgaon — trusted hair & bridal studio since 2000. Hair styling, rebonding, straightening, party & bridal makeup. Book on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine:#7A1F3D; --wine-deep:#5A1530; --blush:#FBEFF1; --blush-2:#F6E1E6;
+  --gold:#C1975A; --gold-2:#E4C48C; --ink:#2A1A20; --muted:#8a7a80; --cream:#FCF8F5;
+  --font-h:'Cormorant Garamond',Georgia,serif; --font-b:'Inter',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-b);background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:hidden;padding-bottom:4.5rem}
+h1,h2,h3{font-family:var(--font-h);font-weight:600;letter-spacing:-.01em}
+img{max-width:100%}
+.wrap{max-width:520px;margin:0 auto;position:relative;background:var(--cream);box-shadow:0 0 60px rgba(0,0,0,.06)}
+
+/* Header */
+.top{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+  padding:.7rem 1.1rem;background:rgba(252,248,245,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--blush-2)}
+.brand{font-family:var(--font-h);font-size:1.5rem;color:var(--wine);line-height:1}
+.brand small{display:block;font-family:var(--font-b);font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:2px}
+.top .est{font-family:var(--font-b);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+
+/* Hero */
+.hero{position:relative;padding:2.6rem 1.3rem 2.2rem;text-align:center;color:#fff;overflow:hidden;
+  background:linear-gradient(160deg,var(--wine) 0%,var(--wine-deep) 55%,#3d0e22 100%)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 15%,rgba(228,196,140,.28),transparent 55%);pointer-events:none}
+.hero .kicker{position:relative;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-2);margin-bottom:.6rem}
+.hero h1{position:relative;font-size:2.9rem;line-height:1.02;margin-bottom:.5rem}
+.hero h1 i{color:var(--gold-2)}
+.hero p{position:relative;font-size:.95rem;color:#f3dfe4;max-width:22rem;margin:0 auto 1rem}
+.stars{position:relative;display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.14);
+  border:1px solid rgba(228,196,140,.4);padding:.3rem .8rem;border-radius:40px;font-size:.72rem;letter-spacing:.03em}
+.stars b{color:var(--gold-2)}
+.hero-cta{position:relative;display:flex;gap:.6rem;justify-content:center;margin-top:1.3rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;font-family:var(--font-b);
+  font-weight:600;font-size:.82rem;text-decoration:none;padding:.75rem 1.3rem;border-radius:40px;transition:.2s}
+.btn-wa{background:#25D366;color:#fff}
+.btn-gold{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#3d1020}
+.btn:active{transform:scale(.97)}
+
+/* Photo slot */
+.photoslot{position:relative;height:210px;background:
+  linear-gradient(135deg,var(--blush) 0%,var(--blush-2) 100%);display:flex;align-items:center;justify-content:center}
+.photoslot span{font-family:var(--font-b);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:#c69aa6;text-align:center;padding:0 1rem}
+.photoslot.tall{height:260px}
+
+/* Sections */
+.sec{padding:2.4rem 1.3rem}
+.sec-title{text-align:center;font-size:2rem;color:var(--wine);margin-bottom:.3rem}
+.sec-sub{text-align:center;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.6rem}
+.rule{width:44px;height:2px;background:var(--gold);margin:.6rem auto 1.6rem;border-radius:2px}
+
+/* Services */
+.svc{list-style:none;display:grid;gap:.7rem}
+.svc li{background:#fff;border:1px solid var(--blush-2);border-radius:14px;padding:1rem 1.1rem;display:flex;align-items:center;gap:.9rem}
+.svc .dot{width:38px;height:38px;flex:none;border-radius:50%;display:grid;place-items:center;
+  background:var(--blush);color:var(--wine)}
+.svc h3{font-size:1.15rem;color:var(--ink);line-height:1.1}
+.svc p{font-size:.78rem;color:var(--muted);margin-top:1px}
+
+/* Gallery */
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.gal .photoslot{height:130px;border-radius:12px}
+.gal .photoslot:first-child{grid-column:1/3;height:160px}
+
+/* Since / trust */
+.trust{background:linear-gradient(160deg,#fff,var(--blush));text-align:center;padding:2.6rem 1.3rem;border-top:1px solid var(--blush-2);border-bottom:1px solid var(--blush-2)}
+.trust .big{font-family:var(--font-h);font-size:3.4rem;color:var(--wine);line-height:1}
+.trust .big span{color:var(--gold)}
+.trust p{font-size:.95rem;color:var(--muted);max-width:20rem;margin:.5rem auto 0}
+
+/* Reviews */
+.rev{background:#fff;border:1px solid var(--blush-2);border-radius:14px;padding:1.2rem;text-align:center;margin-bottom:.7rem}
+.rev .s{color:var(--gold);letter-spacing:3px;font-size:.95rem}
+.rev p{font-size:.82rem;color:var(--muted);font-style:italic;margin-top:.4rem}
+.rev small{display:block;font-family:var(--font-b);font-size:.6rem;letter-spacing:.08em;color:#c69aa6;margin-top:.5rem;text-transform:uppercase}
+
+/* Location */
+.map{border:0;width:100%;height:200px;border-radius:14px;filter:grayscale(.15)}
+.addr{font-size:.9rem;color:var(--muted);text-align:center;margin:.9rem 0 1rem}
+.addr b{color:var(--ink);font-weight:600}
+
+/* Footer */
+footer{background:var(--wine-deep);color:#e9cdd5;text-align:center;padding:2rem 1.3rem 2.4rem}
+footer .fb{font-family:var(--font-h);font-size:1.7rem;color:#fff}
+footer p{font-size:.72rem;margin-top:.4rem;opacity:.85}
+.demo-tag{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin-top:1rem}
+
+/* Sticky bar */
+.bar{position:fixed;bottom:0;left:0;right:0;max-width:520px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;z-index:50;box-shadow:0 -4px 20px rgba(0,0,0,.14)}
+.bar a{display:flex;align-items:center;justify-content:center;gap:.5rem;height:4.5rem;font-family:var(--font-b);font-weight:600;font-size:.92rem;text-decoration:none;padding-bottom:env(safe-area-inset-bottom,0)}
+.bar .call{background:var(--ink);color:#fff}
+.bar .wa{background:#25D366;color:#fff}
+svg{display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">Queen Madonna<small>Hair &amp; Bridal Studio</small></div>
+    <div class="est">Est. 2000</div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="kicker">Sector 31 · Gurugram</div>
+    <h1>Where you leave <br><i>feeling beautiful.</i></h1>
+    <p>A trusted neighbourhood hair &amp; bridal salon in Sector 31 — caring for Gurgaon's families since 2000.</p>
+    <div class="stars">★ <b>4.5</b> on Google · Loved by regulars</div>
+    <div class="hero-cta">
+      <a class="btn btn-wa" href="https://wa.me/919811899939?text=Hi%20Queen%20Madonna%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.57-.35"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 18.15c-1.48 0-2.93-.4-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24"/></svg>
+        Book on WhatsApp
+      </a>
+      <a class="btn btn-gold" href="tel:+919811899939">Call the Salon</a>
+    </div>
+  </header>
+
+  <div class="photoslot tall"><span>✦ Your salon's best photo goes here ✦</span></div>
+
+  <!-- SERVICES -->
+  <section class="sec">
+    <h2 class="sec-title">Our Services</h2>
+    <div class="rule"></div>
+    <ul class="svc">
+      <li><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/><path d="M11 11l9 9M14 14l-3 6"/></svg></span><div><h3>Hair Styling &amp; Cuts</h3><p>Cuts, blow-dry &amp; styling for every occasion</p></div></li>
+      <li><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20c2-6 4-9 8-9s6 3 8 9M12 3v3"/></svg></span><div><h3>Rebonding &amp; Smoothening</h3><p>Silky, manageable, long-lasting results</p></div></li>
+      <li><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3v18M10 3v18M14 3v18M18 3v18"/></svg></span><div><h3>Hair Straightening</h3><p>Sleek, straight hair that stays put</p></div></li>
+      <li><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 16l-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg></span><div><h3>Party &amp; Basic Makeup</h3><p>Look your best for every celebration</p></div></li>
+      <li><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2 5h5l-4 3 1.5 6L12 13 7.5 16 9 10 5 7h5z"/></svg></span><div><h3>Bridal Makeup</h3><p>Your most beautiful day, perfected</p></div></li>
+    </ul>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="sec" style="padding-top:0">
+    <h2 class="sec-title">Our Work</h2>
+    <div class="rule"></div>
+    <div class="gal">
+      <div class="photoslot"><span>Your photo</span></div>
+      <div class="photoslot"><span>Your photo</span></div>
+      <div class="photoslot"><span>Your photo</span></div>
+      <div class="photoslot"><span>Your photo</span></div>
+      <div class="photoslot"><span>Your photo</span></div>
+    </div>
+    <p style="text-align:center;font-size:.72rem;color:#c69aa6;margin-top:.9rem;letter-spacing:.06em;text-transform:uppercase">Send us 5–6 real photos &amp; we'll place them here</p>
+  </section>
+
+  <!-- SINCE -->
+  <section class="trust">
+    <div class="big">Since <span>2000</span></div>
+    <p>Two decades of trusted beauty care for the families of Sector 31.</p>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="sec">
+    <h2 class="sec-title">Loved on Google</h2>
+    <div class="sec-sub">★ 4.5 rating</div>
+    <div class="rev"><div class="s">★★★★★</div><p>Your real Google reviews appear here</p><small>Pulled from your Google profile</small></div>
+    <div class="rev"><div class="s">★★★★★</div><p>Your real Google reviews appear here</p><small>Pulled from your Google profile</small></div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="sec" style="padding-top:0">
+    <h2 class="sec-title">Find Us</h2>
+    <div class="rule"></div>
+    <p class="addr"><b>Queen Madonna Salon</b><br>Shop 100, 1st Floor, Mini Huda Market,<br>Sector 31, Gurugram — 122001</p>
+    <iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      src="https://maps.google.com/maps?q=Queen%20Madonna%20Salon%20Mini%20Huda%20Market%20Sector%2031%20Gurgaon&output=embed"></iframe>
+    <a class="btn btn-gold" style="width:100%;margin-top:1rem" href="https://www.google.com/maps/search/?api=1&query=Queen%20Madonna%20Salon%20Sector%2031%20Gurgaon&query_place_id=ChIJJy_cB_wZDTkR7UP0DK-2Li0" target="_blank" rel="noopener">Get Directions</a>
+  </section>
+
+  <footer>
+    <div class="fb">Queen Madonna</div>
+    <p>Hair &amp; Bridal Studio · Sector 31, Gurugram · Since 2000</p>
+    <p>Shop 100, Mini Huda Market · +91 98118 99939</p>
+    <p class="demo-tag">Sample website · a demo by Lantern 🏮</p>
+  </footer>
+
+  <!-- STICKY BAR -->
+  <div class="bar">
+    <a class="call" href="tel:+919811899939">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .5 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.5-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1z"/></svg>
+      Call
+    </a>
+    <a class="wa" href="https://wa.me/919811899939?text=Hi%20Queen%20Madonna%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 18.15c-1.48 0-2.93-.4-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24m4.52-6.16c-.25-.13-1.47-.73-1.7-.81-.22-.08-.38-.13-.55.12-.17.25-.64.82-.78.98-.15.17-.29.19-.54.06-.3-.15-1.26-.47-2.39-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.57-.35"/></svg>
+      WhatsApp
+    </a>
+  </div>
+
+</div>
+</body>
+</html>
