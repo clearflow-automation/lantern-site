@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Dr. Mona Prabhakar — Orthodontist, Sector 31 Gurgaon · Braces & Clear Aligners</title>
+<meta name="description" content="Straighten your smile with Dr. Mona Prabhakar, MDS Orthodontics — braces & clear aligners in Sector 31, Gurugram. Gold-medallist specialist. Book a consultation.">
+<meta name="theme-color" content="#F4FBFA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --aqua:#0FA79E; --aqua-deep:#0A8079; --aqua-lt:#7FD8D1; --mint:#E7F6F4; --mint-2:#D5EFEC;
+  --ink:#15242A; --slate:#5B6E72; --line:#E4EEEC; --bg:#FFFFFF; --soft:#F4FBFA; --coral:#FF7A66;
+  --h:'Poppins',system-ui,sans-serif; --b:'Inter',system-ui,sans-serif; --r:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--b);background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden;padding-bottom:4.6rem}
+h1,h2,h3{font-family:var(--h);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.wrap{max-width:580px;margin:0 auto;position:relative;background:var(--bg);box-shadow:0 0 90px rgba(0,0,0,.05);overflow:hidden}
+svg{display:block}a{color:inherit}
+.eyebrow{font-family:var(--h);font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--aqua)}
+
+.progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:1000;background:var(--aqua)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.09s}.d2{transition-delay:.18s}.d3{transition-delay:.27s}.d4{transition-delay:.36s}
+
+.nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;
+  padding:.8rem 1.3rem;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .logo{display:flex;align-items:center;gap:.5rem;font-family:var(--h);font-size:1.05rem;font-weight:700;color:var(--ink)}
+.nav .logo .m{width:28px;height:28px;border-radius:9px;background:var(--aqua);display:grid;place-items:center;flex:none}
+.nav a.book{font-family:var(--h);font-size:.66rem;font-weight:600;letter-spacing:.04em;color:#fff;background:var(--aqua);padding:.55rem 1rem;border-radius:40px;text-decoration:none;transition:.25s}
+.nav a.book:hover{background:var(--aqua-deep)}
+
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--h);font-weight:600;font-size:.78rem;text-decoration:none;padding:.95rem 1.7rem;border-radius:40px;transition:transform .2s,box-shadow .3s,background .25s}
+.btn .arw{transition:transform .3s}.btn:hover .arw{transform:translateX(4px)}
+.btn.solid{background:var(--aqua);color:#fff;box-shadow:0 12px 26px -10px rgba(15,167,158,.7)}
+.btn.solid:hover{background:var(--aqua-deep)}
+.btn.wa{background:#25D366;color:#fff}
+.btn.soft{background:var(--mint);color:var(--aqua-deep)}.btn.soft:hover{background:var(--mint-2)}
+.btn:active{transform:scale(.97)}
+
+/* hero */
+.hero{position:relative;padding:3.4rem 1.5rem 3rem;overflow:hidden;background:var(--soft)}
+.hero::before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(127,216,209,.35),transparent 65%);top:-80px;right:-80px}
+.hero>*{position:relative}
+.hero .eyebrow{margin-bottom:1rem;display:inline-block}
+.hero h1{font-size:clamp(2.5rem,9vw,3.4rem);color:var(--ink);margin-bottom:1rem}
+.hero h1 span{color:var(--aqua)}
+.hero .lede{color:var(--slate);font-size:1rem;max-width:26rem;margin-bottom:1.5rem}
+.hero .cta{display:flex;gap:.6rem;flex-wrap:wrap}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.chip{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--h);font-size:.7rem;font-weight:500;color:var(--aqua-deep);background:#fff;border:1px solid var(--line);padding:.4rem .8rem;border-radius:40px}
+.chip svg{color:var(--aqua)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;padding:1.6rem 1.4rem}
+.tile{background:var(--mint);border-radius:18px;padding:1.3rem .5rem;text-align:center}
+.tile .n{font-family:var(--h);font-weight:700;font-size:1.9rem;color:var(--aqua-deep);line-height:1}
+.tile .l{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-top:.35rem}
+
+.sec{padding:4.2rem 1.4rem}
+.idx{font-family:var(--h);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--aqua);font-weight:600;margin-bottom:.8rem;display:block}
+.sec h2{font-size:clamp(2rem,8vw,2.6rem);color:var(--ink)}
+.sec .sub{color:var(--slate);margin-top:.6rem;max-width:26rem}
+
+/* treatments */
+.treat{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.8rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.5rem 1.3rem;transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 34px -20px rgba(15,167,158,.5)}
+.card .ic{width:46px;height:46px;border-radius:14px;background:var(--mint);display:grid;place-items:center;color:var(--aqua);margin-bottom:.9rem}
+.card h3{font-family:var(--h);font-size:1.15rem;color:var(--ink)}
+.card p{font-size:.82rem;color:var(--slate);margin-top:.3rem}
+
+/* SIGNATURE: braces vs aligners toggle */
+.compare{background:var(--soft);border-radius:24px;padding:1.6rem 1.3rem;margin-top:1.8rem;border:1px solid var(--line)}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line);border-radius:40px;padding:.3rem;position:relative;margin-bottom:1.4rem}
+.seg button{font-family:var(--h);font-weight:600;font-size:.82rem;border:0;background:none;color:var(--slate);padding:.7rem;border-radius:40px;cursor:pointer;z-index:1;transition:color .3s}
+.seg button.on{color:#fff}
+.seg .pill{position:absolute;top:.3rem;bottom:.3rem;left:.3rem;width:calc(50% - .3rem);background:var(--aqua);border-radius:40px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.seg.aligners .pill{transform:translateX(100%)}
+.panel{display:none}.panel.show{display:block;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.panel h3{font-family:var(--h);font-size:1.3rem;color:var(--ink)}
+.panel ul{list-style:none;margin-top:.8rem;display:flex;flex-direction:column;gap:.6rem}
+.panel li{display:flex;gap:.6rem;font-size:.88rem;color:var(--slate)}
+.panel li svg{color:var(--aqua);flex:none;margin-top:3px}
+
+/* why */
+.why{background:var(--aqua);color:#fff;border-radius:0}
+.why .idx{color:#cdeeeb}.why h2{color:#fff}
+.why .grid{display:flex;flex-direction:column;gap:1.3rem;margin-top:1.6rem}
+.why .item{display:flex;gap:.9rem;align-items:flex-start}
+.why .item .ic{width:40px;height:40px;flex:none;border-radius:12px;background:rgba(255,255,255,.16);display:grid;place-items:center;color:#fff}
+.why .item h3{font-family:var(--h);font-size:1.15rem;color:#fff}
+.why .item p{color:#d6f2ef;font-size:.85rem}
+
+/* words */
+.words{text-align:center}
+.words .quote{font-family:var(--h);font-weight:500;font-size:clamp(1.4rem,5.5vw,1.8rem);line-height:1.4;color:var(--ink);max-width:28rem;margin:1rem auto 0}
+.words .stars{color:#F5B301;letter-spacing:3px;margin-top:1rem;font-size:1.1rem}
+.words small{display:block;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-top:.6rem}
+
+/* visit */
+.map{border:0;width:100%;height:210px;border-radius:var(--r);filter:grayscale(.1)}
+.addr{color:var(--slate);margin:1rem 0;line-height:1.8;font-size:.92rem}.addr b{color:var(--ink);font-weight:600}
+.appt{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--h);font-size:.76rem;color:var(--aqua-deep);background:var(--mint);padding:.5rem .9rem;border-radius:40px;margin-bottom:1rem}
+
+footer{background:var(--ink);color:#a7c4c2;text-align:center;padding:2.2rem 1.4rem}
+footer .fl{font-family:var(--h);font-weight:700;font-size:1.3rem;color:#fff}
+footer p{font-size:.68rem;margin-top:.4rem;opacity:.85;line-height:1.6}
+.tag-demo{font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin-top:1rem}
+
+.bar{position:fixed;bottom:0;left:0;right:0;max-width:580px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;z-index:70;box-shadow:0 -6px 24px rgba(0,0,0,.12)}
+.bar a{display:flex;align-items:center;justify-content:center;gap:.5rem;height:4.6rem;font-family:var(--h);font-weight:600;font-size:.85rem;text-decoration:none;padding-bottom:env(safe-area-inset-bottom,0)}
+.bar .call{background:var(--ink);color:#fff}.bar .wa{background:#25D366;color:#fff}
+
+@media(min-width:760px){.wrap{max-width:100%}.hero{padding:5rem 8%}.sec{padding:6rem 8%}.stats{grid-template-columns:repeat(3,1fr);max-width:700px;margin:0 auto}.treat,.why .grid,.compare,.words-in,.visit-in{max-width:900px;margin-inline:auto}.why .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}.bar{display:none}body{padding-bottom:0}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+<div class="wrap">
+
+  <nav class="nav">
+    <div class="logo"><span class="m"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 13s2 3 8 3 8-3 8-3M8 9h.01M16 9h.01"/></svg></span>Dr. Mona</div>
+    <a class="book" href="#book">Book</a>
+  </nav>
+
+  <header class="hero">
+    <span class="eyebrow rv">Braces &amp; Clear Aligners · Sector 31</span>
+    <h1 class="rv d1">Love your <span>smile.</span></h1>
+    <p class="lede rv d2">Straighten your teeth with a gold-medallist orthodontic specialist — braces or near-invisible aligners, tailored just for you.</p>
+    <div class="cta rv d2">
+      <a class="btn solid" href="#book">Book a Consultation <span class="arw">→</span></a>
+      <a class="btn soft" href="#compare">Braces or Aligners?</a>
+    </div>
+    <div class="chips rv d3">
+      <span class="chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M8 13l-2 8 6-3 6 3-2-8"/></svg> Gold Medallist</span>
+      <span class="chip">MDS Orthodontics</span>
+      <span class="chip">Since 1997</span>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="tile rv"><div class="n"><span class="cu" data-to="25">0</span>+</div><div class="l">Years experience</div></div>
+    <div class="tile rv d1"><div class="n">MDS</div><div class="l">Specialist</div></div>
+    <div class="tile rv d2"><div class="n">2</div><div class="l">Ways to straighten</div></div>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section class="sec" id="treatments">
+    <span class="idx rv">Treatments</span>
+    <h2 class="rv">Care for every smile.</h2>
+    <div class="treat">
+      <div class="card rv" data-tilt><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="9" width="18" height="6" rx="2"/><path d="M7 9v6M11 9v6M15 9v6"/></svg></div><h3>Braces</h3><p>Metal &amp; ceramic, for all ages.</p></div>
+      <div class="card rv d1" data-tilt><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8c0-2 3-3 7-3s7 1 7 3-1 9-3 10-3-2-4-2-2 3-4 2S5 10 5 8z"/></svg></div><h3>Clear Aligners</h3><p>Near-invisible &amp; removable.</p></div>
+      <div class="card rv d2" data-tilt><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M4 14s1.5 3 8 3 8-3 8-3M8 10h.01M16 10h.01"/></svg></div><h3>Smile Correction</h3><p>Gaps, crowding &amp; bite fixes.</p></div>
+      <div class="card rv d3" data-tilt><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20c0-3 3-5 7-5M14 16c3 0 6 1 6 4"/></svg></div><h3>Kids' Braces</h3><p>Early, gentle guidance.</p></div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE: compare -->
+  <section class="sec" id="compare" style="padding-top:0">
+    <span class="idx rv">Not sure which?</span>
+    <h2 class="rv">Braces or aligners?</h2>
+    <p class="sub rv">Tap to compare — we'll help you decide at your consultation.</p>
+    <div class="compare rv d1">
+      <div class="seg" id="seg">
+        <div class="pill"></div>
+        <button class="on" data-t="braces">Braces</button>
+        <button data-t="aligners">Clear Aligners</button>
+      </div>
+      <div class="panel show" data-p="braces">
+        <h3>Braces</h3>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Handles even complex corrections</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Metal or tooth-coloured ceramic</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Fixed — nothing to remember to wear</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Great for kids &amp; teens</li>
+        </ul>
+      </div>
+      <div class="panel" data-p="aligners">
+        <h3>Clear Aligners</h3>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Near-invisible — most won't notice</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Removable for eating &amp; brushing</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Comfortable, no wires</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Popular with working adults</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="sec why">
+    <span class="idx rv">Why Dr. Mona</span>
+    <h2 class="rv">Expertise you can trust.</h2>
+    <div class="grid">
+      <div class="item rv d1"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M8 13l-2 8 6-3 6 3-2-8"/></svg></span><div><h3>Gold-medallist specialist</h3><p>Top-of-class BDS and an MDS in orthodontics.</p></div></div>
+      <div class="item rv d2"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></span><div><h3>A professor of orthodontics</h3><p>She trains the specialists — you're in expert hands.</p></div></div>
+      <div class="item rv d3"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>25+ years, only orthodontics</h3><p>Focused, unhurried, by-appointment care.</p></div></div>
+      <div class="item rv d4"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></span><div><h3>Gentle, honest approach</h3><p>Clear plans, no pressure, real answers.</p></div></div>
+    </div>
+  </section>
+
+  <!-- WORDS -->
+  <section class="sec words"><div class="words-in">
+    <span class="eyebrow rv">Happy smiles</span>
+    <p class="quote rv d1">“Your real Google reviews appear here — never invented.”</p>
+    <div class="stars rv d2">★★★★★</div>
+    <small class="rv d2">Pulled live from your Google profile</small>
+  </div></section>
+
+  <!-- VISIT -->
+  <section class="sec visit" id="book"><div class="visit-in">
+    <span class="idx rv">Visit us</span>
+    <h2 class="rv">Book your consultation.</h2>
+    <p class="addr rv d1"><b>The Orthodontic Clinic — Dr. Mona Prabhakar</b><br>Sector 31, Gurugram (near Raheja Atlantis)</p>
+    <div class="appt rv d1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 2v4M16 2v4M4 9h16"/></svg> By appointment · evenings</div>
+    <iframe class="map rv d2" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Dr%20Mona%20Prabhakar%20Orthodontic%20Clinic%20Sector%2031%20Gurgaon&output=embed"></iframe>
+    <div class="cta rv d2" style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.2rem">
+      <a class="btn wa" href="https://wa.me/919810131064?text=Namaste%20Dr.%20Mona%2C%20I%27d%20like%20to%20book%20an%20orthodontic%20consultation." target="_blank" rel="noopener">Book on WhatsApp</a>
+      <a class="btn solid" href="tel:+919810131064">Call the Clinic <span class="arw">→</span></a>
+    </div>
+  </div></section>
+
+  <footer>
+    <div class="fl">Dr. Mona Prabhakar</div>
+    <p>Braces · Clear Aligners · Smile Correction · Sector 31, Gurugram</p>
+    <p class="tag-demo">Sample website · a demo by Lantern 🏮 · Option 3 — Modern</p>
+  </footer>
+
+  <div class="bar">
+    <a class="call" href="tel:+919810131064"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .5 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.5-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1z"/></svg>Call</a>
+    <a class="wa" href="https://wa.me/919810131064?text=Namaste%20Dr.%20Mona%2C%20I%27d%20like%20to%20book%20an%20orthodontic%20consultation." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m4.52 12c-.25-.13-1.47-.73-1.7-.81-.22-.08-.38-.13-.55.12-.17.25-.64.82-.78.98-.15.17-.29.19-.54.06-.3-.15-1.26-.47-2.39-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.57-.35"/></svg>WhatsApp</a>
+  </div>
+</div>
+<script>
+(function(){
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches, touch=matchMedia('(hover:none)').matches;
+  var prog=document.getElementById('prog');
+  addEventListener('scroll',function(){var h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,to=parseFloat(el.dataset.to);
+    if(rm){el.textContent=to;cio.unobserve(el);return;}var s=performance.now();(function t(n){var p=Math.min((n-s)/1000,1);el.textContent=Math.round((1-Math.pow(1-p,3))*to);if(p<1)requestAnimationFrame(t);})(s);cio.unobserve(el);});},{threshold:.6});
+  document.querySelectorAll('.cu').forEach(function(el){cio.observe(el);});
+  // toggle
+  var seg=document.getElementById('seg');
+  if(seg){seg.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){
+    seg.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');
+    seg.classList.toggle('aligners',b.dataset.t==='aligners');
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('show',p.dataset.p===b.dataset.t);});
+  });});}
+  if(!rm&&!touch)document.querySelectorAll('[data-tilt]').forEach(function(el){
+    el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform='perspective(800px) rotateX('+(-y*5)+'deg) rotateY('+(x*5)+'deg) translateY(-4px)';});
+    el.addEventListener('mouseleave',function(){el.style.transform='';});});
+})();
+</script>
+</body>
+</html>

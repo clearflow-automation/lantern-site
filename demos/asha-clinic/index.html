@@ -216,6 +216,30 @@ footer p{font-size:.68rem;margin-top:.4rem;opacity:.85}
     </div>
   </section>
 
+  <!-- HOW A VISIT WORKS (signature moment) -->
+  <style>
+    .steps{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.8rem}
+    .step{display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.2rem 1.3rem;position:relative;transition:transform .3s,box-shadow .3s}
+    .step:hover{transform:translateY(-3px);box-shadow:0 16px 32px -22px rgba(12,110,99,.5)}
+    .step .num{font-family:var(--h);font-size:1.5rem;color:#fff;background:var(--teal);width:2.6rem;height:2.6rem;border-radius:50%;display:grid;place-items:center;flex:none;line-height:1}
+    .step.home .num{background:var(--gold)}
+    .step h3{font-size:1.2rem;color:var(--ink)}
+    .step p{font-size:.84rem;color:var(--slate);margin-top:.2rem}
+    .step .badge{display:inline-block;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-top:.4rem}
+    @media(min-width:760px){.steps{grid-template-columns:repeat(2,1fr);max-width:1000px;margin-inline:auto}}
+  </style>
+  <section class="sec">
+    <span class="idx rv">03 — How a visit works</span>
+    <h2 class="rv">Simple, from start <em>to finish.</em></h2>
+    <p class="sub rv">No confusion, no running around — here's exactly what to expect.</p>
+    <div class="steps">
+      <div class="step rv d1"><span class="num">1</span><div><h3>Book in a tap</h3><p>Call or WhatsApp us — or simply walk in during clinic hours.</p></div></div>
+      <div class="step rv d2"><span class="num">2</span><div><h3>See the right specialist</h3><p>You're matched to the right doctor for your concern the first time.</p></div></div>
+      <div class="step rv d3"><span class="num">3</span><div><h3>Tests, right here</h3><p>Blood work and diagnostics done on-site — no second trip elsewhere.</p></div></div>
+      <div class="step home rv d4"><span class="num">4</span><div><h3>Or we come to you</h3><p>Can't make it in? Book a doctor home visit and get cared for at home.</p><span class="badge">Home visits available</span></div></div>
+    </div>
+  </section>
+
   <!-- REVIEWS -->
   <section class="sec rev">
     <span class="eyebrow rv">In their words</span>
@@ -226,7 +250,7 @@ footer p{font-size:.68rem;margin-top:.4rem;opacity:.85}
 
   <!-- VISIT -->
   <section class="sec visit">
-    <span class="idx rv">03 — Visit us</span>
+    <span class="idx rv">04 — Visit us</span>
     <h2 class="rv">Find the clinic.</h2>
     <p class="addr rv d1"><b>Asha Multi Speciality Clinic</b><br>C-2, HUDA Market Road, Vigyan Vihar,<br>Urban Estate, Sector 40, Gurugram — 122003</p>
     <div class="hours rv d1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Timings shown on your Google profile</div>
