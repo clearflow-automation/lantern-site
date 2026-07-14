@@ -2,17 +2,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isTouch = window.matchMedia('(hover: none)').matches;
 
-    /* ---------- Scroll reveal (fade-in / slide-up) ---------- */
+    /* ---------- Scroll reveal (fade-in / slide-up) — with safety nets ---------- */
     const animated = document.querySelectorAll('.fade-in, .slide-up');
-    const io = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                obs.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.15 });
-    animated.forEach(el => io.observe(el));
+    const revealAll = () => animated.forEach(el => el.classList.add('visible'));
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -5% 0px' });
+        animated.forEach(el => io.observe(el));
+        // Safety net 1: reveal anything already in view shortly after load (never blank on open).
+        setTimeout(() => animated.forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
+        }), 600);
+        // Safety net 2: nothing stays hidden — reveal everything after the page settles.
+        window.addEventListener('load', () => setTimeout(revealAll, 2600));
+    } else {
+        revealAll(); // no IntersectionObserver support → just show everything
+    }
 
     /* ---------- Count-up numbers ---------- */
     const counters = document.querySelectorAll('.count-up');
