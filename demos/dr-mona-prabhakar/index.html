@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Dr. Mona Prabhakar — Orthodontist, Sector 31 Gurgaon · Braces & Clear Aligners</title>
+<meta name="description" content="The Orthodontic Clinic of Dr. Mona Prabhakar, MDS (Orthodontics) — Sector 31, Gurugram. Braces, clear aligners and smile correction from a gold-medallist specialist and professor of orthodontics. By appointment.">
+<meta property="og:title" content="Dr. Mona Prabhakar — Orthodontist, Sector 31 Gurgaon">
+<meta property="og:description" content="Braces, clear aligners & smile correction from a gold-medallist orthodontic specialist. By appointment, Sector 31, Gurugram.">
+<meta name="theme-color" content="#0E3542">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E3542; --navy-deep:#0A2831; --teal:#2C6E77; --gold:#B0863C; --gold-lt:#E0C084;
+  --cream:#FBF8F3; --panel:#F4EEE3; --ink:#1B2A2E; --slate:#5E6E72; --line:#E6DFD2; --mint:#EAF2F1;
+  --h:'Fraunces',Georgia,serif; --b:'Inter',system-ui,sans-serif; --r:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--b);background:var(--cream);color:var(--ink);line-height:1.7;overflow-x:hidden;font-weight:400;padding-bottom:4.6rem}
+h1,h2,h3{font-family:var(--h);font-weight:500;letter-spacing:-.01em;line-height:1.08}
+em,i{font-style:italic}
+.wrap{max-width:580px;margin:0 auto;position:relative;background:var(--cream);box-shadow:0 0 90px rgba(0,0,0,.07);overflow:hidden}
+svg{display:block}
+a{color:inherit}
+.eyebrow{font-size:.6rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.rule{width:40px;height:1px;background:var(--gold);margin:1rem 0}
+.rule.c{margin-inline:auto}
+
+.progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:1000;background:linear-gradient(90deg,var(--gold-lt),var(--gold))}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.2,.8,.2,1),transform .85s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 1.3rem;background:rgba(251,248,243,.82);backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid var(--line)}
+.nav .logo{font-family:var(--h);font-size:1.15rem;color:var(--navy);line-height:1}
+.nav .logo small{display:block;font-family:var(--b);font-size:.5rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-top:2px}
+.nav a.book{font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#fff;background:var(--navy);padding:.55rem 1rem;border-radius:40px;text-decoration:none;transition:.3s}
+.nav a.book:hover{background:var(--teal)}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;gap:.55rem;font-weight:600;font-size:.74rem;letter-spacing:.06em;
+  text-transform:uppercase;text-decoration:none;padding:1rem 1.8rem;border-radius:44px;transition:transform .25s,box-shadow .3s,background .3s;overflow:hidden}
+.btn .arw{transition:transform .3s}.btn:hover .arw{transform:translateX(4px)}
+.btn.solid{background:var(--navy);color:#fff;box-shadow:0 12px 30px -12px rgba(14,53,66,.8)}
+.btn.solid:hover{background:var(--navy-deep)}
+.btn.gold{background:linear-gradient(120deg,var(--gold-lt),var(--gold));color:#2a1e08}
+.btn.wa{background:#25D366;color:#fff}
+.btn.ghost{border:1px solid rgba(27,42,46,.22);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--navy);color:var(--navy)}
+.btn:active{transform:scale(.97)}
+
+/* HERO */
+.hero{position:relative;padding:3.4rem 1.5rem 3rem;overflow:hidden;
+  background:radial-gradient(120% 80% at 100% 0%,var(--mint),transparent 55%)}
+.hero .eyebrow{margin-bottom:1.2rem;display:inline-block}
+.hero h1{font-size:clamp(2.7rem,10vw,3.8rem);color:var(--navy);margin-bottom:1.1rem}
+.hero h1 em{color:var(--gold)}
+.hero .lede{color:var(--slate);font-size:1.02rem;max-width:27rem;margin-bottom:1.5rem}
+.hero .cta{display:flex;gap:.6rem;flex-wrap:wrap}
+.credbar{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.6rem 0 0}
+.credbar .c{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:500;color:var(--navy);background:#fff;border:1px solid var(--line);padding:.42rem .8rem;border-radius:40px}
+.credbar .c svg{color:var(--gold)}
+/* doctor card */
+.doc{margin-top:2rem;background:var(--navy);color:#fff;border-radius:18px;padding:1.5rem;position:relative;overflow:hidden;box-shadow:0 24px 50px -24px rgba(14,53,66,.7)}
+.doc::after{content:"";position:absolute;top:-40%;right:-30%;width:70%;height:80%;background:radial-gradient(circle,rgba(224,192,132,.18),transparent 65%)}
+.doc .seal{width:56px;height:56px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold-lt);flex:none;position:relative}
+.doc .top{display:flex;gap:1rem;align-items:center;position:relative}
+.doc h3{font-size:1.4rem;color:#fff}
+.doc .top span{font-size:.78rem;color:#bcd0d2}
+.doc .quals{position:relative;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.12);font-size:.82rem;color:#cfe0e1;line-height:1.6}
+.doc .quals b{color:var(--gold-lt);font-weight:600}
+
+/* sections */
+.sec{padding:4.6rem 1.5rem;position:relative}
+.idx{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.9rem;display:block}
+.sec h2{font-size:clamp(2.1rem,8vw,2.9rem);color:var(--navy)}
+.sec .sub{color:var(--slate);margin-top:.7rem;max-width:27rem}
+
+/* philosophy */
+.philo{background:var(--panel);text-align:center}
+.philo p{font-family:var(--h);font-size:clamp(1.5rem,6vw,2.1rem);font-weight:400;line-height:1.4;color:var(--ink);max-width:30rem;margin:0 auto}
+.philo p em{color:var(--navy)}
+
+/* treatments */
+.treat{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.8rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.5rem 1.3rem;transition:transform .3s,box-shadow .3s,border-color .3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 36px -22px rgba(14,53,66,.5);border-color:var(--gold)}
+.card .ic{width:44px;height:44px;border-radius:12px;background:var(--mint);display:grid;place-items:center;color:var(--teal);margin-bottom:.9rem}
+.card h3{font-size:1.25rem;color:var(--ink)}
+.card p{font-size:.82rem;color:var(--slate);margin-top:.3rem}
+.card.wide{grid-column:1/3}
+
+/* why */
+.why{background:var(--navy);color:#fff}
+.why .idx{color:var(--gold-lt)}
+.why h2{color:#fff}
+.why .grid{display:flex;flex-direction:column;gap:1.5rem;margin-top:1.8rem}
+.why .item{display:flex;gap:1rem;align-items:flex-start}
+.why .item .n{font-family:var(--h);font-size:1.6rem;color:var(--gold-lt);line-height:1;flex:none;width:2rem}
+.why .item h3{color:#fff;font-size:1.25rem}
+.why .item p{color:#bcd0d2;font-size:.86rem}
+
+/* before after */
+.ba{position:relative;aspect-ratio:3/2;border-radius:var(--r);overflow:hidden;touch-action:none;user-select:none;box-shadow:0 22px 46px -24px rgba(14,53,66,.5)}
+.ba .layer{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--h);font-size:1.9rem}
+.ba .after{background:linear-gradient(135deg,#dcebe9,#c3ddd9);color:var(--navy)}
+.ba .before{background:linear-gradient(135deg,#dfd8cd,#c7bcac);color:#6a5c48;clip-path:inset(0 50% 0 0)}
+.ba .tag{position:absolute;top:12px;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.32);color:#fff;padding:.24rem .6rem;border-radius:20px}
+.ba .tag.l{left:12px}.ba .tag.r{right:12px;background:var(--gold);color:#231a07}
+.ba .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-50%);box-shadow:0 0 12px rgba(0,0,0,.3)}
+.ba .knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--navy);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.hint{text-align:center;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#a99e88;margin-top:.9rem}
+
+/* words */
+.words{background:var(--panel);text-align:center}
+.words .quote{font-family:var(--h);font-style:italic;font-size:clamp(1.4rem,6vw,1.9rem);font-weight:400;line-height:1.42;color:var(--ink);max-width:28rem;margin:1.2rem auto 0}
+.words .stars{color:var(--gold);letter-spacing:3px;margin-top:1rem;font-size:1.1rem}
+.words small{display:block;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-top:.7rem}
+
+/* visit */
+.map{border:0;width:100%;height:210px;border-radius:var(--r);filter:grayscale(.12)}
+.addr{color:var(--slate);margin:1rem 0;line-height:1.8;font-size:.94rem}
+.addr b{color:var(--ink);font-weight:600}
+.appt{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--navy);background:#fff;border:1px solid var(--line);padding:.5rem .9rem;border-radius:40px;margin-bottom:1rem}
+
+/* footer */
+footer{background:var(--navy-deep);color:#a9c1c3;text-align:center;padding:2.4rem 1.5rem}
+footer .fl{font-family:var(--h);font-size:1.35rem;color:#fff}
+footer p{font-size:.68rem;margin-top:.4rem;opacity:.85;line-height:1.6}
+.tag-demo{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-top:1.1rem}
+
+/* sticky bar */
+.bar{position:fixed;bottom:0;left:0;right:0;max-width:580px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;z-index:70;box-shadow:0 -6px 24px rgba(0,0,0,.15)}
+.bar a{display:flex;align-items:center;justify-content:center;gap:.5rem;height:4.6rem;font-weight:600;font-size:.86rem;text-decoration:none;padding-bottom:env(safe-area-inset-bottom,0)}
+.bar .call{background:var(--navy);color:#fff}.bar .wa{background:#25D366;color:#fff}
+
+@media(min-width:760px){
+  .wrap{max-width:100%}
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:3.4rem;align-items:center;padding:5.5rem 8%}
+  .hero .doc{margin-top:0}
+  .sec{padding:6.5rem 8%}
+  .treat,.why .grid,.words-in,.visit,.ba-wrap,.philo p{max-width:1000px;margin-inline:auto}
+  .why .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.4rem}
+  .bar{display:none}body{padding-bottom:0}
+}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+<div class="wrap">
+
+  <nav class="nav">
+    <div class="logo">Dr. Mona Prabhakar<small>The Orthodontic Clinic</small></div>
+    <a class="book" href="#book">Book</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <span class="eyebrow rv">Orthodontics · Sector 31, Gurugram</span>
+      <h1 class="rv d1">A confident smile, <em>expertly designed.</em></h1>
+      <p class="lede rv d2">Braces, clear aligners and smile correction — from a gold-medallist orthodontic specialist who has been perfecting smiles since 1997.</p>
+      <div class="cta rv d3">
+        <a class="btn solid" href="#book">Book a Consultation <span class="arw">→</span></a>
+        <a class="btn ghost" href="#treatments">Treatments</a>
+      </div>
+      <div class="credbar rv d3">
+        <span class="c"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M8 13l-2 8 6-3 6 3-2-8"/></svg> BDS Gold Medallist</span>
+        <span class="c"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg> MDS Orthodontics</span>
+        <span class="c"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Since 1997</span>
+      </div>
+    </div>
+    <div class="doc rv d3">
+      <div class="top">
+        <div class="seal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="5"/><path d="M8 13l-2 8 6-3 6 3-2-8"/></svg></div>
+        <div><h3>Dr. Mona Prabhakar</h3><span>Specialist Orthodontist</span></div>
+      </div>
+      <div class="quals">
+        <b>MDS — Orthodontics</b>, King George's Medical College, Lucknow · <b>BDS Gold Medallist</b>, Govt. Dental College, Rohtak · <b>Professor</b> of Orthodontics &amp; Dentofacial Orthopedics, SGT Dental College.
+      </div>
+    </div>
+  </header>
+
+  <!-- PHILOSOPHY -->
+  <section class="sec philo">
+    <span class="eyebrow rv">The approach</span>
+    <div class="rule c rv"></div>
+    <p class="rv d1">An exclusively orthodontic practice — <em>by appointment only</em> — so every smile gets unhurried, specialist attention from start to finish.</p>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section class="sec" id="treatments">
+    <span class="idx rv">01 — Treatments</span>
+    <h2 class="rv">Every path to a <em>straighter smile.</em></h2>
+    <p class="sub rv">From classic braces to near-invisible aligners — the right approach for your teeth, your age and your lifestyle.</p>
+    <div class="treat">
+      <div class="card rv" data-tilt>
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="9" width="18" height="6" rx="2"/><path d="M7 9v6M11 9v6M15 9v6"/></svg></div>
+        <h3>Braces</h3><p>Metal &amp; ceramic — precise, proven correction for all ages.</p>
+      </div>
+      <div class="card rv d1" data-tilt>
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 8c0-2 3-3 7-3s7 1 7 3-1 9-3 10-3-2-4-2-2 3-4 2S5 10 5 8z"/></svg></div>
+        <h3>Clear Aligners</h3><p>Near-invisible, removable — straighten without anyone noticing.</p>
+      </div>
+      <div class="card rv d2" data-tilt>
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 14s1.5 3 8 3 8-3 8-3M8 10h.01M16 10h.01"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Smile Correction</h3><p>Gaps, crowding and bite issues, thoughtfully corrected.</p>
+      </div>
+      <div class="card rv d3" data-tilt>
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M2 20c0-3 3-5 7-5M14 16c3 0 6 1 6 4"/></svg></div>
+        <h3>Kids' Orthodontics</h3><p>Early, gentle guidance (dentofacial orthopedics) for growing smiles.</p>
+      </div>
+      <div class="card wide rv d3" data-tilt>
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 2v4M16 2v4M4 8h16M5 6h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z"/><path d="M9 14l2 2 4-4"/></svg></div>
+        <h3>Specialist Consultation</h3><p>A calm, personal assessment and an honest, tailored treatment plan — by appointment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="sec why">
+    <span class="idx rv">02 — Why patients trust Dr. Mona</span>
+    <h2 class="rv">Rare expertise, <em>close to home.</em></h2>
+    <div class="grid">
+      <div class="item rv d1"><span class="n">01</span><div><h3>A true specialist</h3><p>Exclusively orthodontics — this is all she does, and has done, for over 25 years.</p></div></div>
+      <div class="item rv d2"><span class="n">02</span><div><h3>Academic authority</h3><p>A professor of orthodontics who trains the next generation of specialists.</p></div></div>
+      <div class="item rv d3"><span class="n">03</span><div><h3>Top-tier training</h3><p>Gold-medallist BDS and an MDS from King George's Medical College, Lucknow.</p></div></div>
+      <div class="item rv d4"><span class="n">04</span><div><h3>Unhurried, personal care</h3><p>By-appointment practice — real time and attention for every patient.</p></div></div>
+    </div>
+  </section>
+
+  <!-- BEFORE AFTER -->
+  <section class="sec">
+    <span class="idx rv">03 — The transformation</span>
+    <h2 class="rv">See a smile <em>come together.</em></h2>
+    <div class="ba-wrap"><div class="ba rv d1" id="ba" style="margin-top:1.8rem">
+      <div class="layer after"><span class="tag r">After</span>After ✦</div>
+      <div class="layer before" id="baBefore"><span class="tag l">Before</span>Before</div>
+      <div class="handle" id="baHandle"><div class="knob">⇆</div></div>
+    </div>
+    <p class="hint">Real before/after smiles from the clinic will appear here</p></div>
+  </section>
+
+  <!-- WORDS -->
+  <section class="sec words">
+    <div class="words-in">
+    <span class="eyebrow rv">In their words</span>
+    <div class="rule c rv"></div>
+    <p class="quote rv d1">“Your genuine Google reviews will appear here — real words from real patients, never invented.”</p>
+    <div class="stars rv d2">★★★★★</div>
+    <small class="rv d2">Pulled live from your Google profile</small>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="sec visit" id="book">
+    <span class="idx rv">04 — Visit the clinic</span>
+    <h2 class="rv">Book your <em>consultation.</em></h2>
+    <p class="addr rv d1"><b>The Orthodontic Clinic — Dr. Mona Prabhakar</b><br>Sector 31, Gurugram (near Raheja Atlantis)</p>
+    <div class="appt rv d1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M4 9h16"/><rect x="4" y="5" width="16" height="16" rx="2"/></svg> By appointment · evening consultations</div>
+    <iframe class="map rv d2" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      src="https://maps.google.com/maps?q=Dr%20Mona%20Prabhakar%20Orthodontic%20Clinic%20Sector%2031%20Gurgaon&output=embed"></iframe>
+    <div class="cta rv d2" style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.2rem">
+      <a class="btn wa" href="https://wa.me/919810131064?text=Namaste%20Dr.%20Mona%2C%20I%27d%20like%20to%20book%20an%20orthodontic%20consultation." target="_blank" rel="noopener">Book on WhatsApp</a>
+      <a class="btn solid" href="tel:+919810131064">Call the Clinic <span class="arw">→</span></a>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Dr%20Mona%20Prabhakar%20Orthodontic%20Clinic%20Sector%2031%20Gurgaon" target="_blank" rel="noopener">Directions</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fl">Dr. Mona Prabhakar</div>
+    <p>The Orthodontic Clinic · Braces · Aligners · Smile Correction<br>Sector 31, Gurugram · By appointment</p>
+    <p class="tag-demo">Sample website · a demo by Lantern 🏮</p>
+  </footer>
+
+  <div class="bar">
+    <a class="call" href="tel:+919810131064"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .5 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.5-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1z"/></svg>Call</a>
+    <a class="wa" href="https://wa.me/919810131064?text=Namaste%20Dr.%20Mona%2C%20I%27d%20like%20to%20book%20an%20orthodontic%20consultation." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m4.52 12c-.25-.13-1.47-.73-1.7-.81-.22-.08-.38-.13-.55.12-.17.25-.64.82-.78.98-.15.17-.29.19-.54.06-.3-.15-1.26-.47-2.39-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.57-.35"/></svg>WhatsApp</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches, touch=matchMedia('(hover:none)').matches;
+  var prog=document.getElementById('prog');
+  addEventListener('scroll',function(){var h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.16});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  if(!rm&&!touch)document.querySelectorAll('[data-tilt]').forEach(function(el){
+    el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      el.style.transform='perspective(800px) rotateX('+(-y*5)+'deg) rotateY('+(x*5)+'deg) translateY(-4px)';});
+    el.addEventListener('mouseleave',function(){el.style.transform='';});});
+  if(!rm&&!touch)document.querySelectorAll('.btn').forEach(function(b){
+    b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.12)+'px,'+((e.clientY-r.top-r.height/2)*.18)+'px)';});
+    b.addEventListener('mouseleave',function(){b.style.transform='';});});
+  var ba=document.getElementById('ba'),bf=document.getElementById('baBefore'),hn=document.getElementById('baHandle');
+  if(ba){function set(x){var r=ba.getBoundingClientRect();var p=Math.max(0,Math.min(1,(x-r.left)/r.width));bf.style.clipPath='inset(0 '+(100-p*100)+'% 0 0)';hn.style.left=(p*100)+'%';}
+    var drag=false;ba.addEventListener('pointerdown',function(e){drag=true;ba.setPointerCapture(e.pointerId);set(e.clientX);});
+    ba.addEventListener('pointermove',function(e){if(drag)set(e.clientX);});
+    ba.addEventListener('pointerup',function(){drag=false;});ba.addEventListener('pointercancel',function(){drag=false;});}
+})();
+</script>
+</body>
+</html>
