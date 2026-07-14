@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Yoga with Aarav — Personal Yoga & Meditation · Gurugram (Concept)</title>
+<meta name="description" content="Personal yoga & meditation with Aarav — Hatha, Vinyasa, breathwork and stillness. Private, group and online sessions. A sample personal-brand website by Lantern.">
+<meta name="theme-color" content="#F7F2E9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F7F2E9; --sand:#EFE6D6; --paper:#FBF8F1; --sage:#6E7A5A; --sage-deep:#4E5740;
+  --clay:#BE7355; --clay-deep:#9F5A40; --ink:#2C2820; --muted:#847B6B; --line:#E4DAC7; --gold:#C79A4B;
+  --h:'Cormorant Garamond',Georgia,serif; --b:'Jost',system-ui,sans-serif; --r:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--b);background:var(--cream);color:var(--ink);line-height:1.75;overflow-x:hidden;font-weight:300;padding-bottom:4.6rem}
+h1,h2,h3{font-family:var(--h);font-weight:500;letter-spacing:.005em;line-height:1.08}
+em,i{font-style:italic}
+.wrap{max-width:600px;margin:0 auto;position:relative;background:var(--cream);box-shadow:0 0 90px rgba(0,0,0,.06);overflow:hidden}
+svg{display:block}a{color:inherit}
+.eyebrow{font-size:.6rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--clay-deep)}
+.rule{width:44px;height:1px;background:var(--clay);margin:1.2rem 0}.rule.c{margin-inline:auto}
+
+.concept{background:var(--ink);color:var(--sand);text-align:center;font-family:var(--b);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;padding:.5rem}
+.progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:1000;background:var(--clay)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}
+
+.nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 1.4rem;background:rgba(247,242,233,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .logo{font-family:var(--h);font-size:1.5rem;color:var(--ink);letter-spacing:.01em}
+.nav .logo b{color:var(--clay);font-weight:500}
+.nav a.book{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);background:var(--sage);padding:.55rem 1rem;border-radius:40px;text-decoration:none;transition:.3s}
+.nav a.book:hover{background:var(--sage-deep)}
+
+.btn{position:relative;display:inline-flex;align-items:center;gap:.55rem;font-family:var(--b);font-weight:400;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:1rem 1.9rem;border-radius:44px;transition:transform .3s,background .3s,color .3s}
+.btn .arw{transition:transform .3s}.btn:hover .arw{transform:translateX(4px)}
+.btn.clay{background:var(--clay);color:var(--paper)}.btn.clay:hover{background:var(--clay-deep)}
+.btn.sage{background:var(--sage);color:var(--paper)}.btn.sage:hover{background:var(--sage-deep)}
+.btn.wa{background:#25D366;color:#fff}
+.btn.line{border:1px solid var(--line);color:var(--ink)}.btn.line:hover{border-color:var(--clay);color:var(--clay-deep)}
+.btn:active{transform:scale(.97)}
+
+/* HERO */
+.hero{position:relative;min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:3.5rem 1.5rem 3rem;text-align:center;overflow:hidden}
+.hero .sun{position:absolute;width:75vw;max-width:440px;aspect-ratio:1;border-radius:50%;left:50%;top:34%;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(190,115,85,.16),rgba(110,122,90,.08) 55%,transparent 72%);filter:blur(8px);pointer-events:none}
+.hero>*{position:relative;z-index:1}
+.hero .eyebrow{margin-bottom:1.6rem}
+.hero h1{font-size:clamp(3rem,13vw,4.8rem);color:var(--ink);margin-bottom:1.3rem}
+.hero h1 em{color:var(--clay)}
+.hero .lede{font-size:1.05rem;color:var(--muted);max-width:24rem;margin:0 auto 2rem}
+.hero .cta{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap}
+.scrollcue{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:.5rem;z-index:1}
+.scrollcue .l{width:1px;height:32px;background:linear-gradient(var(--clay),transparent);animation:breathe 3.5s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:scaleY(.5);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+
+/* sections */
+.sec{padding:5rem 1.5rem;position:relative}
+.idx{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--clay-deep);margin-bottom:1rem;display:block}
+.sec h2{font-size:clamp(2.3rem,9vw,3.2rem);color:var(--ink)}
+.sec h2 em{color:var(--clay)}
+
+/* about */
+.about{background:var(--sand);text-align:center}
+.about .photo{width:150px;height:150px;border-radius:50%;margin:0 auto 1.6rem;background:linear-gradient(150deg,#d8c8a8,#b9a988);display:grid;place-items:center;color:#7a6a4a;font-family:var(--b);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line)}
+.about p{font-family:var(--h);font-size:clamp(1.35rem,5.5vw,1.7rem);font-weight:400;line-height:1.5;color:var(--ink);max-width:30rem;margin:0 auto}
+.about p em{color:var(--sage-deep)}
+
+/* offerings */
+.offer{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:2rem}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem 1.3rem;transition:transform .35s,box-shadow .35s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -24px rgba(78,87,64,.5)}
+.card .ic{width:44px;height:44px;border-radius:50%;background:rgba(110,122,90,.12);display:grid;place-items:center;color:var(--sage-deep);margin-bottom:.9rem}
+.card h3{font-size:1.5rem;color:var(--ink)}
+.card p{font-size:.82rem;color:var(--muted);margin-top:.3rem;text-transform:none}
+.card.wide{grid-column:1/3}
+
+/* philosophy */
+.philo{background:var(--sage);color:var(--paper);text-align:center;position:relative;overflow:hidden}
+.philo .eyebrow{color:#d9dcc9}
+.philo blockquote{font-family:var(--h);font-style:italic;font-size:clamp(1.7rem,7vw,2.4rem);font-weight:400;line-height:1.35;max-width:26rem;margin:1.2rem auto 0;color:var(--paper)}
+.philo cite{display:block;font-family:var(--b);font-style:normal;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#c9cdb6;margin-top:1.4rem}
+
+/* formats */
+.formats{display:grid;grid-template-columns:1fr;gap:.8rem;margin-top:1.8rem}
+.fmt{display:flex;gap:1rem;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.1rem 1.3rem}
+.fmt .n{font-family:var(--h);font-size:1.6rem;color:var(--clay);width:2rem;flex:none;line-height:1}
+.fmt h3{font-size:1.25rem;color:var(--ink)}
+.fmt p{font-size:.82rem;color:var(--muted)}
+
+/* testimonial */
+.test{background:var(--sand);text-align:center}
+.test blockquote{font-family:var(--h);font-style:italic;font-size:clamp(1.4rem,5.5vw,1.9rem);line-height:1.45;color:var(--ink);max-width:28rem;margin:1.2rem auto 0}
+.test .stars{color:var(--gold);letter-spacing:3px;margin-top:1rem}
+.test small{display:block;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:.7rem}
+
+/* book */
+.book{text-align:center}
+.book p{color:var(--muted);max-width:24rem;margin:.6rem auto 2rem}
+.addr{font-size:.82rem;color:var(--muted);margin-top:2.2rem;line-height:1.9}
+.addr b{color:var(--ink);font-weight:400}
+
+footer{background:var(--ink);color:#b5aa96;text-align:center;padding:2.4rem 1.5rem}
+footer .fl{font-family:var(--h);font-size:1.7rem;color:var(--cream)}
+footer .fl b{color:var(--clay)}
+footer p{font-size:.68rem;margin-top:.5rem;opacity:.85;line-height:1.6}
+.tag-demo{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-top:1.1rem}
+
+.bar{position:fixed;bottom:0;left:0;right:0;max-width:600px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;z-index:70;box-shadow:0 -6px 24px rgba(0,0,0,.12)}
+.bar a{display:flex;align-items:center;justify-content:center;gap:.5rem;height:4.6rem;font-family:var(--b);font-weight:400;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding-bottom:env(safe-area-inset-bottom,0)}
+.bar .call{background:var(--ink);color:var(--cream)}.bar .wa{background:#25D366;color:#fff}
+
+@media(min-width:760px){.wrap{max-width:100%}.hero{padding:6rem 8%}.sec{padding:7rem 8%}
+  .offer,.formats,.about-in,.philo-in,.test-in,.book-in{max-width:900px;margin-inline:auto}
+  .formats{grid-template-columns:repeat(3,1fr)}.bar{display:none}body{padding-bottom:0}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important;transition:none!important}.scrollcue .l{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="concept">◇ Concept preview — name, photo, classes &amp; details are placeholders we'll replace with yours ◇</div>
+<div class="progress" id="prog"></div>
+<div class="wrap">
+
+  <nav class="nav">
+    <div class="logo">Yoga with <b>Aarav</b></div>
+    <a class="book" href="#book">Book</a>
+  </nav>
+
+  <header class="hero">
+    <div class="sun"></div>
+    <span class="eyebrow rv">Personal Yoga &amp; Meditation</span>
+    <h1 class="rv d1">Find your breath.<br>Find your <em>balance.</em></h1>
+    <p class="lede rv d2">One-on-one and small-group yoga rooted in breath, movement and stillness — meeting you exactly where you are.</p>
+    <div class="cta rv d3">
+      <a class="btn clay" href="#book">Book a Session <span class="arw">→</span></a>
+      <a class="btn line" href="#offer">Explore Classes</a>
+    </div>
+    <div class="scrollcue"><span>Breathe</span><span class="l"></span></div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="sec about"><div class="about-in">
+    <div class="photo rv">Your photo here</div>
+    <span class="eyebrow rv">Namaste, I'm Aarav</span>
+    <div class="rule c rv"></div>
+    <p class="rv d1">I've spent <em>ten years</em> on the mat learning that yoga isn't about touching your toes — it's about what you learn on the way down. I teach calm, honest practice that fits real life. <em>(Your story goes here.)</em></p>
+  </div></section>
+
+  <!-- OFFERINGS -->
+  <section class="sec" id="offer">
+    <span class="idx rv">01 — What we practise</span>
+    <h2 class="rv">Classes for <em>every body.</em></h2>
+    <div class="offer">
+      <div class="card rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="5" r="2"/><path d="M12 8v6M7 11h10M9 20l3-6 3 6"/></svg></div><h3>Hatha Yoga</h3><p>Grounding postures, held with breath and intention.</p></div>
+      <div class="card rv d1"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12c4-6 14-6 18 0-4 6-14 6-18 0z"/><circle cx="12" cy="12" r="1.6"/></svg></div><h3>Vinyasa Flow</h3><p>Moving meditation — strength that flows with the breath.</p></div>
+      <div class="card rv d2"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Meditation &amp; Pranayama</h3><p>Breathwork and stillness to quiet a busy mind.</p></div>
+      <div class="card rv d3"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div><h3>Private 1-on-1</h3><p>A practice designed entirely around you and your goals.</p></div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="sec philo"><div class="philo-in">
+    <span class="eyebrow rv">The practice</span>
+    <blockquote class="rv d1">“Yoga is the journey of the self, through the self, to the self.”</blockquote>
+    <cite class="rv d2">— Your guiding words here</cite>
+  </div></section>
+
+  <!-- FORMATS -->
+  <section class="sec">
+    <span class="idx rv">02 — How we practise together</span>
+    <h2 class="rv">Wherever you <em>are.</em></h2>
+    <div class="formats">
+      <div class="fmt rv d1"><span class="n">01</span><div><h3>In person</h3><p>At your home, garden or a studio near you.</p></div></div>
+      <div class="fmt rv d2"><span class="n">02</span><div><h3>Online</h3><p>Live sessions over video, from anywhere.</p></div></div>
+      <div class="fmt rv d3"><span class="n">03</span><div><h3>Groups &amp; corporate</h3><p>For friends, families and workplaces.</p></div></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="sec test"><div class="test-in">
+    <span class="eyebrow rv">Kind words</span>
+    <blockquote class="rv d1">“A real testimonial from one of your students will live here — genuine words, never invented.”</blockquote>
+    <div class="stars rv d2">★★★★★</div>
+    <small class="rv d2">Your students' real reviews</small>
+  </div></section>
+
+  <!-- BOOK -->
+  <section class="sec book" id="book"><div class="book-in">
+    <span class="eyebrow rv">Begin</span>
+    <div class="rule c rv"></div>
+    <h2 class="rv d1">Roll out your <em>mat.</em></h2>
+    <p class="rv d2">Message me on WhatsApp to book a session or ask a question — no pressure, just a first step.</p>
+    <a class="btn clay rv d2" href="https://wa.me/919999999999?text=Namaste%2C%20I%27d%20like%20to%20book%20a%20yoga%20session." target="_blank" rel="noopener" style="margin:0 auto">Book on WhatsApp <span class="arw">→</span></a>
+    <div class="addr rv d3"><b>Yoga with Aarav</b><br>Personal yoga &amp; meditation · Gurugram<br><em>(Your area &amp; contact number here)</em></div>
+  </div></section>
+
+  <footer>
+    <div class="fl">Yoga with <b>Aarav</b></div>
+    <p>Personal Yoga · Meditation · Breathwork · Gurugram</p>
+    <p class="tag-demo">Concept website · a demo by Lantern 🏮</p>
+  </footer>
+
+  <div class="bar">
+    <a class="call" href="tel:+919999999999"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .5 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.5-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1z"/></svg>Call</a>
+    <a class="wa" href="https://wa.me/919999999999?text=Namaste%2C%20I%27d%20like%20to%20book%20a%20yoga%20session." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m4.52 12c-.25-.13-1.47-.73-1.7-.81-.22-.08-.38-.13-.55.12-.17.25-.64.82-.78.98-.15.17-.29.19-.54.06-.3-.15-1.26-.47-2.39-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.57-.35"/></svg>WhatsApp</a>
+  </div>
+</div>
+<script>
+(function(){
+  var prog=document.getElementById('prog');
+  addEventListener('scroll',function(){var h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  setTimeout(function(){document.querySelectorAll('.rv').forEach(function(e){if(e.getBoundingClientRect().top<window.innerHeight)e.classList.add('in');});},600);
+  window.addEventListener('load',function(){setTimeout(function(){document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in');});},2600);});
+})();
+</script>
+</body>
+</html>
