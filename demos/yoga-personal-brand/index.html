@@ -12,121 +12,222 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#F7F2E9; --sand:#EFE6D6; --paper:#FBF8F1; --sage:#6E7A5A; --sage-deep:#4E5740;
-  --clay:#BE7355; --clay-deep:#9F5A40; --ink:#2C2820; --muted:#847B6B; --line:#E4DAC7; --gold:#C79A4B;
-  --h:'Cormorant Garamond',Georgia,serif; --b:'Jost',system-ui,sans-serif; --r:16px;
+  --cream:#F7F2E9; --sand:#EFE6D6; --paper:#FBF8F1; --sage:#6E7A5A; --sage-deep:#48513B;
+  --clay:#BE7355; --clay-deep:#9F5A40; --ink:#2C2820; --muted:#847B6B; --line:#E2D8C4; --gold:#C79A4B;
+  --h:'Cormorant Garamond',Georgia,serif; --b:'Jost',system-ui,sans-serif; --r:18px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:var(--b);background:var(--cream);color:var(--ink);line-height:1.75;overflow-x:hidden;font-weight:300;padding-bottom:4.6rem}
-h1,h2,h3{font-family:var(--h);font-weight:500;letter-spacing:.005em;line-height:1.08}
+h1,h2,h3{font-family:var(--h);font-weight:500;letter-spacing:.005em;line-height:1.06}
 em,i{font-style:italic}
+img{max-width:100%;display:block}
 .wrap{max-width:600px;margin:0 auto;position:relative;background:var(--cream);box-shadow:0 0 90px rgba(0,0,0,.06);overflow:hidden}
 svg{display:block}a{color:inherit}
 .eyebrow{font-size:.6rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--clay-deep)}
 .rule{width:44px;height:1px;background:var(--clay);margin:1.2rem 0}.rule.c{margin-inline:auto}
 
-.concept{background:var(--ink);color:var(--sand);text-align:center;font-family:var(--b);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;padding:.5rem}
-.progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:1000;background:var(--clay)}
-.rv{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1)}
-.rv.in{opacity:1;transform:none}
+/* grain — the film layer */
+.grain{position:fixed;inset:0;z-index:998;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:1000;background:linear-gradient(90deg,var(--gold),var(--clay))}
+
+.concept{background:var(--ink);color:var(--sand);text-align:center;font-family:var(--b);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;padding:.5rem}
+
+/* reveals */
+.rv{opacity:0;transform:translateY(28px);filter:blur(3px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1),filter 1s ease}
+.rv.in{opacity:1;transform:none;filter:none}
 .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}
 
+/* nav */
 .nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;
-  padding:.9rem 1.4rem;background:rgba(247,242,233,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  padding:.9rem 1.4rem;background:rgba(247,242,233,.8);backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid var(--line)}
 .nav .logo{font-family:var(--h);font-size:1.5rem;color:var(--ink);letter-spacing:.01em}
 .nav .logo b{color:var(--clay);font-weight:500}
-.nav a.book{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);background:var(--sage);padding:.55rem 1rem;border-radius:40px;text-decoration:none;transition:.3s}
+.nav a.book{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream);background:var(--sage);padding:.6rem 1.1rem;border-radius:40px;text-decoration:none;transition:.3s}
 .nav a.book:hover{background:var(--sage-deep)}
 
-.btn{position:relative;display:inline-flex;align-items:center;gap:.55rem;font-family:var(--b);font-weight:400;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:1rem 1.9rem;border-radius:44px;transition:transform .3s,background .3s,color .3s}
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;gap:.55rem;font-family:var(--b);font-weight:400;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:1.05rem 2rem;border-radius:44px;transition:transform .3s,background .3s,color .3s,box-shadow .3s}
 .btn .arw{transition:transform .3s}.btn:hover .arw{transform:translateX(4px)}
-.btn.clay{background:var(--clay);color:var(--paper)}.btn.clay:hover{background:var(--clay-deep)}
-.btn.sage{background:var(--sage);color:var(--paper)}.btn.sage:hover{background:var(--sage-deep)}
-.btn.wa{background:#25D366;color:#fff}
-.btn.line{border:1px solid var(--line);color:var(--ink)}.btn.line:hover{border-color:var(--clay);color:var(--clay-deep)}
+.btn.clay{background:var(--clay);color:var(--paper);box-shadow:0 14px 30px -14px rgba(159,90,64,.65)}.btn.clay:hover{background:var(--clay-deep)}
+.btn.line{border:1px solid rgba(44,40,32,.28);color:var(--ink)}.btn.line:hover{border-color:var(--clay);color:var(--clay-deep)}
+.btn.ghostlight{border:1px solid rgba(247,242,233,.4);color:var(--cream)}.btn.ghostlight:hover{border-color:var(--gold);color:#EBD9A9}
 .btn:active{transform:scale(.97)}
 
-/* HERO */
-.hero{position:relative;min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:3.5rem 1.5rem 3rem;text-align:center;overflow:hidden}
-.hero .sun{position:absolute;width:75vw;max-width:440px;aspect-ratio:1;border-radius:50%;left:50%;top:34%;transform:translate(-50%,-50%);
-  background:radial-gradient(circle,rgba(190,115,85,.16),rgba(110,122,90,.08) 55%,transparent 72%);filter:blur(8px);pointer-events:none}
+/* ═══ HERO ═══ */
+.hero{position:relative;padding:4rem 1.5rem 0;text-align:center;overflow:hidden}
+.hero .rings{position:absolute;left:50%;top:22%;transform:translate(-50%,-50%);width:120vw;max-width:720px;aspect-ratio:1;pointer-events:none}
+.hero .rings span{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(110,122,90,.16);animation:ringbreathe 9s ease-in-out infinite}
+.hero .rings span:nth-child(2){inset:12%;animation-delay:.5s;border-color:rgba(190,115,85,.14)}
+.hero .rings span:nth-child(3){inset:24%;animation-delay:1s;border-color:rgba(110,122,90,.18)}
+.hero .rings span:nth-child(4){inset:36%;animation-delay:1.5s;border-color:rgba(199,154,75,.16)}
+@keyframes ringbreathe{0%,100%{transform:scale(.92);opacity:.6}50%{transform:scale(1.04);opacity:1}}
 .hero>*{position:relative;z-index:1}
-.hero .eyebrow{margin-bottom:1.6rem}
-.hero h1{font-size:clamp(3rem,13vw,4.8rem);color:var(--ink);margin-bottom:1.3rem}
+.hero .eyebrow{margin-bottom:1.6rem;display:block}
+.hero h1{font-size:clamp(3.1rem,13.5vw,5.2rem);color:var(--ink);margin-bottom:1.2rem}
 .hero h1 em{color:var(--clay)}
-.hero .lede{font-size:1.05rem;color:var(--muted);max-width:24rem;margin:0 auto 2rem}
-.hero .cta{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap}
-.scrollcue{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:.5rem;z-index:1}
-.scrollcue .l{width:1px;height:32px;background:linear-gradient(var(--clay),transparent);animation:breathe 3.5s ease-in-out infinite}
+.hero .lede{font-size:1.02rem;color:var(--muted);max-width:24.5rem;margin:0 auto 2.1rem}
+.hero .cta{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.2rem}
+
+/* hero photo — arch + chips */
+.heroph{position:relative;max-width:400px;margin:0 auto}
+.heroph .arch{border-radius:200px 200px var(--r) var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:0 34px 70px -30px rgba(44,40,32,.45)}
+.heroph .arch img{width:100%;aspect-ratio:4/4.8;object-fit:cover;transform:scale(1.06);will-change:transform}
+.chip{position:absolute;background:rgba(251,248,241,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:40px;
+  padding:.55rem .95rem;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);box-shadow:0 14px 30px -16px rgba(44,40,32,.4);white-space:nowrap}
+.chip b{color:var(--clay-deep);font-weight:500}
+.chip.c1{top:14%;left:-.4rem}
+.chip.c2{top:44%;right:-.6rem}
+.chip.c3{bottom:9%;left:6%}
+.scrollcue{margin:2.6rem auto 1.6rem;font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.scrollcue .l{width:1px;height:34px;background:linear-gradient(var(--clay),transparent);animation:breathe 3.5s ease-in-out infinite}
 @keyframes breathe{0%,100%{transform:scaleY(.5);opacity:.4}50%{transform:scaleY(1);opacity:1}}
 
+/* ═══ MARQUEE ═══ */
+.marq{background:var(--sage);color:var(--paper);overflow:hidden;white-space:nowrap;padding:.85rem 0;border-block:1px solid var(--sage-deep)}
+.marq .track{display:inline-flex;animation:mscroll 26s linear infinite}
+.marq .track span{display:inline-flex;align-items:center;gap:1.6rem;padding-right:1.6rem;font-family:var(--h);font-style:italic;font-size:1.15rem;letter-spacing:.04em}
+.marq .track i{font-style:normal;color:#D8DCC4;font-size:.7rem}
+@keyframes mscroll{to{transform:translateX(-50%)}}
+
 /* sections */
-.sec{padding:5rem 1.5rem;position:relative}
+.sec{padding:5.2rem 1.5rem;position:relative}
 .idx{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--clay-deep);margin-bottom:1rem;display:block}
-.sec h2{font-size:clamp(2.3rem,9vw,3.2rem);color:var(--ink)}
+.sec h2{font-size:clamp(2.3rem,9vw,3.4rem);color:var(--ink)}
 .sec h2 em{color:var(--clay)}
 
-/* about */
-.about{background:var(--sand);text-align:center}
-.about .photo{width:170px;height:170px;border-radius:50%;margin:0 auto 1.6rem;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 40px -20px rgba(78,87,64,.45)}
-.about .photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
-.pgal{display:grid;grid-template-columns:1fr;gap:.8rem;margin-top:1.6rem}
-.pgal img{width:100%;border-radius:var(--r);display:block;border:1px solid var(--line)}
-.about p{font-family:var(--h);font-size:clamp(1.35rem,5.5vw,1.7rem);font-weight:400;line-height:1.5;color:var(--ink);max-width:30rem;margin:0 auto}
-.about p em{color:var(--sage-deep)}
+/* ═══ ABOUT ═══ */
+.about{background:var(--sand);border-block:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1fr;gap:2.4rem;align-items:center}
+.aphoto{position:relative;max-width:290px;margin:0 auto}
+.aphoto .arch{border-radius:160px 160px var(--r) var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:0 26px 60px -26px rgba(44,40,32,.4)}
+.aphoto .arch img{width:100%;aspect-ratio:4/4.6;object-fit:cover;object-position:center 20%}
+.aphoto::before{content:"";position:absolute;inset:-12px;border:1px solid rgba(190,115,85,.35);border-radius:172px 172px calc(var(--r) + 12px) calc(var(--r) + 12px);pointer-events:none}
+.about .txt{text-align:center}
+.about .txt p{font-family:var(--h);font-size:clamp(1.3rem,5.2vw,1.62rem);font-weight:400;line-height:1.5;color:var(--ink);max-width:30rem;margin:0 auto}
+.about .txt p em{color:var(--sage-deep)}
+.creds{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:2.4rem}
+.cred{background:var(--paper);padding:1.4rem .5rem;text-align:center}
+.cred .n{font-family:var(--h);font-size:1.9rem;color:var(--clay-deep);line-height:1}
+.cred .l{font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:.45rem}
 
-/* offerings */
-.offer{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:2rem}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem 1.3rem;transition:transform .35s,box-shadow .35s}
-.card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -24px rgba(78,87,64,.5)}
-.card .ic{width:44px;height:44px;border-radius:50%;background:rgba(110,122,90,.12);display:grid;place-items:center;color:var(--sage-deep);margin-bottom:.9rem}
-.card h3{font-size:1.5rem;color:var(--ink)}
-.card p{font-size:.82rem;color:var(--muted);margin-top:.3rem;text-transform:none}
-.card.wide{grid-column:1/3}
+/* ═══ OFFERINGS ═══ */
+.feature{position:relative;border-radius:var(--r);overflow:hidden;margin-top:2.2rem;box-shadow:0 30px 70px -30px rgba(44,40,32,.5)}
+.feature img{width:100%;aspect-ratio:4/4.4;object-fit:cover}
+.feature .ov{position:absolute;inset:0;background:linear-gradient(8deg,rgba(30,28,22,.87) 26%,rgba(30,28,22,.25) 60%,rgba(30,28,22,0));display:flex;flex-direction:column;justify-content:flex-end;padding:1.7rem 1.5rem}
+.feature .no{font-family:var(--h);font-style:italic;font-size:1rem;color:#EBD9A9;letter-spacing:.06em}
+.feature h3{font-size:2.1rem;color:var(--paper);margin:.25rem 0 .45rem}
+.feature p{font-size:.9rem;color:#E8E0D0;max-width:26rem;font-weight:300}
+.offer{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:.8rem}
+.card{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.5rem 1.25rem 1.4rem;overflow:hidden;transition:transform .35s,box-shadow .35s}
+.card::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,var(--clay),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 44px -24px rgba(78,87,64,.5)}
+.card:hover::after{transform:scaleX(1)}
+.card .no{font-family:var(--h);font-style:italic;font-size:.9rem;color:var(--gold)}
+.card .ic{width:42px;height:42px;border-radius:50%;border:1px solid rgba(110,122,90,.4);display:grid;place-items:center;color:var(--sage-deep);margin:.7rem 0 .85rem;background:rgba(110,122,90,.07)}
+.card h3{font-size:1.42rem;color:var(--ink);line-height:1.1}
+.card p{font-size:.8rem;color:var(--muted);margin-top:.3rem}
 
-/* philosophy */
-.philo{background:var(--sage);color:var(--paper);text-align:center;position:relative;overflow:hidden}
-.philo .eyebrow{color:#d9dcc9}
-.philo blockquote{font-family:var(--h);font-style:italic;font-size:clamp(1.7rem,7vw,2.4rem);font-weight:400;line-height:1.35;max-width:26rem;margin:1.2rem auto 0;color:var(--paper)}
-.philo cite{display:block;font-family:var(--b);font-style:normal;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#c9cdb6;margin-top:1.4rem}
+/* ═══ BREATH — signature moment ═══ */
+.breath{background:radial-gradient(130% 110% at 50% -10%,#59654A,var(--sage-deep));color:var(--paper);text-align:center;overflow:hidden;position:relative}
+.breath .eyebrow{color:#D8DCC4}
+.breath h2{color:var(--paper)}
+.breath h2 em{color:#EBD9A9}
+.breath .sub{color:#D5DAC6;font-size:.95rem;max-width:23rem;margin:.8rem auto 2.8rem}
+.borb{position:relative;width:230px;aspect-ratio:1;margin:0 auto}
+.borb .halo,.borb .halo2{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(247,242,233,.28)}
+.borb .halo{animation:orbgrow 9s ease-in-out infinite}
+.borb .halo2{inset:-14%;border-color:rgba(247,242,233,.14);animation:orbgrow 9s ease-in-out infinite .4s}
+.borb .core{position:absolute;inset:17%;border-radius:50%;background:radial-gradient(circle at 38% 32%,rgba(251,248,241,.32),rgba(251,248,241,.1) 62%,transparent);border:1px solid rgba(247,242,233,.5);display:grid;place-items:center;animation:orbgrow 9s ease-in-out infinite}
+@keyframes orbgrow{0%,100%{transform:scale(.78)}44%,56%{transform:scale(1.05)}}
+.borb .bword{font-family:var(--h);font-style:italic;font-size:1.5rem;color:var(--paper);letter-spacing:.04em}
+.breath .after{margin-top:2.8rem;font-family:var(--h);font-style:italic;font-size:1.35rem;color:#EBD9A9}
+@media(prefers-reduced-motion:reduce){.borb .halo,.borb .halo2,.borb .core{animation:none}}
 
-/* formats */
-.formats{display:grid;grid-template-columns:1fr;gap:.8rem;margin-top:1.8rem}
-.fmt{display:flex;gap:1rem;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.1rem 1.3rem}
-.fmt .n{font-family:var(--h);font-size:1.6rem;color:var(--clay);width:2rem;flex:none;line-height:1}
-.fmt h3{font-size:1.25rem;color:var(--ink)}
+/* ═══ PHOTO band ═══ */
+.band{padding:0;position:relative}
+.band img{width:100%;aspect-ratio:16/11;object-fit:cover;display:block}
+.band .cap{position:absolute;left:1.2rem;bottom:1.2rem;background:rgba(251,248,241,.9);backdrop-filter:blur(8px);border:1px solid var(--line);
+  border-radius:12px;padding:.7rem 1rem;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.band .cap b{color:var(--clay-deep);font-weight:500}
+
+/* ═══ FORMATS ═══ */
+.formats{margin-top:2rem;border-top:1px solid var(--line)}
+.fmt{display:grid;grid-template-columns:auto 1fr auto;gap:1.2rem;align-items:center;padding:1.45rem .3rem;border-bottom:1px solid var(--line);transition:background .3s,padding .3s}
+.fmt:hover{background:rgba(251,248,241,.8);padding-left:.8rem}
+.fmt .n{font-family:var(--h);font-style:italic;font-size:1.5rem;color:var(--gold);width:2.4rem;flex:none;line-height:1}
+.fmt h3{font-size:1.5rem;color:var(--ink);line-height:1.1}
 .fmt p{font-size:.82rem;color:var(--muted)}
+.fmt .go{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--clay-deep);transition:.3s;flex:none}
+.fmt:hover .go{background:var(--clay);border-color:var(--clay);color:var(--paper);transform:translateX(3px)}
+.team{margin-top:2.2rem;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);padding:1.5rem 1.4rem;display:grid;grid-template-columns:auto 1fr;gap:1.1rem;align-items:start}
+.team .lotus{width:40px;height:40px;border-radius:50%;background:rgba(190,115,85,.1);border:1px solid rgba(190,115,85,.3);display:grid;place-items:center;color:var(--clay-deep);flex:none}
+.team p{font-size:.88rem;color:var(--muted)}
+.team p b{font-weight:500;color:var(--ink)}
 
-/* testimonial */
-.test{background:var(--sand);text-align:center}
-.test blockquote{font-family:var(--h);font-style:italic;font-size:clamp(1.4rem,5.5vw,1.9rem);line-height:1.45;color:var(--ink);max-width:28rem;margin:1.2rem auto 0}
-.test .stars{color:var(--gold);letter-spacing:3px;margin-top:1rem}
-.test small{display:block;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:.7rem}
+/* ═══ PHILOSOPHY ═══ */
+.philo{background:var(--sand);text-align:center;position:relative;overflow:hidden;border-block:1px solid var(--line)}
+.philo .qm{font-family:var(--h);font-size:7rem;line-height:.6;color:rgba(190,115,85,.3);display:block;margin-bottom:1.2rem}
+.philo blockquote{font-family:var(--h);font-style:italic;font-size:clamp(1.55rem,6.4vw,2.2rem);font-weight:400;line-height:1.38;max-width:27rem;margin:0 auto;color:var(--ink)}
+.philo cite{display:block;font-family:var(--b);font-style:normal;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--clay-deep);margin-top:1.5rem}
 
-/* book */
-.book{text-align:center}
-.book p{color:var(--muted);max-width:24rem;margin:.6rem auto 2rem}
-.addr{font-size:.82rem;color:var(--muted);margin-top:2.2rem;line-height:1.9}
-.addr b{color:var(--ink);font-weight:400}
+/* ═══ TESTIMONIAL ═══ */
+.test{text-align:center}
+.test blockquote{font-family:var(--h);font-style:italic;font-size:clamp(1.35rem,5.4vw,1.8rem);line-height:1.45;color:var(--ink);max-width:28rem;margin:1.1rem auto 0}
+.test .stars{color:var(--gold);letter-spacing:4px;margin-top:1.1rem}
+.test small{display:block;font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:.7rem}
 
-footer{background:var(--ink);color:#b5aa96;text-align:center;padding:2.4rem 1.5rem}
+/* ═══ BOOK ═══ */
+.book{background:radial-gradient(120% 100% at 50% 0%,#3A3529,var(--ink));color:var(--cream);text-align:center;padding-bottom:6rem}
+.book .eyebrow{color:#C9B98F}
+.book h2{color:var(--cream)}
+.book h2 em{color:#EBD9A9}
+.book p{color:#B9AF9C;max-width:24rem;margin:.7rem auto 2.2rem}
+.addr{font-size:.82rem;color:#A79D8A;margin-top:2.4rem;line-height:1.9}
+.addr b{color:var(--cream);font-weight:400}
+
+footer{background:#231F18;color:#9A9080;text-align:center;padding:2.4rem 1.5rem}
 footer .fl{font-family:var(--h);font-size:1.7rem;color:var(--cream)}
 footer .fl b{color:var(--clay)}
-footer p{font-size:.68rem;margin-top:.5rem;opacity:.85;line-height:1.6}
-.tag-demo{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-top:1.1rem}
+footer p{font-size:.66rem;margin-top:.5rem;opacity:.85;line-height:1.6}
+.tag-demo{font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-top:1.1rem}
 
 .bar{position:fixed;bottom:0;left:0;right:0;max-width:600px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;z-index:70;box-shadow:0 -6px 24px rgba(0,0,0,.12)}
 .bar a{display:flex;align-items:center;justify-content:center;gap:.5rem;height:4.6rem;font-family:var(--b);font-weight:400;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding-bottom:env(safe-area-inset-bottom,0)}
 .bar .call{background:var(--ink);color:var(--cream)}.bar .wa{background:#25D366;color:#fff}
 
-@media(min-width:760px){.wrap{max-width:100%}.hero{padding:6rem 8%}.sec{padding:7rem 8%}
-  .offer,.formats,.about-in,.philo-in,.test-in,.book-in{max-width:900px;margin-inline:auto}
-  .formats{grid-template-columns:repeat(2,1fr)}.pgal{grid-template-columns:1fr 1fr;max-width:900px;margin-inline:auto;align-items:start}.bar{display:none}body{padding-bottom:0}}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important;transition:none!important}.scrollcue .l{animation:none}html{scroll-behavior:auto}}
+/* desktop */
+@media(min-width:760px){
+  .wrap{max-width:100%}
+  .hero{padding:6.5rem 8% 0}
+  .hero h1{font-size:5.6rem}
+  .heroph{max-width:440px}
+  .chip.c1{left:-3.4rem}.chip.c2{right:-3.8rem}.chip.c3{left:-2.6rem}
+  .sec{padding:7rem 8%}
+  .about-grid{grid-template-columns:320px 1fr;gap:4rem;max-width:960px;margin-inline:auto;text-align:left}
+  .about .txt{text-align:left}
+  .about .txt p{margin:0}
+  .creds{max-width:520px}
+  .offer{grid-template-columns:repeat(3,1fr);max-width:1000px;margin-inline:auto}
+  .feature{max-width:1000px;margin-inline:auto;margin-top:2.2rem}
+  .feature img{aspect-ratio:16/8}
+  .formats,.team{max-width:820px;margin-inline:auto}
+  .formats{margin-top:2rem}.team{margin-top:2.2rem}
+  .philo-in,.test-in,.book-in{max-width:900px;margin-inline:auto}
+  .band img{aspect-ratio:16/7}
+  .band .cap{left:8%;bottom:2rem}
+  .bar{display:none}body{padding-bottom:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+  .scrollcue .l,.hero .rings span,.marq .track{animation:none}
+  html{scroll-behavior:auto}
+}
 </style>
 </head>
 <body>
+<div class="grain"></div>
 <div class="concept">◇ Preview for Kanha · crafted by Lantern ◇</div>
 <div class="progress" id="prog"></div>
 <div class="wrap">
@@ -136,70 +237,110 @@ footer p{font-size:.68rem;margin-top:.5rem;opacity:.85;line-height:1.6}
     <a class="book" href="#book">Book</a>
   </nav>
 
+  <!-- HERO -->
   <header class="hero">
-    <div class="sun"></div>
+    <div class="rings" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
     <span class="eyebrow rv">Therapeutic Yoga · Home, Studio &amp; Online</span>
     <h1 class="rv d1">Find your breath.<br>Find your <em>balance.</em></h1>
-    <p class="lede rv d2">Therapeutic yoga that helps your body heal — easing back pain, stiffness and stress through practice designed around you, at home, in studio or online.</p>
+    <p class="lede rv d2">Therapeutic yoga that helps your body heal — easing back pain, stiffness and stress through practice designed around you.</p>
     <div class="cta rv d3">
       <a class="btn clay" href="#book">Book a Session <span class="arw">→</span></a>
-      <a class="btn line" href="#offer">Explore Classes</a>
+      <a class="btn line" href="#offer">Explore</a>
+    </div>
+    <div class="heroph rv d3">
+      <div class="arch"><img src="img/kanha-twist.jpg" alt="Kanha in a seated spinal twist during a therapeutic session" id="heroimg"></div>
+      <div class="chip c1 rv d3"><b>M.A.</b> Yogic Science · Rishikesh</div>
+      <div class="chip c2 rv d4"><b>6+ yrs</b> teaching</div>
+      <div class="chip c3 rv d4">Ages <b>35–75</b> welcome</div>
     </div>
     <div class="scrollcue"><span>Breathe</span><span class="l"></span></div>
   </header>
 
+  <!-- MARQUEE -->
+  <div class="marq" aria-hidden="true">
+    <div class="track">
+      <span>Therapeutic Yoga <i>✦</i> Pain Management <i>✦</i> Back &amp; Sciatica Care <i>✦</i> Slip Disc Support <i>✦</i> Meditation &amp; Pranayama <i>✦</i> Stress Relief <i>✦</i> Weight Management <i>✦</i>&nbsp;</span>
+      <span>Therapeutic Yoga <i>✦</i> Pain Management <i>✦</i> Back &amp; Sciatica Care <i>✦</i> Slip Disc Support <i>✦</i> Meditation &amp; Pranayama <i>✦</i> Stress Relief <i>✦</i> Weight Management <i>✦</i>&nbsp;</span>
+    </div>
+  </div>
+
   <!-- ABOUT -->
-  <section class="sec about"><div class="about-in">
-    <div class="photo rv"><img src="img/kanha-portrait.jpg" alt="Kanha holding a balancing yoga pose on his mat"></div>
-    <span class="eyebrow rv">Namaste, I'm Kanha</span>
-    <div class="rule c rv"></div>
-    <p class="rv d1">I hold an <em>M.A. in Yogic Science</em> from Jairam Mahavidyalaya, Rishikesh, and have taught for the past <em>six years</em> — including at Drishti Yogshala, Rishikesh. My work is therapeutic yoga: helping people aged 35 to 75 move freely, breathe deeply and live with less pain — through practice built around <em>your</em> body, not a template.</p>
-  </div></section>
+  <section class="sec about">
+    <div class="about-grid">
+      <div class="aphoto rv"><div class="arch"><img src="img/kanha-portrait.jpg" alt="Kanha holding a balancing pose on his mat"></div></div>
+      <div class="txt">
+        <span class="eyebrow rv">Namaste, I'm Kanha</span>
+        <div class="rule rv" style="margin-inline:auto"></div>
+        <p class="rv d1">I hold an <em>M.A. in Yogic Science</em> from Jairam Mahavidyalaya, Rishikesh, and have taught for the past <em>six years</em> — including at Drishti Yogshala, Rishikesh. My work is therapeutic yoga: helping people move freely, breathe deeply and live with less pain — through practice built around <em>your</em> body, not a template.</p>
+        <div class="creds rv d2">
+          <div class="cred"><div class="n"><span class="cu" data-to="6">0</span>+</div><div class="l">Years teaching</div></div>
+          <div class="cred"><div class="n">M.A.</div><div class="l">Yogic Science</div></div>
+          <div class="cred"><div class="n">35–75</div><div class="l">Age focus</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- OFFERINGS -->
   <section class="sec" id="offer">
     <span class="idx rv">01 — What we practise</span>
     <h2 class="rv">Yoga that <em>heals.</em></h2>
+
+    <div class="feature rv d1">
+      <img src="img/kanha-teaching.jpg" alt="Kanha guiding two students through a seated side stretch in studio" loading="lazy">
+      <div class="ov">
+        <span class="no">Signature practice</span>
+        <h3>Therapeutic Yoga</h3>
+        <p>Personalised sessions for ages 35–75 — building mobility, flexibility, strength and calm, one breath at a time.</p>
+      </div>
+    </div>
+
     <div class="offer">
-      <div class="card wide rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div><h3>Therapeutic Yoga</h3><p>My signature practice — personalised sessions for ages 35–75, building mobility, flexibility, strength and calm.</p></div>
-      <div class="card rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="5" r="2"/><path d="M12 8v6M7 11h10M9 20l3-6 3 6"/></svg></div><h3>Pain Management</h3><p>Gentle, structured practice to ease chronic aches.</p></div>
-      <div class="card rv d1"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c0 4-3 5-3 9a3 3 0 0 0 6 0c0-4-3-5-3-9z"/><path d="M12 15v6"/></svg></div><h3>Back Pain &amp; Sciatica</h3><p>Targeted support for a stronger, freer spine.</p></div>
-      <div class="card rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17c2.5-1 5.5-1 8 0s5.5 1 8 0"/><path d="M4 12c2.5-1 5.5-1 8 0s5.5 1 8 0"/><path d="M4 7c2.5-1 5.5-1 8 0s5.5 1 8 0"/></svg></div><h3>Slip Disc Care</h3><p>Careful, safe movement for disc-related pain.</p></div>
-      <div class="card rv d1"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12c4-6 14-6 18 0-4 6-14 6-18 0z"/><circle cx="12" cy="12" r="1.6"/></svg></div><h3>Muscle Relaxation</h3><p>Release deep-held tension, restore ease.</p></div>
-      <div class="card rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3a7 7 0 0 0-7 7c0 3 2 5 2 8h10c0-3 2-5 2-8a7 7 0 0 0-7-7z"/><path d="M9 21h6"/></svg></div><h3>Stress &amp; Anxiety Relief</h3><p>Slow down a racing mind, gently.</p></div>
-      <div class="card rv d1"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Meditation &amp; Pranayama</h3><p>Breathwork and stillness to quiet a busy mind.</p></div>
-      <div class="card wide rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Weight Management Yoga</h3><p>Sustainable, mindful movement toward a lighter, healthier you.</p></div>
+      <div class="card rv"><span class="no">02</span><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="5" r="2"/><path d="M12 8v6M7 11h10M9 20l3-6 3 6"/></svg></div><h3>Pain Management</h3><p>Gentle, structured practice to ease chronic aches.</p></div>
+      <div class="card rv d1"><span class="no">03</span><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c0 4-3 5-3 9a3 3 0 0 0 6 0c0-4-3-5-3-9z"/><path d="M12 15v6"/></svg></div><h3>Back Pain &amp; Sciatica</h3><p>Targeted support for a stronger, freer spine.</p></div>
+      <div class="card rv"><span class="no">04</span><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17c2.5-1 5.5-1 8 0s5.5 1 8 0"/><path d="M4 12c2.5-1 5.5-1 8 0s5.5 1 8 0"/><path d="M4 7c2.5-1 5.5-1 8 0s5.5 1 8 0"/></svg></div><h3>Slip Disc Care</h3><p>Careful, safe movement for disc-related pain.</p></div>
+      <div class="card rv d1"><span class="no">05</span><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12c4-6 14-6 18 0-4 6-14 6-18 0z"/><circle cx="12" cy="12" r="1.6"/></svg></div><h3>Muscle Relaxation</h3><p>Release deep-held tension, restore ease.</p></div>
+      <div class="card rv"><span class="no">06</span><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3a7 7 0 0 0-7 7c0 3 2 5 2 8h10c0-3 2-5 2-8a7 7 0 0 0-7-7z"/><path d="M9 21h6"/></svg></div><h3>Stress &amp; Anxiety Relief</h3><p>Slow down a racing mind, gently.</p></div>
+      <div class="card rv d1"><span class="no">07</span><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Meditation &amp; Pranayama</h3><p>Breathwork and stillness to quiet a busy mind.</p></div>
+      <div class="card rv"><span class="no">08</span><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Weight Management</h3><p>Sustainable, mindful movement toward a lighter you.</p></div>
+    </div>
+  </section>
+
+  <!-- BREATH — signature moment -->
+  <section class="sec breath">
+    <span class="eyebrow rv">A small taste</span>
+    <h2 class="rv d1">One breath, <em>together.</em></h2>
+    <p class="sub rv d2">Follow the circle as it grows and softens. In through the nose… and slowly out.</p>
+    <div class="borb rv d2" aria-hidden="true">
+      <span class="halo"></span><span class="halo2"></span>
+      <span class="core"><span class="bword" id="bword">Breathe in</span></span>
+    </div>
+    <p class="after rv d3">Now imagine an hour of this.</p>
+    <a class="btn ghostlight rv d3" href="#book" style="margin-top:1.6rem">Begin your practice <span class="arw">→</span></a>
+  </section>
+
+  <!-- FORMATS -->
+  <section class="sec">
+    <span class="idx rv">02 — How we practise together</span>
+    <h2 class="rv">Wherever you <em>are.</em></h2>
+    <div class="formats">
+      <div class="fmt rv d1"><span class="n">01</span><div><h3>Home sessions</h3><p>Personal practice in the comfort of your own space.</p></div><span class="go">→</span></div>
+      <div class="fmt rv d2"><span class="n">02</span><div><h3>Studio sessions</h3><p>Focused one-on-one and small-group classes.</p></div><span class="go">→</span></div>
+      <div class="fmt rv d3"><span class="n">03</span><div><h3>Gym sessions</h3><p>Yoga woven into your existing fitness routine.</p></div><span class="go">→</span></div>
+      <div class="fmt rv d4"><span class="n">04</span><div><h3>Online classes</h3><p>Live guided sessions, from anywhere in the world.</p></div><span class="go">→</span></div>
+    </div>
+    <div class="team rv d4">
+      <span class="lotus"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20c-2.5-1.5-4-4-4-7 0-3.5 2-6.5 4-8 2 1.5 4 4.5 4 8 0 3-1.5 5.5-4 7z"/><path d="M12 20c-4 0-7-2-8.5-5C6 14 9 15 12 17c3-2 6-3 8.5-2-1.5 3-4.5 5-8.5 5z"/></svg></span>
+      <p>Beyond my own mat — <b>our team of instructors teaches across India</b>, and every one of them holds a Master's degree in Yogic Science. Wherever you are, the guidance stays authentic.</p>
     </div>
   </section>
 
   <!-- PHILOSOPHY -->
   <section class="sec philo"><div class="philo-in">
-    <span class="eyebrow rv">The practice</span>
-    <blockquote class="rv d1">“My aim is to help people reach a healthier life — through mindful movement, therapeutic techniques, breath, and guidance shaped to each person's needs.”</blockquote>
-    <cite class="rv d2">— Kanha</cite>
+    <span class="qm" aria-hidden="true">“</span>
+    <blockquote class="rv">My aim is to help people reach a healthier life — through mindful movement, therapeutic techniques, breath, and guidance shaped to each person's needs.</blockquote>
+    <cite class="rv d1">— Kanha</cite>
   </div></section>
-
-  <!-- PHOTOS -->
-  <section class="sec" style="padding-block:3.5rem">
-    <span class="idx rv">The practice, in pictures</span>
-    <div class="pgal">
-      <img class="rv" src="img/kanha-twist.jpg" alt="Kanha in a seated spinal twist during a therapeutic session" loading="lazy">
-      <img class="rv d1" src="img/kanha-teaching.jpg" alt="Kanha guiding two students through a seated side stretch in studio" loading="lazy">
-    </div>
-  </section>
-
-  <!-- FORMATS -->
-  <section class="sec" style="padding-top:1.5rem">
-    <span class="idx rv">02 — How we practise together</span>
-    <h2 class="rv">Wherever you <em>are.</em></h2>
-    <div class="formats">
-      <div class="fmt rv d1"><span class="n">01</span><div><h3>Home sessions</h3><p>Personal practice in the comfort of your own space.</p></div></div>
-      <div class="fmt rv d2"><span class="n">02</span><div><h3>Studio sessions</h3><p>Focused one-on-one and small-group classes.</p></div></div>
-      <div class="fmt rv d3"><span class="n">03</span><div><h3>Gym sessions</h3><p>Yoga woven into your existing fitness routine.</p></div></div>
-      <div class="fmt rv d4"><span class="n">04</span><div><h3>Online classes</h3><p>Live guided sessions, from anywhere in the world.</p></div></div>
-    </div>
-    <p class="rv d4" style="font-size:.88rem;color:var(--muted);max-width:30rem;margin:2rem auto 0;text-align:center">Beyond my own mat — our team of instructors teaches across India, and every one of them holds a <b style="font-weight:500;color:var(--ink)">Master's degree in Yogic Science</b>. Wherever you are, the guidance stays authentic.</p>
-  </section>
 
   <!-- TESTIMONIAL -->
   <section class="sec test"><div class="test-in">
@@ -212,8 +353,7 @@ footer p{font-size:.68rem;margin-top:.5rem;opacity:.85;line-height:1.6}
   <!-- BOOK -->
   <section class="sec book" id="book"><div class="book-in">
     <span class="eyebrow rv">Begin</span>
-    <div class="rule c rv"></div>
-    <h2 class="rv d1">Roll out your <em>mat.</em></h2>
+    <h2 class="rv d1" style="margin-top:.6rem">Roll out your <em>mat.</em></h2>
     <p class="rv d2">Message me on WhatsApp to book a session or ask a question — no pressure, just a first step.</p>
     <a class="btn clay rv d2" href="https://wa.me/919399409227?text=Namaste%2C%20I%27d%20like%20to%20book%20a%20yoga%20session." target="_blank" rel="noopener" style="margin:0 auto">Book on WhatsApp <span class="arw">→</span></a>
     <div class="addr rv d3"><b>Yoga with Kanha</b><br>Therapeutic yoga · Home, studio, gym &amp; online<br>Sessions across India · WhatsApp +91 93994 09227</div>
@@ -232,13 +372,35 @@ footer p{font-size:.68rem;margin-top:.5rem;opacity:.85;line-height:1.6}
 </div>
 <script>
 (function(){
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var touch=matchMedia('(hover:none)').matches;
+  // progress
   var prog=document.getElementById('prog');
   addEventListener('scroll',function(){var h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14});
+  // reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.13});
   document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
-  setTimeout(function(){document.querySelectorAll('.rv').forEach(function(e){if(e.getBoundingClientRect().top<window.innerHeight)e.classList.add('in');});},600);
-  window.addEventListener('load',function(){setTimeout(function(){document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in');});},2600);});
+  // hero photo parallax
+  var hi=document.getElementById('heroimg');
+  if(hi&&!rm)addEventListener('scroll',function(){var y=Math.min(scrollY*.05,46);hi.style.transform='scale(1.06) translateY('+y+'px)';},{passive:true});
+  // count-up
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,to=parseFloat(el.dataset.to);
+    if(rm){el.textContent=to;cio.unobserve(el);return;}
+    var s=performance.now();(function t(n){var p=Math.min((n-s)/900,1);el.textContent=Math.round((1-Math.pow(1-p,3))*to);if(p<1)requestAnimationFrame(t);})(s);cio.unobserve(el);});},{threshold:.6});
+  document.querySelectorAll('.cu').forEach(function(el){cio.observe(el);});
+  // breathing words — synced to the 9s ring cycle
+  var bw=document.getElementById('bword');
+  if(bw&&!rm){var t0=performance.now();
+    (function tick(n){var t=((n-t0)/1000)%9;
+      bw.textContent = t<3.9 ? 'Breathe in' : (t<4.6 ? 'Hold' : (t<8.6 ? 'Breathe out' : 'Rest'));
+      requestAnimationFrame(tick);})(t0);}
+  // magnetic buttons (desktop)
+  if(!rm&&!touch)document.querySelectorAll('.btn').forEach(function(b){
+    b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.12)+'px,'+((e.clientY-r.top-r.height/2)*.18)+'px)';});
+    b.addEventListener('mouseleave',function(){b.style.transform='';});
+  });
 })();
 </script>
+<script>/*LANTERN_SAFETY_NET*/(function(){function R(){document.querySelectorAll('.rv,.wipe').forEach(function(e){e.classList.add('in');});document.querySelectorAll('.slide-up,.fade-in').forEach(function(e){e.classList.add('visible');});}setTimeout(function(){document.querySelectorAll('.rv,.wipe,.slide-up,.fade-in').forEach(function(e){if(e.getBoundingClientRect().top<window.innerHeight)e.classList.add('in','visible');});},600);window.addEventListener('load',function(){setTimeout(R,2600);});})();</script>
 </body>
 </html>
