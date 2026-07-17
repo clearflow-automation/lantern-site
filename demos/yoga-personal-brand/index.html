@@ -32,7 +32,15 @@ svg{display:block}a{color:inherit}
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:1000;background:linear-gradient(90deg,var(--gold),var(--clay))}
 
-.concept{background:var(--ink);color:var(--sand);text-align:center;font-family:var(--b);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;padding:.5rem}
+.concept{position:sticky;top:0;z-index:9999;text-align:center;font-family:var(--b);font-weight:800;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:#000;padding:.7rem .5rem;line-height:1.35;
+  background:repeating-linear-gradient(45deg,#ffe600 0 22px,#111 22px 44px);
+  -webkit-text-stroke:0;text-shadow:0 0 6px #ffe600,0 0 6px #ffe600,0 0 6px #ffe600,0 0 6px #ffe600;
+  border-bottom:4px solid #ff1744}
+.concept b{color:#ff1744;text-shadow:0 0 5px #fff,0 0 5px #fff,0 0 5px #fff}
+.demoflag{position:fixed;z-index:9999;top:34px;right:-62px;transform:rotate(45deg);background:#ff1744;color:#fff;
+  font-family:var(--b);font-weight:800;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:.5rem 5rem;box-shadow:0 3px 14px rgba(0,0,0,.5);border-top:2px solid #fff;border-bottom:2px solid #fff;pointer-events:none}
+@media(max-width:640px){.concept{font-size:.62rem}.demoflag{font-size:.6rem;top:28px;right:-70px;padding:.45rem 5rem}}
 
 /* reveals */
 .rv{opacity:0;transform:translateY(28px);filter:blur(3px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1),filter 1s ease}
@@ -228,7 +236,8 @@ footer p{font-size:.66rem;margin-top:.5rem;opacity:.85;line-height:1.6}
 </head>
 <body>
 <div class="grain"></div>
-<div class="concept">◇ Preview for Kanha · crafted by Lantern ◇</div>
+<div class="concept">⚠ DEMO ONLY — NOT LIVE · <b>PAYMENT PENDING</b> · NOT FOR PUBLIC SHARING ⚠</div>
+<div class="demoflag">Unpaid Demo</div>
 <div class="progress" id="prog"></div>
 <div class="wrap">
 
