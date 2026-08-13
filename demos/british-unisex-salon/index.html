@@ -71,6 +71,20 @@ em{font-style:italic}
 .arch img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
 .arch::after{content:"";position:absolute;inset:0;border-radius:inherit;
   box-shadow:inset 0 0 0 1px rgba(244,238,228,.14);pointer-events:none}
+/* warm wash so every frame sits in the same light */
+.arch::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  border-radius:inherit;mix-blend-mode:soft-light;
+  background:linear-gradient(180deg,rgba(216,176,106,.16),rgba(20,18,15,.34))}
+
+/* ── photo grade ──────────────────────────────
+   Mixed stock arrives at wildly different exposures and colour temps.
+   One grade pulls it all into the same near-black, brass-warm world. */
+.arch img,.gal img,.band img,.ba img,.feat-fig img{
+  filter:saturate(.7) contrast(1.06) brightness(.92) sepia(.15)}
+/* the before/after pair is the brightest source material — graded harder */
+.ba img{filter:saturate(.58) contrast(1.12) brightness(.72) sepia(.22)}
+/* full-bleed bands carry text, so they go darkest */
+.band img{filter:saturate(.55) contrast(1.06) brightness(.8) sepia(.2)}
 
 /* ── reveal ───────────────────────────────── */
 .rv{opacity:0;transform:translateY(28px);filter:blur(5px);
@@ -256,6 +270,9 @@ h2 em{color:var(--accent);transition:color .6s var(--ease)}
   text-transform:uppercase;padding:.32rem .65rem;border-radius:var(--r);
   background:rgba(13,11,9,.72);color:var(--ivory);pointer-events:none}
 .ba-lab.l{left:.85rem}.ba-lab.r{right:.85rem}
+/* the source pair is high-key stock — a vignette sinks its edges into the page */
+.ba::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(ellipse at center,transparent 42%,rgba(13,11,9,.6) 100%)}
 
 /* ── cinematic band ───────────────────────── */
 .band{position:relative;min-height:64vh;display:grid;align-items:end;overflow:hidden}
@@ -282,9 +299,9 @@ h2 em{color:var(--accent);transition:color .6s var(--ease)}
 @media(min-width:760px){.gal{grid-template-columns:repeat(3,1fr);gap:.85rem}}
 .gal button{border:0;padding:0;background:none;cursor:pointer;overflow:hidden;
   border-radius:999px 999px var(--r) var(--r);aspect-ratio:3/4;position:relative}
-.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease),filter .6s ease;
-  filter:saturate(.85)}
-.gal button:hover img{transform:scale(1.07);filter:saturate(1)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease),filter .6s ease}
+.gal button:hover img{transform:scale(1.07);
+  filter:saturate(.95) contrast(1.03) brightness(1.02) sepia(.06)}
 .gal button::after{content:"";position:absolute;inset:0;border-radius:inherit;
   box-shadow:inset 0 0 0 1px rgba(244,238,228,.14)}
 
@@ -442,7 +459,7 @@ footer a:hover{color:var(--accent)}
         <figcaption class="arch-tag">For him</figcaption>
       </figure>
       <figure class="arch rv d3 wipe" data-par="0.09">
-        <img src="img/hero-her.webp" alt="Women's hair colour and styling at British Unisex Salon" width="900" height="1200" fetchpriority="high">
+        <img src="img/hero-her.webp" alt="Long hair styling and colour for women at British Unisex Salon" width="900" height="1200" fetchpriority="high">
         <figcaption class="arch-tag">For her</figcaption>
       </figure>
     </div>
@@ -504,7 +521,7 @@ footer a:hover{color:var(--accent)}
       <div class="menu-fig rv d2" id="menuFig">
         <div class="arch">
           <img src="img/svc-fade.webp" alt="Fade haircut in progress" width="800" height="1000" loading="lazy">
-          <img src="img/svc-style.webp" alt="Hair styling with a curling wand" width="800" height="1000" loading="lazy">
+          <img src="img/svc-style.webp" alt="Blow-dry and styling for long hair" width="800" height="1000" loading="lazy">
         </div>
         <div class="fig-chip">
           <b id="figTitle">Skin fades &amp; beard sculpt</b>
@@ -619,9 +636,9 @@ footer a:hover{color:var(--accent)}
       <button class="rv"    aria-label="Open photo"><img src="img/g1.webp" alt="Hair design and fade" width="700" height="900" loading="lazy"></button>
       <button class="rv d1" aria-label="Open photo"><img src="img/g2.webp" alt="Styled updo" width="700" height="900" loading="lazy"></button>
       <button class="rv d2" aria-label="Open photo"><img src="img/g3.webp" alt="Bridal makeup" width="700" height="900" loading="lazy"></button>
-      <button class="rv"    aria-label="Open photo"><img src="img/g5.webp" alt="Beard sculpt and styling" width="700" height="900" loading="lazy"></button>
-      <button class="rv d1" aria-label="Open photo"><img src="img/g6.webp" alt="Colour and updo" width="700" height="900" loading="lazy"></button>
-      <button class="rv d2" aria-label="Open photo"><img src="img/g4.webp" alt="Nail art" width="700" height="900" loading="lazy"></button>
+      <button class="rv"    aria-label="Open photo"><img src="img/g5.webp" alt="Men's cut and styling" width="700" height="900" loading="lazy"></button>
+      <button class="rv d1" aria-label="Open photo"><img src="img/g6.webp" alt="Makeup and beauty finish" width="700" height="900" loading="lazy"></button>
+      <button class="rv d2" aria-label="Open photo"><img src="img/g4.webp" alt="Manicure and nail finish" width="700" height="900" loading="lazy"></button>
     </div>
     <p class="menu-note rv" style="margin-top:1.2rem">
       Stock placeholders. Send 10–15 photos from your phone and this becomes your real gallery.
