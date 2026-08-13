@@ -92,8 +92,11 @@ em{font-style:italic}
 .rv.in{opacity:1;transform:none;filter:none}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
 .d4{transition-delay:.32s}.d5{transition-delay:.4s}
-.wipe{clip-path:inset(0 0 100% 0);transition:clip-path 1.25s var(--ease)}
-.wipe.in{clip-path:inset(0 0 0 0)}
+/* The wipe clips the IMAGE, never the observed element. Clipping the observed
+   element collapses its area to zero, and a zero-area target can never satisfy
+   an IntersectionObserver threshold — so it would stay hidden forever. */
+.wipe img{clip-path:inset(0 0 100% 0);transition:clip-path 1.25s var(--ease)}
+.wipe.in img{clip-path:inset(0 0 0 0)}
 
 /* ── demo strip ───────────────────────────── */
 .demo{background:#0D0B09;color:var(--ivory-dim);text-align:center;
@@ -385,6 +388,11 @@ footer a:hover{color:var(--accent)}
   .menu-list li{opacity:1;transform:none}
 }
 </style>
+<noscript><style>
+  /* never ship a page whose content depends on JS to become visible */
+  .rv{opacity:1;transform:none;filter:none}
+  .wipe img{clip-path:none}
+</style></noscript>
 </head>
 <body data-side="him">
 
