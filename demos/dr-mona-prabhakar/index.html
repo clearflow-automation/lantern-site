@@ -8,14 +8,14 @@
 <meta name="description" content="Specialist orthodontic care in Sector 31, Gurugram. Braces, clear aligners, functional therapy and smile correction from an MDS orthodontist practising since 1997. By appointment only.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0E3542; --navy-deep:#0A2831; --teal:#2C6E77;
-  --gold:#B0863C; --gold-lt:#E0C084;
-  --cream:#FBF8F3; --panel:#F4EEE3; --mint:#EAF2F1;
-  --ink:#1B2A2E; --slate:#5E6E72; --line:#E6DFD2;
-  --serif:"Fraunces",Georgia,serif; --sans:"Inter",-apple-system,sans-serif;
+  --navy:#2C423C; --navy-deep:#1F302B; --teal:#6C8A81;
+  --gold:#B8976C; --gold-lt:#DBC6AA;
+  --cream:#F9F7F4; --panel:#F1EFEA; --mint:#E6EBE9;
+  --ink:#252A28; --slate:#69726E; --line:#E0DFD8;
+  --serif:"Fraunces",Georgia,serif; --sans:"Outfit",-apple-system,sans-serif;
   --pad:clamp(20px,5vw,72px); --bar:78px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -42,7 +42,7 @@ h2.sec em{font-style:italic;color:var(--teal)}
 .mark .tooth{fill:currentColor;opacity:.9}
 .mark .wire{fill:none;stroke:currentColor;stroke-width:2.4;opacity:.55}
 
-header{position:sticky;top:0;z-index:60;background:rgba(251,248,243,.9);
+header{position:sticky;top:0;z-index:60;background:rgba(249,247,244,.92);
        backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .hrow{display:flex;align-items:center;gap:16px;height:72px}
 .brand{display:flex;align-items:center;gap:12px;color:var(--navy)}
@@ -79,23 +79,23 @@ header{position:sticky;top:0;z-index:60;background:rgba(251,248,243,.9);
 .chip b{color:var(--gold);font-weight:600}
 .hfig{position:relative;max-width:min(420px,82vw);margin-inline:auto;width:100%}
 .hfig>img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 18%;
-          border-radius:210px 210px 24px 24px;box-shadow:0 30px 70px -34px rgba(14,53,66,.5)}
+          border-radius:240px 240px 40px 40px;box-shadow:0 24px 60px -20px rgba(44,66,60,.12)}
 .hbadge{position:absolute;left:clamp(-40px,-7vw,-12px);bottom:20px;background:#fff;
         border:1px solid var(--line);border-radius:100px 20px 20px 100px;padding:8px 20px 8px 8px;
-        box-shadow:0 18px 40px -18px rgba(14,53,66,.36);
+        box-shadow:0 18px 40px -18px rgba(44,66,60,.15);
         display:flex;align-items:center;gap:12px;width:max-content;max-width:min(280px,106%)}
 .hbadge img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;
             border:2px solid var(--gold-lt)}
 .hbadge .n{font-family:var(--serif);font-weight:400;font-size:29px;line-height:1;color:var(--navy)}
 .hbadge .t{font-size:11.5px;line-height:1.35;color:var(--slate)}
 
-.trust{background:var(--navy);color:#fff}
-.tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.13)}
+.trust{padding: 20px 0 60px;}
+.tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 12px 30px -15px rgba(0,0,0,.03);}
 @media(min-width:820px){.tgrid{grid-template-columns:repeat(4,1fr)}}
-.tcell{background:var(--navy);padding:clamp(22px,3vw,36px) clamp(18px,2.4vw,28px)}
+.tcell{background:var(--cream);padding:clamp(22px,3vw,36px) clamp(18px,2.4vw,28px)}
 .tcell .k{font-family:var(--serif);font-weight:400;font-size:clamp(22px,3vw,32px);
-          line-height:1.1;color:var(--gold-lt)}
-.tcell .v{font-size:13.5px;color:rgba(255,255,255,.72);margin-top:8px;line-height:1.45}
+          line-height:1.1;color:var(--navy)}
+.tcell .v{font-size:13.5px;color:var(--slate);margin-top:8px;line-height:1.45}
 
 section{padding:clamp(56px,7.5vw,104px) 0}
 .shead{max-width:660px;margin-bottom:clamp(32px,4.4vw,50px)}
@@ -108,7 +108,7 @@ section{padding:clamp(56px,7.5vw,104px) 0}
   .card.feature{grid-column:span 3;flex-direction:row;align-items:center}}
 .card{background:#fff;border:1px solid var(--line);border-radius:22px;
       padding:clamp(22px,2.6vw,30px);transition:transform .22s,box-shadow .22s}
-.card:hover{transform:translateY(-4px);box-shadow:0 22px 46px -26px rgba(14,53,66,.32)}
+.card:hover{transform:translateY(-4px);box-shadow:0 22px 46px -20px rgba(44,66,60,.12);border-color:var(--gold-lt)}
 .card h3{font-family:var(--serif);font-weight:500;font-size:21.5px;color:var(--navy);margin-bottom:8px}
 .card p{font-size:15px;color:var(--slate);line-height:1.58}
 .card .ic{width:40px;height:40px;border-radius:11px;background:var(--mint);
@@ -122,7 +122,7 @@ section{padding:clamp(56px,7.5vw,104px) 0}
 .wgrid{display:grid;gap:clamp(28px,4vw,50px)}
 @media(min-width:900px){.wgrid{grid-template-columns:.9fr 1.1fr;align-items:start}}
 .wlist{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);
-       border-radius:20px;overflow:hidden}
+       border-radius:24px;overflow:hidden}
 .witem{background:var(--panel);padding:clamp(20px,2.5vw,28px);display:flex;gap:18px}
 .witem .no{font-family:var(--serif);font-size:15px;color:var(--gold);font-weight:500;
            padding-top:3px;flex:none}
@@ -134,7 +134,7 @@ section{padding:clamp(56px,7.5vw,104px) 0}
 @media(min-width:900px){.meet{grid-template-columns:.8fr 1.2fr}}
 .dfig{position:relative}
 .dfig img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:22px;
-          box-shadow:0 26px 56px -30px rgba(14,53,66,.44)}
+          box-shadow:0 26px 56px -20px rgba(44,66,60,.16)}
 .dfig figcaption{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(251,248,243,.94);
                  backdrop-filter:blur(8px);border-radius:14px;padding:11px 15px;
                  font-size:12.5px;color:var(--slate);line-height:1.45}
@@ -153,42 +153,37 @@ section{padding:clamp(56px,7.5vw,104px) 0}
 .ba .eyebrow{color:var(--gold-lt)}.ba .eyebrow::after{background:rgba(255,255,255,.2)}
 .ba h2.sec{color:#fff}.ba h2.sec em{color:var(--gold-lt)}
 .ba .lede{color:rgba(255,255,255,.68)}
-.railhead{display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;
-          justify-content:space-between;margin:44px 0 16px}
-.railhead h3{font-family:var(--serif);font-weight:400;font-size:clamp(20px,2.6vw,27px);color:#fff}
-.railhead p{font-size:13.5px;color:rgba(255,255,255,.55);max-width:46ch}
-.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
-      padding:4px 0 18px;scrollbar-width:none;-ms-overflow-style:none;
-      padding-inline:max(var(--pad),calc((100vw - 1220px)/2 + var(--pad)))}
-.rail::-webkit-scrollbar{display:none}
-.bacard{flex:0 0 min(84vw,440px);scroll-snap-align:center;background:var(--navy-deep);
-        border:1px solid rgba(255,255,255,.12);border-radius:20px;overflow:hidden}
-.rail.tallr .bacard{flex:0 0 min(70vw,330px)}
-.cmp{position:relative;aspect-ratio:16/9;cursor:ew-resize;user-select:none;touch-action:pan-y}
-.rail.tallr .cmp{aspect-ratio:4/5}
-.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
-.cmp .aft{clip-path:inset(0 0 0 var(--x,50%))}
-.cmp .tag{position:absolute;top:11px;z-index:3;font:600 9.5px var(--sans);letter-spacing:.14em;
-          text-transform:uppercase;background:rgba(10,40,49,.74);color:#fff;
-          padding:5px 10px;border-radius:100px;backdrop-filter:blur(6px)}
-.cmp .tag.l{left:11px}.cmp .tag.r{right:11px}
-.hnd{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;background:var(--gold-lt);
-     z-index:2;transform:translateX(-1px);pointer-events:none}
-.hnd::after{content:"";position:absolute;top:50%;left:50%;width:38px;height:38px;
-            transform:translate(-50%,-50%);border-radius:50%;background:var(--gold-lt);
-            box-shadow:0 5px 18px rgba(0,0,0,.4)}
-.hnd::before{content:"‹ ›";position:absolute;top:50%;left:50%;z-index:3;
-             transform:translate(-50%,-50%);color:var(--navy-deep);font-size:14px;font-weight:600}
-.bacap{padding:13px 16px 15px;font-size:13px;color:rgba(255,255,255,.62);
-       display:flex;justify-content:space-between;gap:10px;align-items:baseline}
-.bacap b{font-family:var(--serif);font-size:15.5px;color:#fff;font-weight:500}
-.railnav{display:flex;gap:9px;align-items:center;margin-top:2px}
-.rbtn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.28);
-      background:transparent;color:#fff;cursor:pointer;display:grid;place-items:center;
-      transition:background .18s,border-color .18s}
-.rbtn:hover{background:rgba(255,255,255,.12);border-color:var(--gold-lt)}
-.railhint{font-size:12.5px;color:rgba(255,255,255,.45);margin-left:6px}
+/* Side-by-side pairs. No slider: she asked twice for "simple individual 2 photo
+   collages / patient", and a half-revealed image cannot show a treatment result.
+   Stacked on a phone (before above after, exactly like the collage she sent us),
+   two-up from 700px. */
+.cases{display:grid;gap:clamp(38px,5.5vw,68px)}
+.case{border-top:1px solid rgba(255,255,255,.15);padding-top:clamp(24px,3.2vw,38px)}
+.casehd{max-width:64ch;margin-bottom:clamp(18px,2.2vw,26px)}
+.casehd h3{font-family:var(--serif);font-weight:400;line-height:1.18;
+           font-size:clamp(21px,2.9vw,30px);color:#fff}
+.casehd p{font-size:14.2px;line-height:1.55;color:rgba(255,255,255,.6);margin-top:9px}
+.pairs{display:grid;gap:clamp(16px,2.2vw,24px)}
+.pairlbl{font:600 10px var(--sans);letter-spacing:.16em;text-transform:uppercase;
+         color:var(--gold-lt);margin-bottom:10px}
+.pair{display:grid;gap:12px}
+@media(min-width:700px){.pair{grid-template-columns:1fr 1fr;gap:18px}}
+.pair figure{position:relative;background:var(--navy-deep);
+             border:1px solid rgba(255,255,255,.13);border-radius:18px;overflow:hidden}
+.pair img{width:100%;height:auto;display:block}
+.ptag{position:absolute;top:11px;left:11px;z-index:2;font:600 9.5px var(--sans);
+      letter-spacing:.14em;text-transform:uppercase;background:rgba(31,48,43,.82);
+      color:#fff;padding:5px 10px;border-radius:100px;backdrop-filter:blur(6px)}
+.pair figcaption{padding:12px 15px 15px;font-size:13.2px;line-height:1.5;
+                 color:rgba(255,255,255,.66)}
 .banote{font-size:12.8px;color:rgba(255,255,255,.42);margin-top:26px;max-width:64ch}
+
+/* clinic strip — real photographs of the practice, her captions */
+.cstrip{display:grid;gap:14px;margin-bottom:clamp(30px,4vw,46px)}
+@media(min-width:640px){.cstrip{grid-template-columns:repeat(3,1fr)}}
+.cstrip figure{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.cstrip img{width:100%;height:auto;display:block}
+.cstrip figcaption{padding:11px 14px 13px;font-size:12.8px;color:var(--slate)}
 
 .rtop{display:flex;flex-wrap:wrap;gap:20px;align-items:center;
       justify-content:space-between;margin-bottom:28px}
@@ -224,21 +219,21 @@ section{padding:clamp(56px,7.5vw,104px) 0}
      height:100%;background:var(--mint)}
 .map iframe{width:100%;height:100%;min-height:330px;border:0;display:block;filter:grayscale(.26)}
 
-footer{background:var(--navy-deep);color:rgba(255,255,255,.6);
+footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--line);
        padding:clamp(40px,5.5vw,60px) 0 30px;font-size:14px}
 .frow{display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between;align-items:flex-start}
-.fnote{margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);
+.fnote{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);
        display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;
-       font-size:12.5px;color:rgba(255,255,255,.42)}
+       font-size:12.5px;color:var(--slate)}
 
-.fab{position:fixed;left:0;right:0;bottom:0;z-index:80;display:grid;
-     grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
-     border-top:1px solid var(--line);box-shadow:0 -8px 26px -14px rgba(14,53,66,.34)}
-.fab a{display:flex;align-items:center;justify-content:center;gap:10px;
-       padding:19px 10px;font:500 15px var(--sans);background:#fff;color:var(--navy)}
-.fab a.wa{background:#25D366;color:#fff}
+.fab{position:fixed;bottom:24px;right:24px;z-index:80;display:flex;flex-direction:column;gap:10px;pointer-events:none;}
+.fab a{display:flex;align-items:center;justify-content:center;gap:10px;pointer-events:auto;
+       padding:14px 22px;border-radius:100px;font:500 15px var(--sans);
+       background:#fff;color:var(--navy);box-shadow:0 12px 30px -8px rgba(44,66,60,.25);
+       border:1px solid var(--line);transition:transform .2s,box-shadow .2s;}
+.fab a:hover{transform:translateY(-3px);box-shadow:0 18px 36px -10px rgba(44,66,60,.3);}
+.fab a.wa{background:var(--navy);color:#fff;border:none;}
 .fab svg{width:19px;height:19px;flex:none}
-@media(min-width:900px){.fab{display:none}body{padding-bottom:0}}
 
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
@@ -299,14 +294,14 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.6);
   </div>
 </section>
 
-<div class="trust">
+<div class="trust"><div class="wrap">
   <div class="tgrid">
     <div class="tcell"><div class="k">1997</div><div class="v">In specialist practice since</div></div>
     <div class="tcell"><div class="k">Gold Medallist</div><div class="v">BDS — Govt. Dental College, Rohtak</div></div>
     <div class="tcell"><div class="k">MDS</div><div class="v">King George's Medical College, Lucknow</div></div>
     <div class="tcell"><div class="k">5.0 ★</div><div class="v">Rated by patients on Google</div></div>
   </div>
-</div>
+</div></div>
 
 <section id="treatments">
   <div class="wrap">
@@ -385,7 +380,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.6);
         taught the subject to postgraduate specialists for two decades.</p>
       <figure class="wfig">
         <img src="assets/web/dr-chairside.webp" width="800" height="800" loading="lazy"
-             alt="Dr. Prabhakar at the treatment chair">
+             alt="The treatment room at The Orthodontic Clinic, Sector 31 Gurugram">
       </figure>
     </div>
     <div class="wlist rv">
@@ -434,85 +429,144 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.6);
   <div class="wrap shead rv">
     <p class="eyebrow">04 — The transformation</p>
     <h2 class="sec">Real cases,<br><em>real results.</em></h2>
-    <p class="lede">Actual patients treated at the clinic. Drag the handle on any case to compare
-      before and after, and swipe sideways for more.</p>
+    <p class="lede">Four patients treated at the clinic, before and after — shown side by side,
+      described in Dr. Prabhakar's own words.</p>
   </div>
 
-  <div class="wrap railhead rv">
-    <h3>Dental changes</h3>
-    <p>How the teeth and bite change. Cropped to the smile so no patient is identifiable.</p>
-  </div>
-  <div class="rail rv" id="railD">
-    <article class="bacard"><div class="cmp">
-      <img width="960" height="540" loading="lazy" decoding="async" src="assets/web/d1-before.webp" alt="Before treatment"><img width="960" height="540" loading="lazy" decoding="async" class="aft" src="assets/web/d1-after.webp" alt="After treatment">
-      <span class="tag l">Before</span><span class="tag r">After</span><span class="hnd"></span></div>
-      <div class="bacap"><b>Case 01</b><span>Crowding &amp; deep bite</span></div></article>
-    <article class="bacard"><div class="cmp">
-      <img width="960" height="540" loading="lazy" decoding="async" src="assets/web/d2-before.webp" alt="Before treatment"><img width="960" height="540" loading="lazy" decoding="async" class="aft" src="assets/web/d2-after.webp" alt="After treatment">
-      <span class="tag l">Before</span><span class="tag r">After</span><span class="hnd"></span></div>
-      <div class="bacap"><b>Case 02</b><span>Protrusion &amp; spacing</span></div></article>
-    <article class="bacard"><div class="cmp">
-      <img width="960" height="540" loading="lazy" decoding="async" src="assets/web/d3-before.webp" alt="Before treatment"><img width="960" height="540" loading="lazy" decoding="async" class="aft" src="assets/web/d3-after.webp" alt="After treatment">
-      <span class="tag l">Before</span><span class="tag r">After</span><span class="hnd"></span></div>
-      <div class="bacap"><b>Case 03</b><span>Spacing in a growing child</span></div></article>
-    <article class="bacard"><div class="cmp">
-      <img width="960" height="540" loading="lazy" decoding="async" src="assets/web/d4-before.webp" alt="Before treatment"><img width="960" height="540" loading="lazy" decoding="async" class="aft" src="assets/web/d4-after.webp" alt="After treatment">
-      <span class="tag l">Before</span><span class="tag r">After</span><span class="hnd"></span></div>
-      <div class="bacap"><b>Case 04</b><span>Irregular upper teeth</span></div></article>
-    <article class="bacard"><div class="cmp">
-      <img width="960" height="540" loading="lazy" decoding="async" src="assets/web/d5-before.webp" alt="Before treatment"><img width="960" height="540" loading="lazy" decoding="async" class="aft" src="assets/web/d5-after.webp" alt="After treatment">
-      <span class="tag l">Before</span><span class="tag r">After</span><span class="hnd"></span></div>
-      <div class="bacap"><b>Case 05</b><span>Forwardly placed front teeth</span></div></article>
-    <article class="bacard"><div class="cmp">
-      <img width="960" height="540" loading="lazy" decoding="async" src="assets/web/d6-before.webp" alt="Before treatment"><img width="960" height="540" loading="lazy" decoding="async" class="aft" src="assets/web/d6-after.webp" alt="After treatment">
-      <span class="tag l">Before</span><span class="tag r">After</span><span class="hnd"></span></div>
-      <div class="bacap"><b>Case 06</b><span>Crowding &amp; overjet</span></div></article>
-  </div>
-  <div class="wrap"><div class="railnav rv">
-    <button class="rbtn" data-rail="railD" data-dir="-1" aria-label="Previous dental case">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-    <button class="rbtn" data-rail="railD" data-dir="1" aria-label="Next dental case">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
-    <span class="railhint">6 dental cases</span>
-  </div></div>
+  <div class="wrap cases">
 
-  <div class="wrap railhead rv">
-    <h3>Facial changes</h3>
-    <p>How the profile and jaw change with growth guidance. Eyes are covered in every image.</p>
-  </div>
-  <div class="rail tallr rv" id="railF">
-    <article class="bacard"><div class="cmp">
-      <img width="720" height="900" loading="lazy" decoding="async" src="assets/web/f1-before.webp" alt="Before treatment"><img width="720" height="900" loading="lazy" decoding="async" class="aft" src="assets/web/f1-after.webp" alt="After treatment">
-      <span class="tag l">Before</span><span class="tag r">After</span><span class="hnd"></span></div>
-      <div class="bacap"><b>Case 01</b><span>Front view</span></div></article>
-    <article class="bacard"><div class="cmp">
-      <img width="720" height="900" loading="lazy" decoding="async" src="assets/web/f2-before.webp" alt="Before treatment"><img width="720" height="900" loading="lazy" decoding="async" class="aft" src="assets/web/f2-after.webp" alt="After treatment">
-      <span class="tag l">Before</span><span class="tag r">After</span><span class="hnd"></span></div>
-      <div class="bacap"><b>Case 01</b><span>Profile</span></div></article>
-    <article class="bacard"><div class="cmp">
-      <img width="720" height="900" loading="lazy" decoding="async" src="assets/web/f3-before.webp" alt="Before treatment"><img width="720" height="900" loading="lazy" decoding="async" class="aft" src="assets/web/f3-after.webp" alt="After treatment">
-      <span class="tag l">Before</span><span class="tag r">After</span><span class="hnd"></span></div>
-      <div class="bacap"><b>Case 02</b><span>Front view</span></div></article>
-    <article class="bacard"><div class="cmp">
-      <img width="720" height="900" loading="lazy" decoding="async" src="assets/web/f4-before.webp" alt="Before treatment"><img width="720" height="900" loading="lazy" decoding="async" class="aft" src="assets/web/f4-after.webp" alt="After treatment">
-      <span class="tag l">Before</span><span class="tag r">After</span><span class="hnd"></span></div>
-      <div class="bacap"><b>Case 02</b><span>Profile</span></div></article>
-    <article class="bacard"><div class="cmp">
-      <img width="720" height="900" loading="lazy" decoding="async" src="assets/web/f5-before.webp" alt="Before treatment"><img width="720" height="900" loading="lazy" decoding="async" class="aft" src="assets/web/f5-after.webp" alt="After treatment">
-      <span class="tag l">Before</span><span class="tag r">After</span><span class="hnd"></span></div>
-      <div class="bacap"><b>Case 03</b><span>Front view</span></div></article>
-  </div>
-  <div class="wrap">
-    <div class="railnav rv">
-      <button class="rbtn" data-rail="railF" data-dir="-1" aria-label="Previous facial case">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-      <button class="rbtn" data-rail="railF" data-dir="1" aria-label="Next facial case">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
-      <span class="railhint">5 facial views</span>
-    </div>
-    <p class="banote rv">Clinical records from Dr. Prabhakar's own case documentation. Dental views are
-      cropped below the eyes and facial views are permanently redacted, so no patient can be identified.
-      Photographs are only ever published with written consent.</p>
+    <article class="case rv">
+      <div class="casehd">
+        <h3>Malpositioned upper canine teeth</h3>
+      </div>
+      <div class="pairs">
+        <div>
+          <p class="pairlbl">The smile</p>
+          <div class="pair">
+            <figure><span class="ptag">Before</span>
+              <img src="assets/web/cn-smile-before.webp" width="1200" height="800"
+                   loading="lazy" decoding="async" alt="Smile before treatment, upper canine out of line">
+              <figcaption>Smile before treatment</figcaption></figure>
+            <figure><span class="ptag">After</span>
+              <img src="assets/web/cn-smile-after.webp" width="1200" height="800"
+                   loading="lazy" decoding="async" alt="Smile after the upper canine teeth were aligned">
+              <figcaption>Smile on alignment of upper canine teeth.</figcaption></figure>
+          </div>
+        </div>
+        <div>
+          <p class="pairlbl">The bite</p>
+          <div class="pair">
+            <figure><span class="ptag">Before</span>
+              <img src="assets/web/cn-intra-before.webp" width="1200" height="800"
+                   loading="lazy" decoding="async" alt="Highly placed upper canine teeth before treatment">
+              <figcaption>Malpositioned/Highly placed upper canine teeth look quite unesthetic</figcaption></figure>
+            <figure><span class="ptag">After</span>
+              <img src="assets/web/cn-intra-after.webp" width="1200" height="800"
+                   loading="lazy" decoding="async" alt="Teeth evenly positioned in the dental arch after treatment">
+              <figcaption>Teeth when positioned evenly in a dental arch form look far more esthetic
+                on smiling.</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case rv">
+      <div class="casehd">
+        <h3>Malposition of the upper front teeth</h3>
+      </div>
+      <div class="pairs">
+        <div>
+          <p class="pairlbl">The bite</p>
+          <div class="pair">
+            <figure><span class="ptag">Before</span>
+              <img src="assets/web/ak-intra-before.webp" width="1200" height="800"
+                   loading="lazy" decoding="async" alt="Upper front teeth out of position before treatment">
+              <figcaption>Pre — malposition of upper front teeth (incisors) before treatment</figcaption></figure>
+            <figure><span class="ptag">After</span>
+              <img src="assets/web/ak-intra-after.webp" width="1200" height="800"
+                   loading="lazy" decoding="async" alt="Upper front teeth aligned after treatment with braces">
+              <figcaption>Upper front teeth properly aligned with the help of braces with
+                approximately 18 months of comprehensive orthodontic treatment.</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case rv">
+      <div class="casehd">
+        <h3>Correction of protruded front teeth</h3>
+        <p>Eyes and eyebrows are covered in every facial photograph on this page.</p>
+      </div>
+      <div class="pairs">
+        <div>
+          <p class="pairlbl">Facial change</p>
+          <div class="pair">
+            <figure><span class="ptag">Before</span>
+              <img src="assets/web/ub-face-before.webp" width="720" height="900"
+                   loading="lazy" decoding="async" alt="Patient before treatment, eyes and eyebrows redacted">
+              <figcaption>Before treatment</figcaption></figure>
+            <figure><span class="ptag">After</span>
+              <img src="assets/web/ub-face-after.webp" width="720" height="900"
+                   loading="lazy" decoding="async" alt="The same patient after treatment, eyes and eyebrows redacted">
+              <figcaption>After treatment</figcaption></figure>
+          </div>
+        </div>
+        <div>
+          <p class="pairlbl">The bite</p>
+          <div class="pair">
+            <figure><span class="ptag">Before</span>
+              <img src="assets/web/ub-intra-before.webp" width="1200" height="800"
+                   loading="lazy" decoding="async" alt="Protruded upper front teeth before treatment">
+              <figcaption>Before treatment</figcaption></figure>
+            <figure><span class="ptag">After</span>
+              <img src="assets/web/ub-intra-after.webp" width="1200" height="800"
+                   loading="lazy" decoding="async" alt="Front teeth brought back into line after treatment">
+              <figcaption>After treatment</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case rv">
+      <div class="casehd">
+        <h3>Interceptive jaw orthopaedics</h3>
+        <p>Facial &amp; Dental change brought about by Interceptive Jaw Orthopedics &amp;
+          Orthodontic therapy — treatment carried out during the child's active growth phase.</p>
+      </div>
+      <div class="pairs">
+        <div>
+          <p class="pairlbl">Front view</p>
+          <div class="pair">
+            <figure><span class="ptag">Before</span>
+              <img src="assets/web/vb-front-before.webp" width="720" height="900"
+                   loading="lazy" decoding="async" alt="Patient front view before treatment, eyes and eyebrows redacted">
+              <figcaption>Before treatment</figcaption></figure>
+            <figure><span class="ptag">After</span>
+              <img src="assets/web/vb-front-after.webp" width="720" height="900"
+                   loading="lazy" decoding="async" alt="Patient front view after treatment, eyes and eyebrows redacted">
+              <figcaption>After treatment</figcaption></figure>
+          </div>
+        </div>
+        <div>
+          <p class="pairlbl">Profile</p>
+          <div class="pair">
+            <figure><span class="ptag">Before</span>
+              <img src="assets/web/vb-prof-before.webp" width="720" height="900"
+                   loading="lazy" decoding="async" alt="Patient profile before treatment, eyes and eyebrows redacted">
+              <figcaption>Before treatment</figcaption></figure>
+            <figure><span class="ptag">After</span>
+              <img src="assets/web/vb-prof-after.webp" width="720" height="900"
+                   loading="lazy" decoding="async" alt="Patient profile after treatment, showing the jaw change">
+              <figcaption>After treatment</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <p class="banote rv">Clinical records from Dr. Prabhakar's own case documentation, published
+      with her patients' consent. Views of the teeth are cropped to the mouth, and in every
+      photograph that shows a face the eyes and eyebrows are permanently blacked out in the image
+      itself — so no patient here can be identified.</p>
   </div>
 </section>
 
@@ -560,13 +614,32 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.6);
       <p class="eyebrow">06 — Visit the clinic</p>
       <h2 class="sec">Book your<br><em>consultation.</em></h2>
     </div>
+
+    <div class="cstrip rv">
+      <figure>
+        <img src="assets/web/clinic-waiting.webp" width="1200" height="800" loading="lazy"
+             decoding="async" alt="Entrance and waiting area at the clinic, ground floor">
+        <figcaption>Waiting area on the Ground floor</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/web/clinic-room.webp" width="1200" height="800" loading="lazy"
+             decoding="async" alt="The orthodontic treatment room on the first floor">
+        <figcaption>Orthodontic Clinic on First floor</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/web/clinic-awards.webp" width="1200" height="800" loading="lazy"
+             decoding="async" alt="Awards and recognitions on display at the clinic">
+        <figcaption>Awards and recognitions on display</figcaption>
+      </figure>
+    </div>
+
     <div class="vgrid">
       <div class="vbox rv">
         <div class="vrow"><span class="lbl">Clinic</span><span class="val">The Orthodontic Clinic<small>Dr. Mona Prabhakar</small></span></div>
         <div class="vrow"><span class="lbl">Address</span><span class="val">212, Sector 31<small>Gurugram 122001, Haryana</small></span></div>
         <div class="vrow"><span class="lbl">Phone</span><span class="val"><a href="tel:+919810131064">+91 98101 31064</a><small><a href="tel:+911244034212">0124 — 4034212</a></small></span></div>
         <div class="vrow"><span class="lbl">Email</span><span class="val"><a href="mailto:prabhakarmona@gmail.com">prabhakarmona@gmail.com</a></span></div>
-        <div class="vrow"><span class="lbl">Hours</span><span class="val">Consultation by appointment only<small>Evening consultations</small></span></div>
+        <div class="vrow"><span class="lbl">Hours</span><span class="val">Evening clinic only<small>Consultation by appointment</small></span></div>
         <div class="vcta">
           <a class="btn btn-solid" href="https://wa.me/919810131064?text=Hello%20Dr.%20Prabhakar%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20book%20an%20orthodontic%20consultation." target="_blank" rel="noopener">Book on WhatsApp</a>
           <a class="btn btn-ghost" href="tel:+919810131064">Call the Clinic</a>
@@ -583,7 +656,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.6);
 <footer>
   <div class="wrap">
     <div class="frow">
-      <div class="brand" style="display:flex;align-items:center;gap:12px;color:#fff">
+      <div class="brand" style="display:flex;align-items:center;gap:12px;color:var(--navy)">
         <svg class="mark" viewBox="0 0 100 56" aria-hidden="true">
           <path class="lip" d="M6 22 Q50 -6 94 22"/><path class="lip" d="M6 22 Q50 60 94 22"/>
           <g class="tooth"><rect x="20" y="20" width="13" height="15" rx="3"/>
@@ -593,7 +666,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.6);
           <path class="wire" d="M20 27 H80"/>
         </svg>
         <span><b style="font-family:var(--serif);font-size:18.5px;display:block">Dr. Mona Prabhakar</b>
-        <span style="font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.5)">The Orthodontic Clinic</span></span>
+        <span style="font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--slate)">The Orthodontic Clinic</span></span>
       </div>
       <div>Braces · Clear Aligners · Functional Therapy<br>212, Sector 31, Gurugram · By appointment</div>
     </div>
@@ -643,23 +716,9 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     if(e.getBoundingClientRect().top < innerHeight) e.classList.add('in');});},400);
 })();
 
-document.querySelectorAll('.cmp').forEach(function(c){
-  var drag=false;
-  function set(x){var r=c.getBoundingClientRect();
-    c.style.setProperty('--x', Math.max(2,Math.min(98,((x-r.left)/r.width)*100))+'%');}
-  c.addEventListener('pointerdown',function(e){drag=true;c.setPointerCapture(e.pointerId);set(e.clientX);});
-  c.addEventListener('pointermove',function(e){if(drag){e.preventDefault();set(e.clientX);}});
-  c.addEventListener('pointerup',function(){drag=false;});
-  c.addEventListener('pointercancel',function(){drag=false;});
-});
-
-document.querySelectorAll('.rbtn').forEach(function(b){
-  b.addEventListener('click',function(){
-    var rail=document.getElementById(b.dataset.rail);
-    var card=rail.querySelector('.bacard'); if(!card) return;
-    rail.scrollBy({left:(+b.dataset.dir)*(card.getBoundingClientRect().width+16),behavior:'smooth'});
-  });
-});
+/* The before/after slider and its swipe rails were removed on 14 Aug at the
+   client's request — the results section is now plain side-by-side pairs and
+   needs no script at all. */
 </script>
 </body>
 </html>
