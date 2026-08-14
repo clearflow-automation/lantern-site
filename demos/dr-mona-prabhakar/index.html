@@ -124,12 +124,16 @@ section{padding:clamp(56px,7.5vw,104px) 0}
 .wlist{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);
        border-radius:24px;overflow:hidden}
 .witem{background:var(--panel);padding:clamp(20px,2.5vw,28px);display:flex;gap:18px}
+/* Fraunces has proportional figures, so 01/02/03/04 measured 16.8-19.1px wide
+   and every heading in this list started at a different x. Tabular figures plus
+   a fixed box give the column one left edge. */
 .witem .no{font-family:var(--serif);font-size:15px;color:var(--gold);font-weight:500;
-           padding-top:3px;flex:none}
+           padding-top:3px;flex:none;width:20px;font-variant-numeric:tabular-nums}
 .witem h4{font-family:var(--serif);font-weight:500;font-size:19px;color:var(--navy);margin-bottom:5px}
 .witem p{font-size:14.8px;color:var(--slate);line-height:1.58}
 .wfig img{border-radius:20px;width:100%;aspect-ratio:4/5;object-fit:cover;margin-top:28px}
-.wfig figcaption{font-size:13px;line-height:1.5;color:var(--slate);margin-top:11px}
+.wfig figcaption{font-size:13.5px;line-height:1.62;color:var(--slate);
+                 margin-top:14px;max-width:46ch}
 .wfig figcaption b{color:var(--navy);font-weight:600}
 
 .meet{display:grid;gap:clamp(28px,4vw,52px);align-items:center}
@@ -137,11 +141,11 @@ section{padding:clamp(56px,7.5vw,104px) 0}
 .dfig{position:relative}
 .dfig img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:22px;
           box-shadow:0 26px 56px -20px rgba(44,66,60,.16)}
-.dfig figcaption{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(251,248,243,.94);
-                 backdrop-filter:blur(8px);border-radius:14px;padding:11px 15px;
-                 font-size:12.5px;color:var(--slate);line-height:1.45}
+.dfig figcaption{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(249,247,244,.95);
+                 backdrop-filter:blur(8px);border-radius:14px;padding:14px 17px;
+                 font-size:13px;color:var(--slate);line-height:1.55}
 .dfig figcaption b{color:var(--navy);display:block;font-family:var(--serif);
-                   font-size:16px;font-weight:500;margin-bottom:2px}
+                   font-size:16.5px;font-weight:500;margin-bottom:4px}
 .quote{font-family:var(--serif);font-weight:300;font-style:italic;
        font-size:clamp(19px,2.5vw,28px);line-height:1.42;color:var(--navy);
        border-left:2px solid var(--gold);padding-left:22px;margin:22px 0}
@@ -159,20 +163,24 @@ section{padding:clamp(56px,7.5vw,104px) 0}
    collages / patient", and a half-revealed image cannot show a treatment result.
    Stacked on a phone (before above after, exactly like the collage she sent us),
    two-up from 700px. */
-.cases{display:grid;gap:clamp(38px,5.5vw,68px)}
-.case{border-top:1px solid rgba(255,255,255,.15);padding-top:clamp(24px,3.2vw,38px)}
-.casehd{max-width:64ch;margin-bottom:clamp(18px,2.2vw,26px)}
+.cases{display:grid;gap:clamp(48px,6.5vw,82px)}
+.case{border-top:1px solid rgba(255,255,255,.15);padding-top:clamp(30px,3.6vw,44px)}
+.casehd{max-width:56ch;margin-bottom:clamp(22px,2.6vw,30px)}
 .casehd h3{font-family:var(--serif);font-weight:400;line-height:1.18;
            font-size:clamp(21px,2.9vw,30px);color:#fff}
-.casehd p{font-size:14.2px;line-height:1.55;color:rgba(255,255,255,.6);margin-top:9px}
+.casehd p{font-size:14.2px;line-height:1.6;color:rgba(255,255,255,.6);margin-top:10px}
 /* Two-up at every width, including the phone. Stacking them put ~280px of
    scroll between before and after, so you could never see both at once —
    which is the very thing she objected to about the slider. Side by side also
    cuts this section from 6,439px to roughly 2,400px on a 375px screen. */
-.pairs{display:grid;gap:clamp(20px,2.6vw,28px)}
+/* Spacing is a hierarchy, not one value repeated. The label, the photographs
+   and the two captions all sat 9-11px apart, so nothing grouped and the block
+   read as a wall. A pair is now tight inside and the gap to the next pair is
+   about three times larger. */
+.pairs{display:grid;gap:clamp(34px,4.2vw,46px)}
 .pairlbl{font:600 10px var(--sans);letter-spacing:.16em;text-transform:uppercase;
-         color:var(--gold-lt);margin-bottom:9px}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+         color:var(--gold-lt);margin-bottom:10px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(min-width:700px){.pair{gap:18px}}
 .pair figure{position:relative;margin:0;background:var(--navy-deep);
              border:1px solid rgba(255,255,255,.13);border-radius:14px;overflow:hidden}
@@ -187,11 +195,12 @@ section{padding:clamp(56px,7.5vw,104px) 0}
 @media(min-width:700px){.ptag{top:11px;left:11px;font-size:9.5px;padding:5px 10px}}
 /* Her captions sit under the pair, full width. Inside a 161px column they
    wrapped to six lines and stood taller than the photograph they described. */
-.paircaps{display:grid;gap:9px;margin-top:11px}
-@media(min-width:700px){.paircaps{grid-template-columns:1fr 1fr;gap:18px}}
-.paircaps p{font-size:13px;line-height:1.5;color:rgba(255,255,255,.63)}
+.paircaps{display:grid;gap:18px;margin-top:16px}
+@media(min-width:700px){.paircaps{grid-template-columns:1fr 1fr;column-gap:18px}}
+/* 13px running to the full 537px column was ~74 characters a line. */
+.paircaps p{font-size:13.5px;line-height:1.62;color:rgba(255,255,255,.66);max-width:52ch}
 .paircaps b{display:block;color:var(--gold-lt);font:600 9px var(--sans);
-            letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px}
+            letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px}
 
 /* tap to enlarge — nothing is hidden by default, this is an optional zoom */
 .lbx{position:fixed;inset:0;z-index:200;display:none;align-items:center;
@@ -213,7 +222,7 @@ section{padding:clamp(56px,7.5vw,104px) 0}
 @media(min-width:640px){.cstrip{grid-template-columns:repeat(3,1fr)}}
 .cstrip figure{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff}
 .cstrip img{width:100%;height:auto;display:block}
-.cstrip figcaption{padding:11px 14px 13px;font-size:12.8px;color:var(--slate)}
+.cstrip figcaption{padding:14px 16px 16px;font-size:13.2px;line-height:1.5;color:var(--slate)}
 
 .rtop{display:flex;flex-wrap:wrap;gap:20px;align-items:center;
       justify-content:space-between;margin-bottom:28px}
