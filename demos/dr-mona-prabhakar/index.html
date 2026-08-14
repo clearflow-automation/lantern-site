@@ -128,7 +128,9 @@ section{padding:clamp(56px,7.5vw,104px) 0}
            padding-top:3px;flex:none}
 .witem h4{font-family:var(--serif);font-weight:500;font-size:19px;color:var(--navy);margin-bottom:5px}
 .witem p{font-size:14.8px;color:var(--slate);line-height:1.58}
-.wfig img{border-radius:20px;width:100%;aspect-ratio:1/1;object-fit:cover;margin-top:28px}
+.wfig img{border-radius:20px;width:100%;aspect-ratio:4/5;object-fit:cover;margin-top:28px}
+.wfig figcaption{font-size:13px;line-height:1.5;color:var(--slate);margin-top:11px}
+.wfig figcaption b{color:var(--navy);font-weight:600}
 
 .meet{display:grid;gap:clamp(28px,4vw,52px);align-items:center}
 @media(min-width:900px){.meet{grid-template-columns:.8fr 1.2fr}}
@@ -163,19 +165,47 @@ section{padding:clamp(56px,7.5vw,104px) 0}
 .casehd h3{font-family:var(--serif);font-weight:400;line-height:1.18;
            font-size:clamp(21px,2.9vw,30px);color:#fff}
 .casehd p{font-size:14.2px;line-height:1.55;color:rgba(255,255,255,.6);margin-top:9px}
-.pairs{display:grid;gap:clamp(16px,2.2vw,24px)}
+/* Two-up at every width, including the phone. Stacking them put ~280px of
+   scroll between before and after, so you could never see both at once —
+   which is the very thing she objected to about the slider. Side by side also
+   cuts this section from 6,439px to roughly 2,400px on a 375px screen. */
+.pairs{display:grid;gap:clamp(20px,2.6vw,28px)}
 .pairlbl{font:600 10px var(--sans);letter-spacing:.16em;text-transform:uppercase;
-         color:var(--gold-lt);margin-bottom:10px}
-.pair{display:grid;gap:12px}
-@media(min-width:700px){.pair{grid-template-columns:1fr 1fr;gap:18px}}
-.pair figure{position:relative;background:var(--navy-deep);
-             border:1px solid rgba(255,255,255,.13);border-radius:18px;overflow:hidden}
-.pair img{width:100%;height:auto;display:block}
-.ptag{position:absolute;top:11px;left:11px;z-index:2;font:600 9.5px var(--sans);
-      letter-spacing:.14em;text-transform:uppercase;background:rgba(31,48,43,.82);
-      color:#fff;padding:5px 10px;border-radius:100px;backdrop-filter:blur(6px)}
-.pair figcaption{padding:12px 15px 15px;font-size:13.2px;line-height:1.5;
-                 color:rgba(255,255,255,.66)}
+         color:var(--gold-lt);margin-bottom:9px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:700px){.pair{gap:18px}}
+.pair figure{position:relative;margin:0;background:var(--navy-deep);
+             border:1px solid rgba(255,255,255,.13);border-radius:14px;overflow:hidden}
+@media(min-width:700px){.pair figure{border-radius:18px}}
+.shot{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.shot img{width:100%;height:auto;display:block}
+.shot:focus-visible{outline:2px solid var(--gold-lt);outline-offset:2px}
+.ptag{position:absolute;top:9px;left:9px;z-index:2;font:600 9px var(--sans);
+      letter-spacing:.13em;text-transform:uppercase;background:rgba(31,48,43,.82);
+      color:#fff;padding:4px 9px;border-radius:100px;backdrop-filter:blur(6px);
+      pointer-events:none}
+@media(min-width:700px){.ptag{top:11px;left:11px;font-size:9.5px;padding:5px 10px}}
+/* Her captions sit under the pair, full width. Inside a 161px column they
+   wrapped to six lines and stood taller than the photograph they described. */
+.paircaps{display:grid;gap:9px;margin-top:11px}
+@media(min-width:700px){.paircaps{grid-template-columns:1fr 1fr;gap:18px}}
+.paircaps p{font-size:13px;line-height:1.5;color:rgba(255,255,255,.63)}
+.paircaps b{display:block;color:var(--gold-lt);font:600 9px var(--sans);
+            letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px}
+
+/* tap to enlarge — nothing is hidden by default, this is an optional zoom */
+.lbx{position:fixed;inset:0;z-index:200;display:none;align-items:center;
+     justify-content:center;padding:16px;background:rgba(14,22,19,.95)}
+.lbx.on{display:flex}
+.lbx .inner{max-width:min(1100px,100%);display:grid;gap:14px}
+.lbx img{max-width:100%;max-height:74vh;object-fit:contain;border-radius:12px;margin-inline:auto}
+.lbx .cap{color:rgba(255,255,255,.82);font-size:14px;line-height:1.55;
+          text-align:center;max-width:62ch;margin-inline:auto}
+.lbx .cap b{display:block;color:var(--gold-lt);font:600 10px var(--sans);
+            letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
+.lbxclose{position:absolute;top:14px;right:14px;width:46px;height:46px;border-radius:50%;
+          border:1px solid rgba(255,255,255,.32);background:rgba(0,0,0,.35);color:#fff;
+          font-size:22px;line-height:1;cursor:pointer}
 .banote{font-size:12.8px;color:rgba(255,255,255,.42);margin-top:26px;max-width:64ch}
 
 /* clinic strip — real photographs of the practice, her captions */
@@ -379,8 +409,10 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
       <p class="lede">Sector 31 has plenty of dentists. It has very few orthodontists who have
         taught the subject to postgraduate specialists for two decades.</p>
       <figure class="wfig">
-        <img src="assets/web/dr-chairside.webp" width="800" height="800" loading="lazy"
-             alt="The treatment room at The Orthodontic Clinic, Sector 31 Gurugram">
+        <img src="assets/web/dr-honours.webp" width="800" height="1000" loading="lazy"
+             alt="Dr. Prabhakar beside the Best Graduate honours board at Dental College, Rohtak">
+        <figcaption>The <b>Best Graduate</b> board at Dental College, Rohtak.
+          The 1991 line reads <b>Dr. Mona Duggal</b> — her name before marriage.</figcaption>
       </figure>
     </div>
     <div class="wlist rv">
@@ -443,28 +475,63 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
         <div>
           <p class="pairlbl">The smile</p>
           <div class="pair">
-            <figure><span class="ptag">Before</span>
-              <img src="assets/web/cn-smile-before.webp" width="1200" height="800"
-                   loading="lazy" decoding="async" alt="Smile before treatment, upper canine out of line">
-              <figcaption>Smile before treatment</figcaption></figure>
-            <figure><span class="ptag">After</span>
-              <img src="assets/web/cn-smile-after.webp" width="1200" height="800"
-                   loading="lazy" decoding="async" alt="Smile after the upper canine teeth were aligned">
-              <figcaption>Smile on alignment of upper canine teeth.</figcaption></figure>
+            <figure>
+              <button class="shot" type="button" data-full="assets/web/cn-smile-before.webp"
+                      data-tag="Before" data-cap="Smile before treatment"
+                      aria-label="Enlarge the before photograph">
+                <img srcset="assets/web/cn-smile-before-sm.webp 440w, assets/web/cn-smile-before.webp 1200w"
+                     sizes="(min-width:700px) 530px, 44vw"
+                     src="assets/web/cn-smile-before.webp" width="1200" height="800"
+                     loading="lazy" decoding="async" alt="Smile before treatment, upper canine out of line">
+              </button>
+              <span class="ptag">Before</span>
+            </figure>
+            <figure>
+              <button class="shot" type="button" data-full="assets/web/cn-smile-after.webp"
+                      data-tag="After" data-cap="Smile on alignment of upper canine teeth."
+                      aria-label="Enlarge the after photograph">
+                <img srcset="assets/web/cn-smile-after-sm.webp 440w, assets/web/cn-smile-after.webp 1200w"
+                     sizes="(min-width:700px) 530px, 44vw"
+                     src="assets/web/cn-smile-after.webp" width="1200" height="800"
+                     loading="lazy" decoding="async" alt="Smile after the upper canine teeth were aligned">
+              </button>
+              <span class="ptag">After</span>
+            </figure>
+          </div>
+          <div class="paircaps">
+            <p><b>Before</b>Smile before treatment</p>
+            <p><b>After</b>Smile on alignment of upper canine teeth.</p>
           </div>
         </div>
         <div>
           <p class="pairlbl">The bite</p>
           <div class="pair">
-            <figure><span class="ptag">Before</span>
-              <img src="assets/web/cn-intra-before.webp" width="1200" height="800"
-                   loading="lazy" decoding="async" alt="Highly placed upper canine teeth before treatment">
-              <figcaption>Malpositioned/Highly placed upper canine teeth look quite unesthetic</figcaption></figure>
-            <figure><span class="ptag">After</span>
-              <img src="assets/web/cn-intra-after.webp" width="1200" height="800"
-                   loading="lazy" decoding="async" alt="Teeth evenly positioned in the dental arch after treatment">
-              <figcaption>Teeth when positioned evenly in a dental arch form look far more esthetic
-                on smiling.</figcaption></figure>
+            <figure>
+              <button class="shot" type="button" data-full="assets/web/cn-intra-before.webp"
+                      data-tag="Before" data-cap="Malpositioned/Highly placed upper canine teeth look quite unesthetic"
+                      aria-label="Enlarge the before photograph">
+                <img srcset="assets/web/cn-intra-before-sm.webp 440w, assets/web/cn-intra-before.webp 1200w"
+                     sizes="(min-width:700px) 530px, 44vw"
+                     src="assets/web/cn-intra-before.webp" width="1200" height="800"
+                     loading="lazy" decoding="async" alt="Highly placed upper canine teeth before treatment">
+              </button>
+              <span class="ptag">Before</span>
+            </figure>
+            <figure>
+              <button class="shot" type="button" data-full="assets/web/cn-intra-after.webp"
+                      data-tag="After" data-cap="Teeth when positioned evenly in a dental arch form look far more esthetic on smiling."
+                      aria-label="Enlarge the after photograph">
+                <img srcset="assets/web/cn-intra-after-sm.webp 440w, assets/web/cn-intra-after.webp 1200w"
+                     sizes="(min-width:700px) 530px, 44vw"
+                     src="assets/web/cn-intra-after.webp" width="1200" height="800"
+                     loading="lazy" decoding="async" alt="Teeth evenly positioned in the dental arch after treatment">
+              </button>
+              <span class="ptag">After</span>
+            </figure>
+          </div>
+          <div class="paircaps">
+            <p><b>Before</b>Malpositioned/Highly placed upper canine teeth look quite unesthetic</p>
+            <p><b>After</b>Teeth when positioned evenly in a dental arch form look far more esthetic on smiling.</p>
           </div>
         </div>
       </div>
@@ -478,15 +545,32 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
         <div>
           <p class="pairlbl">The bite</p>
           <div class="pair">
-            <figure><span class="ptag">Before</span>
-              <img src="assets/web/ak-intra-before.webp" width="1200" height="800"
-                   loading="lazy" decoding="async" alt="Upper front teeth out of position before treatment">
-              <figcaption>Pre — malposition of upper front teeth (incisors) before treatment</figcaption></figure>
-            <figure><span class="ptag">After</span>
-              <img src="assets/web/ak-intra-after.webp" width="1200" height="800"
-                   loading="lazy" decoding="async" alt="Upper front teeth aligned after treatment with braces">
-              <figcaption>Upper front teeth properly aligned with the help of braces with
-                approximately 18 months of comprehensive orthodontic treatment.</figcaption></figure>
+            <figure>
+              <button class="shot" type="button" data-full="assets/web/ak-intra-before.webp"
+                      data-tag="Before" data-cap="Pre — malposition of upper front teeth (incisors) before treatment"
+                      aria-label="Enlarge the before photograph">
+                <img srcset="assets/web/ak-intra-before-sm.webp 440w, assets/web/ak-intra-before.webp 1200w"
+                     sizes="(min-width:700px) 530px, 44vw"
+                     src="assets/web/ak-intra-before.webp" width="1200" height="800"
+                     loading="lazy" decoding="async" alt="Upper front teeth out of position before treatment">
+              </button>
+              <span class="ptag">Before</span>
+            </figure>
+            <figure>
+              <button class="shot" type="button" data-full="assets/web/ak-intra-after.webp"
+                      data-tag="After" data-cap="Upper front teeth properly aligned with the help of braces with approximately 18 months of comprehensive orthodontic treatment."
+                      aria-label="Enlarge the after photograph">
+                <img srcset="assets/web/ak-intra-after-sm.webp 440w, assets/web/ak-intra-after.webp 1200w"
+                     sizes="(min-width:700px) 530px, 44vw"
+                     src="assets/web/ak-intra-after.webp" width="1200" height="800"
+                     loading="lazy" decoding="async" alt="Upper front teeth aligned after treatment with braces">
+              </button>
+              <span class="ptag">After</span>
+            </figure>
+          </div>
+          <div class="paircaps">
+            <p><b>Before</b>Pre — malposition of upper front teeth (incisors) before treatment</p>
+            <p><b>After</b>Upper front teeth properly aligned with the help of braces with approximately 18 months of comprehensive orthodontic treatment.</p>
           </div>
         </div>
       </div>
@@ -501,27 +585,55 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
         <div>
           <p class="pairlbl">Facial change</p>
           <div class="pair">
-            <figure><span class="ptag">Before</span>
-              <img src="assets/web/ub-face-before.webp" width="720" height="900"
-                   loading="lazy" decoding="async" alt="Patient before treatment, eyes and eyebrows redacted">
-              <figcaption>Before treatment</figcaption></figure>
-            <figure><span class="ptag">After</span>
-              <img src="assets/web/ub-face-after.webp" width="720" height="900"
-                   loading="lazy" decoding="async" alt="The same patient after treatment, eyes and eyebrows redacted">
-              <figcaption>After treatment</figcaption></figure>
+            <figure>
+              <button class="shot" type="button" data-full="assets/web/ub-face-before.webp"
+                      data-tag="Before" data-cap="Before treatment"
+                      aria-label="Enlarge the before photograph">
+                <img srcset="assets/web/ub-face-before-sm.webp 440w, assets/web/ub-face-before.webp 720w"
+                     sizes="(min-width:700px) 530px, 44vw"
+                     src="assets/web/ub-face-before.webp" width="720" height="900"
+                     loading="lazy" decoding="async" alt="Patient before treatment, eyes and eyebrows redacted">
+              </button>
+              <span class="ptag">Before</span>
+            </figure>
+            <figure>
+              <button class="shot" type="button" data-full="assets/web/ub-face-after.webp"
+                      data-tag="After" data-cap="After treatment"
+                      aria-label="Enlarge the after photograph">
+                <img srcset="assets/web/ub-face-after-sm.webp 440w, assets/web/ub-face-after.webp 720w"
+                     sizes="(min-width:700px) 530px, 44vw"
+                     src="assets/web/ub-face-after.webp" width="720" height="900"
+                     loading="lazy" decoding="async" alt="The same patient after treatment, eyes and eyebrows redacted">
+              </button>
+              <span class="ptag">After</span>
+            </figure>
           </div>
         </div>
         <div>
           <p class="pairlbl">The bite</p>
           <div class="pair">
-            <figure><span class="ptag">Before</span>
-              <img src="assets/web/ub-intra-before.webp" width="1200" height="800"
-                   loading="lazy" decoding="async" alt="Protruded upper front teeth before treatment">
-              <figcaption>Before treatment</figcaption></figure>
-            <figure><span class="ptag">After</span>
-              <img src="assets/web/ub-intra-after.webp" width="1200" height="800"
-                   loading="lazy" decoding="async" alt="Front teeth brought back into line after treatment">
-              <figcaption>After treatment</figcaption></figure>
+            <figure>
+              <button class="shot" type="button" data-full="assets/web/ub-intra-before.webp"
+                      data-tag="Before" data-cap="Before treatment"
+                      aria-label="Enlarge the before photograph">
+                <img srcset="assets/web/ub-intra-before-sm.webp 440w, assets/web/ub-intra-before.webp 1200w"
+                     sizes="(min-width:700px) 530px, 44vw"
+                     src="assets/web/ub-intra-before.webp" width="1200" height="800"
+                     loading="lazy" decoding="async" alt="Protruded upper front teeth before treatment">
+              </button>
+              <span class="ptag">Before</span>
+            </figure>
+            <figure>
+              <button class="shot" type="button" data-full="assets/web/ub-intra-after.webp"
+                      data-tag="After" data-cap="After treatment"
+                      aria-label="Enlarge the after photograph">
+                <img srcset="assets/web/ub-intra-after-sm.webp 440w, assets/web/ub-intra-after.webp 1200w"
+                     sizes="(min-width:700px) 530px, 44vw"
+                     src="assets/web/ub-intra-after.webp" width="1200" height="800"
+                     loading="lazy" decoding="async" alt="Front teeth brought back into line after treatment">
+              </button>
+              <span class="ptag">After</span>
+            </figure>
           </div>
         </div>
       </div>
@@ -530,39 +642,65 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
     <article class="case rv">
       <div class="casehd">
         <h3>Interceptive jaw orthopaedics</h3>
-        <p>Facial &amp; Dental change brought about by Interceptive Jaw Orthopedics &amp;
-          Orthodontic therapy — treatment carried out during the child's active growth phase.</p>
+        <p>Facial &amp; Dental change brought about by Interceptive Jaw Orthopedics &amp; Orthodontic therapy — treatment carried out during the child's active growth phase.</p>
       </div>
       <div class="pairs">
         <div>
           <p class="pairlbl">Front view</p>
           <div class="pair">
-            <figure><span class="ptag">Before</span>
-              <img src="assets/web/vb-front-before.webp" width="720" height="900"
-                   loading="lazy" decoding="async" alt="Patient front view before treatment, eyes and eyebrows redacted">
-              <figcaption>Before treatment</figcaption></figure>
-            <figure><span class="ptag">After</span>
-              <img src="assets/web/vb-front-after.webp" width="720" height="900"
-                   loading="lazy" decoding="async" alt="Patient front view after treatment, eyes and eyebrows redacted">
-              <figcaption>After treatment</figcaption></figure>
+            <figure>
+              <button class="shot" type="button" data-full="assets/web/vb-front-before.webp"
+                      data-tag="Before" data-cap="Before treatment"
+                      aria-label="Enlarge the before photograph">
+                <img srcset="assets/web/vb-front-before-sm.webp 440w, assets/web/vb-front-before.webp 720w"
+                     sizes="(min-width:700px) 530px, 44vw"
+                     src="assets/web/vb-front-before.webp" width="720" height="900"
+                     loading="lazy" decoding="async" alt="Patient front view before treatment, eyes and eyebrows redacted">
+              </button>
+              <span class="ptag">Before</span>
+            </figure>
+            <figure>
+              <button class="shot" type="button" data-full="assets/web/vb-front-after.webp"
+                      data-tag="After" data-cap="After treatment"
+                      aria-label="Enlarge the after photograph">
+                <img srcset="assets/web/vb-front-after-sm.webp 440w, assets/web/vb-front-after.webp 720w"
+                     sizes="(min-width:700px) 530px, 44vw"
+                     src="assets/web/vb-front-after.webp" width="720" height="900"
+                     loading="lazy" decoding="async" alt="Patient front view after treatment, eyes and eyebrows redacted">
+              </button>
+              <span class="ptag">After</span>
+            </figure>
           </div>
         </div>
         <div>
           <p class="pairlbl">Profile</p>
           <div class="pair">
-            <figure><span class="ptag">Before</span>
-              <img src="assets/web/vb-prof-before.webp" width="720" height="900"
-                   loading="lazy" decoding="async" alt="Patient profile before treatment, eyes and eyebrows redacted">
-              <figcaption>Before treatment</figcaption></figure>
-            <figure><span class="ptag">After</span>
-              <img src="assets/web/vb-prof-after.webp" width="720" height="900"
-                   loading="lazy" decoding="async" alt="Patient profile after treatment, showing the jaw change">
-              <figcaption>After treatment</figcaption></figure>
+            <figure>
+              <button class="shot" type="button" data-full="assets/web/vb-prof-before.webp"
+                      data-tag="Before" data-cap="Before treatment"
+                      aria-label="Enlarge the before photograph">
+                <img srcset="assets/web/vb-prof-before-sm.webp 440w, assets/web/vb-prof-before.webp 720w"
+                     sizes="(min-width:700px) 530px, 44vw"
+                     src="assets/web/vb-prof-before.webp" width="720" height="900"
+                     loading="lazy" decoding="async" alt="Patient profile before treatment, eyes and eyebrows redacted">
+              </button>
+              <span class="ptag">Before</span>
+            </figure>
+            <figure>
+              <button class="shot" type="button" data-full="assets/web/vb-prof-after.webp"
+                      data-tag="After" data-cap="After treatment"
+                      aria-label="Enlarge the after photograph">
+                <img srcset="assets/web/vb-prof-after-sm.webp 440w, assets/web/vb-prof-after.webp 720w"
+                     sizes="(min-width:700px) 530px, 44vw"
+                     src="assets/web/vb-prof-after.webp" width="720" height="900"
+                     loading="lazy" decoding="async" alt="Patient profile after treatment, showing the jaw change">
+              </button>
+              <span class="ptag">After</span>
+            </figure>
           </div>
         </div>
       </div>
     </article>
-
     <p class="banote rv">Clinical records from Dr. Prabhakar's own case documentation, published
       with her patients' consent. Views of the teeth are cropped to the mouth, and in every
       photograph that shows a face the eyes and eyebrows are permanently blacked out in the image
@@ -702,6 +840,13 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
 {"@type":"MedicalTherapy","name":"Habit-Breaking Appliances"}]}
 </script>
 
+<div class="lbx" id="lbx" role="dialog" aria-modal="true" aria-label="Enlarged photograph">
+  <button class="lbxclose" type="button" aria-label="Close">&times;</button>
+  <div class="inner">
+    <img src="" alt="">
+    <p class="cap"><b></b><span></span></p>
+  </div>
+</div>
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
 
@@ -716,9 +861,45 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     if(e.getBoundingClientRect().top < innerHeight) e.classList.add('in');});},400);
 })();
 
-/* The before/after slider and its swipe rails were removed on 14 Aug at the
-   client's request — the results section is now plain side-by-side pairs and
-   needs no script at all. */
+/* The drag slider and its swipe rails were removed on 14 Aug at her request.
+   What follows is not a return to that: nothing on the page is hidden behind
+   it. Both photographs are always fully visible in the grid; this only offers
+   a bigger look at one of them, because two-up on a phone makes each about
+   161px wide. Closes on Esc, on the backdrop, or on the button. */
+(function(){
+  var box = document.getElementById('lbx');
+  if(!box) return;
+  var img = box.querySelector('img'),
+      tag = box.querySelector('.cap b'),
+      txt = box.querySelector('.cap span'),
+      last = null;
+
+  function open(btn){
+    last = btn;
+    img.src = btn.dataset.full;
+    img.alt = btn.querySelector('img').alt;
+    tag.textContent = btn.dataset.tag;
+    txt.textContent = btn.dataset.cap;
+    box.classList.add('on');
+    document.body.style.overflow = 'hidden';
+    box.querySelector('.lbxclose').focus();
+  }
+  function close(){
+    box.classList.remove('on');
+    document.body.style.overflow = '';
+    if(last){ last.focus(); last = null; }
+  }
+
+  document.querySelectorAll('.shot').forEach(function(b){
+    b.addEventListener('click', function(){ open(b); });
+  });
+  box.addEventListener('click', function(e){
+    if(e.target === box || e.target.closest('.lbxclose')) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && box.classList.contains('on')) close();
+  });
+})();
 </script>
 </body>
 </html>
