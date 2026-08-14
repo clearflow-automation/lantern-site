@@ -120,7 +120,13 @@ section{padding:clamp(56px,7.5vw,104px) 0}
 
 .why{background:var(--panel)}
 .wgrid{display:grid;gap:clamp(28px,4vw,50px)}
-@media(min-width:900px){.wgrid{grid-template-columns:.9fr 1.1fr;align-items:start}}
+/* Left column carries the heading, the lede and a 4:5 photograph; the right
+   carries the four boxes. With align-items:start the boxes finished ~340px
+   above the photograph, leaving a hole beside its lower half. Letting the
+   list stretch closes both columns on the same line. Phone is unaffected —
+   below 900px this is a single stacked column. */
+@media(min-width:900px){.wgrid{grid-template-columns:.9fr 1.1fr;align-items:stretch}
+  .wlist{align-content:stretch}}
 .wlist{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);
        border-radius:24px;overflow:hidden}
 .witem{background:var(--panel);padding:clamp(20px,2.5vw,28px);display:flex;gap:18px}
@@ -469,6 +475,10 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
         <li><span class="dot"></span><span><b>B.D.S. — Gold Medallist</b>, Government Dental College, Rohtak</span></li>
         <li><span class="dot"></span><span><b>Formerly Professor</b>, Dept. of Orthodontics, Faculty of Dental Sciences, SGT University, Gurugram</span></li>
         <li><span class="dot"></span><span><b>Sr. Consultant Orthodontist</b> — in private practice since 1997</span></li>
+        <!-- Both lines below are read off plaques photographed in her own clinic
+             (assets/web/Dr mona/Mona Clinic/PXL_20220111_093716915.jpg), not inferred. -->
+        <li><span class="dot"></span><span><b>Excellence Award</b>, SGT University, Gurugram (2014) — for her service to the Faculty of Dental Sciences</span></li>
+        <li><span class="dot"></span><span><b>Chairperson &amp; Panelist</b>, Dept. of Orthodontics, Jamia Millia Islamia — North Zone Orthodontic P.G. Convention, New Delhi (2019)</span></li>
       </ul>
     </div>
   </div>
