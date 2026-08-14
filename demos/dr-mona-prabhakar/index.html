@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Dr. Mona Prabhakar — Orthodontist, Sector 31 Gurugram | Braces &amp; Clear Aligners</title>
+<title>Orthodontist in Sector 31, Gurugram — Dr. Mona Prabhakar</title>
 <meta name="description" content="Specialist orthodontic care in Sector 31, Gurugram. Braces, clear aligners, functional therapy and smile correction from an MDS orthodontist practising since 1997. By appointment only.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,7 +129,7 @@ section{padding:clamp(56px,7.5vw,104px) 0}
    a fixed box give the column one left edge. */
 .witem .no{font-family:var(--serif);font-size:15px;color:var(--gold);font-weight:500;
            padding-top:3px;flex:none;width:20px;font-variant-numeric:tabular-nums}
-.witem h4{font-family:var(--serif);font-weight:500;font-size:19px;color:var(--navy);margin-bottom:5px}
+.witem .wh{font-family:var(--serif);font-weight:500;font-size:19px;color:var(--navy);margin-bottom:5px}
 .witem p{font-size:14.8px;color:var(--slate);line-height:1.58}
 .wfig img{border-radius:20px;width:100%;aspect-ratio:4/5;object-fit:cover;margin-top:28px}
 .wfig figcaption{font-size:13.5px;line-height:1.62;color:var(--slate);
@@ -178,6 +178,14 @@ section{padding:clamp(56px,7.5vw,104px) 0}
    read as a wall. A pair is now tight inside and the gap to the next pair is
    about three times larger. */
 .pairs{display:grid;gap:clamp(34px,4.2vw,46px)}
+/* On a wide screen the pair filled the whole 1220px column, so each photograph
+   ran 537px and a 4:5 face became 671px tall — taller than most laptop
+   viewports. One cap for every block, not a looser one for mouths and a
+   tighter one for faces: two widths stacked inside a single case put their
+   edges out of line, which is the thing this was meant to fix. Capping the
+   block rather than the image keeps the label, the pair and the captions on
+   that same shared width. */
+@media(min-width:700px){ .pairblock{max-width:760px} }
 .pairlbl{font:600 10px var(--sans);letter-spacing:.16em;text-transform:uppercase;
          color:var(--gold-lt);margin-bottom:10px}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -426,18 +434,18 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
     </div>
     <div class="wlist rv">
       <div class="witem"><span class="no">01</span><div>
-        <h4>A true specialist</h4>
+        <h3 class="wh">A true specialist</h3>
         <p>Exclusively orthodontics — this is all she does, and has done, for close to three decades.</p></div></div>
       <div class="witem"><span class="no">02</span><div>
-        <h4>Academic authority</h4>
+        <h3 class="wh">Academic authority</h3>
         <p>Formerly Professor in the Dept. of Orthodontics, Faculty of Dental Sciences, SGT University —
            where she trained and guided postgraduate specialists.</p></div></div>
       <div class="witem"><span class="no">03</span><div>
-        <h4>Top-tier training</h4>
+        <h3 class="wh">Top-tier training</h3>
         <p>Gold-medallist BDS from Govt. Dental College, Rohtak, and an MDS from King George's
            Medical College, Lucknow.</p></div></div>
       <div class="witem"><span class="no">04</span><div>
-        <h4>Unhurried, personal care</h4>
+        <h3 class="wh">Unhurried, personal care</h3>
         <p>A by-appointment practice — real time and attention for every patient,
            never a crowded waiting room.</p></div></div>
     </div>
@@ -481,7 +489,7 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
         <h3>Malpositioned upper canine teeth</h3>
       </div>
       <div class="pairs">
-        <div>
+        <div class="pairblock">
           <p class="pairlbl">The smile</p>
           <div class="pair">
             <figure>
@@ -512,7 +520,7 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
             <p><b>After</b>Smile on alignment of upper canine teeth.</p>
           </div>
         </div>
-        <div>
+        <div class="pairblock">
           <p class="pairlbl">The bite</p>
           <div class="pair">
             <figure>
@@ -551,7 +559,7 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
         <h3>Malposition of the upper front teeth</h3>
       </div>
       <div class="pairs">
-        <div>
+        <div class="pairblock">
           <p class="pairlbl">The bite</p>
           <div class="pair">
             <figure>
@@ -591,7 +599,7 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
         <p>Eyes and eyebrows are covered in every facial photograph on this page.</p>
       </div>
       <div class="pairs">
-        <div>
+        <div class="pairblock tall">
           <p class="pairlbl">Facial change</p>
           <div class="pair">
             <figure>
@@ -618,7 +626,7 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
             </figure>
           </div>
         </div>
-        <div>
+        <div class="pairblock">
           <p class="pairlbl">The bite</p>
           <div class="pair">
             <figure>
@@ -654,7 +662,7 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
         <p>Facial &amp; Dental change brought about by Interceptive Jaw Orthopedics &amp; Orthodontic therapy — treatment carried out during the child's active growth phase.</p>
       </div>
       <div class="pairs">
-        <div>
+        <div class="pairblock tall">
           <p class="pairlbl">Front view</p>
           <div class="pair">
             <figure>
@@ -681,7 +689,7 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
             </figure>
           </div>
         </div>
-        <div>
+        <div class="pairblock tall">
           <p class="pairlbl">Profile</p>
           <div class="pair">
             <figure>
