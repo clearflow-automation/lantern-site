@@ -231,6 +231,13 @@ section{padding:clamp(56px,7.5vw,104px) 0}
           font-size:22px;line-height:1;cursor:pointer}
 .banote{font-size:12.8px;color:rgba(255,255,255,.42);margin-top:26px;max-width:64ch}
 
+/* the team — capped at the same 760px the case pairs use, so the page keeps
+   one content width rather than gaining a third */
+.teamfig{max-width:760px;margin:0 0 clamp(26px,3.4vw,40px);border-radius:16px;
+         overflow:hidden;border:1px solid var(--line);background:#fff}
+.teamfig img{width:100%;height:auto;display:block}
+.teamfig figcaption{padding:14px 16px 16px;font-size:13.2px;line-height:1.5;color:var(--slate)}
+
 /* clinic strip — real photographs of the practice, her captions */
 .cstrip{display:grid;gap:14px;margin-bottom:clamp(30px,4vw,46px)}
 @media(min-width:640px){.cstrip{grid-template-columns:repeat(3,1fr)}}
@@ -475,8 +482,9 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
         <li><span class="dot"></span><span><b>B.D.S. — Gold Medallist</b>, Government Dental College, Rohtak</span></li>
         <li><span class="dot"></span><span><b>Formerly Professor</b>, Dept. of Orthodontics, Faculty of Dental Sciences, SGT University, Gurugram</span></li>
         <li><span class="dot"></span><span><b>Sr. Consultant Orthodontist</b> — in private practice since 1997</span></li>
-        <!-- Both lines below are read off plaques photographed in her own clinic
-             (assets/web/Dr mona/Mona Clinic/PXL_20220111_093716915.jpg), not inferred. -->
+        <!-- Both lines below are read off plaques photographed in her own clinic,
+             not inferred. Source file is named in CLIENT-BRIEF.md, deliberately not
+             here: view-source should not advertise where the originals sit. -->
         <li><span class="dot"></span><span><b>Excellence Award</b>, SGT University, Gurugram (2014) — for her service to the Faculty of Dental Sciences</span></li>
         <li><span class="dot"></span><span><b>Chairperson &amp; Panelist</b>, Dept. of Orthodontics, Jamia Millia Islamia — North Zone Orthodontic P.G. Convention, New Delhi (2019)</span></li>
       </ul>
@@ -779,6 +787,12 @@ footer{background:var(--panel);color:var(--slate);border-top:1px solid var(--lin
       <p class="eyebrow">06 — Visit the clinic</p>
       <h2 class="sec">Book your<br><em>consultation.</em></h2>
     </div>
+
+    <figure class="teamfig rv">
+      <img src="assets/web/team.webp" width="1200" height="800" loading="lazy" decoding="async"
+           alt="Dr. Mona Prabhakar seated with the team at The Orthodontic Clinic, Sector 31 Gurugram">
+      <figcaption>Dr. Prabhakar with the team at The Orthodontic Clinic.</figcaption>
+    </figure>
 
     <div class="cstrip rv">
       <figure>
