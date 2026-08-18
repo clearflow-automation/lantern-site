@@ -47,6 +47,59 @@
   onScroll();
   addEventListener('scroll', onScroll, { passive: true });
 
+  /* ── The lamp across the whole page (fine pointers only) ─────────── */
+  var lamp = d.querySelector('.page-lamp');
+  if (lamp && !reduce && matchMedia('(pointer: fine)').matches) {
+    var px = 50, py = -10, ptx = px, pty = py, praf = null;
+    var pPaint = function () {
+      lamp.style.setProperty('--px', px.toFixed(2) + '%');
+      lamp.style.setProperty('--py', py.toFixed(2) + '%');
+    };
+    var pChase = function () {
+      px += (ptx - px) * 0.12;
+      py += (pty - py) * 0.12;
+      pPaint();
+      praf = (Math.abs(ptx - px) > 0.05 || Math.abs(pty - py) > 0.05)
+        ? requestAnimationFrame(pChase) : null;
+    };
+    addEventListener('pointermove', function (e) {
+      ptx = e.clientX / innerWidth * 100;
+      pty = e.clientY / innerHeight * 100;
+      lamp.classList.add('on');
+      if (!praf) praf = requestAnimationFrame(pChase);
+    }, { passive: true });
+  }
+
+  /* ── The enquiry form ────────────────────────────────────────────── */
+  var enq = d.getElementById('enq');
+  if (enq) {
+    enq.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!enq.reportValidity()) return;
+      var btn = enq.querySelector('.enq__btn');
+      var ok = enq.querySelector('.enq__ok');
+      var err = enq.querySelector('.enq__err');
+      err.hidden = true;
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      fetch('https://formsubmit.co/ajax/vaishnandit@gmail.com', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(enq)
+      }).then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return r.json();
+      }).then(function () {
+        [].forEach.call(enq.querySelectorAll('.enq__row, .enq__btn'), function (n) { n.hidden = true; });
+        ok.hidden = false;
+      }).catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Request a call back';
+        err.hidden = false;
+      });
+    });
+  }
+
   /* ── Hold the lantern ────────────────────────────────────────────── */
   /* Fine pointer: the light follows the cursor. Touch: it drifts slowly,
      like a lamp swinging, and stops when the hero leaves the viewport. */

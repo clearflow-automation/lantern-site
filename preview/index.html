@@ -64,6 +64,7 @@
 </script>
 </head>
 <body>
+<div class="page-lamp" aria-hidden="true"></div>
 
 <header class="hdr" id="hdr">
   <a class="hdr__logo" href="#top" aria-label="Lantern — home">
@@ -323,10 +324,14 @@
           <h2 class="t-h2">It's one person, and that's the point</h2>
           <p class="lede" style="margin-top:1rem">I'm Nandit. I build these myself, from Gurugram. There's no account manager, no ticket number, and nobody to pass you to. When you call the number on this page, I pick it up.</p>
           <p class="lede" style="margin-top:1rem">That's also the honest limit: I take a small number of builds at a time, because two days per shop only works if I'm not running six at once.</p>
-          <p style="margin-top:1.5rem"><a class="tlink" href="tel:+919711105497">+91 97111 05497</a></p>
+          <p class="sig" aria-hidden="true">— Nandit</p>
+          <p style="margin-top:.5rem"><a class="tlink" href="tel:+919711105497">+91 97111 05497</a></p>
         </div>
         <div class="split__b">
-          <div class="me__photo"><span>Photo of Nandit goes here. A real one, in the shop or on the street, not a headshot against a wall.</span></div>
+          <div class="me-card">
+            <img src="assets/brand/lantern-mark-inked.svg" alt="" width="72" height="94" loading="lazy">
+            <p>Builds so far: one paying client, fourteen samples, and this page you're reading — which is its own kind of proof.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -365,18 +370,54 @@
     </div>
   </section>
 
-  <!-- ═══ 11 · Closing. The lights go back down. ═══ -->
+  <!-- ═══ 11 · Closing. The lights go back down. A real form now — some
+           people won't open WhatsApp for a stranger, and enquiries that
+           arrive at 1am need somewhere to land. Success and error states
+           are written in voice, not left as browser defaults. ═══ -->
   <section class="sec sec--tall sec--night close" id="contact">
     <div class="wrap">
       <img class="close__mark" src="assets/brand/lantern-mark-light.svg" alt="" width="66" height="86" aria-hidden="true">
-      <h2 class="t-h1">Send me your shop's name. I'll tell you what I'd do with it.</h2>
-      <p class="lede" style="margin-top:1.25rem; max-width:52ch">No form, no callback queue. A message on WhatsApp gets you an answer from me, usually the same day.</p>
-      <div class="hero__actions">
-        <a class="btn btn--flame" href="https://wa.me/919711105497?text=Hi%20Nandit%20%E2%80%94%20I%20saw%20the%20Lantern%20site.%20My%20shop%20is%20" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5-.1-.2-.7-1.6-.9-2.1-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
-          Message me on WhatsApp
-        </a>
-        <a class="btn btn--ghost" href="tel:+919711105497">Or call +91 97111 05497</a>
+      <h2 class="t-h1">Two days from now, your shop could be live.</h2>
+      <p class="lede" style="margin-top:1.25rem; max-width:52ch">WhatsApp is fastest — you'll get me directly. Or leave your details and I'll call you back, usually the same day.</p>
+
+      <div class="contact-grid">
+        <div class="contact-wa">
+          <a class="btn btn--flame" href="https://wa.me/919711105497?text=Hi%20Nandit%20%E2%80%94%20I%20saw%20the%20Lantern%20site.%20My%20shop%20is%20" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5-.1-.2-.7-1.6-.9-2.1-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
+            Message me on WhatsApp
+          </a>
+          <a class="btn btn--ghost" href="tel:+919711105497">Or call +91 97111 05497</a>
+        </div>
+
+        <form class="enq" id="enq" action="https://formsubmit.co/vaishnandit@gmail.com" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New enquiry — madebylantern.com">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-5000px">
+          <div class="enq__row">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Pooja">
+          </div>
+          <div class="enq__row">
+            <label for="f-shop">Shop name &amp; area</label>
+            <input id="f-shop" name="shop" type="text" required placeholder="Pooja Boutique, Sector 31">
+          </div>
+          <div class="enq__row">
+            <label for="f-phone">Phone (WhatsApp)</label>
+            <input id="f-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="98xxxxxxxx">
+          </div>
+          <div class="enq__row">
+            <label for="f-need">What do you need?</label>
+            <select id="f-need" name="need">
+              <option>A new website</option>
+              <option>Fix my current website</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <button class="btn btn--flame enq__btn" type="submit">Request a call back</button>
+          <p class="enq__ok" hidden>Got it. I'll call you back within a day — usually much sooner. <span>— Nandit</span></p>
+          <p class="enq__err" hidden>That didn't go through. WhatsApp me instead — the green button is right there, or call <a href="tel:+919711105497">+91 97111 05497</a>.</p>
+        </form>
       </div>
     </div>
   </section>
