@@ -124,11 +124,12 @@ footer{padding:52px 0 120px;border-top:1px solid var(--line)}
 .fab .wa{background:#25D366;color:#08301A}
 .fab .cl{background:#141110;color:#fff}
 
-.tag{position:fixed;left:0;right:0;top:0;z-index:70;background:var(--accent);
-  color:#fff;font-size:11.5px;letter-spacing:.04em;
-  text-align:center;padding:6px 12px}
-body{padding-top:29px}
-header{top:29px}
+/* The concept ribbon sits IN FLOW, not fixed. Fixed made it two lines on a
+   360px phone and the sticky header rode up underneath it — the first thing
+   she would have seen. In flow it simply scrolls away and can never collide. */
+.tag{background:var(--accent);color:#fff;
+  font-size:11px;letter-spacing:.03em;line-height:1.45;
+  text-align:center;padding:7px 14px}
 </style>
 </head>
 <body>
