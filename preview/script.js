@@ -1,4 +1,4 @@
-/* Lantern — madebylantern.com
+/* Lantern — airlantern.com
    Everything here is enhancement. The page is complete without it: reveals
    only hide under html.js, the header is absolute until JS pins it, and the
    contact bar shows by default. If this file never loads, nothing is lost
