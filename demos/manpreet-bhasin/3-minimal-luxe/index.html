@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Manpreet Bhasin's Peaches &amp; Cream — Minimal Luxe direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF9F7; --ink:#22201D; --muted:#77726C; --line:#E4E1DC;
+  --accent:#9A7B4F; --gold:#9A7B4F; --panel:#F1EEE9;
+  --serif:'Marcellus',Georgia,serif; --sans:'Karla',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;margin:0}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px}
+
+/* header */
+header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.82);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;
+  padding:14px 22px;max-width:1080px;margin:0 auto}
+.brand{font-family:var(--serif);font-size:17px;letter-spacing:.02em}
+.brand small{display:block;font-family:var(--sans);font-size:9.5px;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.nav{display:none;gap:26px;font-size:13px}
+.nav a{color:var(--muted);text-decoration:none}
+.nav a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:11px 22px;border-radius:999px;
+  text-decoration:none;font-size:13.5px;letter-spacing:.02em;transition:.2s}
+.btn-solid{background:var(--accent);color:#fff}
+.btn-line{border:1px solid var(--line);color:var(--ink)}
+.btn:hover{opacity:.88}
+@media(min-width:900px){.nav{display:flex}}
+
+/* hero */
+.hero{padding:64px 0 56px;background:linear-gradient(160deg,#F2EFEA,#E3DED6)}
+.hero h1{font-size:clamp(38px,8.5vw,68px);line-height:1.04;margin-bottom:18px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.lede{font-size:16.5px;color:var(--muted);max-width:44ch;margin-bottom:28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+  font-size:12px;color:var(--muted);background:rgba(255,255,255,.55)}
+.pill b{color:var(--ink);font-weight:500}
+.herogrid{display:grid;gap:28px}
+@media(min-width:900px){.herogrid{grid-template-columns:1.05fr .95fr;align-items:center}}
+
+/* photo slots */
+.slot{margin:0;border:1px solid var(--line);border-radius:4px;
+  background:
+    repeating-linear-gradient(45deg,transparent,transparent 9px,
+      rgba(0,0,0,.016) 9px,
+      rgba(0,0,0,.016) 18px),
+    var(--panel);
+  display:flex;align-items:center;justify-content:center;text-align:center}
+.slot span{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);padding:0 14px}
+.slotgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(min-width:700px){.slotgrid{grid-template-columns:repeat(4,1fr)}}
+
+section{padding:62px 0}
+.sechead{margin-bottom:34px;max-width:52ch}
+.sechead h2{font-size:clamp(26px,5vw,38px);margin-bottom:12px}
+.sechead p{color:var(--muted);margin:0}
+
+/* signature */
+.sig{background:var(--panel);border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line)}
+.sigcard{display:grid;gap:24px}
+@media(min-width:820px){.sigcard{grid-template-columns:1fr 1fr;align-items:center;gap:44px}}
+.bigprice{font-family:var(--serif);font-size:clamp(44px,9vw,72px);
+  color:var(--accent);line-height:1}
+
+/* price rows */
+.cols{display:grid;gap:34px}
+@media(min-width:820px){.cols{grid-template-columns:1fr 1fr;gap:44px}}
+.card{border:1px solid var(--line);border-radius:5px;padding:24px;
+  background:#fff}
+.card h3{font-size:19px;margin-bottom:4px}
+.card .sub{font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:9px 0;border-bottom:1px dotted var(--line)}
+.row:last-child{border-bottom:0}
+.rn{font-size:14.5px}
+.note{display:block;font-size:11.5px;color:var(--muted);margin-top:1px}
+.rp{font-family:var(--serif);font-size:15.5px;color:var(--accent);white-space:nowrap}
+
+/* academy */
+.academy{background:linear-gradient(150deg,var(--panel),var(--bg));
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* reviews */
+.quotes{display:grid;gap:16px}
+@media(min-width:820px){.quotes{grid-template-columns:repeat(3,1fr)}}
+.q{border:1px solid var(--line);border-radius:5px;padding:20px;
+  background:#fff}
+.q p{margin:0 0 12px;font-size:14.5px}
+.q .who{font-size:12px;color:var(--muted)}
+.stars{color:var(--gold);letter-spacing:2px;font-size:13px}
+
+footer{padding:52px 0 120px;border-top:1px solid var(--line)}
+.fgrid{display:grid;gap:22px}
+@media(min-width:760px){.fgrid{grid-template-columns:1.2fr 1fr 1fr}}
+.fgrid h4{font-family:var(--serif);font-weight:400;font-size:16px;margin:0 0 8px}
+.fgrid p,.fgrid a{color:var(--muted);font-size:13.5px;margin:0 0 5px;
+  text-decoration:none;display:block}
+
+/* floating CTA */
+.fab{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;
+  flex-direction:column;gap:9px;align-items:flex-end}
+.fab a{display:flex;align-items:center;gap:8px;padding:12px 18px;
+  border-radius:999px;text-decoration:none;font-size:14px;font-weight:400;
+  box-shadow:0 6px 22px rgba(0,0,0,.22)}
+.fab .wa{background:#25D366;color:#08301A}
+.fab .cl{background:#141110;color:#fff}
+
+.tag{position:fixed;left:0;right:0;top:0;z-index:70;background:var(--accent);
+  color:#fff;font-size:11.5px;letter-spacing:.04em;
+  text-align:center;padding:6px 12px}
+body{padding-top:29px}
+header{top:29px}
+</style>
+</head>
+<body>
+<div class="tag">Direction 3 — <b>Minimal Luxe</b> · rough concept for Manpreet Bhasin · by Lantern · photos are placeholders</div>
+
+<header><div class="hd">
+  <div class="brand">Peaches &amp; Cream<small>Manpreet Bhasin's</small></div>
+  <nav class="nav">
+    <a href="#bridal">Bridal</a><a href="#services">Services</a>
+    <a href="#academy">Academy</a><a href="#visit">Visit</a>
+  </nav>
+  <a class="btn btn-solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Book on WhatsApp</a>
+</div></header>
+
+<div class="hero"><div class="wrap herogrid">
+  <div>
+    <div class="eyebrow">Hair · Skin · Makeup · Gurugram</div>
+    <h1>The bride everyone<br><em>remembers.</em></h1>
+    <p class="lede">Bridal and occasion makeup, hair, skin and nails — by Manpreet Bhasin,
+      makeup artist and educator. Airbrush and HD finishes that hold from the
+      first ritual to the last dance.</p>
+    <div class="cta">
+      <a class="btn btn-solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Book your date</a>
+      <a class="btn btn-line" href="#bridal">See bridal pricing</a>
+    </div>
+    <div class="pills">
+      <span class="pill"><b>4.5 ★</b> on Google</span>
+      <span class="pill"><b>4,300+</b> on Instagram</span>
+      <span class="pill"><b>Academy</b> &amp; training</span>
+    </div>
+  </div>
+  <figure class="slot" style="aspect-ratio:4/5"><span>Bridal hero photograph</span></figure>
+</div></div>
+
+<section><div class="wrap">
+  <div class="slotgrid">
+    <figure class="slot" style="aspect-ratio:1/1"><span>Bridal look</span></figure><figure class="slot" style="aspect-ratio:1/1"><span>Airbrush detail</span></figure>
+    <figure class="slot" style="aspect-ratio:1/1"><span>Hair styling</span></figure><figure class="slot" style="aspect-ratio:1/1"><span>Studio</span></figure>
+  </div>
+</div></section>
+
+<section class="sig" id="bridal"><div class="wrap">
+  <div class="sigcard">
+    <div>
+      <div class="eyebrow">The signature</div>
+      <h2 style="font-size:clamp(28px,5.5vw,42px);margin-bottom:14px">Airbrush Bridal</h2>
+      <p style="color:var(--muted);margin:0 0 18px;max-width:42ch">A weightless,
+        camera-ready finish built to last through the ceremony, the photographs
+        and the reception — without a single touch-up in between.</p>
+      <div class="bigprice">₹34,999</div>
+      <div style="margin-top:22px"><a class="btn btn-solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Check your date</a></div>
+    </div>
+    <figure class="slot" style="aspect-ratio:1/1"><span>Airbrush bridal photograph</span></figure>
+  </div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <div class="sechead">
+    <div class="eyebrow">Pricing, in the open</div>
+    <h2>Every price, published</h2>
+    <p>No "enquire for rates". You know what it costs before you message.</p>
+  </div>
+  <div class="cols">
+    <div class="card">
+      <h3>Bridal &amp; Occasion</h3><div class="sub">Airbrush &amp; HD</div>
+      <div class="row"><div><span class="rn">Airbrush Bridal</span><span class="note">The full bridal day, airbrush finish</span></div><span class="rp">₹34,999</span></div>
+<div class="row"><div><span class="rn">HD Bridal — Lux</span><span class="note">Premium HD, luxury product line</span></div><span class="rp">₹29,999</span></div>
+<div class="row"><div><span class="rn">HD Bridal</span><span class="note">The signature bridal look</span></div><span class="rp">₹25,000</span></div>
+<div class="row"><div><span class="rn">Airbrush Occasional</span><span class="note">Roka, reception, engagement</span></div><span class="rp">₹18,999</span></div>
+<div class="row"><div><span class="rn">HD Occasional</span><span class="note">Roka, reception, engagement</span></div><span class="rp">₹14,999</span></div>
+    </div>
+    <div class="card">
+      <h3>Party Makeup</h3><div class="sub">Evening &amp; events</div>
+      <div class="row"><div><span class="rn">Airbrush Party</span></div><span class="rp">₹6,999</span></div>
+<div class="row"><div><span class="rn">HD Party</span></div><span class="rp">₹4,999</span></div>
+<div class="row"><div><span class="rn">Premium Party</span></div><span class="rp">₹4,999</span></div>
+<div class="row"><div><span class="rn">Light Party</span></div><span class="rp">₹3,999</span></div>
+<div class="row"><div><span class="rn">Classic Party</span></div><span class="rp">₹3,500</span></div>
+    </div>
+    <div class="card">
+      <h3>Pre-Bridal Packages</h3><div class="sub">Skin &amp; body, before the day</div>
+      <div class="row"><div><span class="rn">Pre-Bridal</span></div><span class="rp">₹5,999+</span></div>
+<div class="row"><div><span class="rn">Pre-Bridal</span></div><span class="rp">₹9,999+</span></div>
+<div class="row"><div><span class="rn">Pre-Bridal</span></div><span class="rp">₹14,999+</span></div>
+<div class="row"><div><span class="rn">Casmara Pre-Bridal</span></div><span class="rp">₹21,000+</span></div>
+    </div>
+    <div class="card">
+      <h3>Hair</h3><div class="sub">Cut · colour · treatment</div>
+      <div class="row"><div><span class="rn">Hair Cut</span></div><span class="rp">₹499</span></div>
+<div class="row"><div><span class="rn">Colour Touch-Up</span></div><span class="rp">₹1,400</span></div>
+<div class="row"><div><span class="rn">Balayage</span></div><span class="rp">₹4,499</span></div>
+<div class="row"><div><span class="rn">Hair Colour</span></div><span class="rp">₹4,499</span></div>
+<div class="row"><div><span class="rn">Global Colour</span></div><span class="rp">₹4,999</span></div>
+<div class="row"><div><span class="rn">Keratin</span></div><span class="rp">₹5,599</span></div>
+<div class="row"><div><span class="rn">Highlights</span></div><span class="rp">₹5,999</span></div>
+<div class="row"><div><span class="rn">Hair Treatment</span></div><span class="rp">₹5,999</span></div>
+    </div>
+    <div class="card">
+      <h3>Skin</h3><div class="sub">Facials</div>
+      <div class="row"><div><span class="rn">Basic Facial</span></div><span class="rp">₹1,200</span></div>
+<div class="row"><div><span class="rn">Deep Cleansing</span></div><span class="rp">₹1,500</span></div>
+<div class="row"><div><span class="rn">Anti-Ageing</span></div><span class="rp">₹2,500</span></div>
+<div class="row"><div><span class="rn">Hydra Facial</span></div><span class="rp">₹3,000</span></div>
+<div class="row"><div><span class="rn">Glass Skin</span></div><span class="rp">₹3,500</span></div>
+    </div>
+    <div class="card">
+      <h3>Nails</h3><div class="sub">Gel · acrylic · art</div>
+      <div class="row"><div><span class="rn">Gel Polish</span></div><span class="rp">₹799</span></div>
+<div class="row"><div><span class="rn">Gel Manicure</span></div><span class="rp">₹999</span></div>
+<div class="row"><div><span class="rn">Gel Pedicure</span></div><span class="rp">₹999</span></div>
+<div class="row"><div><span class="rn">Acrylic Nails</span></div><span class="rp">₹1,499</span></div>
+<div class="row"><div><span class="rn">Nail Art</span></div><span class="rp">₹300 / nail</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="academy" id="academy"><div class="wrap">
+  <div class="sigcard">
+    <figure class="slot" style="aspect-ratio:4/3"><span>Academy / teaching photograph</span></figure>
+    <div>
+      <div class="eyebrow">Learn from her</div>
+      <h2 style="font-size:clamp(26px,5vw,38px);margin-bottom:14px">The Academy</h2>
+      <p style="color:var(--muted);margin:0 0 20px;max-width:42ch">Manpreet trains
+        the next set of makeup artists — professional technique, airbrush and HD,
+        taught hands-on in the studio.</p>
+      <p style="color:var(--muted);font-size:13px;margin:0 0 20px">
+        <b style="color:var(--ink)">Course names, duration and fees to come from you</b> —
+        this section is built and waiting for the detail.</p>
+      <a class="btn btn-line" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Ask about courses</a>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sechead">
+    <div class="eyebrow">In their words</div>
+    <h2>4.5 ★ on Google</h2>
+    <p>Her real reviews drop in here — we never write these.</p>
+  </div>
+  <div class="quotes">
+    <div class="q"><div class="stars">★★★★★</div><p>Her actual Google review appears here.</p><div class="who">— Verified Google review</div></div>
+    <div class="q"><div class="stars">★★★★★</div><p>Her actual Google review appears here.</p><div class="who">— Verified Google review</div></div>
+    <div class="q"><div class="stars">★★★★★</div><p>Her actual Google review appears here.</p><div class="who">— Verified Google review</div></div>
+  </div>
+</div></section>
+
+<footer id="visit"><div class="wrap">
+  <div class="fgrid">
+    <div>
+      <h4>Manpreet Bhasin's Peaches &amp; Cream</h4>
+      <p>Hair · Skin · Makeup</p>
+      <p>Valley Souk, Ansals Valley View Estate,<br>Gurugram 122001</p>
+      <p style="font-size:11.5px;opacity:.7">(address to confirm)</p>
+    </div>
+    <div>
+      <h4>Reach her</h4>
+      <a href="tel:+919810819297">+91 98108 19297</a>
+      <a href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.instagram.com/manpreetbhasinspeachesandcream/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <div>
+      <h4>Hours</h4>
+      <p>To be confirmed</p>
+    </div>
+  </div>
+</div></footer>
+
+<nav class="fab">
+  <a class="wa" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp</a>
+  <a class="cl" href="tel:+919810819297">Call</a>
+</nav>
+</body></html>
