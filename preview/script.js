@@ -35,14 +35,11 @@
     });
   }
 
-  /* ── Header pins, contact bar rises, once the hero is behind you ─── */
-  var hdr = d.getElementById('hdr');
+  /* ── The sticky contact bar rises once the hero is behind you ────── */
   var bar = d.getElementById('bar');
   var hero = d.getElementById('hero');
   function onScroll() {
-    var past = window.scrollY > (hero ? hero.offsetHeight - 72 : 420);
-    if (hdr) hdr.classList.toggle('lit', past);
-    if (bar) bar.classList.toggle('on', past);
+    if (bar) bar.classList.toggle('on', window.scrollY > (hero ? hero.offsetHeight - 72 : 420));
   }
   onScroll();
   addEventListener('scroll', onScroll, { passive: true });
@@ -68,36 +65,6 @@
       lamp.classList.add('on');
       if (!praf) praf = requestAnimationFrame(pChase);
     }, { passive: true });
-  }
-
-  /* ── The enquiry form ────────────────────────────────────────────── */
-  var enq = d.getElementById('enq');
-  if (enq) {
-    enq.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!enq.reportValidity()) return;
-      var btn = enq.querySelector('.enq__btn');
-      var ok = enq.querySelector('.enq__ok');
-      var err = enq.querySelector('.enq__err');
-      err.hidden = true;
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-      fetch('https://formsubmit.co/ajax/vaishnandit@gmail.com', {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(enq)
-      }).then(function (r) {
-        if (!r.ok) throw new Error(r.status);
-        return r.json();
-      }).then(function () {
-        [].forEach.call(enq.querySelectorAll('.enq__row, .enq__btn'), function (n) { n.hidden = true; });
-        ok.hidden = false;
-      }).catch(function () {
-        btn.disabled = false;
-        btn.textContent = 'Request a call back';
-        err.hidden = false;
-      });
-    });
   }
 
   /* ── Hold the lantern ────────────────────────────────────────────── */

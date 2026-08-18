@@ -69,7 +69,7 @@ a { color: inherit; text-decoration: none; }
 .sec--paper2 { background: var(--paper-2); }
 .sec--night { background: var(--night); color: var(--bone); }
 
-section[id] { scroll-margin-top: 76px; }
+section[id] { scroll-margin-top: 24px; }
 
 /* ── Type ─────────────────────────────────────────────────────────────── */
 
@@ -162,32 +162,28 @@ p { max-width: 65ch; }
 .tlink:hover { background-size: 100% 1px; }
 
 /* ── Header ───────────────────────────────────────────────────────────── */
+/* Static on purpose. It used to be fixed, which meant the logo travelled the
+   whole page and turned into a cream bar floating over the dark closing
+   section — read as the mark "moving around". It sits over the hero and
+   scrolls away. Actions live in the sticky bottom bar on phones. */
 
 .hdr {
   position: absolute; top: 0; left: 0; right: 0; z-index: 60;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1.1rem var(--gut);
-  transition: background .5s var(--ease), border-color .5s var(--ease);
-  border-bottom: 1px solid transparent;
 }
-.js .hdr { position: fixed; }
-.hdr.lit { background: rgba(247, 241, 234, .88); border-bottom-color: var(--paper-3); }
-@supports (backdrop-filter: blur(10px)) {
-  .hdr.lit { backdrop-filter: blur(12px); }
+.hdr__logo { display: flex; align-items: baseline; gap: .5rem; }
+.hdr__logo img { width: 22px; height: 29px; align-self: center; }
+.hdr__word {
+  font-family: var(--display); font-weight: 500; font-size: 1.375rem;
+  letter-spacing: -.02em; color: var(--bone); line-height: 1;
 }
-.hdr__logo { display: flex; align-items: baseline; gap: .55rem; }
-.hdr__logo img { height: 30px; width: auto; }
 .hdr__logo .deva {
-  font-family: 'Tiro Devanagari Hindi', var(--display); font-size: 1rem; color: var(--bone-soft);
-  transition: color .5s var(--ease);
+  font-family: 'Tiro Devanagari Hindi', var(--display);
+  font-size: 1rem; color: var(--bone-soft); line-height: 1;
 }
-.hdr.lit .hdr__logo .deva { color: var(--ink-soft); }
-.hdr__logo .mark-dark { display: none; }
-.hdr.lit .mark-light { display: none; }
-.hdr.lit .mark-dark { display: block; }
-
-.hdr__cta { font-size: .875rem; font-weight: 600; color: var(--bone); transition: color .5s var(--ease); }
-.hdr.lit .hdr__cta { color: var(--ink); }
+.hdr__cta { font-size: .875rem; font-weight: 600; color: var(--bone); }
+.hdr__cta:hover { color: var(--glow); }
 
 /* ── Hero — "hold the lantern" ────────────────────────────────────────── */
 
@@ -195,7 +191,10 @@ p { max-width: 65ch; }
   position: relative; min-height: 100svh;
   display: flex; align-items: flex-end;
   background: var(--night); color: var(--bone);
-  overflow: hidden; padding-bottom: clamp(3rem, 9vw, 6rem);
+  overflow: hidden;
+  /* padding-top reserves the header band. Without it, a zoomed-in or short
+     viewport pushed the hero's content up underneath the logo. */
+  padding: clamp(6rem, 14vh, 8rem) 0 clamp(3rem, 9vw, 6rem);
 }
 
 /* The light. Position is driven by JS (cursor on desktop, a slow drift on
@@ -211,14 +210,13 @@ p { max-width: 65ch; }
 }
 /* Paper grain that only exists where the light falls. */
 .hero__grain {
-  position: absolute; inset: 0; pointer-events: none; z-index: 1; opacity: .5;
+  position: absolute; inset: 0; pointer-events: none; z-index: 1; opacity: .26;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
-  -webkit-mask-image: radial-gradient(400px circle at var(--lx, 50%) var(--ly, 42%), #000 0%, transparent 70%);
-          mask-image: radial-gradient(400px circle at var(--lx, 50%) var(--ly, 42%), #000 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(560px circle at var(--lx, 50%) var(--ly, 42%), #000 0%, transparent 78%);
+          mask-image: radial-gradient(560px circle at var(--lx, 50%) var(--ly, 42%), #000 0%, transparent 78%);
 }
 .hero__inner { position: relative; z-index: 2; width: 100%; }
 
-.hero__mark { width: clamp(54px, 9vw, 82px); margin-bottom: clamp(1.5rem, 4vw, 2.5rem); opacity: .96; }
 
 .hero h1 { max-width: 15ch; }
 .hero .lede { margin-top: 1.6rem; }
@@ -304,7 +302,7 @@ p { max-width: 65ch; }
 .work__item { position: relative; }
 .work__shot {
   position: relative; overflow: hidden; border-radius: var(--r);
-  background: var(--paper-2); aspect-ratio: 9 / 11;
+  background: var(--paper-2); aspect-ratio: 520 / 650;
   box-shadow: var(--shadow); transition: box-shadow .4s var(--ease), transform .4s var(--ease);
 }
 .work__shot img {
@@ -314,8 +312,9 @@ p { max-width: 65ch; }
 .work__item:hover .work__shot { box-shadow: var(--shadow-lift); transform: translateY(-4px); }
 .work__item:hover .work__shot img { transform: scale(1.035); }
 
-/* Deliberate asymmetry — the live client is larger than its siblings. */
-.work__item--feature .work__shot { aspect-ratio: 9 / 8; }
+/* Deliberate asymmetry — the live client is BIGGER, never a different crop.
+   Forcing a tall screenshot into a 16/10 box was what made the thumbnails
+   look stretched. Spanning 2 columns AND 2 rows keeps the true 520x650. */
 
 .work__cap { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-top: .85rem; }
 .work__name { font-weight: 600; font-size: .9375rem; }
@@ -409,45 +408,54 @@ p { max-width: 65ch; }
 .faq details[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
 .faq details p { padding-bottom: 1.4rem; color: var(--ink-soft); font-size: .9375rem; }
 
-/* ── Contact: WhatsApp column + the enquiry form ─────────────────────── */
+/* ── Contact + enquiry form ───────────────────────────────────────────── */
+/* Light section so the form reads calmly, and a native POST — no fetch, no
+   "Sending…" state, no animation. FormSubmit redirects to thanks.html. */
 
-.contact-grid {
-  margin-top: clamp(2rem, 5vw, 2.75rem);
-  display: grid; gap: clamp(2rem, 5vw, 3.5rem); align-items: start;
-}
-.contact-wa { display: flex; flex-direction: column; gap: .85rem; align-items: flex-start; }
+.contact { display: grid; gap: clamp(2.25rem, 6vw, 4rem); align-items: start; }
+.contact__btns { margin-top: clamp(1.75rem, 4vw, 2.25rem); display: flex; flex-direction: column; align-items: flex-start; gap: 1.1rem; }
 
 .enq {
-  background: var(--night-2); border: 1px solid rgba(242, 233, 222, .12);
-  border-radius: var(--r); padding: clamp(1.5rem, 4vw, 2rem);
-  display: grid; gap: 1.1rem; position: relative;
+  background: var(--paper); border: 1px solid var(--paper-3);
+  border-radius: var(--r); padding: clamp(1.5rem, 4vw, 2.25rem);
+  display: grid; gap: 1.15rem;
 }
-.enq__row { display: grid; gap: .45rem; }
-.enq label {
-  font-size: .8125rem; font-weight: 600; color: var(--bone-soft);
-  letter-spacing: .04em;
-}
+.enq [name="_honey"] { position: absolute; left: -5000px; }
+.enq__grid { display: grid; gap: 1.15rem; }
+.enq__row { display: grid; gap: .4rem; margin: 0; max-width: none; }
+.enq label { font-size: .8125rem; font-weight: 600; color: var(--ink-soft); }
 .enq input, .enq select {
-  width: 100%; font: inherit; color: var(--bone);
-  background: rgba(242, 233, 222, .06);
-  border: 1px solid rgba(242, 233, 222, .18); border-radius: 10px;
-  padding: .8rem .95rem; outline: none;
-  transition: border-color .25s var(--ease), background .25s var(--ease);
+  width: 100%; font: inherit; font-size: 1rem; color: var(--ink);
+  background: #FFFDFA; border: 1px solid var(--paper-3);
+  border-radius: 10px; padding: .8rem .95rem; outline: none;
 }
-.enq input::placeholder { color: rgba(162, 149, 138, .55); }
-.enq input:focus, .enq select:focus { border-color: var(--glow); background: rgba(242, 233, 222, .1); }
-.enq select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--bone-soft) 50%), linear-gradient(135deg, var(--bone-soft) 50%, transparent 50%); background-position: calc(100% - 1.3rem) 50%, calc(100% - 1rem) 50%; background-size: 5px 5px; background-repeat: no-repeat; }
-.enq__btn { justify-content: center; }
-.enq__btn[disabled] { opacity: .55; pointer-events: none; }
-.enq__ok, .enq__err { font-size: .9375rem; line-height: 1.55; }
-.enq__ok { color: var(--glow); }
-.enq__ok span { display: block; margin-top: .3rem; font-family: var(--display); font-style: italic; }
-.enq__err { color: #E8A492; }
-.enq__err a { text-decoration: underline; }
+.enq input::placeholder { color: rgba(107, 96, 88, .5); }
+.enq input:focus, .enq select:focus { border-color: var(--clay); }
+.enq select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink-soft) 50%),
+                    linear-gradient(135deg, var(--ink-soft) 50%, transparent 50%);
+  background-position: calc(100% - 1.35rem) 55%, calc(100% - 1.05rem) 55%;
+  background-size: 5px 5px; background-repeat: no-repeat;
+}
+.enq button { justify-content: center; margin-top: .35rem; }
+.enq__note { font-size: .8125rem; color: var(--ink-soft); margin: 0; }
 
-@media (min-width: 940px) {
-  .contact-grid { grid-template-columns: 38fr 62fr; }
+@media (min-width: 760px) {
+  .enq__grid { grid-template-columns: 1fr 1fr; }
 }
+@media (min-width: 940px) {
+  .contact { grid-template-columns: 38fr 62fr; }
+}
+
+/* ── Capacity band ────────────────────────────────────────────────────── */
+.cap__line {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(1.5rem, 3.4vw, 2.125rem); line-height: 1.25;
+  letter-spacing: -.015em; max-width: 34ch;
+}
+.cap__line strong { font-weight: 500; color: var(--clay-deep); }
+.cap__sub { margin-top: 1.1rem; color: var(--ink-soft); max-width: 46ch; font-size: .9375rem; }
 
 /* ── Signature + the card that stands where a photo will ─────────────── */
 .sig {
@@ -500,6 +508,11 @@ p { max-width: 65ch; }
 
 /* ── Responsive ───────────────────────────────────────────────────────── */
 
+@media (min-width: 700px) and (max-width: 939px) {
+  .work__item--feature { grid-column: span 2; }
+  .work__item--feature .work__shot { aspect-ratio: 16 / 11; }
+}
+
 @media (min-width: 700px) {
   .work { grid-template-columns: repeat(2, 1fr); }
   .doors { grid-template-columns: 1fr 1fr; }
@@ -521,8 +534,12 @@ p { max-width: 65ch; }
   .split--flip .split__b { order: 1; }
 
   .work { grid-template-columns: repeat(3, 1fr); }
-  .work__item--feature { grid-column: span 2; }
-  .work__item--feature .work__shot { aspect-ratio: 16 / 10; }
+  .work__item--feature { grid-column: span 2; grid-row: span 2; }
+  /* Spanning 2x2 gives a box slightly wider than the 520x650 screenshot, so
+     `cover` would shave the site's left and right edges. `contain` on a paper
+     field shows the whole page instead — framed, not cropped. */
+  .work__item--feature .work__shot { height: 100%; aspect-ratio: auto; background: var(--paper); }
+  .work__item--feature .work__shot img { object-fit: contain; object-position: center; }
 
   .tiers { grid-template-columns: repeat(3, 1fr); }
   .steps { grid-template-columns: repeat(4, 1fr); }
