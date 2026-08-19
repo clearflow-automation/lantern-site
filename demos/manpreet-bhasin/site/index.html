@@ -61,8 +61,8 @@ em{font-style:italic; color:var(--gold-lite)}
   color:var(--gold); font-weight:400;
 }
 .lede{color:var(--muted); font-size:clamp(1.02rem,2.2vw,1.2rem); max-width:62ch}
-section{padding:var(--s6) 0; position:relative}
-@media(max-width:720px){section{padding:var(--s5) 0}}
+section{padding:clamp(52px,7vw,84px) 0; position:relative}
+
 
 /* ---------- ambience: grain + gold aurora ---------- */
 .grain{
@@ -164,7 +164,7 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
       linear-gradient(180deg,rgba(11,10,9,.88) 0%,rgba(11,10,9,.20) 18%,rgba(11,10,9,.62) 36%,rgba(11,10,9,.92) 56%,rgba(11,10,9,.99) 74%,var(--bg) 99%);
   }
 }
-.hero-inner{position:relative; z-index:2; padding-bottom:clamp(38px,9vh,86px); padding-top:120px}
+.hero-inner{position:relative; z-index:2; padding-bottom:clamp(20px,4.5vh,54px); padding-top:120px}
 /* The hero is the largest paint on the page, so it must never be hidden and
    faded in. Transform only — the text is legible from the first frame. */
 .hero-inner>*{animation:heroIn .85s var(--ease) both}
@@ -174,11 +174,11 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 .hero-inner>*:nth-child(5){animation-delay:.24s}
 @keyframes heroIn{from{transform:translateY(16px)}to{transform:none}}
 .hero h1{margin:18px 0 0; max-width:15ch}
-.hero .lede{margin-top:var(--s3)}
-.hero-cta{display:flex; gap:12px; margin-top:var(--s4); flex-wrap:wrap}
+.hero .lede{margin-top:18px}
+.hero-cta{display:flex; gap:12px; margin-top:26px; flex-wrap:wrap}
 .hero-trust{
-  display:flex; gap:20px; align-items:center; flex-wrap:wrap; margin-top:var(--s4);
-  padding-top:var(--s3); border-top:1px solid var(--line); color:var(--muted); font-size:.9rem;
+  display:flex; gap:16px; align-items:center; flex-wrap:wrap; margin-top:26px;
+  padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.88rem;
 }
 .stars{color:var(--gold); letter-spacing:.16em; font-size:.95rem}
 .scrollcue{
@@ -209,18 +209,21 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 @media(max-width:420px){.proof small{font-size:.58rem; letter-spacing:.1em}}
 
 /* ---------- her philosophy ---------- */
-.creed{padding-block:clamp(44px,7vw,92px)}
+.creed-line{}
 .creed-line{
   font-size:clamp(1.5rem,4.2vw,2.6rem); line-height:1.28; letter-spacing:-.018em;
   font-weight:300; max-width:24ch; margin:0; color:var(--ink);
 }
-.creed-by{margin:var(--s3) 0 0; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold)}
+.creed-by{margin:18px 0 34px; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold)}
 
 /* ---------- section head ---------- */
-.shead{max-width:70ch; margin-bottom:var(--s5)}
-.shead h2{margin-top:14px}
-.shead p{margin-top:var(--s3)}
-.flourish{display:block; width:220px; max-width:60%; height:auto; margin:0 0 22px; opacity:.9}
+.shead{max-width:70ch; margin-bottom:clamp(26px,3.6vw,42px)}
+.shead h2{margin-top:10px}
+.shead p{margin-top:18px}
+.shead .eyebrow::before,.creed .eyebrow::before{
+  content:""; display:block; width:54px; height:1px; margin-bottom:16px;
+  background:linear-gradient(90deg,var(--gold),rgba(214,177,95,0));
+}
 
 /* ---------- the jaali arch frame (owned motif) ---------- */
 .arch{
@@ -452,7 +455,7 @@ html{scroll-behavior:smooth}
     </a>
     <nav>
       <a href="#work">The work</a>
-      <a href="#bridal">Bridal</a>
+      <a href="#bridal">Airbrush or HD</a>
       <a href="#prices">Prices</a>
       <a href="#academy">Academy</a>
       <a href="#visit">Visit</a>
@@ -512,69 +515,14 @@ html{scroll-behavior:smooth}
   </div>
 </div>
 
-<!-- ===================== PROOF ===================== -->
-<section style="padding-block:var(--s5) var(--s3)">
-  <div class="wrap">
-    <div class="proof rv">
-      <div><b data-count="4.5" data-dec="1">0</b><small>on Google · 25 reviews</small></div>
-      <div><b data-count="4349">0</b><small>following on Instagram</small></div>
-      <div><b>7</b><small>services, one studio</small></div>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== HER PHILOSOPHY ===================== -->
 <section class="creed" aria-label="How Manpreet works">
   <div class="wrap">
     <p class="creed-line rv">Makeup doesn't hide real skin. The right technique <em>blurs</em> what you'd rather not see and <em>enhances</em> what you would — so you still look like yourself in every photograph.</p>
     <p class="creed-by rv">Manpreet Bhasin · Makeup artist &amp; educator</p>
-  </div>
-</section>
 
-<!-- ===================== SIGNATURE: AIRBRUSH vs HD ===================== -->
-<section id="bridal">
-  <div class="wrap">
-    <div class="shead rv">
-      <img class="flourish" src="assets/flourish.svg" alt="" width="320" height="20">
-      <p class="eyebrow">The decision every bride has to make</p>
-      <h2>Airbrush, or <em>HD?</em></h2>
-      <p class="lede">Both are done here, by the same hands. The difference is the tool, the finish and how the makeup behaves at hour eleven. Tap between them — the price changes with the answer, and nothing is hidden behind “enquire”.</p>
-    </div>
-
-    <div class="sig">
-      <div class="sig-media rv">
-        <div class="arch"><img src="assets/img/feature-magenta-760.webp" srcset="assets/img/feature-magenta-760.webp 760w, assets/img/feature-magenta-1400.webp 1400w" sizes="(max-width:900px) 92vw, 44vw" width="760" height="1013" alt="Bride in a magenta and gold lehenga with kundan jewellery, full bridal makeup by Manpreet Bhasin's Peaches &amp; Cream" loading="lazy"></div>
-        <span class="chip" id="sigChip">Airbrush finish</span>
-      </div>
-
-      <div class="rv">
-        <div class="toggle" role="group" aria-label="Choose a bridal finish">
-          <span class="thumb" id="thumb"></span>
-          <button id="bAir" aria-pressed="true">Airbrush</button>
-          <button id="bHd" aria-pressed="false">HD</button>
-        </div>
-
-        <div id="sigBody">
-          <div class="sig-price">
-            <b id="sigPrice">₹34,999</b>
-            <s id="sigNote">Airbrush bridal makeup</s>
-          </div>
-          <dl>
-            <dt>Finish</dt><dd id="sigFinish">Sprayed in fine layers, so it sits on the skin rather than in it. Weightless up close and in flash photography.</dd>
-            <dt>Wears</dt><dd id="sigWear">Built for a full wedding day — long hours, heat, embraces and the photographer's lights.</dd>
-            <dt>Also at</dt><dd id="sigAlso">₹18,999 for engagement, roka and reception · ₹6,999 for a party</dd>
-          </dl>
-        </div>
-
-        <div class="hero-cta" style="margin-top:var(--s4)">
-          <a class="btn solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20am%20enquiring%20about%20bridal%20makeup.%20My%20wedding%20date%20is%3A" target="_blank" rel="noopener">
-            Check my date
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a class="btn ghost" href="#prices">See every price</a>
-        </div>
-      </div>
-    </div>
+    <div class="proof rv">
+      <div><b data-count="4.5" data-dec="1">0</b><small>on Google · 25 reviews</small></div>
   </div>
 </section>
 
@@ -583,7 +531,6 @@ html{scroll-behavior:smooth}
   <div class="glow" style="width:520px;height:520px;background:rgba(214,177,95,.10); top:-120px; right:-120px"></div>
   <div class="wrap" style="position:relative;z-index:1">
     <div class="shead rv">
-      <img class="flourish" src="assets/flourish.svg" alt="" width="320" height="20">
       <p class="eyebrow">The work</p>
       <h2>Brides, and the <em>looks</em> they chose.</h2>
       <p class="lede">Real clients, photographed on the day. Tap any picture to see it large.</p>
@@ -632,7 +579,6 @@ html{scroll-behavior:smooth}
 <section>
   <div class="wrap">
     <div class="shead rv">
-      <img class="flourish" src="assets/flourish.svg" alt="" width="320" height="20">
       <p class="eyebrow">How a bridal booking actually goes</p>
       <h2>How the <em>morning</em> goes.</h2>
       <p class="lede">The same client, the same morning. Nothing here is a stock picture.</p>
@@ -652,11 +598,56 @@ html{scroll-behavior:smooth}
   </div>
 </section>
 
-<!-- ===================== PRICES ===================== -->
-<section id="prices" style="background:var(--panel); border-block:1px solid var(--line)">
+<!-- ===================== SIGNATURE: AIRBRUSH vs HD ===================== -->
+<section id="bridal" style="background:var(--panel); border-block:1px solid var(--line)">
   <div class="wrap">
     <div class="shead rv">
-      <img class="flourish" src="assets/flourish.svg" alt="" width="320" height="20">
+      <p class="eyebrow">The decision every bride has to make</p>
+      <h2>Airbrush, or <em>HD?</em></h2>
+      <p class="lede">Both are done here, by the same hands. The difference is the tool, the finish and how the makeup behaves at hour eleven. Tap between them — the price changes with the answer, and nothing is hidden behind “enquire”.</p>
+    </div>
+
+    <div class="sig">
+      <div class="sig-media rv">
+        <div class="arch"><img src="assets/img/feature-magenta-760.webp" srcset="assets/img/feature-magenta-760.webp 760w, assets/img/feature-magenta-1400.webp 1400w" sizes="(max-width:900px) 92vw, 44vw" width="760" height="1013" alt="Bride in a magenta and gold lehenga with kundan jewellery, full bridal makeup by Manpreet Bhasin's Peaches &amp; Cream" loading="lazy"></div>
+        <span class="chip" id="sigChip">Airbrush finish</span>
+      </div>
+
+      <div class="rv">
+        <div class="toggle" role="group" aria-label="Choose a bridal finish">
+          <span class="thumb" id="thumb"></span>
+          <button id="bAir" aria-pressed="true">Airbrush</button>
+          <button id="bHd" aria-pressed="false">HD</button>
+        </div>
+
+        <div id="sigBody">
+          <div class="sig-price">
+            <b id="sigPrice">₹34,999</b>
+            <s id="sigNote">Airbrush bridal makeup</s>
+          </div>
+          <dl>
+            <dt>Finish</dt><dd id="sigFinish">Sprayed in fine layers, so it sits on the skin rather than in it. Weightless up close and in flash photography.</dd>
+            <dt>Wears</dt><dd id="sigWear">Built for a full wedding day — long hours, heat, embraces and the photographer's lights.</dd>
+            <dt>Also at</dt><dd id="sigAlso">₹18,999 for engagement, roka and reception · ₹6,999 for a party</dd>
+          </dl>
+        </div>
+
+        <div class="hero-cta" style="margin-top:var(--s4)">
+          <a class="btn solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20am%20enquiring%20about%20bridal%20makeup.%20My%20wedding%20date%20is%3A" target="_blank" rel="noopener">
+            Check my date
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn ghost" href="#prices">See every price</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRICES ===================== -->
+<section id="prices">
+  <div class="wrap">
+    <div class="shead rv">
       <p class="eyebrow">Nothing behind “enquire”</p>
       <h2>Every price, <em>published.</em></h2>
       <p class="lede">Most artists make you ask. These are the rates as they stand — so you can compare us properly, before you ever pick up the phone.</p>
@@ -732,7 +723,6 @@ html{scroll-behavior:smooth}
   <div class="glow" style="width:460px;height:460px;background:rgba(214,177,95,.09); bottom:-140px; left:-140px"></div>
   <div class="wrap" style="position:relative;z-index:1">
     <div class="shead rv" style="margin-bottom:var(--s4)">
-      <img class="flourish" src="assets/flourish.svg" alt="" width="320" height="20">
       <p class="eyebrow">The second door</p>
       <h2>The <em>Academy.</em></h2>
       <p class="lede">The studio teaches as well as it books. Small groups, real brides in the chair, and the same kit the professionals use — taught by the artist whose work is on this page.</p>
@@ -772,7 +762,6 @@ html{scroll-behavior:smooth}
 <section>
   <div class="wrap">
     <div class="shead rv">
-      <img class="flourish" src="assets/flourish.svg" alt="" width="320" height="20">
       <p class="eyebrow">In their words</p>
       <h2>4.5 on Google, from <em>25 reviews.</em></h2>
       <p class="lede">Every word below is a real Google review, quoted exactly. Nothing on this site is invented.</p>
@@ -789,7 +778,6 @@ html{scroll-behavior:smooth}
 <section id="visit" style="background:var(--panel); border-block:1px solid var(--line)">
   <div class="wrap">
     <div class="shead rv">
-      <img class="flourish" src="assets/flourish.svg" alt="" width="320" height="20">
       <p class="eyebrow">Visit</p>
       <h2>Valley Souk, <em>Gurugram.</em></h2>
       <p class="lede">Bridal bookings travel — Gurugram and Delhi both.</p>
