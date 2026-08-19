@@ -234,6 +234,14 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 }
 .creed-by{margin:18px 0 34px; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold)}
 
+.proofquote{
+  margin:22px 0 0; font-style:italic; color:var(--ink); font-size:1.05rem; max-width:44ch;
+}
+.proofquote span{
+  display:block; margin-top:7px; font-style:normal; color:var(--muted);
+  font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+}
+
 /* ---------- section head ---------- */
 .shead{max-width:70ch; margin-bottom:clamp(26px,3.6vw,42px)}
 .shead h2{margin-top:10px}
@@ -574,6 +582,11 @@ html{scroll-behavior:smooth}
 
     <div class="proof rv">
       <div><b data-count="4.7" data-dec="1">0</b><small>on Google · 103 reviews</small></div>
+      <div><b data-count="4349">0</b><small>following on Instagram</small></div>
+      <div><b>7</b><small>services, one studio</small></div>
+    </div>
+
+    <p class="proofquote rv">“Been coming here for years — staff and service are impeccable.” <span>Riyana Dudeja, on Google</span></p>
   </div>
 </section>
 
@@ -639,7 +652,7 @@ html{scroll-behavior:smooth}
         <div class="shead" style="margin-bottom:26px">
           <p class="eyebrow">The other half of the studio</p>
           <h2>Colour, mixed to a <em>formula.</em></h2>
-          <p class="lede">Not a shade off a chart. Schwarzkopf zero-ammonia, blended per head — roots and lengths mixed separately so the colour reads as one piece of hair, not two.</p>
+          <p class="lede">Never just picked off a shade chart. Schwarzkopf zero-ammonia, mixed per head — roots and lengths blended separately, so the colour reads as one piece of hair and not two.</p>
         </div>
         <dl class="hairlist">
           <dt>Balayage</dt><dd>₹4,499</dd>
@@ -669,9 +682,9 @@ html{scroll-behavior:smooth}
 <section style="background:var(--panel); border-block:1px solid var(--line)">
   <div class="wrap">
     <div class="shead rv">
-      <p class="eyebrow">How a bridal booking actually goes</p>
-      <h2>How the <em>morning</em> goes.</h2>
-      <p class="lede">The same client, the same morning. Nothing here is a stock picture.</p>
+      <p class="eyebrow">Your wedding day, from the chair</p>
+      <h2>What the <em>morning</em> looks like.</h2>
+      <p class="lede">The same client, the same morning. No stock images used, anywhere on this site.</p>
     </div>
     <div class="steps">
       <div class="step rv">
@@ -805,6 +818,9 @@ html{scroll-behavior:smooth}
       </div>
     </div>
     <p style="margin-top:var(--s3); color:var(--muted); font-size:.9rem">Bridal bookings are held against a date. Trials, travel and party sizes are quoted on the call.</p>
+    <p class="ph" style="margin-top:12px; color:var(--muted); font-size:.9rem; border:1px dashed var(--line); border-radius:8px; padding:10px 14px; display:inline-block">
+      All prices are inclusive of GST <span class="tbc">to confirm</span>
+    </p>
   </div>
 </section>
 
