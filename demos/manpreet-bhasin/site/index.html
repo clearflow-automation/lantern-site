@@ -1,0 +1,969 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Manpreet Bhasin's Peaches &amp; Cream — Bridal Makeup, Salon &amp; Academy in Gurugram</title>
+<meta name="description" content="Airbrush and HD bridal makeup, hair, skin and nails at Manpreet Bhasin's Peaches &amp; Cream, Ansals Valley View Estate, Gurugram. Every price published. Makeup academy enrolling now.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Manpreet Bhasin's Peaches &amp; Cream — Bridal Makeup, Salon &amp; Academy">
+<meta property="og:description" content="Airbrush bridal from ₹34,999. Every price published, nothing hidden behind ‘enquire’. Gurugram.">
+<meta property="og:image" content="assets/img/hero-poster-1200.webp">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Manpreet Bhasin's Peaches & Cream
+   One typeface — Newsreader — carried by weight, size and italic.
+   Motif: the gold jaali arch and the filigree rule from her own
+   signboard, repeated as frames, dividers and keylines.
+   ============================================================ */
+:root{
+  --bg:#0B0A09; --panel:#141110; --panel-2:#1B1714;
+  --ink:#F6F0E6; --muted:#A79A8B;
+  --gold:#D6B15F; --gold-lite:#F3E0AE; --gold-deep:#8A6B22;
+  --line:rgba(214,177,95,.20); --line-soft:rgba(246,240,230,.09);
+  --r:14px;
+  --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:96px;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 12px 28px -12px rgba(0,0,0,.7), 0 40px 80px -40px rgba(0,0,0,.9);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Newsreader",Georgia,serif; font-weight:300;
+  font-size:17px; line-height:1.65; letter-spacing:.002em;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+img,video{max-width:100%; display:block}
+figure,blockquote,dl,dd{margin:0}
+a{color:inherit}
+h1,h2,h3,h4{font-weight:300; letter-spacing:-.022em; line-height:1.02; margin:0}
+h1{font-size:clamp(2.6rem,10vw,5.4rem)}
+h2{font-size:clamp(2.1rem,6.4vw,3.9rem)}
+h3{font-size:clamp(1.35rem,3.4vw,1.85rem); line-height:1.15}
+em{font-style:italic; color:var(--gold-lite)}
+.wrap{width:min(1180px,92vw); margin-inline:auto}
+.eyebrow{
+  font-size:.74rem; letter-spacing:.32em; text-transform:uppercase;
+  color:var(--gold); font-weight:400;
+}
+.lede{color:var(--muted); font-size:clamp(1.02rem,2.2vw,1.2rem); max-width:62ch}
+section{padding:var(--s6) 0; position:relative}
+@media(max-width:720px){section{padding:var(--s5) 0}}
+
+/* ---------- ambience: grain + gold aurora ---------- */
+.grain{
+  position:fixed; inset:0; pointer-events:none; z-index:60; opacity:.32;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='140' height='140' filter='url(%23n)' opacity='.42'/></svg>");
+  mix-blend-mode:overlay;
+}
+.glow{position:absolute; border-radius:50%; filter:blur(90px); pointer-events:none; z-index:0}
+.progress{
+  position:fixed; top:0; left:0; height:2px; z-index:70; width:0;
+  background:linear-gradient(90deg,var(--gold-deep),var(--gold-lite),var(--gold));
+}
+
+/* ---------- header ---------- */
+header{
+  position:fixed; inset:0 0 auto 0; z-index:50; padding:14px 0;
+  transition:background .4s var(--ease), border-color .4s, backdrop-filter .4s;
+  border-bottom:1px solid transparent;
+}
+header.stuck{background:rgba(11,10,9,.82); backdrop-filter:blur(14px); border-bottom-color:var(--line)}
+.bar{display:flex; align-items:center; gap:var(--s3); justify-content:space-between}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; min-width:0}
+.brand svg{width:38px; height:38px; flex:none}
+.brand b{font-weight:400; font-size:1.02rem; letter-spacing:.01em; display:block; white-space:nowrap}
+.brand span{display:block; font-size:.63rem; letter-spacing:.24em; text-transform:uppercase; color:var(--muted)}
+.brand .short{display:none}
+@media(max-width:860px){
+  .brand svg{width:32px; height:32px}
+  .brand .full{display:none}
+  .brand .short{display:block; font-weight:400; font-size:.98rem; white-space:nowrap}
+  .brand span{font-size:.55rem; letter-spacing:.16em}
+}
+@media(max-width:560px){
+  .brand span .tag-long{display:none}
+  .eyebrow{letter-spacing:.2em; font-size:.68rem}
+}
+@media(min-width:561px){.brand span .tag-short{display:none}}
+nav{display:flex; gap:26px; align-items:center}
+nav a{
+  text-decoration:none; font-size:.92rem; color:var(--muted); position:relative; padding:4px 0;
+  transition:color .3s;
+}
+nav a::after{
+  content:""; position:absolute; left:0; bottom:0; height:1px; width:0; background:var(--gold);
+  transition:width .35s var(--ease);
+}
+nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
+@media(max-width:960px){nav{display:none}}
+.hbtns{display:flex; gap:10px}
+@media(max-width:520px){.hbtns .btn{display:none}}
+
+/* ---------- buttons ---------- */
+.btn{
+  --fill:var(--gold);
+  position:relative; display:inline-flex; align-items:center; gap:10px;
+  padding:13px 26px; border-radius:999px; text-decoration:none; overflow:hidden;
+  font-size:.95rem; letter-spacing:.01em; border:1px solid var(--gold);
+  color:var(--gold); background:transparent; cursor:pointer; isolation:isolate;
+  transition:color .35s var(--ease), border-color .35s, transform .25s var(--ease);
+}
+.btn::before{
+  content:""; position:absolute; inset:0; z-index:-1; background:var(--fill);
+  transform:translateY(101%); transition:transform .42s var(--ease);
+}
+.btn:hover{color:#120E08} .btn:hover::before{transform:translateY(0)}
+.btn:active{transform:scale(.97)}
+.btn.solid{background:var(--gold); color:#120E08; border-color:var(--gold)}
+.btn.solid::before{background:var(--gold-lite)}
+.btn.ghost{border-color:var(--line-soft); color:var(--ink)}
+.btn.ghost::before{background:var(--ink)}
+.btn.ghost:hover{color:#120E08; border-color:var(--ink)}
+.btn svg{width:16px; height:16px; transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+
+/* ---------- hero ---------- */
+.hero{min-height:100svh; padding:0; display:grid; align-items:end; position:relative; overflow:hidden}
+.hero-media{position:absolute; inset:0; z-index:0}
+.hero-media video,.hero-media img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 28%}
+.hero-media video{opacity:0; transition:opacity 1.2s var(--ease)}
+.hero-media video.on{opacity:1}
+.hero-media::after{
+  content:""; position:absolute; inset:0;
+  background:
+    linear-gradient(180deg,rgba(11,10,9,.88) 0%,rgba(11,10,9,.34) 26%,rgba(11,10,9,.80) 58%,rgba(11,10,9,.95) 82%,var(--bg) 99%),
+    radial-gradient(80% 55% at 50% 100%,rgba(11,10,9,.9),transparent 72%);
+}
+@media(max-width:900px){
+  .hero-media video,.hero-media img{object-position:50% 16%}
+  .hero-media::after{
+    background:
+      linear-gradient(180deg,rgba(11,10,9,.88) 0%,rgba(11,10,9,.20) 18%,rgba(11,10,9,.62) 36%,rgba(11,10,9,.92) 56%,rgba(11,10,9,.99) 74%,var(--bg) 99%);
+  }
+}
+.hero-inner{position:relative; z-index:2; padding-bottom:clamp(38px,9vh,86px); padding-top:120px}
+.hero h1{margin:18px 0 0; max-width:15ch}
+.hero .lede{margin-top:var(--s3)}
+.hero-cta{display:flex; gap:12px; margin-top:var(--s4); flex-wrap:wrap}
+.hero-trust{
+  display:flex; gap:20px; align-items:center; flex-wrap:wrap; margin-top:var(--s4);
+  padding-top:var(--s3); border-top:1px solid var(--line); color:var(--muted); font-size:.9rem;
+}
+.stars{color:var(--gold); letter-spacing:.16em; font-size:.95rem}
+.scrollcue{
+  position:absolute; left:50%; bottom:18px; z-index:3; translate:-50% 0;
+  width:1px; height:46px; background:linear-gradient(180deg,transparent,var(--gold));
+  animation:cue 2.6s var(--ease) infinite;
+}
+@keyframes cue{0%,100%{opacity:.15; transform:scaleY(.5)}50%{opacity:1; transform:scaleY(1)}}
+
+/* ---------- kinetic marquee ---------- */
+.marquee{
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  padding:18px 0; overflow:hidden; background:var(--panel);
+}
+.marquee-track{display:flex; gap:44px; width:max-content; animation:slide 38s linear infinite}
+.marquee span{
+  font-size:clamp(1rem,2.6vw,1.5rem); color:var(--muted); white-space:nowrap;
+  display:flex; align-items:center; gap:44px; font-weight:300; letter-spacing:.06em;
+}
+.marquee i{color:var(--gold); font-style:normal}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- proof ---------- */
+.proof{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r); overflow:hidden}
+.proof div{background:var(--bg); padding:var(--s4) var(--s3); text-align:center}
+.proof b{display:block; font-size:clamp(1.9rem,5vw,3rem); font-weight:300; color:var(--gold-lite); letter-spacing:-.03em}
+.proof small{display:block; margin-top:6px; font-size:.74rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted)}
+@media(max-width:720px){.proof{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- section head ---------- */
+.shead{max-width:70ch; margin-bottom:var(--s5)}
+.shead h2{margin-top:14px}
+.shead p{margin-top:var(--s3)}
+.flourish{display:block; width:min(420px,70%); margin:0 0 var(--s3); opacity:.85}
+.flourish.center{margin-inline:auto}
+
+/* ---------- the jaali arch frame (owned motif) ---------- */
+.arch{
+  border-radius:999px 999px var(--r) var(--r);
+  overflow:hidden; position:relative; background:var(--panel-2);
+}
+.arch::after{
+  content:""; position:absolute; inset:9px; border:1px solid rgba(243,224,168,.34);
+  border-radius:999px 999px 6px 6px; pointer-events:none; z-index:2;
+}
+.arch img{transition:transform 1.1s var(--ease)}
+.arch:hover img{transform:scale(1.05)}
+
+/* ---------- signature: airbrush vs HD ---------- */
+.sig{display:grid; grid-template-columns:.95fr 1.05fr; gap:clamp(24px,5vw,72px); align-items:center}
+@media(max-width:900px){.sig{grid-template-columns:1fr}}
+.sig-media{position:relative}
+.sig-media .arch{aspect-ratio:3/4}
+.sig-media img{width:100%; height:100%; object-fit:cover}
+.chip{
+  position:absolute; right:-10px; bottom:26px; z-index:3;
+  background:rgba(11,10,9,.72); backdrop-filter:blur(10px);
+  border:1px solid var(--line); border-radius:999px; padding:10px 20px;
+  font-size:.82rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-lite);
+}
+.toggle{
+  display:inline-flex; padding:5px; border:1px solid var(--line); border-radius:999px;
+  background:var(--panel); margin:var(--s3) 0 var(--s4); position:relative;
+}
+.toggle button{
+  font-family:inherit; font-size:.95rem; letter-spacing:.06em; color:var(--muted);
+  background:none; border:0; padding:11px 26px; border-radius:999px; cursor:pointer;
+  position:relative; z-index:2; transition:color .35s var(--ease);
+}
+.toggle button[aria-pressed=true]{color:#120E08}
+.toggle .thumb{
+  position:absolute; z-index:1; top:5px; bottom:5px; border-radius:999px;
+  background:linear-gradient(180deg,var(--gold-lite),var(--gold));
+  transition:left .45s var(--ease), width .45s var(--ease);
+}
+.sig-price{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
+.sig-price b{font-size:clamp(2.4rem,7vw,3.6rem); font-weight:300; color:var(--gold-lite); letter-spacing:-.03em}
+.sig-price s{color:var(--muted); text-decoration:none; font-size:.95rem}
+.sig dl{display:grid; grid-template-columns:auto 1fr; gap:12px 22px; margin:var(--s3) 0 0; padding-top:var(--s3); border-top:1px solid var(--line)}
+.sig dt{color:var(--gold); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; padding-top:5px}
+.sig dd{margin:0; color:var(--muted)}
+.fade-swap{animation:fadein .5s var(--ease)}
+@keyframes fadein{from{opacity:0; transform:translateY(6px)}to{opacity:1; transform:none}}
+
+/* ---------- gallery ---------- */
+.filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:var(--s4)}
+.filters button{
+  font-family:inherit; font-size:.88rem; letter-spacing:.06em; padding:9px 20px;
+  border-radius:999px; border:1px solid var(--line); background:transparent; color:var(--muted);
+  cursor:pointer; transition:.3s var(--ease);
+}
+.filters button:hover{color:var(--ink); border-color:var(--gold)}
+.filters button.on{background:var(--gold); border-color:var(--gold); color:#120E08}
+.grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:720px){.grid{grid-template-columns:repeat(2,1fr); gap:10px}}
+.tile{
+  position:relative; overflow:hidden; border-radius:var(--r); background:var(--panel-2);
+  aspect-ratio:3/4; cursor:zoom-in; border:1px solid var(--line-soft);
+  transition:transform .5s var(--ease), border-color .4s, box-shadow .5s;
+}
+.tile.wide{aspect-ratio:4/3}
+.tile img{width:100%; height:100%; object-fit:cover; transition:transform 1.1s var(--ease), filter .6s}
+.tile:hover{border-color:var(--gold); box-shadow:var(--shadow)}
+.tile:hover img{transform:scale(1.07)}
+.tile figcaption{
+  position:absolute; left:0; right:0; bottom:0; padding:34px 14px 12px;
+  font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-lite);
+  background:linear-gradient(180deg,transparent,rgba(11,10,9,.86));
+  opacity:0; transform:translateY(8px); transition:.42s var(--ease);
+}
+.tile:hover figcaption{opacity:1; transform:none}
+.tile[hidden]{display:none}
+
+/* ---------- transformation strip ---------- */
+.steps{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,3vw,34px)}
+@media(max-width:820px){.steps{grid-template-columns:1fr; gap:var(--s4)}}
+.step figure{margin:0; border-radius:var(--r); overflow:hidden; aspect-ratio:3/4; background:var(--panel-2); border:1px solid var(--line-soft)}
+.step img{width:100%; height:100%; object-fit:cover}
+.step b{display:block; margin-top:var(--s3); font-size:.74rem; letter-spacing:.16em; color:var(--gold); font-weight:400}
+.step h3{margin-top:10px}
+.step p{color:var(--muted); margin:10px 0 0; font-size:.98rem}
+
+/* ---------- prices ---------- */
+.tabs{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:var(--s4)}
+.tabs button{
+  font-family:inherit; font-size:.9rem; padding:10px 20px; border-radius:999px; cursor:pointer;
+  border:1px solid var(--line); background:transparent; color:var(--muted); transition:.3s var(--ease);
+}
+.tabs button.on{background:var(--panel); border-color:var(--gold); color:var(--gold-lite)}
+.pricecard{border:1px solid var(--line); border-radius:var(--r); background:linear-gradient(180deg,var(--panel),var(--bg)); overflow:hidden}
+.prow{
+  display:flex; align-items:baseline; gap:18px; padding:18px clamp(18px,3vw,30px);
+  border-bottom:1px solid var(--line-soft);
+}
+.prow:last-child{border-bottom:0}
+.prow.hero-row{background:rgba(214,177,95,.06)}
+.prow span:first-child{flex:1; min-width:0}
+.prow .dots{flex:1; border-bottom:1px dotted rgba(167,154,139,.35); transform:translateY(-5px)}
+.prow b{font-weight:400; color:var(--gold-lite); white-space:nowrap; font-size:1.08rem}
+.prow small{display:block; color:var(--muted); font-size:.86rem; margin-top:3px}
+.panel[hidden]{display:none}
+
+/* ---------- academy ---------- */
+.academy{background:var(--panel); border-block:1px solid var(--line)}
+.acad{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(24px,5vw,72px); align-items:center}
+@media(max-width:900px){.acad{grid-template-columns:1fr}}
+.acad-media{border-radius:var(--r); overflow:hidden; aspect-ratio:4/3; border:1px solid var(--line)}
+.acad-media img{width:100%; height:100%; object-fit:cover}
+.courses{display:grid; gap:12px; margin:var(--s4) 0}
+.course{
+  border:1px solid var(--line); border-radius:var(--r); padding:20px 22px;
+  background:var(--bg); transition:.4s var(--ease);
+}
+.course:hover{border-color:var(--gold); transform:translateY(-3px)}
+.course h4{font-size:1.12rem}
+.course p{margin:6px 0 0; color:var(--muted); font-size:.94rem}
+
+/* ---------- placeholder marker ---------- */
+.tbc{
+  display:inline-block; font-size:.62rem; letter-spacing:.18em; text-transform:uppercase;
+  color:#0B0A09; background:var(--gold); border-radius:4px; padding:2px 7px; vertical-align:middle;
+  margin-left:8px; font-weight:400;
+}
+.ph{border-style:dashed !important}
+
+/* ---------- reviews ---------- */
+.quotes{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+@media(max-width:880px){.quotes{grid-template-columns:1fr}}
+.quote{border:1px solid var(--line); border-radius:var(--r); padding:clamp(22px,3vw,34px); background:var(--panel)}
+.quote p{font-size:1.12rem; font-style:italic; color:var(--ink); margin:0}
+.quote footer{margin-top:var(--s3); color:var(--muted); font-size:.88rem}
+.quote .mark{font-size:3rem; line-height:.6; color:var(--gold); display:block; margin-bottom:10px}
+
+/* ---------- visit ---------- */
+.visit{display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px,4vw,54px)}
+@media(max-width:880px){.visit{grid-template-columns:1fr}}
+.visit dl{display:grid; grid-template-columns:auto minmax(0,1fr); gap:16px 24px; margin:0 0 var(--s4)}
+.visit dt{color:var(--gold); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; padding-top:6px}
+.visit dd{margin:0; min-width:0; overflow-wrap:anywhere}
+@media(max-width:560px){
+  .visit dl{grid-template-columns:1fr; gap:6px 0}
+  .visit dt{padding-top:14px}
+  .prow .dots{display:none}
+  .chip{right:8px}
+}
+.visit a{color:var(--gold-lite)}
+.map{border-radius:var(--r); overflow:hidden; border:1px solid var(--line); min-height:340px; background:var(--panel-2)}
+.map iframe{width:100%; height:100%; min-height:340px; border:0; filter:grayscale(.4) invert(.92) hue-rotate(180deg) contrast(.9)}
+
+/* ---------- footer ---------- */
+footer.f{border-top:1px solid var(--line); padding:var(--s5) 0 var(--s4); color:var(--muted); font-size:.9rem}
+@media(max-width:900px){footer.f{padding-bottom:120px}}
+.f-top{display:flex; justify-content:space-between; gap:var(--s4); flex-wrap:wrap; align-items:flex-start}
+.f a{text-decoration:none}
+.f a:hover{color:var(--gold-lite)}
+
+/* ---------- sticky mobile CTA ---------- */
+.dock{
+  position:fixed; left:0; right:0; bottom:0; z-index:55; display:none; gap:1px;
+  background:var(--line); border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.dock a{
+  flex:1; display:flex; align-items:center; justify-content:center; gap:9px;
+  padding:16px 8px; text-decoration:none; font-size:.98rem; background:var(--bg); color:var(--ink);
+}
+.dock a.wa{background:var(--gold); color:#120E08}
+.dock svg{width:19px; height:19px}
+@media(max-width:900px){.dock{display:flex}}
+
+/* ---------- lightbox ---------- */
+.lb{
+  position:fixed; inset:0; z-index:80; background:rgba(8,7,6,.95); display:none;
+  align-items:center; justify-content:center; padding:20px;
+}
+.lb.open{display:flex; animation:fadein .3s var(--ease)}
+.lb img{max-width:min(92vw,760px); max-height:88vh; border-radius:var(--r); object-fit:contain}
+.lb button{
+  position:absolute; top:18px; right:18px; width:44px; height:44px; border-radius:50%;
+  border:1px solid var(--line); background:rgba(11,10,9,.6); color:var(--ink); cursor:pointer; font-size:1.3rem;
+}
+
+/* ---------- scroll reveal ---------- */
+.rv{opacity:0; transform:translateY(26px); filter:blur(6px); transition:opacity .9s var(--ease), transform .9s var(--ease), filter .9s var(--ease)}
+.rv.in{opacity:1; transform:none; filter:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1; transform:none; filter:none; transition:none}
+  .marquee-track{animation:none}
+  .scrollcue{animation:none}
+  *{scroll-behavior:auto !important}
+}
+html{scroll-behavior:smooth}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="progress" id="prog"></div>
+
+<!-- ===================== HEADER ===================== -->
+<header id="hdr">
+  <div class="wrap bar">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#F3E0AE"/><stop offset=".45" stop-color="#D6B15F"/><stop offset="1" stop-color="#A87F2C"/>
+        </linearGradient></defs>
+        <g fill="none" stroke="url(#hg)" stroke-linecap="round">
+          <circle cx="100" cy="100" r="94" stroke-width="4"/><circle cx="100" cy="100" r="82" stroke-width="2"/>
+        </g>
+        <g fill="url(#hg)"><circle cx="100" cy="6" r="5"/><circle cx="100" cy="194" r="5"/><circle cx="6" cy="100" r="5"/><circle cx="194" cy="100" r="5"/></g>
+        <g fill="none" stroke="url(#hg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M62 143V72c0-14 17-18 24-7l14 23"/><path d="M100 88l14-23c7-11 24-7 24 7v20"/>
+          <path d="M100 88v55"/><path d="M138 92c14 0 21 10 21 20s-8 18-21 18c13 0 22 8 22 19s-9 20-24 20c-12 0-20-6-20-6"/>
+        </g>
+      </svg>
+      <span class="t">
+        <b class="full">Manpreet Bhasin's Peaches &amp; Cream</b>
+        <b class="short">Peaches &amp; Cream</b>
+        <span><span class="tag-long">Unisex Salon · Makeup Studio · Academy</span><span class="tag-short">Salon · Studio · Academy</span></span>
+      </span>
+    </a>
+    <nav>
+      <a href="#work">The work</a>
+      <a href="#bridal">Bridal</a>
+      <a href="#prices">Prices</a>
+      <a href="#academy">Academy</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="hbtns">
+      <a class="btn" href="#academy">Learn with us</a>
+      <a class="btn solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Book</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="hero-media">
+    <img src="assets/img/hero-poster-760.webp"
+         srcset="assets/img/hero-poster-760.webp 760w, assets/img/hero-poster-1200.webp 1200w, assets/img/hero-poster-1600.webp 1600w"
+         sizes="100vw" width="760" height="1013" fetchpriority="high"
+         alt="Bride in bridal makeup by Manpreet Bhasin's Peaches &amp; Cream, photographed by candlelight">
+    <video muted loop playsinline preload="none" id="hv" aria-hidden="true"></video>
+  </div>
+  <div class="wrap hero-inner">
+    <p class="eyebrow rv">Ansals Valley View Estate · Gurugram</p>
+    <h1 class="rv">The bride everyone <em>remembers.</em></h1>
+    <p class="lede rv">Airbrush and HD bridal makeup, hair, skin and nails — and a working makeup academy in the same studio. Every price we charge is published on this page.</p>
+    <div class="hero-cta rv">
+      <a class="btn solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">
+        Book an appointment
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn ghost" href="#academy">
+        Learn with us
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="hero-trust rv">
+      <span class="stars">★★★★★</span>
+      <span>4.5 on Google · 25 reviews · 4,349 on Instagram</span>
+    </div>
+  </div>
+  <div class="scrollcue"></div>
+</section>
+
+<!-- ===================== MARQUEE ===================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Airbrush Bridal <i>·</i> HD Bridal <i>·</i> Engagement &amp; Roka <i>·</i> Party Makeup <i>·</i> Hair &amp; Colour <i>·</i> Skin <i>·</i> Nails <i>·</i> The Academy <i>·</i> </span>
+    <span>Airbrush Bridal <i>·</i> HD Bridal <i>·</i> Engagement &amp; Roka <i>·</i> Party Makeup <i>·</i> Hair &amp; Colour <i>·</i> Skin <i>·</i> Nails <i>·</i> The Academy <i>·</i> </span>
+  </div>
+</div>
+
+<!-- ===================== PROOF ===================== -->
+<section style="padding-block:var(--s5)">
+  <div class="wrap">
+    <div class="proof rv">
+      <div><b data-count="4.5" data-dec="1">0</b><small>Google rating</small></div>
+      <div><b data-count="25">0</b><small>Google reviews</small></div>
+      <div><b data-count="4349">0</b><small>Instagram followers</small></div>
+      <div><b>7</b><small>Services under one roof</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SIGNATURE: AIRBRUSH vs HD ===================== -->
+<section id="bridal">
+  <div class="wrap">
+    <div class="shead rv">
+      <img class="flourish" src="assets/flourish.svg" alt="" width="600" height="60">
+      <p class="eyebrow">The decision every bride has to make</p>
+      <h2>Airbrush, or <em>HD?</em></h2>
+      <p class="lede">Both are done here, by the same hands. The difference is the tool, the finish and how the makeup behaves at hour eleven. Tap between them — the price changes with the answer, and nothing is hidden behind “enquire”.</p>
+    </div>
+
+    <div class="sig">
+      <div class="sig-media rv">
+        <div class="arch"><img src="assets/img/feature-magenta-760.webp" srcset="assets/img/feature-magenta-760.webp 760w, assets/img/feature-magenta-1400.webp 1400w" sizes="(max-width:900px) 92vw, 44vw" width="760" height="1013" alt="Bride in a magenta and gold lehenga with kundan jewellery, full bridal makeup by Manpreet Bhasin's Peaches &amp; Cream" loading="lazy"></div>
+        <span class="chip" id="sigChip">Airbrush finish</span>
+      </div>
+
+      <div class="rv">
+        <div class="toggle" role="group" aria-label="Choose a bridal finish">
+          <span class="thumb" id="thumb"></span>
+          <button id="bAir" aria-pressed="true">Airbrush</button>
+          <button id="bHd" aria-pressed="false">HD</button>
+        </div>
+
+        <div id="sigBody">
+          <div class="sig-price">
+            <b id="sigPrice">₹34,999</b>
+            <s id="sigNote">Airbrush bridal makeup</s>
+          </div>
+          <dl>
+            <dt>Finish</dt><dd id="sigFinish">Sprayed in fine layers, so it sits on the skin rather than in it. Weightless up close and in flash photography.</dd>
+            <dt>Wears</dt><dd id="sigWear">Built for a full wedding day — long hours, heat, embraces and the photographer's lights.</dd>
+            <dt>Also at</dt><dd id="sigAlso">₹18,999 for engagement, roka and reception · ₹6,999 for a party</dd>
+          </dl>
+        </div>
+
+        <div class="hero-cta" style="margin-top:var(--s4)">
+          <a class="btn solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20am%20enquiring%20about%20bridal%20makeup.%20My%20wedding%20date%20is%3A" target="_blank" rel="noopener">
+            Check my date
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn ghost" href="#prices">See every price</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE WORK ===================== -->
+<section id="work" style="background:var(--panel); border-block:1px solid var(--line)">
+  <div class="glow" style="width:520px;height:520px;background:rgba(214,177,95,.10); top:-120px; right:-120px"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="shead rv">
+      <p class="eyebrow">The work</p>
+      <h2>Brides, and the <em>looks</em> they chose.</h2>
+      <p class="lede">Real clients, photographed on the day. Tap any picture to see it large.</p>
+    </div>
+
+    <div class="filters rv" id="filters">
+      <button class="on" data-f="all">Everything</button>
+      <button data-f="bridal">Bridal</button>
+      <button data-f="occasion">Engagement &amp; party</button>
+      <button data-f="hair">Hair</button>
+      <button data-f="nails">Nails</button>
+    </div>
+
+    <div class="grid" id="grid">
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-magenta-a-560.webp" data-full="assets/img/bridal-magenta-a-1000.webp" width="560" height="747" loading="lazy" alt="Bride in magenta and gold, kundan choker, hair pinned with fresh flowers"><figcaption>Bridal · magenta &amp; gold</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-ivory-a-560.webp" data-full="assets/img/bridal-ivory-a-1000.webp" width="560" height="747" loading="lazy" alt="Bride in an ivory lehenga with an emerald necklace"><figcaption>Bridal · ivory &amp; emerald</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-red-a-560.webp" data-full="assets/img/bridal-red-a-1000.webp" width="560" height="747" loading="lazy" alt="Bride in a red lehenga under a red dupatta, heavy kundan jewellery"><figcaption>Bridal · classic red</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-lilac-560.webp" data-full="assets/img/bridal-lilac-1000.webp" width="560" height="747" loading="lazy" alt="Bride in lilac with a nath and silver jewellery against a gold jaali screen"><figcaption>Bridal · lilac &amp; silver</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-magenta-c-560.webp" data-full="assets/img/bridal-magenta-c-1000.webp" width="560" height="747" loading="lazy" alt="Close portrait of a bride in magenta with a maang tikka"><figcaption>Bridal · the close-up</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-scarlet-a-560.webp" data-full="assets/img/bridal-scarlet-a-1000.webp" width="560" height="747" loading="lazy" alt="Bride in a scarlet and gold saree adjusting her maang tikka"><figcaption>Bridal · scarlet &amp; gold</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-red-b-560.webp" data-full="assets/img/bridal-red-b-1000.webp" width="560" height="747" loading="lazy" alt="Bride in red reflected in the studio mirror"><figcaption>Bridal · in the mirror</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-magenta-b-560.webp" data-full="assets/img/bridal-magenta-b-1000.webp" width="560" height="747" loading="lazy" alt="Bride in magenta with gold bangles and a painted backdrop"><figcaption>Bridal · the detail</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-ivory-b-560.webp" data-full="assets/img/bridal-ivory-b-1000.webp" width="560" height="747" loading="lazy" alt="Bride in ivory and silver against a painted floral backdrop"><figcaption>Bridal · ivory &amp; silver</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-scarlet-b-560.webp" data-full="assets/img/bridal-scarlet-b-1000.webp" width="560" height="747" loading="lazy" alt="Bride in scarlet photographed outdoors in daylight"><figcaption>Bridal · scarlet outdoors</figcaption></figure>
+      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blue-c-560.webp" data-full="assets/img/occasion-blue-c-1000.webp" width="560" height="747" loading="lazy" alt="Client in a blue lehenga beside a gold jaali screen"><figcaption>Occasion · blue &amp; gold</figcaption></figure>
+      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-nude-a-560.webp" data-full="assets/img/occasion-nude-a-1000.webp" width="560" height="747" loading="lazy" alt="Occasion makeup in soft nude tones with flowers in the hair"><figcaption>Engagement · soft nude</figcaption></figure>
+      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blue-a-560.webp" data-full="assets/img/occasion-blue-a-1000.webp" width="560" height="747" loading="lazy" alt="Client in a powder blue lehenga photographed outdoors"><figcaption>Engagement · powder blue</figcaption></figure>
+      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blush-a-560.webp" data-full="assets/img/occasion-blush-a-1000.webp" width="560" height="747" loading="lazy" alt="Client in a blush lehenga with a nath and layered jewellery"><figcaption>Reception · blush</figcaption></figure>
+      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-nude-b-560.webp" data-full="assets/img/occasion-nude-b-1000.webp" width="560" height="747" loading="lazy" alt="Occasion look in beige and gold, photographed outdoors"><figcaption>Occasion · beige &amp; gold</figcaption></figure>
+      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blue-b-560.webp" data-full="assets/img/occasion-blue-b-1000.webp" width="560" height="747" loading="lazy" alt="Client in a blue lehenga with silver jewellery"><figcaption>Occasion · ice blue</figcaption></figure>
+      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blush-b-560.webp" data-full="assets/img/occasion-blush-b-1000.webp" width="560" height="747" loading="lazy" alt="Close portrait of a client in blush with a maang tikka"><figcaption>Occasion · the portrait</figcaption></figure>
+      <figure class="tile rv" data-c="hair"><img src="assets/img/hair-balayage-560.webp" data-full="assets/img/hair-balayage-1000.webp" width="560" height="747" loading="lazy" alt="Balayage colour with long soft waves, photographed from behind"><figcaption>Hair · balayage &amp; waves</figcaption></figure>
+      <figure class="tile rv" data-c="hair"><img src="assets/img/hair-brunette-560.webp" data-full="assets/img/hair-brunette-1000.webp" width="560" height="747" loading="lazy" alt="Deep brunette colour with a soft wave set"><figcaption>Hair · colour &amp; set</figcaption></figure>
+      <figure class="tile wide rv" data-c="nails"><img src="assets/img/nails-french-560.webp" data-full="assets/img/nails-french-1000.webp" width="560" height="420" loading="lazy" alt="French gel manicure with hand-painted daisy nail art"><figcaption>Nails · French &amp; daisy art</figcaption></figure>
+      <figure class="tile wide rv" data-c="nails"><img src="assets/img/nails-dot-560.webp" data-full="assets/img/nails-dot-1000.webp" width="560" height="420" loading="lazy" alt="Dark polka dot gel nail art on almond nails"><figcaption>Nails · polka dot</figcaption></figure>
+    </div>
+
+    <p style="margin-top:var(--s4); color:var(--muted); font-size:.94rem">
+      More work, updated weekly, on Instagram —
+      <a href="https://www.instagram.com/manpreetbhasinspeachesandcream/" target="_blank" rel="noopener" style="color:var(--gold-lite)">@manpreetbhasinspeachesandcream</a>
+    </p>
+  </div>
+</section>
+
+<!-- ===================== TRANSFORMATION ===================== -->
+<section>
+  <div class="wrap">
+    <div class="shead rv">
+      <p class="eyebrow">How a bridal booking actually goes</p>
+      <h2>Three hours, one <em>transformation.</em></h2>
+      <p class="lede">The same client, the same morning. Nothing here is a stock picture.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv">
+        <figure><img src="assets/img/step-1-bare-520.webp" srcset="assets/img/step-1-bare-520.webp 520w, assets/img/step-1-bare-900.webp 900w" sizes="(max-width:820px) 92vw, 30vw" width="520" height="693" loading="lazy" alt="Client before makeup, skin prepared and base mapped out"></figure>
+        <b>01</b><h3>Bare, and prepped</h3>
+        <p>Skin read first, then prepped and colour-matched. The base is chosen for your skin, the light you'll be photographed in, and the length of the day.</p>
+      </div>
+      <div class="step rv">
+        <figure><img src="assets/img/step-2-chair-520.webp" srcset="assets/img/step-2-chair-520.webp 520w, assets/img/step-2-chair-900.webp 900w" sizes="(max-width:820px) 92vw, 30vw" width="520" height="693" loading="lazy" alt="Makeup being applied in the studio chair"></figure>
+        <b>02</b><h3>In the chair</h3>
+        <p>Airbrush or HD, built in layers and checked in daylight as it goes. Hair is set alongside, so nothing is rushed at the end.</p>
+      </div>
+      <div class="step rv">
+        <figure><img src="assets/img/step-3-day-520.webp" srcset="assets/img/step-3-day-520.webp 520w, assets/img/step-3-day-900.webp 900w" sizes="(max-width:820px) 92vw, 30vw" width="520" height="693" loading="lazy" alt="The finished bridal look, photographed outdoors in daylight"></figure>
+        <b>03</b><h3>The day</h3>
+        <p>Finished, photographed and sent out of the door. Touch-up guidance goes with you, so hour eleven looks like hour one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRICES ===================== -->
+<section id="prices" style="background:var(--panel); border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="shead rv">
+      <img class="flourish" src="assets/flourish.svg" alt="" width="600" height="60">
+      <p class="eyebrow">Nothing behind “enquire”</p>
+      <h2>Every price, <em>published.</em></h2>
+      <p class="lede">Most artists make you ask. These are the rates as they stand — so you can compare us properly, before you ever pick up the phone.</p>
+    </div>
+
+    <div class="tabs rv" id="tabs">
+      <button class="on" data-p="makeup">Bridal &amp; party makeup</button>
+      <button data-p="prebridal">Pre-bridal</button>
+      <button data-p="hair">Hair</button>
+      <button data-p="skin">Skin</button>
+      <button data-p="nails">Nails</button>
+      <button data-p="waxing">Waxing</button>
+    </div>
+
+    <div class="pricecard rv">
+      <div class="panel" id="p-makeup">
+        <div class="prow hero-row"><span>Airbrush bridal makeup<small>The signature booking — the full wedding day</small></span><i class="dots"></i><b>₹34,999</b></div>
+        <div class="prow"><span>HD bridal makeup — Lux</span><i class="dots"></i><b>₹29,999</b></div>
+        <div class="prow"><span>HD bridal makeup</span><i class="dots"></i><b>₹25,000</b></div>
+        <div class="prow"><span>Airbrush occasional<small>Roka, reception, engagement</small></span><i class="dots"></i><b>₹18,999</b></div>
+        <div class="prow"><span>HD occasional makeup</span><i class="dots"></i><b>₹14,999</b></div>
+        <div class="prow"><span>Airbrush party makeup</span><i class="dots"></i><b>₹6,999</b></div>
+        <div class="prow"><span>HD party makeup</span><i class="dots"></i><b>₹4,999</b></div>
+        <div class="prow"><span>Premium party makeup</span><i class="dots"></i><b>₹4,999</b></div>
+        <div class="prow"><span>Light party makeup</span><i class="dots"></i><b>₹3,999</b></div>
+        <div class="prow"><span>Classic party makeup</span><i class="dots"></i><b>₹3,500</b></div>
+      </div>
+      <div class="panel" id="p-prebridal" hidden>
+        <div class="prow"><span>Pre-bridal package — essential</span><i class="dots"></i><b>₹5,999+</b></div>
+        <div class="prow"><span>Pre-bridal package — advanced</span><i class="dots"></i><b>₹9,999+</b></div>
+        <div class="prow"><span>Pre-bridal package — premium</span><i class="dots"></i><b>₹14,999+</b></div>
+        <div class="prow"><span>Casmara pre-bridal</span><i class="dots"></i><b>₹21,000+</b></div>
+        <div class="prow ph"><span>What each package includes <span class="tbc">to confirm</span><small>The inclusions per package go here once Manpreet confirms them.</small></span></div>
+      </div>
+      <div class="panel" id="p-hair" hidden>
+        <div class="prow"><span>Hair cut</span><i class="dots"></i><b>₹499</b></div>
+        <div class="prow"><span>Colour touch-up</span><i class="dots"></i><b>₹1,400</b></div>
+        <div class="prow"><span>Balayage</span><i class="dots"></i><b>₹4,499</b></div>
+        <div class="prow"><span>Hair colour</span><i class="dots"></i><b>₹4,499</b></div>
+        <div class="prow"><span>Global colour</span><i class="dots"></i><b>₹4,999</b></div>
+        <div class="prow"><span>Keratin</span><i class="dots"></i><b>₹5,599</b></div>
+        <div class="prow"><span>Highlights</span><i class="dots"></i><b>₹5,999</b></div>
+        <div class="prow"><span>Hair treatment</span><i class="dots"></i><b>₹5,999</b></div>
+      </div>
+      <div class="panel" id="p-skin" hidden>
+        <div class="prow"><span>Basic facial</span><i class="dots"></i><b>₹1,200</b></div>
+        <div class="prow"><span>Deep cleansing</span><i class="dots"></i><b>₹1,500</b></div>
+        <div class="prow"><span>Anti-ageing</span><i class="dots"></i><b>₹2,500</b></div>
+        <div class="prow"><span>Hydra facial</span><i class="dots"></i><b>₹3,000</b></div>
+        <div class="prow"><span>Glass skin</span><i class="dots"></i><b>₹3,500</b></div>
+      </div>
+      <div class="panel" id="p-nails" hidden>
+        <div class="prow"><span>Gel polish</span><i class="dots"></i><b>₹799</b></div>
+        <div class="prow"><span>Gel manicure</span><i class="dots"></i><b>₹999</b></div>
+        <div class="prow"><span>Gel pedicure</span><i class="dots"></i><b>₹999</b></div>
+        <div class="prow"><span>Acrylic extensions</span><i class="dots"></i><b>₹1,499</b></div>
+        <div class="prow"><span>Nail art</span><i class="dots"></i><b>₹300 / nail</b></div>
+      </div>
+      <div class="panel" id="p-waxing" hidden>
+        <div class="prow"><span>Upper lip</span><i class="dots"></i><b>₹100</b></div>
+        <div class="prow"><span>Eyebrow</span><i class="dots"></i><b>₹200</b></div>
+        <div class="prow"><span>Full leg</span><i class="dots"></i><b>₹700</b></div>
+        <div class="prow"><span>Bikini</span><i class="dots"></i><b>₹999</b></div>
+        <div class="prow"><span>Brazilian</span><i class="dots"></i><b>₹2,500</b></div>
+      </div>
+    </div>
+    <p style="margin-top:var(--s3); color:var(--muted); font-size:.9rem">Bridal bookings are held against a date. Trials, travel and party sizes are quoted on the call.</p>
+  </div>
+</section>
+
+<!-- ===================== ACADEMY ===================== -->
+<section class="academy" id="academy">
+  <div class="glow" style="width:460px;height:460px;background:rgba(214,177,95,.09); bottom:-140px; left:-140px"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="shead rv" style="margin-bottom:var(--s4)">
+      <p class="eyebrow">The second door</p>
+      <h2>The <em>Academy.</em></h2>
+      <p class="lede">The studio teaches as well as it books. Small groups, real brides in the chair, and the same kit the professionals use — taught by the artist whose work is on this page.</p>
+    </div>
+
+    <div class="acad">
+      <div class="rv">
+        <div class="courses">
+          <article class="course ph">
+            <h4>Professional bridal makeup <span class="tbc">to confirm</span></h4>
+            <p>Course length, fee and certification to be filled in from Manpreet's own course card.</p>
+          </article>
+          <article class="course ph">
+            <h4>Self-makeup &amp; personal grooming <span class="tbc">to confirm</span></h4>
+            <p>Course length, fee and certification to be filled in.</p>
+          </article>
+          <article class="course ph">
+            <h4>Hair styling &amp; advanced techniques <span class="tbc">to confirm</span></h4>
+            <p>Course length, fee and certification to be filled in.</p>
+          </article>
+        </div>
+        <div class="hero-cta">
+          <a class="btn solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20would%20like%20details%20of%20the%20academy%20courses." target="_blank" rel="noopener">
+            Ask about the next batch
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="acad-media"><img src="assets/img/academy-teaching-560.webp" srcset="assets/img/academy-teaching-560.webp 560w, assets/img/academy-teaching-1000.webp 1000w" sizes="(max-width:900px) 92vw, 44vw" width="560" height="420" loading="lazy" alt="Makeup being applied to a client in the studio during a teaching session"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section>
+  <div class="wrap">
+    <div class="shead rv" style="text-align:center; margin-inline:auto">
+      <img class="flourish center" src="assets/flourish.svg" alt="" width="600" height="60">
+      <p class="eyebrow">In their words</p>
+      <h2>4.5 on Google, from <em>25 reviews.</em></h2>
+      <p class="lede" style="margin-inline:auto">Every word below will be a real Google review, quoted exactly. Nothing on this site is invented.</p>
+    </div>
+    <div class="quotes">
+      <blockquote class="quote ph rv"><span class="mark">”</span><p>Real Google review to be pasted here, word for word. <span class="tbc">to confirm</span></p><footer>— Reviewer's name, as it appears on Google</footer></blockquote>
+      <blockquote class="quote ph rv"><span class="mark">”</span><p>Real Google review to be pasted here, word for word. <span class="tbc">to confirm</span></p><footer>— Reviewer's name, as it appears on Google</footer></blockquote>
+      <blockquote class="quote ph rv"><span class="mark">”</span><p>Real Google review to be pasted here, word for word. <span class="tbc">to confirm</span></p><footer>— Reviewer's name, as it appears on Google</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VISIT ===================== -->
+<section id="visit" style="background:var(--panel); border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="shead rv">
+      <p class="eyebrow">Visit</p>
+      <h2>Valley Souk, <em>Gurugram.</em></h2>
+    </div>
+    <div class="visit">
+      <div class="rv">
+        <dl>
+          <dt>Studio</dt>
+          <dd>Shop 27, 28 &amp; 30, Valley Souk<br>Ansals Valley View Estate<br>Gurugram 122001, Haryana</dd>
+          <dt>Call</dt>
+          <dd><a href="tel:+919810819297">+91 98108 19297</a></dd>
+          <dt>WhatsApp</dt>
+          <dd><a href="https://wa.me/919810819297" target="_blank" rel="noopener">Message the studio</a></dd>
+          <dt>Hours</dt>
+          <dd class="ph" style="border:1px dashed var(--line); border-radius:8px; padding:10px 14px">Opening hours <span class="tbc">to confirm</span><br><small style="color:var(--muted)">Including the day the studio is closed.</small></dd>
+          <dt>Instagram</dt>
+          <dd><a href="https://www.instagram.com/manpreetbhasinspeachesandcream/" target="_blank" rel="noopener">@manpreetbhasins<wbr>peachesandcream</a></dd>
+        </dl>
+        <div class="hero-cta">
+          <a class="btn solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Book on WhatsApp</a>
+          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Manpreet+Bhasin's+Peaches+and+Cream+Valley+Souk+Ansals+Valley+View+Estate+Gurugram" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+      <div class="map rv">
+        <iframe title="Map to Manpreet Bhasin's Peaches &amp; Cream, Valley Souk, Gurugram" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Valley%20Souk%2C%20Ansals%20Valley%20View%20Estate%2C%20Gurugram%20122001&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="f">
+  <div class="wrap f-top">
+    <div style="max-width:34ch">
+      <img src="assets/monogram.svg" alt="" width="52" height="52" style="opacity:.9">
+      <p style="margin:16px 0 0; color:var(--ink); font-size:1rem">Manpreet Bhasin's Peaches &amp; Cream</p>
+      <p style="margin:4px 0 0">Unisex Salon · Makeup Studio · Academy<br>Valley Souk, Ansals Valley View Estate, Gurugram</p>
+    </div>
+    <div>
+      <p style="color:var(--gold); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase">Book</p>
+      <p style="margin:10px 0 0"><a href="tel:+919810819297">+91 98108 19297</a><br><a href="https://wa.me/919810819297" target="_blank" rel="noopener">WhatsApp</a><br><a href="https://www.instagram.com/manpreetbhasinspeachesandcream/" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+    <div>
+      <p style="color:var(--gold); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase">On this page</p>
+      <p style="margin:10px 0 0"><a href="#work">The work</a><br><a href="#prices">Prices</a><br><a href="#academy">Academy</a><br><a href="#visit">Visit</a></p>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:var(--s5); padding-top:var(--s3); border-top:1px solid var(--line-soft); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:.82rem">
+    <span>© <span id="yr">2026</span> Manpreet Bhasin's Peaches &amp; Cream</span>
+    <span>Website by <a href="https://airlantern.com" target="_blank" rel="noopener">Lantern</a></span>
+  </div>
+</footer>
+
+<!-- ===================== STICKY DOCK ===================== -->
+<div class="dock">
+  <a class="wa" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.6 14.1c-.2.7-1.2 1.3-1.9 1.4-.5.1-1.1.1-3.4-.8-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5s.8 1.9.8 2 .1.3 0 .4l-.3.5-.4.4c-.1.1-.3.3-.1.6s.6 1.1 1.4 1.8c1 .9 1.8 1.1 2.1 1.3.3.1.4.1.6-.1s.7-.8.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.1 1.4Z"/></svg>
+    WhatsApp
+  </a>
+  <a href="tel:+919810819297">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.6 3h3l1.5 4-2 1.4a12 12 0 0 0 5.5 5.5l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.2 2 2 0 0 1 6.6 3Z"/></svg>
+    Call
+  </a>
+</div>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div class="lb" id="lb"><button aria-label="Close">✕</button><img alt=""></div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BeautySalon",
+  "name":"Manpreet Bhasin's Peaches & Cream",
+  "description":"Unisex salon, makeup studio and makeup academy in Gurugram. Airbrush and HD bridal makeup, hair, skin and nails.",
+  "telephone":"+91-98108-19297",
+  "url":"https://example.com",
+  "image":"assets/img/hero-poster-1200.webp",
+  "priceRange":"₹₹",
+  "address":{"@type":"PostalAddress","streetAddress":"Shop 27, 28 & 30, Valley Souk, Ansals Valley View Estate","addressLocality":"Gurugram","addressRegion":"Haryana","postalCode":"122001","addressCountry":"IN"},
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.5","reviewCount":"25"},
+  "sameAs":["https://www.instagram.com/manpreetbhasinspeachesandcream/"],
+  "makesOffer":[
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Airbrush bridal makeup"},"price":"34999","priceCurrency":"INR"},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"HD bridal makeup"},"price":"25000","priceCurrency":"INR"},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Airbrush party makeup"},"price":"6999","priceCurrency":"INR"}
+  ],
+  "department":{
+    "@type":"EducationalOrganization",
+    "name":"Manpreet Bhasin's Peaches & Cream Academy",
+    "description":"Professional makeup and hair styling courses in Gurugram."
+  }
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- header + scroll progress ---- */
+  var hdr=document.getElementById("hdr"), prog=document.getElementById("prog");
+  function onScroll(){
+    var y=scrollY, h=document.documentElement.scrollHeight-innerHeight;
+    hdr.classList.toggle("stuck", y>40);
+    prog.style.width=(h>0? (y/h*100):0)+"%";
+  }
+  addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  /* ---- staggered scroll reveals ---- */
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e,i){
+      if(!e.isIntersecting) return;
+      var el=e.target, sibs=Array.prototype.slice.call(el.parentNode.children).filter(function(n){return n.classList.contains("rv")});
+      var idx=Math.max(0,sibs.indexOf(el));
+      setTimeout(function(){el.classList.add("in")}, reduce?0:Math.min(idx,7)*70);
+      io.unobserve(el);
+    });
+  },{rootMargin:"0px 0px -8% 0px", threshold:.08});
+  document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+
+  /* ---- count-ups ---- */
+  var cio=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target, to=parseFloat(el.dataset.count), dec=parseInt(el.dataset.dec||"0",10), t0=null;
+      if(reduce){el.textContent=to.toLocaleString("en-IN",{minimumFractionDigits:dec,maximumFractionDigits:dec}); cio.unobserve(el); return;}
+      function step(ts){
+        if(!t0) t0=ts; var p=Math.min(1,(ts-t0)/1400), e2=1-Math.pow(1-p,3);
+        el.textContent=(to*e2).toLocaleString("en-IN",{minimumFractionDigits:dec,maximumFractionDigits:dec});
+        if(p<1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step); cio.unobserve(el);
+    });
+  },{threshold:.5});
+  document.querySelectorAll("[data-count]").forEach(function(el){cio.observe(el)});
+
+  /* ---- airbrush / HD comparator ---- */
+  var DATA={
+    air:{price:"₹34,999", note:"Airbrush bridal makeup", chip:"Airbrush finish",
+      finish:"Sprayed in fine layers, so it sits on the skin rather than in it. Weightless up close and in flash photography.",
+      wear:"Built for a full wedding day — long hours, heat, embraces and the photographer's lights.",
+      also:"₹18,999 for engagement, roka and reception · ₹6,999 for a party"},
+    hd:{price:"₹29,999", note:"HD bridal makeup — Lux · ₹25,000 standard", chip:"HD finish",
+      finish:"Blended by hand and buildable, so coverage can be taken further exactly where you want it.",
+      wear:"Rich on camera and easy to touch up through the day. The classic choice, and the gentler price.",
+      also:"₹14,999 for occasions · ₹4,999 for a party"}
+  };
+  var bAir=document.getElementById("bAir"), bHd=document.getElementById("bHd"),
+      thumb=document.getElementById("thumb"), body=document.getElementById("sigBody"), chip=document.getElementById("sigChip");
+  function place(btn){ thumb.style.left=btn.offsetLeft+"px"; thumb.style.width=btn.offsetWidth+"px"; }
+  function set(k){
+    var d=DATA[k];
+    document.getElementById("sigPrice").textContent=d.price;
+    document.getElementById("sigNote").textContent=d.note;
+    document.getElementById("sigFinish").textContent=d.finish;
+    document.getElementById("sigWear").textContent=d.wear;
+    document.getElementById("sigAlso").textContent=d.also;
+    chip.textContent=d.chip;
+    bAir.setAttribute("aria-pressed", k==="air"); bHd.setAttribute("aria-pressed", k==="hd");
+    place(k==="air"?bAir:bHd);
+    if(!reduce){ body.classList.remove("fade-swap"); void body.offsetWidth; body.classList.add("fade-swap"); }
+  }
+  bAir.addEventListener("click",function(){set("air")});
+  bHd.addEventListener("click",function(){set("hd")});
+  addEventListener("load",function(){place(bAir)}); place(bAir);
+  addEventListener("resize",function(){place(bAir.getAttribute("aria-pressed")==="true"?bAir:bHd)});
+
+  /* ---- gallery filters ---- */
+  var fbtns=document.querySelectorAll("#filters button"), tiles=document.querySelectorAll("#grid .tile");
+  fbtns.forEach(function(b){
+    b.addEventListener("click",function(){
+      fbtns.forEach(function(x){x.classList.remove("on")}); b.classList.add("on");
+      var f=b.dataset.f;
+      tiles.forEach(function(t){ t.hidden = !(f==="all" || t.dataset.c===f); });
+    });
+  });
+
+  /* ---- price tabs ---- */
+  var tbtns=document.querySelectorAll("#tabs button");
+  tbtns.forEach(function(b){
+    b.addEventListener("click",function(){
+      tbtns.forEach(function(x){x.classList.remove("on")}); b.classList.add("on");
+      document.querySelectorAll(".pricecard .panel").forEach(function(p){p.hidden=true});
+      document.getElementById("p-"+b.dataset.p).hidden=false;
+    });
+  });
+
+  /* ---- lightbox ---- */
+  var lb=document.getElementById("lb"), lbImg=lb.querySelector("img"), lastFocus=null;
+  document.querySelectorAll("#grid .tile").forEach(function(t){
+    t.addEventListener("click",function(){
+      var im=t.querySelector("img");
+      lbImg.src=im.dataset.full||im.src; lbImg.alt=im.alt;
+      lb.classList.add("open"); lastFocus=document.activeElement; lb.querySelector("button").focus();
+    });
+  });
+  function close(){ lb.classList.remove("open"); lbImg.src=""; if(lastFocus) lastFocus.focus(); }
+  lb.querySelector("button").addEventListener("click",close);
+  lb.addEventListener("click",function(e){ if(e.target===lb) close(); });
+  addEventListener("keydown",function(e){ if(e.key==="Escape" && lb.classList.contains("open")) close(); });
+
+  /* ---- hero video: attached only when it can actually help ----
+     The poster is a responsive <img>, so a phone on 4G never pays for the clip.
+     Wider screens (and only if the connection isn't metered/slow) get the motion. */
+  var hv=document.getElementById("hv");
+  function heroVideoWanted(){
+    if(!hv || reduce) return false;
+    if(matchMedia("(max-width:640px)").matches) return false;
+    var c=navigator.connection;
+    if(c && (c.saveData || /2g/.test(c.effectiveType||""))) return false;
+    return true;
+  }
+  if(heroVideoWanted()){
+    var src=document.createElement("source");
+    src.src="assets/video/hero.mp4"; src.type="video/mp4";
+    hv.appendChild(src); hv.preload="auto"; hv.load();
+    hv.addEventListener("playing",function(){hv.classList.add("on")});
+    var pr=hv.play(); if(pr && pr.catch) pr.catch(function(){});
+  }
+
+  document.getElementById("yr").textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
