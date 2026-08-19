@@ -9,11 +9,17 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Manpreet Bhasin's Peaches &amp; Cream — Bridal Makeup, Salon &amp; Academy">
 <meta property="og:description" content="Airbrush bridal from ₹34,999. Every price published, nothing hidden behind ‘enquire’. Gurugram.">
-<meta property="og:image" content="assets/img/hero-poster-1200.webp">
+<meta property="og:image" content="assets/img/hero-poster-1100.webp">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link rel="preload" as="image" fetchpriority="high"
+      href="assets/img/hero-poster-800.webp"
+      imagesrcset="assets/img/hero-poster-520.webp 520w, assets/img/hero-poster-800.webp 800w, assets/img/hero-poster-1100.webp 1100w"
+      imagesizes="100vw">
+<link rel="stylesheet" media="print" onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,300&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,300&display=swap"></noscript>
 <style>
 /* ============================================================
    Manpreet Bhasin's Peaches & Cream
@@ -149,6 +155,14 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
   }
 }
 .hero-inner{position:relative; z-index:2; padding-bottom:clamp(38px,9vh,86px); padding-top:120px}
+/* The hero is the largest paint on the page, so it must never be hidden and
+   faded in. Transform only — the text is legible from the first frame. */
+.hero-inner>*{animation:heroIn .85s var(--ease) both}
+.hero-inner>*:nth-child(2){animation-delay:.06s}
+.hero-inner>*:nth-child(3){animation-delay:.12s}
+.hero-inner>*:nth-child(4){animation-delay:.18s}
+.hero-inner>*:nth-child(5){animation-delay:.24s}
+@keyframes heroIn{from{transform:translateY(16px)}to{transform:none}}
 .hero h1{margin:18px 0 0; max-width:15ch}
 .hero .lede{margin-top:var(--s3)}
 .hero-cta{display:flex; gap:12px; margin-top:var(--s4); flex-wrap:wrap}
@@ -310,7 +324,7 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
   background:var(--bg); transition:.4s var(--ease);
 }
 .course:hover{border-color:var(--gold); transform:translateY(-3px)}
-.course h4{font-size:1.12rem}
+.course h3{font-size:1.12rem; line-height:1.3}
 .course p{margin:6px 0 0; color:var(--muted); font-size:.94rem}
 
 /* ---------- placeholder marker ---------- */
@@ -349,8 +363,9 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 footer.f{border-top:1px solid var(--line); padding:var(--s5) 0 var(--s4); color:var(--muted); font-size:.9rem}
 @media(max-width:900px){footer.f{padding-bottom:120px}}
 .f-top{display:flex; justify-content:space-between; gap:var(--s4); flex-wrap:wrap; align-items:flex-start}
-.f a{text-decoration:none}
+.f a{text-decoration:none; display:inline-block; padding:7px 0; line-height:1.35}
 .f a:hover{color:var(--gold-lite)}
+.f .links p{margin:6px 0 0; display:flex; flex-direction:column; gap:2px}
 
 /* ---------- sticky mobile CTA ---------- */
 .dock{
@@ -383,6 +398,7 @@ footer.f{border-top:1px solid var(--line); padding:var(--s5) 0 var(--s4); color:
 .rv.in{opacity:1; transform:none; filter:none}
 @media(prefers-reduced-motion:reduce){
   .rv{opacity:1; transform:none; filter:none; transition:none}
+  .hero-inner>*{animation:none}
   .marquee-track{animation:none}
   .scrollcue{animation:none}
   *{scroll-behavior:auto !important}
@@ -434,17 +450,17 @@ html{scroll-behavior:smooth}
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="top">
   <div class="hero-media">
-    <img src="assets/img/hero-poster-760.webp"
-         srcset="assets/img/hero-poster-760.webp 760w, assets/img/hero-poster-1200.webp 1200w, assets/img/hero-poster-1600.webp 1600w"
-         sizes="100vw" width="760" height="1013" fetchpriority="high"
+    <img src="assets/img/hero-poster-800.webp"
+         srcset="assets/img/hero-poster-520.webp 520w, assets/img/hero-poster-800.webp 800w, assets/img/hero-poster-1100.webp 1100w"
+         sizes="100vw" width="800" height="1067" fetchpriority="high"
          alt="Bride in bridal makeup by Manpreet Bhasin's Peaches &amp; Cream, photographed by candlelight">
     <video muted loop playsinline preload="none" id="hv" aria-hidden="true"></video>
   </div>
   <div class="wrap hero-inner">
-    <p class="eyebrow rv">Ansals Valley View Estate · Gurugram</p>
-    <h1 class="rv">The bride everyone <em>remembers.</em></h1>
-    <p class="lede rv">Airbrush and HD bridal makeup, hair, skin and nails — and a working makeup academy in the same studio. Every price we charge is published on this page.</p>
-    <div class="hero-cta rv">
+    <p class="eyebrow">Ansals Valley View Estate · Gurugram</p>
+    <h1>The bride everyone <em>remembers.</em></h1>
+    <p class="lede">Airbrush and HD bridal makeup, hair, skin and nails — and a working makeup academy in the same studio. Every price we charge is published on this page.</p>
+    <div class="hero-cta">
       <a class="btn solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">
         Book an appointment
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -454,7 +470,7 @@ html{scroll-behavior:smooth}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
-    <div class="hero-trust rv">
+    <div class="hero-trust">
       <span class="stars">★★★★★</span>
       <span>4.5 on Google · 25 reviews · 4,349 on Instagram</span>
     </div>
@@ -548,27 +564,27 @@ html{scroll-behavior:smooth}
     </div>
 
     <div class="grid" id="grid">
-      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-magenta-a-560.webp" data-full="assets/img/bridal-magenta-a-1000.webp" width="560" height="747" loading="lazy" alt="Bride in magenta and gold, kundan choker, hair pinned with fresh flowers"><figcaption>Bridal · magenta &amp; gold</figcaption></figure>
-      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-ivory-a-560.webp" data-full="assets/img/bridal-ivory-a-1000.webp" width="560" height="747" loading="lazy" alt="Bride in an ivory lehenga with an emerald necklace"><figcaption>Bridal · ivory &amp; emerald</figcaption></figure>
-      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-red-a-560.webp" data-full="assets/img/bridal-red-a-1000.webp" width="560" height="747" loading="lazy" alt="Bride in a red lehenga under a red dupatta, heavy kundan jewellery"><figcaption>Bridal · classic red</figcaption></figure>
-      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-lilac-560.webp" data-full="assets/img/bridal-lilac-1000.webp" width="560" height="747" loading="lazy" alt="Bride in lilac with a nath and silver jewellery against a gold jaali screen"><figcaption>Bridal · lilac &amp; silver</figcaption></figure>
-      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-magenta-c-560.webp" data-full="assets/img/bridal-magenta-c-1000.webp" width="560" height="747" loading="lazy" alt="Close portrait of a bride in magenta with a maang tikka"><figcaption>Bridal · the close-up</figcaption></figure>
-      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-scarlet-a-560.webp" data-full="assets/img/bridal-scarlet-a-1000.webp" width="560" height="747" loading="lazy" alt="Bride in a scarlet and gold saree adjusting her maang tikka"><figcaption>Bridal · scarlet &amp; gold</figcaption></figure>
-      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-red-b-560.webp" data-full="assets/img/bridal-red-b-1000.webp" width="560" height="747" loading="lazy" alt="Bride in red reflected in the studio mirror"><figcaption>Bridal · in the mirror</figcaption></figure>
-      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-magenta-b-560.webp" data-full="assets/img/bridal-magenta-b-1000.webp" width="560" height="747" loading="lazy" alt="Bride in magenta with gold bangles and a painted backdrop"><figcaption>Bridal · the detail</figcaption></figure>
-      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-ivory-b-560.webp" data-full="assets/img/bridal-ivory-b-1000.webp" width="560" height="747" loading="lazy" alt="Bride in ivory and silver against a painted floral backdrop"><figcaption>Bridal · ivory &amp; silver</figcaption></figure>
-      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-scarlet-b-560.webp" data-full="assets/img/bridal-scarlet-b-1000.webp" width="560" height="747" loading="lazy" alt="Bride in scarlet photographed outdoors in daylight"><figcaption>Bridal · scarlet outdoors</figcaption></figure>
-      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blue-c-560.webp" data-full="assets/img/occasion-blue-c-1000.webp" width="560" height="747" loading="lazy" alt="Client in a blue lehenga beside a gold jaali screen"><figcaption>Occasion · blue &amp; gold</figcaption></figure>
-      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-nude-a-560.webp" data-full="assets/img/occasion-nude-a-1000.webp" width="560" height="747" loading="lazy" alt="Occasion makeup in soft nude tones with flowers in the hair"><figcaption>Engagement · soft nude</figcaption></figure>
-      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blue-a-560.webp" data-full="assets/img/occasion-blue-a-1000.webp" width="560" height="747" loading="lazy" alt="Client in a powder blue lehenga photographed outdoors"><figcaption>Engagement · powder blue</figcaption></figure>
-      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blush-a-560.webp" data-full="assets/img/occasion-blush-a-1000.webp" width="560" height="747" loading="lazy" alt="Client in a blush lehenga with a nath and layered jewellery"><figcaption>Reception · blush</figcaption></figure>
-      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-nude-b-560.webp" data-full="assets/img/occasion-nude-b-1000.webp" width="560" height="747" loading="lazy" alt="Occasion look in beige and gold, photographed outdoors"><figcaption>Occasion · beige &amp; gold</figcaption></figure>
-      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blue-b-560.webp" data-full="assets/img/occasion-blue-b-1000.webp" width="560" height="747" loading="lazy" alt="Client in a blue lehenga with silver jewellery"><figcaption>Occasion · ice blue</figcaption></figure>
-      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blush-b-560.webp" data-full="assets/img/occasion-blush-b-1000.webp" width="560" height="747" loading="lazy" alt="Close portrait of a client in blush with a maang tikka"><figcaption>Occasion · the portrait</figcaption></figure>
-      <figure class="tile rv" data-c="hair"><img src="assets/img/hair-balayage-560.webp" data-full="assets/img/hair-balayage-1000.webp" width="560" height="747" loading="lazy" alt="Balayage colour with long soft waves, photographed from behind"><figcaption>Hair · balayage &amp; waves</figcaption></figure>
-      <figure class="tile rv" data-c="hair"><img src="assets/img/hair-brunette-560.webp" data-full="assets/img/hair-brunette-1000.webp" width="560" height="747" loading="lazy" alt="Deep brunette colour with a soft wave set"><figcaption>Hair · colour &amp; set</figcaption></figure>
-      <figure class="tile wide rv" data-c="nails"><img src="assets/img/nails-french-560.webp" data-full="assets/img/nails-french-1000.webp" width="560" height="420" loading="lazy" alt="French gel manicure with hand-painted daisy nail art"><figcaption>Nails · French &amp; daisy art</figcaption></figure>
-      <figure class="tile wide rv" data-c="nails"><img src="assets/img/nails-dot-560.webp" data-full="assets/img/nails-dot-1000.webp" width="560" height="420" loading="lazy" alt="Dark polka dot gel nail art on almond nails"><figcaption>Nails · polka dot</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-magenta-a-560.webp" srcset="assets/img/bridal-magenta-a-560.webp 560w, assets/img/bridal-magenta-a-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/bridal-magenta-a-1000.webp" width="560" height="747" loading="lazy" alt="Bride in magenta and gold, kundan choker, hair pinned with fresh flowers"><figcaption>Bridal · magenta &amp; gold</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-ivory-a-560.webp" srcset="assets/img/bridal-ivory-a-560.webp 560w, assets/img/bridal-ivory-a-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/bridal-ivory-a-1000.webp" width="560" height="747" loading="lazy" alt="Bride in an ivory lehenga with an emerald necklace"><figcaption>Bridal · ivory &amp; emerald</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-red-a-560.webp" srcset="assets/img/bridal-red-a-560.webp 560w, assets/img/bridal-red-a-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/bridal-red-a-1000.webp" width="560" height="747" loading="lazy" alt="Bride in a red lehenga under a red dupatta, heavy kundan jewellery"><figcaption>Bridal · classic red</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-lilac-560.webp" srcset="assets/img/bridal-lilac-560.webp 560w, assets/img/bridal-lilac-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/bridal-lilac-1000.webp" width="560" height="747" loading="lazy" alt="Bride in lilac with a nath and silver jewellery against a gold jaali screen"><figcaption>Bridal · lilac &amp; silver</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-magenta-c-560.webp" srcset="assets/img/bridal-magenta-c-560.webp 560w, assets/img/bridal-magenta-c-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/bridal-magenta-c-1000.webp" width="560" height="747" loading="lazy" alt="Close portrait of a bride in magenta with a maang tikka"><figcaption>Bridal · the close-up</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-scarlet-a-560.webp" srcset="assets/img/bridal-scarlet-a-560.webp 560w, assets/img/bridal-scarlet-a-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/bridal-scarlet-a-1000.webp" width="560" height="747" loading="lazy" alt="Bride in a scarlet and gold saree adjusting her maang tikka"><figcaption>Bridal · scarlet &amp; gold</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-red-b-560.webp" srcset="assets/img/bridal-red-b-560.webp 560w, assets/img/bridal-red-b-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/bridal-red-b-1000.webp" width="560" height="747" loading="lazy" alt="Bride in red reflected in the studio mirror"><figcaption>Bridal · in the mirror</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-magenta-b-560.webp" srcset="assets/img/bridal-magenta-b-560.webp 560w, assets/img/bridal-magenta-b-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/bridal-magenta-b-1000.webp" width="560" height="747" loading="lazy" alt="Bride in magenta with gold bangles and a painted backdrop"><figcaption>Bridal · the detail</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-ivory-b-560.webp" srcset="assets/img/bridal-ivory-b-560.webp 560w, assets/img/bridal-ivory-b-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/bridal-ivory-b-1000.webp" width="560" height="747" loading="lazy" alt="Bride in ivory and silver against a painted floral backdrop"><figcaption>Bridal · ivory &amp; silver</figcaption></figure>
+      <figure class="tile rv" data-c="bridal"><img src="assets/img/bridal-scarlet-b-560.webp" srcset="assets/img/bridal-scarlet-b-560.webp 560w, assets/img/bridal-scarlet-b-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/bridal-scarlet-b-1000.webp" width="560" height="747" loading="lazy" alt="Bride in scarlet photographed outdoors in daylight"><figcaption>Bridal · scarlet outdoors</figcaption></figure>
+      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blue-c-560.webp" srcset="assets/img/occasion-blue-c-560.webp 560w, assets/img/occasion-blue-c-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/occasion-blue-c-1000.webp" width="560" height="747" loading="lazy" alt="Client in a blue lehenga beside a gold jaali screen"><figcaption>Occasion · blue &amp; gold</figcaption></figure>
+      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-nude-a-560.webp" srcset="assets/img/occasion-nude-a-560.webp 560w, assets/img/occasion-nude-a-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/occasion-nude-a-1000.webp" width="560" height="747" loading="lazy" alt="Occasion makeup in soft nude tones with flowers in the hair"><figcaption>Engagement · soft nude</figcaption></figure>
+      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blue-a-560.webp" srcset="assets/img/occasion-blue-a-560.webp 560w, assets/img/occasion-blue-a-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/occasion-blue-a-1000.webp" width="560" height="747" loading="lazy" alt="Client in a powder blue lehenga photographed outdoors"><figcaption>Engagement · powder blue</figcaption></figure>
+      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blush-a-560.webp" srcset="assets/img/occasion-blush-a-560.webp 560w, assets/img/occasion-blush-a-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/occasion-blush-a-1000.webp" width="560" height="747" loading="lazy" alt="Client in a blush lehenga with a nath and layered jewellery"><figcaption>Reception · blush</figcaption></figure>
+      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-nude-b-560.webp" srcset="assets/img/occasion-nude-b-560.webp 560w, assets/img/occasion-nude-b-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/occasion-nude-b-1000.webp" width="560" height="747" loading="lazy" alt="Occasion look in beige and gold, photographed outdoors"><figcaption>Occasion · beige &amp; gold</figcaption></figure>
+      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blue-b-560.webp" srcset="assets/img/occasion-blue-b-560.webp 560w, assets/img/occasion-blue-b-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/occasion-blue-b-1000.webp" width="560" height="747" loading="lazy" alt="Client in a blue lehenga with silver jewellery"><figcaption>Occasion · ice blue</figcaption></figure>
+      <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blush-b-560.webp" srcset="assets/img/occasion-blush-b-560.webp 560w, assets/img/occasion-blush-b-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/occasion-blush-b-1000.webp" width="560" height="747" loading="lazy" alt="Close portrait of a client in blush with a maang tikka"><figcaption>Occasion · the portrait</figcaption></figure>
+      <figure class="tile rv" data-c="hair"><img src="assets/img/hair-balayage-560.webp" srcset="assets/img/hair-balayage-560.webp 560w, assets/img/hair-balayage-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/hair-balayage-1000.webp" width="560" height="747" loading="lazy" alt="Balayage colour with long soft waves, photographed from behind"><figcaption>Hair · balayage &amp; waves</figcaption></figure>
+      <figure class="tile rv" data-c="hair"><img src="assets/img/hair-brunette-560.webp" srcset="assets/img/hair-brunette-560.webp 560w, assets/img/hair-brunette-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/hair-brunette-1000.webp" width="560" height="747" loading="lazy" alt="Deep brunette colour with a soft wave set"><figcaption>Hair · colour &amp; set</figcaption></figure>
+      <figure class="tile wide rv" data-c="nails"><img src="assets/img/nails-french-560.webp" srcset="assets/img/nails-french-560.webp 560w, assets/img/nails-french-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/nails-french-1000.webp" width="560" height="420" loading="lazy" alt="French gel manicure with hand-painted daisy nail art"><figcaption>Nails · French &amp; daisy art</figcaption></figure>
+      <figure class="tile wide rv" data-c="nails"><img src="assets/img/nails-dot-560.webp" srcset="assets/img/nails-dot-560.webp 560w, assets/img/nails-dot-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/nails-dot-1000.webp" width="560" height="420" loading="lazy" alt="Dark polka dot gel nail art on almond nails"><figcaption>Nails · polka dot</figcaption></figure>
     </div>
 
     <p style="margin-top:var(--s4); color:var(--muted); font-size:.94rem">
@@ -695,15 +711,15 @@ html{scroll-behavior:smooth}
       <div class="rv">
         <div class="courses">
           <article class="course ph">
-            <h4>Professional bridal makeup <span class="tbc">to confirm</span></h4>
+            <h3 class="course-t">Professional bridal makeup <span class="tbc">to confirm</span></h3>
             <p>Course length, fee and certification to be filled in from Manpreet's own course card.</p>
           </article>
           <article class="course ph">
-            <h4>Self-makeup &amp; personal grooming <span class="tbc">to confirm</span></h4>
+            <h3 class="course-t">Self-makeup &amp; personal grooming <span class="tbc">to confirm</span></h3>
             <p>Course length, fee and certification to be filled in.</p>
           </article>
           <article class="course ph">
-            <h4>Hair styling &amp; advanced techniques <span class="tbc">to confirm</span></h4>
+            <h3 class="course-t">Hair styling &amp; advanced techniques <span class="tbc">to confirm</span></h3>
             <p>Course length, fee and certification to be filled in.</p>
           </article>
         </div>
@@ -780,13 +796,13 @@ html{scroll-behavior:smooth}
       <p style="margin:16px 0 0; color:var(--ink); font-size:1rem">Manpreet Bhasin's Peaches &amp; Cream</p>
       <p style="margin:4px 0 0">Unisex Salon · Makeup Studio · Academy<br>Valley Souk, Ansals Valley View Estate, Gurugram</p>
     </div>
-    <div>
+    <div class="links">
       <p style="color:var(--gold); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase">Book</p>
-      <p style="margin:10px 0 0"><a href="tel:+919810819297">+91 98108 19297</a><br><a href="https://wa.me/919810819297" target="_blank" rel="noopener">WhatsApp</a><br><a href="https://www.instagram.com/manpreetbhasinspeachesandcream/" target="_blank" rel="noopener">Instagram</a></p>
+      <p><a href="tel:+919810819297">+91 98108 19297</a><a href="https://wa.me/919810819297" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/manpreetbhasinspeachesandcream/" target="_blank" rel="noopener">Instagram</a></p>
     </div>
-    <div>
+    <div class="links">
       <p style="color:var(--gold); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase">On this page</p>
-      <p style="margin:10px 0 0"><a href="#work">The work</a><br><a href="#prices">Prices</a><br><a href="#academy">Academy</a><br><a href="#visit">Visit</a></p>
+      <p><a href="#work">The work</a><a href="#prices">Prices</a><a href="#academy">Academy</a><a href="#visit">Visit</a></p>
     </div>
   </div>
   <div class="wrap" style="margin-top:var(--s5); padding-top:var(--s3); border-top:1px solid var(--line-soft); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:.82rem">
@@ -818,7 +834,7 @@ html{scroll-behavior:smooth}
   "description":"Unisex salon, makeup studio and makeup academy in Gurugram. Airbrush and HD bridal makeup, hair, skin and nails.",
   "telephone":"+91-98108-19297",
   "url":"https://example.com",
-  "image":"assets/img/hero-poster-1200.webp",
+  "image":"assets/img/hero-poster-1100.webp",
   "priceRange":"₹₹",
   "address":{"@type":"PostalAddress","streetAddress":"Shop 27, 28 & 30, Valley Souk, Ansals Valley View Estate","addressLocality":"Gurugram","addressRegion":"Haryana","postalCode":"122001","addressCountry":"IN"},
   "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.5","reviewCount":"25"},
