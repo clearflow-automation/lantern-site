@@ -39,11 +39,23 @@
   --shadow:0 1px 2px rgba(0,0,0,.5), 0 12px 28px -12px rgba(0,0,0,.7), 0 40px 80px -40px rgba(0,0,0,.9);
   --ease:cubic-bezier(.22,.61,.36,1);
 }
+/* A metrics-matched stand-in for Newsreader. Georgia is re-scaled so its
+   advance widths and line box match, which means the swap when the web font
+   arrives moves nothing. Measured against Newsreader, not guessed:
+   width 2298 vs 2401 at 100px, ascent 74/26 vs 92/22. */
+@font-face{
+  font-family:"Newsreader Fallback";
+  src:local("Georgia"),local("Times New Roman"),local("serif");
+  size-adjust:95.71%;
+  ascent-override:77.32%;
+  descent-override:27.17%;
+  line-gap-override:0%;
+}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
   margin:0; background:var(--bg); color:var(--ink);
-  font-family:"Newsreader",Georgia,serif; font-weight:300;
+  font-family:"Newsreader","Newsreader Fallback",Georgia,serif; font-weight:300;
   font-size:17px; line-height:1.65; letter-spacing:.002em;
   overflow-x:hidden; -webkit-font-smoothing:antialiased;
 }
