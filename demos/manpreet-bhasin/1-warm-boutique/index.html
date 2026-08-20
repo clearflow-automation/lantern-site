@@ -4,44 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Manpreet Bhasin's Peaches &amp; Cream — Warm Boutique direction</title>
+<title>Manpreet Bhasin's Peaches &amp; Cream — Warm Boutique</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#FBF5F2; --ink:#3A2226; --muted:#7A5C60; --line:#E7D3CE;
-  --accent:#8C2F39; --gold:#B08968; --panel:#F3E4DF;
+  --accent:#8C2F39; --gold:#8C2F39; --panel:#F3E4DF;
   --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
-  font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+  font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;
+  overflow-x:clip}
 .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
 h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;margin:0}
 .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;
   color:var(--gold);margin-bottom:14px}
 
-/* header */
 header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.82);
   backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .hd{display:flex;align-items:center;justify-content:space-between;
-  padding:14px 22px;max-width:1080px;margin:0 auto}
-.brand{font-family:var(--serif);font-size:17px;letter-spacing:.02em}
+  gap:16px;padding:14px 22px;max-width:1080px;margin:0 auto}
+.brand{font-family:var(--serif);font-size:17px;letter-spacing:.02em;
+  line-height:1.15}
 .brand small{display:block;font-family:var(--sans);font-size:9.5px;
   letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:2px}
 .nav{display:none;gap:26px;font-size:13px}
 .nav a{color:var(--muted);text-decoration:none}
 .nav a:hover{color:var(--ink)}
 .btn{display:inline-block;padding:11px 22px;border-radius:999px;
-  text-decoration:none;font-size:13.5px;letter-spacing:.02em;transition:.2s}
+  text-decoration:none;font-size:13.5px;letter-spacing:.02em;transition:.2s;
+  white-space:nowrap}
 .btn-solid{background:var(--accent);color:#fff}
 .btn-line{border:1px solid var(--line);color:var(--ink)}
 .btn:hover{opacity:.88}
-@media(min-width:900px){.nav{display:flex}}
+@media(min-width:940px){.nav{display:flex}}
 
-/* hero */
 .hero{padding:64px 0 56px;background:linear-gradient(160deg,#F6E3DE,#E8C9C4)}
 .hero h1{font-size:clamp(38px,8.5vw,68px);line-height:1.04;margin-bottom:18px}
 .hero h1 em{font-style:italic;color:var(--accent)}
@@ -54,25 +55,19 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.82);
 .herogrid{display:grid;gap:28px}
 @media(min-width:900px){.herogrid{grid-template-columns:1.05fr .95fr;align-items:center}}
 
-/* photo slots */
-.slot{margin:0;border:1px solid var(--line);border-radius:4px;
-  background:
-    repeating-linear-gradient(45deg,transparent,transparent 9px,
-      rgba(0,0,0,.016) 9px,
-      rgba(0,0,0,.016) 18px),
-    var(--panel);
-  display:flex;align-items:center;justify-content:center;text-align:center}
-.slot span{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--muted);padding:0 14px}
-.slotgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(min-width:700px){.slotgrid{grid-template-columns:repeat(4,1fr)}}
+/* Photographs. Her own files, the same ones the finished site uses — a colour
+   direction cannot be judged on empty frames, and empty frames were the whole
+   complaint. */
+.ph{margin:0;border-radius:4px;overflow:hidden;background:var(--panel)}
+.ph img{display:block;width:100%;height:100%;object-fit:cover}
+.phgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(min-width:700px){.phgrid{grid-template-columns:repeat(4,1fr)}}
 
 section{padding:62px 0}
 .sechead{margin-bottom:34px;max-width:52ch}
 .sechead h2{font-size:clamp(26px,5vw,38px);margin-bottom:12px}
 .sechead p{color:var(--muted);margin:0}
 
-/* signature */
 .sig{background:var(--panel);border-top:1px solid var(--line);
   border-bottom:1px solid var(--line)}
 .sigcard{display:grid;gap:24px}
@@ -80,7 +75,6 @@ section{padding:62px 0}
 .bigprice{font-family:var(--serif);font-size:clamp(44px,9vw,72px);
   color:var(--accent);line-height:1}
 
-/* price rows */
 .cols{display:grid;gap:34px}
 @media(min-width:820px){.cols{grid-template-columns:1fr 1fr;gap:44px}}
 .card{border:1px solid var(--line);border-radius:5px;padding:24px;
@@ -94,12 +88,17 @@ section{padding:62px 0}
 .rn{font-size:14.5px}
 .note{display:block;font-size:11.5px;color:var(--muted);margin-top:1px}
 .rp{font-family:var(--serif);font-size:15.5px;color:var(--accent);white-space:nowrap}
+.gst{margin-top:24px;font-size:12.5px;color:var(--muted)}
 
-/* academy */
 .academy{background:linear-gradient(150deg,var(--panel),var(--bg));
   border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.course{border-bottom:1px dotted var(--line);padding:13px 0}
+.course:last-of-type{border-bottom:0}
+.course .ct{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.course .cn{font-size:15.5px}
+.course .cp{font-family:var(--serif);font-size:16px;color:var(--accent);white-space:nowrap}
+.course .cd{font-size:12px;color:var(--muted);margin-top:2px}
 
-/* reviews */
 .quotes{display:grid;gap:16px}
 @media(min-width:820px){.quotes{grid-template-columns:repeat(3,1fr)}}
 .q{border:1px solid var(--line);border-radius:5px;padding:20px;
@@ -108,14 +107,21 @@ section{padding:62px 0}
 .q .who{font-size:12px;color:var(--muted)}
 .stars{color:var(--gold);letter-spacing:2px;font-size:13px}
 
+/* The price for this direction, on the page. A number in a WhatsApp message is
+   an opinion; a number on the thing itself is a rate. */
+.costband{background:var(--panel);border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);text-align:center}
+.costband h2{font-family:var(--serif);font-size:clamp(38px,8vw,60px);
+  color:var(--accent);line-height:1;margin-bottom:14px}
+.costband p{color:var(--muted);max-width:46ch;margin:0 auto 22px;font-size:15px}
+
 footer{padding:52px 0 120px;border-top:1px solid var(--line)}
 .fgrid{display:grid;gap:22px}
-@media(min-width:760px){.fgrid{grid-template-columns:1.2fr 1fr 1fr}}
+@media(min-width:760px){.fgrid{grid-template-columns:repeat(3,1fr)}}
 .fgrid h4{font-family:var(--serif);font-weight:400;font-size:16px;margin:0 0 8px}
 .fgrid p,.fgrid a{color:var(--muted);font-size:13.5px;margin:0 0 5px;
   text-decoration:none;display:block}
 
-/* floating CTA */
 .fab{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;
   flex-direction:column;gap:9px;align-items:flex-end}
 .fab a{display:flex;align-items:center;gap:8px;padding:12px 18px;
@@ -124,21 +130,22 @@ footer{padding:52px 0 120px;border-top:1px solid var(--line)}
 .fab .wa{background:#25D366;color:#08301A}
 .fab .cl{background:#141110;color:#fff}
 
-/* The concept ribbon sits IN FLOW, not fixed. Fixed made it two lines on a
-   360px phone and the sticky header rode up underneath it — the first thing
-   she would have seen. In flow it simply scrolls away and can never collide. */
+/* The ribbon sits IN FLOW, not fixed. Fixed made it two lines on a 360px phone
+   and the sticky header rode up underneath it. In flow it scrolls away and can
+   never collide. */
 .tag{background:var(--accent);color:#fff;
   font-size:11px;letter-spacing:.03em;line-height:1.45;
-  text-align:center;padding:7px 14px}
+  text-align:center;padding:8px 14px}
+.tag a{color:inherit}
 </style>
 </head>
 <body>
-<div class="tag">Direction 1 — <b>Warm Boutique</b> · rough concept for Manpreet Bhasin · by Lantern · photos are placeholders</div>
+<div class="tag">Direction 1 — <b>Warm Boutique</b> · colour concept · <b>₹3,500</b> to rebuild your website in this direction</div>
 
 <header><div class="hd">
   <div class="brand">Peaches &amp; Cream<small>Manpreet Bhasin's</small></div>
   <nav class="nav">
-    <a href="#bridal">Bridal</a><a href="#services">Services</a>
+    <a href="#bridal">Bridal</a><a href="#services">Prices</a>
     <a href="#academy">Academy</a><a href="#visit">Visit</a>
   </nav>
   <a class="btn btn-solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Book on WhatsApp</a>
@@ -156,18 +163,20 @@ footer{padding:52px 0 120px;border-top:1px solid var(--line)}
       <a class="btn btn-line" href="#bridal">See bridal pricing</a>
     </div>
     <div class="pills">
-      <span class="pill"><b>4.5 ★</b> on Google</span>
-      <span class="pill"><b>4,300+</b> on Instagram</span>
+      <span class="pill"><b>4.7 ★</b> on Google</span>
+      <span class="pill"><b>103</b> reviews</span>
       <span class="pill"><b>Academy</b> &amp; training</span>
     </div>
   </div>
-  <figure class="slot" style="aspect-ratio:4/5"><span>Bridal hero photograph</span></figure>
+  <figure class="ph" style="aspect-ratio:4/5"><img src="../site/assets/img/bridal-red-a-1000.webp" alt="Bridal makeup by Manpreet Bhasin" loading="eager" fetchpriority="high" decoding="async"></figure>
 </div></div>
 
-<section><div class="wrap">
-  <div class="slotgrid">
-    <figure class="slot" style="aspect-ratio:1/1"><span>Bridal look</span></figure><figure class="slot" style="aspect-ratio:1/1"><span>Airbrush detail</span></figure>
-    <figure class="slot" style="aspect-ratio:1/1"><span>Hair styling</span></figure><figure class="slot" style="aspect-ratio:1/1"><span>Studio</span></figure>
+<section style="padding-top:34px"><div class="wrap">
+  <div class="phgrid">
+    <figure class="ph" style="aspect-ratio:1/1"><img src="../site/assets/img/bridal-magenta-a-560.webp" alt="Bridal look" loading="lazy" decoding="async"></figure>
+    <figure class="ph" style="aspect-ratio:1/1"><img src="../site/assets/img/occasion-blush-a-560.webp" alt="Occasion makeup" loading="lazy" decoding="async"></figure>
+    <figure class="ph" style="aspect-ratio:1/1"><img src="../site/assets/img/hair-balayage-560.webp" alt="Balayage" loading="lazy" decoding="async"></figure>
+    <figure class="ph" style="aspect-ratio:1/1"><img src="../site/assets/img/nails-pearl-560.webp" alt="Nail art" loading="lazy" decoding="async"></figure>
   </div>
 </div></section>
 
@@ -182,83 +191,101 @@ footer{padding:52px 0 120px;border-top:1px solid var(--line)}
       <div class="bigprice">₹34,999</div>
       <div style="margin-top:22px"><a class="btn btn-solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Check your date</a></div>
     </div>
-    <figure class="slot" style="aspect-ratio:1/1"><span>Airbrush bridal photograph</span></figure>
+    <figure class="ph" style="aspect-ratio:1/1"><img src="../site/assets/img/bridal-ivory-a-1000.webp" alt="Airbrush bridal finish" loading="lazy" decoding="async"></figure>
   </div>
 </div></section>
 
 <section id="services"><div class="wrap">
   <div class="sechead">
-    <div class="eyebrow">Pricing, in the open</div>
+    <div class="eyebrow">Nothing behind "enquire"</div>
     <h2>Every price, published</h2>
-    <p>No "enquire for rates". You know what it costs before you message.</p>
+    <p>Most artists make you ask. These are the rates as they stand — so a bride
+      can compare properly, before she ever picks up the phone.</p>
   </div>
   <div class="cols">
     <div class="card">
       <h3>Bridal &amp; Occasion</h3><div class="sub">Airbrush &amp; HD</div>
-      <div class="row"><div><span class="rn">Airbrush Bridal</span><span class="note">The full bridal day, airbrush finish</span></div><span class="rp">₹34,999</span></div>
-<div class="row"><div><span class="rn">HD Bridal — Lux</span><span class="note">Premium HD, luxury product line</span></div><span class="rp">₹29,999</span></div>
-<div class="row"><div><span class="rn">HD Bridal</span><span class="note">The signature bridal look</span></div><span class="rp">₹25,000</span></div>
-<div class="row"><div><span class="rn">Airbrush Occasional</span><span class="note">Roka, reception, engagement</span></div><span class="rp">₹18,999</span></div>
-<div class="row"><div><span class="rn">HD Occasional</span><span class="note">Roka, reception, engagement</span></div><span class="rp">₹14,999</span></div>
+      <div class="row"><div><span class="rn">Airbrush bridal makeup</span><span class="note">The signature booking — the full wedding day</span></div><span class="rp">₹34,999</span></div>
+      <div class="row"><div><span class="rn">HD bridal makeup — Lux</span><span class="note">Premium HD, luxury product line</span></div><span class="rp">₹29,999</span></div>
+      <div class="row"><div><span class="rn">HD bridal makeup</span><span class="note">The signature bridal look</span></div><span class="rp">₹25,000</span></div>
+      <div class="row"><div><span class="rn">Airbrush occasional</span><span class="note">Roka, reception, engagement</span></div><span class="rp">₹18,999</span></div>
+      <div class="row"><div><span class="rn">HD occasional makeup</span><span class="note">Roka, reception, engagement</span></div><span class="rp">₹14,999</span></div>
     </div>
     <div class="card">
       <h3>Party Makeup</h3><div class="sub">Evening &amp; events</div>
-      <div class="row"><div><span class="rn">Airbrush Party</span></div><span class="rp">₹6,999</span></div>
-<div class="row"><div><span class="rn">HD Party</span></div><span class="rp">₹4,999</span></div>
-<div class="row"><div><span class="rn">Premium Party</span></div><span class="rp">₹4,999</span></div>
-<div class="row"><div><span class="rn">Light Party</span></div><span class="rp">₹3,999</span></div>
-<div class="row"><div><span class="rn">Classic Party</span></div><span class="rp">₹3,500</span></div>
+      <div class="row"><div><span class="rn">Airbrush party makeup</span></div><span class="rp">₹6,999</span></div>
+      <div class="row"><div><span class="rn">HD party makeup</span></div><span class="rp">₹4,999</span></div>
+      <div class="row"><div><span class="rn">Premium party makeup</span></div><span class="rp">₹4,999</span></div>
+      <div class="row"><div><span class="rn">Light party makeup</span></div><span class="rp">₹3,999</span></div>
+      <div class="row"><div><span class="rn">Classic party makeup</span></div><span class="rp">₹3,500</span></div>
     </div>
     <div class="card">
-      <h3>Pre-Bridal Packages</h3><div class="sub">Skin &amp; body, before the day</div>
-      <div class="row"><div><span class="rn">Pre-Bridal</span></div><span class="rp">₹5,999+</span></div>
-<div class="row"><div><span class="rn">Pre-Bridal</span></div><span class="rp">₹9,999+</span></div>
-<div class="row"><div><span class="rn">Pre-Bridal</span></div><span class="rp">₹14,999+</span></div>
-<div class="row"><div><span class="rn">Casmara Pre-Bridal</span></div><span class="rp">₹21,000+</span></div>
+      <h3>Pre-Bridal</h3><div class="sub">Skin &amp; body, before the day</div>
+      <div class="row"><div><span class="rn">Pre-bridal — essential</span></div><span class="rp">₹5,999</span></div>
+      <div class="row"><div><span class="rn">Pre-bridal — advanced</span></div><span class="rp">₹8,999</span></div>
+      <div class="row"><div><span class="rn">Pre-bridal — premium</span></div><span class="rp">₹14,999</span></div>
+      <div class="row"><div><span class="rn">Casmara pre-bridal</span></div><span class="rp">₹21,000</span></div>
     </div>
     <div class="card">
       <h3>Hair</h3><div class="sub">Cut · colour · treatment</div>
-      <div class="row"><div><span class="rn">Hair Cut</span></div><span class="rp">₹499</span></div>
-<div class="row"><div><span class="rn">Colour Touch-Up</span></div><span class="rp">₹1,400</span></div>
-<div class="row"><div><span class="rn">Balayage</span></div><span class="rp">₹4,499</span></div>
-<div class="row"><div><span class="rn">Hair Colour</span></div><span class="rp">₹4,499</span></div>
-<div class="row"><div><span class="rn">Global Colour</span></div><span class="rp">₹4,999</span></div>
-<div class="row"><div><span class="rn">Keratin</span></div><span class="rp">₹5,599</span></div>
-<div class="row"><div><span class="rn">Highlights</span></div><span class="rp">₹5,999</span></div>
-<div class="row"><div><span class="rn">Hair Treatment</span></div><span class="rp">₹5,999</span></div>
+      <div class="row"><div><span class="rn">Haircut — gents</span></div><span class="rp">₹299</span></div>
+      <div class="row"><div><span class="rn">Hair trim</span></div><span class="rp">₹499</span></div>
+      <div class="row"><div><span class="rn">Haircut — ladies</span></div><span class="rp">₹799</span></div>
+      <div class="row"><div><span class="rn">Colour touch-up</span></div><span class="rp">₹1,400</span></div>
+      <div class="row"><div><span class="rn">Hair colour</span></div><span class="rp">₹4,499</span></div>
+      <div class="row"><div><span class="rn">Global colour — base shades</span></div><span class="rp">₹4,999</span></div>
+      <div class="row"><div><span class="rn">Keratin</span></div><span class="rp">₹5,599</span></div>
+      <div class="row"><div><span class="rn">Global colour — fashion shades</span></div><span class="rp">₹5,999</span></div>
+      <div class="row"><div><span class="rn">Balayage</span></div><span class="rp">₹5,999</span></div>
+      <div class="row"><div><span class="rn">Highlights</span></div><span class="rp">₹5,999</span></div>
+      <div class="row"><div><span class="rn">Hair treatment</span></div><span class="rp">₹5,999</span></div>
     </div>
     <div class="card">
       <h3>Skin</h3><div class="sub">Facials</div>
-      <div class="row"><div><span class="rn">Basic Facial</span></div><span class="rp">₹1,200</span></div>
-<div class="row"><div><span class="rn">Deep Cleansing</span></div><span class="rp">₹1,500</span></div>
-<div class="row"><div><span class="rn">Anti-Ageing</span></div><span class="rp">₹2,500</span></div>
-<div class="row"><div><span class="rn">Hydra Facial</span></div><span class="rp">₹3,000</span></div>
-<div class="row"><div><span class="rn">Glass Skin</span></div><span class="rp">₹3,500</span></div>
+      <div class="row"><div><span class="rn">Basic facial</span></div><span class="rp">₹1,200</span></div>
+      <div class="row"><div><span class="rn">Deep cleansing</span></div><span class="rp">₹1,500</span></div>
+      <div class="row"><div><span class="rn">Anti-ageing</span></div><span class="rp">₹2,500</span></div>
+      <div class="row"><div><span class="rn">Hydra facial</span></div><span class="rp">₹3,000</span></div>
+      <div class="row"><div><span class="rn">Glass skin</span></div><span class="rp">₹3,500</span></div>
     </div>
     <div class="card">
       <h3>Nails</h3><div class="sub">Gel · acrylic · art</div>
-      <div class="row"><div><span class="rn">Gel Polish</span></div><span class="rp">₹799</span></div>
-<div class="row"><div><span class="rn">Gel Manicure</span></div><span class="rp">₹999</span></div>
-<div class="row"><div><span class="rn">Gel Pedicure</span></div><span class="rp">₹999</span></div>
-<div class="row"><div><span class="rn">Acrylic Nails</span></div><span class="rp">₹1,499</span></div>
-<div class="row"><div><span class="rn">Nail Art</span></div><span class="rp">₹300 / nail</span></div>
+      <div class="row"><div><span class="rn">Gel polish</span></div><span class="rp">₹799</span></div>
+      <div class="row"><div><span class="rn">Gel manicure</span></div><span class="rp">₹999</span></div>
+      <div class="row"><div><span class="rn">Gel pedicure</span></div><span class="rp">₹999</span></div>
+      <div class="row"><div><span class="rn">Acrylic extensions</span></div><span class="rp">₹1,499</span></div>
+      <div class="row"><div><span class="rn">Nail art</span></div><span class="rp">₹300 / nail</span></div>
+    </div>
+    <div class="card">
+      <h3>Waxing</h3><div class="sub">Threading &amp; waxing</div>
+      <div class="row"><div><span class="rn">Upper lip</span></div><span class="rp">₹100</span></div>
+      <div class="row"><div><span class="rn">Eyebrow</span></div><span class="rp">₹200</span></div>
+      <div class="row"><div><span class="rn">Full leg</span></div><span class="rp">₹700</span></div>
+      <div class="row"><div><span class="rn">Bikini</span></div><span class="rp">₹999</span></div>
+      <div class="row"><div><span class="rn">Brazilian</span></div><span class="rp">₹2,500</span></div>
     </div>
   </div>
+  <p class="gst">All prices are inclusive of GST. Bridal bookings are held
+    against a date; trials, travel and party sizes are quoted on the call.</p>
 </div></section>
 
 <section class="academy" id="academy"><div class="wrap">
   <div class="sigcard">
-    <figure class="slot" style="aspect-ratio:4/3"><span>Academy / teaching photograph</span></figure>
+    <figure class="ph" style="aspect-ratio:4/3"><img src="../site/assets/img/academy-class-1000.webp" alt="A class at the academy" loading="lazy" decoding="async"></figure>
     <div>
-      <div class="eyebrow">Learn from her</div>
+      <div class="eyebrow">The second door</div>
       <h2 style="font-size:clamp(26px,5vw,38px);margin-bottom:14px">The Academy</h2>
-      <p style="color:var(--muted);margin:0 0 20px;max-width:42ch">Manpreet trains
-        the next set of makeup artists — professional technique, airbrush and HD,
-        taught hands-on in the studio.</p>
-      <p style="color:var(--muted);font-size:13px;margin:0 0 20px">
-        <b style="color:var(--ink)">Course names, duration and fees to come from you</b> —
-        this section is built and waiting for the detail.</p>
-      <a class="btn btn-line" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Ask about courses</a>
+      <p style="color:var(--muted);margin:0 0 20px;max-width:42ch">The studio
+        teaches as well as it books — makeup only, taught by the artist whose
+        work is on this page. Four courses, from a single afternoon to
+        twenty-five days.</p>
+      <div class="course"><div class="ct"><span class="cn">Basic to Advance Makeup</span><span class="cp">₹25,000</span></div><div class="cd">25 days · 11:00 – 14:00 · certificate included</div></div>
+      <div class="course"><div class="ct"><span class="cn">Advance Makeup</span><span class="cp">₹20,000</span></div><div class="cd">5 days · 11:00 – 17:00 · certificate included</div></div>
+      <div class="course"><div class="ct"><span class="cn">Self grooming &amp; self makeup</span><span class="cp">₹4,999</span></div><div class="cd">3 days</div></div>
+      <div class="course"><div class="ct"><span class="cn">Self makeup — one day</span><span class="cp">₹2,500</span></div><div class="cd">For working professionals and new brides</div></div>
+      <p style="color:var(--muted);font-size:12.5px;margin:18px 0 20px">The
+        academy teaches makeup only — there is no separate hair course.</p>
+      <a class="btn btn-line" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Ask about the next batch</a>
     </div>
   </div>
 </div></section>
@@ -266,33 +293,44 @@ footer{padding:52px 0 120px;border-top:1px solid var(--line)}
 <section><div class="wrap">
   <div class="sechead">
     <div class="eyebrow">In their words</div>
-    <h2>4.5 ★ on Google</h2>
-    <p>Her real reviews drop in here — we never write these.</p>
+    <h2>4.7 ★ on Google</h2>
+    <p>From 103 reviews, quoted exactly as they were left. Nothing on this page
+      is invented.</p>
   </div>
   <div class="quotes">
-    <div class="q"><div class="stars">★★★★★</div><p>Her actual Google review appears here.</p><div class="who">— Verified Google review</div></div>
-    <div class="q"><div class="stars">★★★★★</div><p>Her actual Google review appears here.</p><div class="who">— Verified Google review</div></div>
-    <div class="q"><div class="stars">★★★★★</div><p>Her actual Google review appears here.</p><div class="who">— Verified Google review</div></div>
+    <div class="q"><div class="stars">★★★★★</div><p>Love the service here! Been coming here for years — staff and service are impeccable!</p><div class="who">— Riyana Dudeja · Google</div></div>
+    <div class="q"><div class="stars">★★★★★</div><p>Awesome service and very polite behavior. I really love their service with perfection.</p><div class="who">— ila bharti · Google</div></div>
+    <div class="q"><div class="stars">★★★★★</div><p>Great services. Special mention to Gautam, Bharat and Tara. Awesome staff.</p><div class="who">— Nida · Google</div></div>
   </div>
 </div></section>
 
+<section class="costband"><div class="wrap">
+  <div class="eyebrow">If you want this one instead</div>
+  <h2>₹3,500</h2>
+  <p>Your finished website, rebuilt from top to bottom in this colour direction —
+     every section, every photograph, every price. Quoted on a separate invoice,
+     paid before the work starts.</p>
+  <a class="btn btn-solid" href="https://wa.me/919711105497?text=Hi%20Nandit%2C%20I%20like%20direction%201." target="_blank" rel="noopener">Tell Nandit this one</a>
+</div></section>
 <footer id="visit"><div class="wrap">
   <div class="fgrid">
-    <div>
-      <h4>Manpreet Bhasin's Peaches &amp; Cream</h4>
-      <p>Hair · Skin · Makeup</p>
-      <p>Valley Souk, Ansals Valley View Estate,<br>Gurugram 122001</p>
-      <p style="font-size:11.5px;opacity:.7">(address to confirm)</p>
-    </div>
-    <div>
-      <h4>Reach her</h4>
-      <a href="tel:+919810819297">+91 98108 19297</a>
-      <a href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp</a>
-      <a href="https://www.instagram.com/manpreetbhasinspeachesandcream/" target="_blank" rel="noopener">Instagram</a>
-    </div>
+    <div><h4>Gwal Pahari — main studio</h4><p>Shop 26, 27, 28 &amp; 30, Valley Souk<br>Ansals Valley View Estate<br>Gwal Pahari, Gurugram 122003</p></div>
+    <div><h4>Sector 56</h4><p>Hall 1, First Floor<br>Community Centre, Devinder Vihar<br>Sector 56, Gurugram 122011</p></div>
+    <div><h4>Sector 49</h4><p>Park View City 2, Badshahpur Sohna Road<br>Vatika City, Block W<br>Sector 49, Gurugram 122018</p></div>
+  </div>
+  <div class="fgrid" style="margin-top:34px;border-top:1px solid var(--line);padding-top:26px">
     <div>
       <h4>Hours</h4>
-      <p>To be confirmed</p>
+      <p>10:00 – 20:00, all seven days</p>
+    </div>
+    <div>
+      <h4>Reach the studio</h4>
+      <a href="tel:+919810819297">+91 98108 19297</a>
+      <a href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <div>
+      <h4>Serving</h4>
+      <p>Gurugram and Delhi</p>
     </div>
   </div>
 </div></footer>

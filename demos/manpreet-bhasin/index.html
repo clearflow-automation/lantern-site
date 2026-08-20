@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Peaches &amp; Cream — your website, three directions</title>
-<meta property="og:title" content="Peaches &amp; Cream — your website">
-<meta property="og:description" content="Three design directions to choose from, and what we'll need from you.">
+<title>Peaches &amp; Cream — six colour directions</title>
+<meta property="og:title" content="Peaches &amp; Cream — six colour directions">
+<meta property="og:description" content="The same website, six ways. Pick the one you want.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#FBF5F2;--ink:#3A2226;--muted:#7A5C60;--line:#E7D3CE;
-  --accent:#8C2F39;--gold:#B08968;--panel:#F3E4DF;
+  --accent:#8C2F39;--gold:#8C6A4A;--panel:#F3E4DF;
   --serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
-  font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+  font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:clip}
 .wrap{max-width:760px;margin:0 auto;padding:0 22px}
 h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.01em}
 .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;
@@ -27,53 +27,47 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.01em
   border-bottom:1px solid var(--line)}
 .hero h1{font-size:clamp(32px,7.5vw,52px);line-height:1.08;margin-bottom:16px}
 .hero h1 em{font-style:italic;color:var(--accent)}
-.hero p{color:var(--muted);margin:0;font-size:16.5px;max-width:46ch}
+.hero p{color:#6B4B4F;margin:0;font-size:16.5px;max-width:46ch}
 
 section{padding:46px 0;border-bottom:1px solid var(--line)}
 section:last-of-type{border-bottom:0}
 h2{font-size:clamp(24px,5vw,34px);margin-bottom:10px}
 .lede{color:var(--muted);margin:0 0 28px;max-width:52ch}
 
-/* direction cards */
 .dir{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);
   border-radius:6px;overflow:hidden;background:#fff;margin-bottom:16px;
   transition:transform .18s,box-shadow .18s}
 .dir:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(58,34,38,.10)}
+.dir.picked{border-color:var(--gold);border-width:2px}
 .sw{height:92px;display:flex}
 .sw i{flex:1}
 .dbody{padding:18px 20px}
 .dbody h3{font-size:21px;margin-bottom:5px}
 .dbody h3 span{font-family:var(--sans);font-size:11px;letter-spacing:.18em;
   text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px}
-.dbody p{margin:0 0 12px;font-size:14.5px;color:var(--muted)}
+.dbody p{margin:0 0 14px;font-size:14.5px;color:var(--muted)}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap}
 .open{font-size:13px;color:var(--accent);letter-spacing:.04em}
-
-/* checklist */
-ul.check{list-style:none;padding:0;margin:0}
-ul.check li{padding:13px 0 13px 32px;border-bottom:1px dotted var(--line);
-  position:relative;font-size:15px}
-ul.check li:last-child{border-bottom:0}
-ul.check li:before{content:"";position:absolute;left:4px;top:19px;width:13px;
-  height:13px;border:1.5px solid var(--gold);border-radius:3px}
-ul.check li b{font-weight:500}
-ul.check li span{display:block;font-size:13px;color:var(--muted);margin-top:2px}
-
-/* tiers */
-.tier{border:1px solid var(--line);border-radius:6px;padding:22px;
-  background:#fff;margin-bottom:14px}
-.tier.mid{border-color:var(--gold);border-width:1.5px;background:#FFFCF7}
-.tprice{font-family:var(--serif);font-size:32px;color:var(--accent);line-height:1}
-.tname{font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--gold);margin:8px 0 14px}
-.tier ul{list-style:none;padding:0;margin:0}
-.tier ul li{padding:6px 0 6px 20px;position:relative;font-size:14.5px}
-.tier ul li:before{content:"·";position:absolute;left:6px;color:var(--gold);
-  font-size:18px;line-height:1.2}
-.plus{font-size:13px;color:var(--muted);font-style:italic;margin:0 0 10px}
+.chip{font-size:11.5px;letter-spacing:.06em;padding:5px 12px;border-radius:999px;
+  background:var(--panel);color:#6B4B4F;white-space:nowrap}
+.chip-in{background:#EFE3D2;color:#6A5326}
 
 .note{background:var(--panel);border-radius:6px;padding:20px;font-size:14.5px;
   color:var(--muted)}
 .note b{color:var(--ink);font-weight:500}
+
+.two{display:grid;gap:14px}
+@media(min-width:640px){.two{grid-template-columns:1fr 1fr}}
+.box{border:1px solid var(--line);border-radius:6px;padding:20px;background:#fff}
+.box.paid{border-color:var(--gold)}
+.bprice{font-family:var(--serif);font-size:30px;color:var(--accent);line-height:1}
+.bname{font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin:8px 0 14px}
+.box ul{list-style:none;padding:0;margin:0}
+.box ul li{padding:6px 0 6px 18px;position:relative;font-size:14px;color:var(--muted)}
+.box ul li:before{content:"·";position:absolute;left:5px;color:var(--gold);
+  font-size:18px;line-height:1.1}
 
 .cta{text-align:center;padding:44px 0 60px}
 .btn{display:inline-block;background:var(--accent);color:#fff;padding:15px 32px;
@@ -85,141 +79,115 @@ footer{text-align:center;padding:0 0 40px;font-size:12.5px;color:var(--muted)}
 
 <div class="hero"><div class="wrap">
   <div class="eyebrow">Prepared for Manpreet Bhasin's Peaches &amp; Cream</div>
-  <h1>Your website,<br><em>three directions.</em></h1>
-  <p>Have a look before we meet. You don't need to know anything about design —
-     just tell us which one feels like <em>you</em>, and what you'd change.</p>
+  <h1>The same website,<br><em>six ways.</em></h1>
+  <p>Every one of these has your photographs, your prices, your three studios
+     and your four courses. Only the <em>colour</em> changes. Open them on your
+     phone, one after the other.</p>
 </div></div>
 
 <section><div class="wrap">
   <div class="eyebrow">Step one</div>
   <h2>Pick a direction</h2>
-  <p class="lede">All three have the same pages and the same information — your
-    real services and your real prices. Only the <em>feeling</em> changes.
-    Open each one on your phone.</p>
+  <p class="lede">Direction two is the one you chose in August — that is your
+    finished website, and it is paid for. The other five are colour concepts.
+    Any of them can become your site, and each one is priced.</p>
 
   <a class="dir" href="1-warm-boutique/">
-    <div class="sw"><i style="background:#F6E3DE"></i><i style="background:#E8C9C4"></i>
-      <i style="background:#8C2F39"></i><i style="background:#B08968"></i></div>
-    <div class="dbody"><h3><span>Direction one</span>Warm Boutique</h3>
+    <div class="sw"><i style="background:#F6E3DE"></i><i style="background:#E8C9C4"></i><i style="background:#8C2F39"></i><i style="background:#B08968"></i></div>
+    <div class="dbody">
+      <h3><span>Direction 1</span>Warm Boutique</h3>
       <p>Blush, wine and antique gold. Soft and romantic — it feels like a wedding.</p>
-      <div class="open">Open this one →</div></div>
+      <div class="foot"><span class="open">Open this one →</span><span class="chip">₹3,500 to switch</span></div>
+    </div>
   </a>
-
-  <a class="dir" href="2-prestige-luxe/">
-    <div class="sw"><i style="background:#141110"></i><i style="background:#1E1917"></i>
-      <i style="background:#C9A227"></i><i style="background:#F4EFE9"></i></div>
-    <div class="dbody"><h3><span>Direction two</span>Prestige Luxe</h3>
-      <p>Deep espresso and gold. Dark, quiet and expensive-feeling — closest to
-        your own pre-bridal card.</p>
-      <div class="open">Open this one →</div></div>
+  <a class="dir picked" href="../site/">
+    <div class="sw"><i style="background:#141110"></i><i style="background:#1E1917"></i><i style="background:#C9A227"></i><i style="background:#F4EFE9"></i></div>
+    <div class="dbody">
+      <h3><span>Direction 2</span>Prestige Luxe</h3>
+      <p>Deep espresso and gold. Dark, quiet and expensive-feeling. This is the one you chose in August, and your finished website is built in it.</p>
+      <div class="foot"><span class="open">Open your finished website →</span><span class="chip chip-in">Your choice · included</span></div>
+    </div>
   </a>
-
   <a class="dir" href="3-minimal-luxe/">
-    <div class="sw"><i style="background:#FAF9F7"></i><i style="background:#F1EEE9"></i>
-      <i style="background:#9A7B4F"></i><i style="background:#E4E1DC"></i></div>
-    <div class="dbody"><h3><span>Direction three</span>Minimal Luxe</h3>
-      <p>Off-white and fine gold, with a lot of space. Reads as a studio and
-        academy rather than a salon.</p>
-      <div class="open">Open this one →</div></div>
+    <div class="sw"><i style="background:#FAF9F7"></i><i style="background:#F1EEE9"></i><i style="background:#9A7B4F"></i><i style="background:#E4E1DC"></i></div>
+    <div class="dbody">
+      <h3><span>Direction 3</span>Minimal Luxe</h3>
+      <p>Off-white and fine gold, with a lot of space. Reads as a studio and academy rather than a salon.</p>
+      <div class="foot"><span class="open">Open this one →</span><span class="chip">₹3,500 to switch</span></div>
+    </div>
   </a>
-
-  <div class="note" style="margin-top:20px">
-    <b>The photographs are placeholders.</b> Every empty frame you see is where
-    your own work goes — we haven't used your Instagram pictures without asking.
-    The prices, though, are real: we took them from your own price list, so you
-    can check them.
-  </div>
+  <a class="dir" href="4-gold-beige/">
+    <div class="sw"><i style="background:#F4EADA"></i><i style="background:#EADCC5"></i><i style="background:#7C5F16"></i><i style="background:#B08A2E"></i></div>
+    <div class="dbody">
+      <h3><span>Direction 4</span>Gold &amp; Beige</h3>
+      <p>Warm sand and a deep, real gold — the one you asked for. The richest of the light directions; closest to a jewellery counter.</p>
+      <div class="foot"><span class="open">Open this one →</span><span class="chip">₹3,500 to switch</span></div>
+    </div>
+  </a>
+  <a class="dir" href="5-peach-pearl/">
+    <div class="sw"><i style="background:#FFF7F2"></i><i style="background:#FCE7DA"></i><i style="background:#9C4526"></i><i style="background:#D19A78"></i></div>
+    <div class="dbody">
+      <h3><span>Direction 5</span>Peach &amp; Pearl</h3>
+      <p>Pearl white with peach, and a burnt-rose accent. Your own name, read as a colour. The most modern of the six.</p>
+      <div class="foot"><span class="open">Open this one →</span><span class="chip">₹3,500 to switch</span></div>
+    </div>
+  </a>
+  <a class="dir" href="6-blush-gold/">
+    <div class="sw"><i style="background:#FDF2F0"></i><i style="background:#FAE4E0"></i><i style="background:#7E6017"></i><i style="background:#F3D6D1"></i></div>
+    <div class="dbody">
+      <h3><span>Direction 6</span>Blush &amp; Gold</h3>
+      <p>Soft pink and bronze-gold, on white cards. Lighter and prettier than direction one — no wine in it at all.</p>
+      <div class="foot"><span class="open">Open this one →</span><span class="chip">₹3,500 to switch</span></div>
+    </div>
+  </a>
 </div></section>
 
 <section><div class="wrap">
   <div class="eyebrow">Step two</div>
-  <h2>What we'll need from you</h2>
-  <p class="lede">Nothing urgent — we can start with what we have. But the site
-    is only as good as what goes into it.</p>
+  <h2>What each one costs</h2>
+  <p class="lede">So there is no confusion later, here it is in writing.</p>
 
-  <ul class="check">
-    <li><b>Photographs of your work</b>
-      <span>Bridal looks especially. Originals from your phone gallery — not
-      WhatsApp forwards or Instagram screenshots, both are already blurred.</span></li>
-    <li><b>Your correct address</b>
-      <span>We found Valley Souk, Ansals Valley View Estate — please confirm,
-      or tell us the current one.</span></li>
-    <li><b>Opening hours</b>
-      <span>Including which days you're closed.</span></li>
-    <li><b>A check of your prices</b>
-      <span>We've used your published list. Tell us anything that has changed —
-      especially the hair services.</span></li>
-    <li><b>The academy</b>
-      <span>Course names, how many days, what it costs, and whether there's a
-      certificate. This gets its own section.</span></li>
-    <li><b>How long you've been doing this</b>
-      <span>Years of experience is one of the first things a bride looks for.</span></li>
-    <li><b>Your team</b>
-      <span>If you'd like a page for them, a name and photo each.</span></li>
-    <li><b>Anything you're proud of</b>
-      <span>Awards, training, magazine features, celebrity work.</span></li>
-  </ul>
-</div></section>
-
-<section><div class="wrap">
-  <div class="eyebrow">Step three</div>
-  <h2>What it costs</h2>
-  <p class="lede">No hosting bill from us, ever. Whichever you choose.</p>
-
-  <div class="tier">
-    <div class="tprice">₹4,999</div><div class="tname">Starter</div>
-    <ul>
-      <li>One page, built for phones first</li>
-      <li>WhatsApp and Call buttons on every screen</li>
-      <li>Up to 8 of your photographs</li>
-      <li>Your Google reviews on the page</li>
-      <li>Map and directions to your studio</li>
-      <li>A Lantern web address — not your own domain</li>
-      <li>You supply the words</li>
-    </ul>
+  <div class="two">
+    <div class="box paid">
+      <div class="bprice" style="font-size:26px">Included</div>
+      <div class="bname">Direction two</div>
+      <ul>
+        <li>The direction you selected on 18 August</li>
+        <li>What the ₹9,999 invoice was raised against</li>
+        <li>Built, finished and ready to go live</li>
+        <li>Changes <b>inside</b> this direction — words, photographs, prices,
+            sections — stay included</li>
+      </ul>
+    </div>
+    <div class="box">
+      <div class="bprice">₹3,500</div>
+      <div class="bname">Any other direction</div>
+      <ul>
+        <li>Your finished website rebuilt in that colour, top to bottom</li>
+        <li>Every section, photograph and price carried across</li>
+        <li>Quoted on a <b>separate invoice</b>, paid before work starts</li>
+        <li>One direction. Not one at a time until something sticks</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="tier mid">
-    <div class="tprice">₹9,999</div><div class="tname">Complete</div>
-    <p class="plus">Everything above, plus —</p>
-    <ul>
-      <li><b>Your own domain, registered in your name</b></li>
-      <li>Up to 8 sections — bridal, party, pre-bridal, hair, skin, nails, academy</li>
-      <li>All the words written for you</li>
-      <li>Up to 20 photographs, cleaned and edited</li>
-      <li><b>Your Google listing set up properly</b> — categories, services, hours,
-        photos, description, and the questions clients ask, answered</li>
-      <li>Full search setup, so brides find you</li>
-      <li>Your link shows a proper preview when shared on WhatsApp</li>
-      <li>Seasonal banners and a QR code pack for your counter</li>
-    </ul>
-  </div>
-
-  <div class="tier">
-    <div class="tprice">₹14,999</div><div class="tname">Complete + Academy</div>
-    <p class="plus">Everything above, plus —</p>
-    <ul>
-      <li><b>The Academy as its own page</b> — courses, fees, its own enquiry button</li>
-      <li><b>Online booking</b> — clients pick their own date and slot instead of
-        five messages back and forth</li>
-      <li>You change your own prices, from a simple sheet — no training needed</li>
-      <li>Motion and scroll effects</li>
-    </ul>
-  </div>
-
-  <div class="note">
-    <b>₹499 a month afterwards</b> covers updates, backups, keeping the site fast
-    and secure, and small changes when your prices or services change.
+  <div class="note" style="margin-top:18px">
+    <b>Why it is charged.</b> A colour direction is not a setting to be flipped —
+    it is the whole site rebuilt: every ground, every panel, every border,
+    every photograph re-checked so it still looks right and still reads
+    clearly. That is a day's work, and it sits outside the ₹9,999 package,
+    which covers one direction.
     <br><br>
-    <b>Your domain is yours.</b> Registered in your name, on your email. If you
-    ever leave us, it goes with you — we don't hold anything hostage.
+    <b>What is not charged.</b> Anything inside the direction you keep. New
+    photographs, changed prices, new services, different words, another
+    section — those are part of the package and always will be.
   </div>
 </div></section>
 
 <div class="cta"><div class="wrap">
-  <div class="eyebrow">When you're ready</div>
-  <h2 style="margin-bottom:18px">Tell us which one</h2>
-  <a class="btn" href="https://wa.me/919711105497?text=Hi%20Nandit%2C%20I%20looked%20at%20the%20three%20directions." target="_blank" rel="noopener">Message Nandit on WhatsApp</a>
+  <div class="eyebrow">When you have looked</div>
+  <h2 style="margin-bottom:18px">Tell me which number</h2>
+  <a class="btn" href="https://wa.me/919711105497?text=Hi%20Nandit%2C%20I%20have%20looked%20at%20the%20six%20directions." target="_blank" rel="noopener">Message Nandit on WhatsApp</a>
 </div></div>
 
 <footer>Lantern · websites for local businesses in Gurugram<br>
