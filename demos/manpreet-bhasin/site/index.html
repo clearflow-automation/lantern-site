@@ -10,7 +10,9 @@
 <meta property="og:title" content="Manpreet Bhasin's Peaches &amp; Cream — Bridal Makeup, Salon &amp; Academy">
 <meta property="og:description" content="Makeup that enhances, never overpowers. Airbrush bridal from ₹34,999, every price published. Gurugram &amp; Delhi.">
 <meta property="og:image" content="assets/img/hero-poster-1100.webp">
+<meta name="theme-color" content="#0B0A09">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" fetchpriority="high" media="(max-width:720px)"
@@ -102,12 +104,12 @@ header{
 header.stuck{background:rgba(11,10,9,.82); backdrop-filter:blur(14px); border-bottom-color:var(--line)}
 .bar{display:flex; align-items:center; gap:var(--s3); justify-content:space-between}
 .brand{display:flex; align-items:center; gap:12px; text-decoration:none; min-width:0}
-.brand svg{width:38px; height:38px; flex:none}
+.brand .mark{width:42px; height:42px; flex:none; border-radius:50%; object-fit:cover}
 .brand b{font-weight:400; font-size:1.02rem; letter-spacing:.01em; display:block; white-space:nowrap}
 .brand span{display:block; font-size:.63rem; letter-spacing:.24em; text-transform:uppercase; color:var(--muted)}
 .brand .short{display:none}
 @media(max-width:860px){
-  .brand svg{width:32px; height:32px}
+  .brand .mark{width:36px; height:36px}
   .brand .full{display:none}
   .brand .short{display:block; font-weight:400; font-size:.98rem; white-space:nowrap}
   .brand span{font-size:.55rem; letter-spacing:.16em}
@@ -356,6 +358,7 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 .hairlist dt{padding:13px 0; border-bottom:1px solid var(--line-soft)}
 .hairlist dd{padding:13px 0; border-bottom:1px solid var(--line-soft); color:var(--gold-lite); text-align:right}
 .hairpics{display:grid; grid-template-columns:1fr 1fr; gap:7px}
+.hairpics figure:nth-child(3){grid-column:1 / -1; aspect-ratio:16/9}
 .hairpics figure{margin:0; aspect-ratio:3/4}
 .hairpics img{width:100%; height:100%; object-fit:cover}
 .hairpics figure:last-child{transform:translateY(28px)}
@@ -390,8 +393,16 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 .prow small{display:block; color:var(--muted); font-size:.86rem; margin-top:3px}
 .panel[hidden]{display:none}
 
+/* ---------- a package and what is inside it ---------- */
+.pkg{padding:20px clamp(18px,3vw,30px); border-bottom:1px solid var(--line-soft)}
+.pkg:last-child{border-bottom:0}
+.pkg-h{display:flex; align-items:baseline; gap:16px; justify-content:space-between}
+.pkg-h span{font-size:1.06rem}
+.pkg-h b{font-weight:400; color:var(--gold-lite); white-space:nowrap; font-size:1.08rem}
+.pkg p{margin:8px 0 0; color:var(--muted); font-size:.92rem; line-height:1.6; max-width:64ch}
+
 /* ---------- academy ---------- */
-.academy{}
+.academy{background:var(--panel); border-block:1px solid var(--line)}
 .acad{display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(24px,5vw,72px); align-items:center}
 @media(max-width:900px){.acad{grid-template-columns:1fr}}
 .acad-media{border-radius:var(--r); overflow:hidden; aspect-ratio:4/3; border:1px solid var(--line)}
@@ -402,7 +413,12 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
   background:var(--bg); transition:.4s var(--ease);
 }
 .course:hover{border-color:var(--gold); transform:translateY(-3px)}
-.course h3{font-size:1.12rem; line-height:1.3}
+.course-h{display:flex; align-items:baseline; justify-content:space-between; gap:14px}
+.course h3{font-size:1.1rem; line-height:1.3}
+.course-h b{font-weight:400; color:var(--gold-lite); white-space:nowrap; font-size:1.08rem}
+.course-m{margin:7px 0 0 !important; color:var(--gold) !important; font-size:.76rem !important; letter-spacing:.1em; text-transform:uppercase}
+.course-n{margin-top:10px !important; font-size:.86rem !important; opacity:.85}
+.course-sm p{margin-top:6px !important}
 .course p{margin:6px 0 0; color:var(--muted); font-size:.94rem}
 
 /* ---------- placeholder marker ---------- */
@@ -436,6 +452,29 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 .visit a{color:var(--gold-lite)}
 .map{border-radius:var(--r); overflow:hidden; border:1px solid var(--line); min-height:340px; background:var(--panel-2)}
 .map iframe{width:100%; height:100%; min-height:340px; border:0; filter:grayscale(.4) invert(.92) hue-rotate(180deg) contrast(.9)}
+
+.studio-shot{margin:0 0 14px; border-radius:8px; overflow:hidden; aspect-ratio:4/3; background:#241F1A}
+.studio-shot img{width:100%; height:100%; object-fit:cover}
+@media(min-width:881px){.visit{align-items:start}}
+
+/* ---------- meet the artist ---------- */
+.meet{display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(24px,5vw,64px); align-items:center}
+@media(max-width:900px){.meet{grid-template-columns:1fr}}
+.meet-pic .arch{aspect-ratio:3/4}
+.meet-pic img{width:100%; height:100%; object-fit:cover}
+
+/* ---------- the three studios ---------- */
+.branches{display:grid; gap:12px; margin:0 0 var(--s4)}
+.branch{border:1px solid var(--line); border-radius:var(--r); padding:18px 20px; background:var(--panel-2)}
+.branch-t{margin:0 0 8px; font-size:1.02rem; color:var(--ink)}
+.branch-t span{
+  display:inline-block; margin-left:8px; vertical-align:middle; font-size:.6rem;
+  letter-spacing:.16em; text-transform:uppercase; color:#120E08; background:var(--gold);
+  border-radius:4px; padding:3px 7px;
+}
+.branch p{margin:0; color:var(--muted); font-size:.93rem; line-height:1.55}
+.branch a{display:inline-block; margin-top:10px; color:var(--gold-lite); text-decoration:none; font-size:.9rem}
+.branch a:hover{color:var(--gold)}
 
 /* ---------- footer ---------- */
 footer.f{border-top:1px solid var(--line); padding:var(--s5) 0 var(--s4); color:var(--muted); font-size:.9rem}
@@ -494,19 +533,7 @@ html{scroll-behavior:smooth}
 <header id="hdr">
   <div class="wrap bar">
     <a class="brand" href="#top">
-      <svg viewBox="0 0 200 200" aria-hidden="true">
-        <defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#F3E0AE"/><stop offset=".45" stop-color="#D6B15F"/><stop offset="1" stop-color="#A87F2C"/>
-        </linearGradient></defs>
-        <g fill="none" stroke="url(#hg)" stroke-linecap="round">
-          <circle cx="100" cy="100" r="94" stroke-width="4"/><circle cx="100" cy="100" r="82" stroke-width="2"/>
-        </g>
-        <g fill="url(#hg)"><circle cx="100" cy="6" r="5"/><circle cx="100" cy="194" r="5"/><circle cx="6" cy="100" r="5"/><circle cx="194" cy="100" r="5"/></g>
-        <g fill="none" stroke="url(#hg)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M62 143V72c0-14 17-18 24-7l14 23"/><path d="M100 88l14-23c7-11 24-7 24 7v20"/>
-          <path d="M100 88v55"/><path d="M138 92c14 0 21 10 21 20s-8 18-21 18c13 0 22 8 22 19s-9 20-24 20c-12 0-20-6-20-6"/>
-        </g>
-      </svg>
+      <img class="mark" src="assets/img/mark-96.webp" srcset="assets/img/mark-96.webp 96w, assets/img/mark-176.webp 176w" sizes="44px" width="44" height="44" alt="" fetchpriority="high">
       <span class="t">
         <b class="full">Manpreet Bhasin's Peaches &amp; Cream</b>
         <b class="short">Peaches &amp; Cream</b>
@@ -516,6 +543,7 @@ html{scroll-behavior:smooth}
     <nav>
       <a href="#work">The work</a>
       <a href="#hair">Hair</a>
+      <a href="#artist">The artist</a>
       <a href="#bridal">Airbrush or HD</a>
       <a href="#prices">Prices</a>
       <a href="#academy">Academy</a>
@@ -627,6 +655,9 @@ html{scroll-behavior:smooth}
       <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-nude-b-560.webp" srcset="assets/img/occasion-nude-b-560.webp 560w, assets/img/occasion-nude-b-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/occasion-nude-b-1000.webp" width="560" height="747" loading="lazy" alt="Occasion look in beige and gold, photographed outdoors"><figcaption>Occasion · beige &amp; gold</figcaption></figure>
       <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blue-b-560.webp" srcset="assets/img/occasion-blue-b-560.webp 560w, assets/img/occasion-blue-b-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/occasion-blue-b-1000.webp" width="560" height="747" loading="lazy" alt="Client in a blue lehenga with silver jewellery"><figcaption>Occasion · ice blue</figcaption></figure>
       <figure class="tile rv" data-c="occasion"><img src="assets/img/occasion-blush-b-560.webp" srcset="assets/img/occasion-blush-b-560.webp 560w, assets/img/occasion-blush-b-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/occasion-blush-b-1000.webp" width="560" height="747" loading="lazy" alt="Close portrait in blush with a maang tikka"><figcaption>Occasion · the portrait</figcaption></figure>
+      <figure class="tile rv" data-c="nails"><img src="assets/img/nails-pearl-560.webp" srcset="assets/img/nails-pearl-560.webp 560w, assets/img/nails-pearl-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/nails-pearl-1000.webp" width="560" height="420" loading="lazy" alt="Pink ombre French nails with gold trim and hand-painted flowers"><figcaption>Nails · pearl &amp; gold</figcaption></figure>
+      <figure class="tile wide rv" data-c="nails"><img src="assets/img/nails-studio-560.webp" srcset="assets/img/nails-studio-560.webp 560w, assets/img/nails-studio-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/nails-studio-1000.webp" width="560" height="420" loading="lazy" alt="Hand-painted floral nail art on almond nails"><figcaption>Nails · hand-painted</figcaption></figure>
+      <figure class="tile wide rv" data-c="nails"><img src="assets/img/nails-heart-560.webp" srcset="assets/img/nails-heart-560.webp 560w, assets/img/nails-heart-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/nails-heart-1000.webp" width="560" height="420" loading="lazy" alt="Red French tips with painted hearts"><figcaption>Nails · red hearts</figcaption></figure>
       <figure class="tile wide rv" data-c="nails"><img src="assets/img/nails-french-560.webp" srcset="assets/img/nails-french-560.webp 560w, assets/img/nails-french-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/nails-french-1000.webp" width="560" height="420" loading="lazy" alt="French gel manicure with hand-painted daisy nail art"><figcaption>Nails · French &amp; daisy art</figcaption></figure>
       <figure class="tile wide rv" data-c="nails"><img src="assets/img/nails-dot-560.webp" srcset="assets/img/nails-dot-560.webp 560w, assets/img/nails-dot-1000.webp 1000w" sizes="(max-width:720px) 50vw, (max-width:1000px) 33vw, 25vw" data-full="assets/img/nails-dot-1000.webp" width="560" height="420" loading="lazy" alt="Dark polka dot gel nail art on almond nails"><figcaption>Nails · polka dot</figcaption></figure>
     </div>
@@ -657,12 +688,12 @@ html{scroll-behavior:smooth}
           <p class="lede">Never just picked off a shade chart. Schwarzkopf zero-ammonia, mixed per head — roots and lengths blended separately, so the colour reads as one piece of hair and not two.</p>
         </div>
         <dl class="hairlist">
-          <dt>Balayage</dt><dd>₹4,499</dd>
-          <dt>Global colour</dt><dd>₹4,999</dd>
+          <dt>Balayage</dt><dd>₹5,999</dd>
+          <dt>Global colour — base</dt><dd>₹4,999</dd>
+          <dt>Global colour — fashion</dt><dd>₹5,999</dd>
           <dt>Highlights</dt><dd>₹5,999</dd>
           <dt>Keratin</dt><dd>₹5,599</dd>
-          <dt>Hair treatment</dt><dd>₹5,999</dd>
-          <dt>Cut</dt><dd>₹499</dd>
+          <dt>Haircut — ladies</dt><dd>₹799</dd>
         </dl>
         <div class="hero-cta" style="margin-top:26px">
           <a class="btn solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20would%20like%20to%20book%20a%20hair%20appointment." target="_blank" rel="noopener">
@@ -674,14 +705,41 @@ html{scroll-behavior:smooth}
       </div>
       <div class="hairpics rv">
         <figure class="arch"><img src="assets/img/hair-balayage-560.webp" srcset="assets/img/hair-balayage-560.webp 560w, assets/img/hair-balayage-1000.webp 1000w" sizes="(max-width:900px) 46vw, 24vw" width="560" height="747" loading="lazy" alt="Balayage colour with long soft waves, photographed from behind"></figure>
+        <figure class="arch"><img src="assets/img/hair-updo-560.webp" srcset="assets/img/hair-updo-560.webp 560w, assets/img/hair-updo-1000.webp 1000w" sizes="(max-width:900px) 46vw, 24vw" width="560" height="747" loading="lazy" alt="A bridal updo being pinned in the studio"></figure>
         <figure class="arch"><img src="assets/img/hair-brunette-560.webp" srcset="assets/img/hair-brunette-560.webp 560w, assets/img/hair-brunette-1000.webp 1000w" sizes="(max-width:900px) 46vw, 24vw" width="560" height="747" loading="lazy" alt="Deep brunette global colour with a soft wave set"></figure>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ===================== MEET MANPREET ===================== -->
+<section id="artist" style="background:var(--panel); border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="meet">
+      <div class="meet-pic rv">
+        <div class="arch"><img src="assets/img/manpreet-portrait-520.webp" srcset="assets/img/manpreet-portrait-520.webp 520w, assets/img/manpreet-portrait-900.webp 900w" sizes="(max-width:900px) 88vw, 40vw" width="520" height="693" loading="lazy" alt="Manpreet Bhasin at work in her studio"></div>
+      </div>
+      <div class="rv">
+        <div class="shead" style="margin-bottom:22px">
+          <p class="eyebrow">The artist</p>
+          <h2>Manpreet <em>Bhasin.</em></h2>
+          <p class="lede">Bridal makeup artist, hair artist and educator. She runs the chair and she runs the classroom — the same hands that do the brides teach the course.</p>
+        </div>
+        <p style="color:var(--muted); max-width:56ch">Three studios across Gurugram, a makeup academy, and a following of 4,349 who watch the work go up every week. Whichever branch you book, the standard is hers.</p>
+        <div class="hero-cta" style="margin-top:26px">
+          <a class="btn solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">
+            Book with Manpreet
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn ghost" href="#academy">Learn with her</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== TRANSFORMATION ===================== -->
-<section style="background:var(--panel); border-block:1px solid var(--line)">
+<section>
   <div class="wrap">
     <div class="shead rv">
       <p class="eyebrow">Your wedding day, from the chair</p>
@@ -704,7 +762,7 @@ html{scroll-behavior:smooth}
 </section>
 
 <!-- ===================== SIGNATURE: AIRBRUSH vs HD ===================== -->
-<section id="bridal">
+<section id="bridal" style="background:var(--panel); border-block:1px solid var(--line)">
   <div class="wrap">
     <div class="shead rv">
       <p class="eyebrow">The decision every bride has to make</p>
@@ -750,7 +808,7 @@ html{scroll-behavior:smooth}
 </section>
 
 <!-- ===================== PRICES ===================== -->
-<section id="prices" style="background:var(--panel); border-block:1px solid var(--line)">
+<section id="prices">
   <div class="wrap">
     <div class="shead rv">
       <p class="eyebrow">Nothing behind “enquire”</p>
@@ -781,19 +839,33 @@ html{scroll-behavior:smooth}
         <div class="prow"><span>Classic party makeup</span><i class="dots"></i><b>₹3,500</b></div>
       </div>
       <div class="panel" id="p-prebridal" hidden>
-        <div class="prow"><span>Pre-bridal package — essential</span><i class="dots"></i><b>₹5,999+</b></div>
-        <div class="prow"><span>Pre-bridal package — advanced</span><i class="dots"></i><b>₹9,999+</b></div>
-        <div class="prow"><span>Pre-bridal package — premium</span><i class="dots"></i><b>₹14,999+</b></div>
-        <div class="prow"><span>Casmara pre-bridal</span><i class="dots"></i><b>₹21,000+</b></div>
-        <div class="prow ph"><span>What each package includes <span class="tbc">to confirm</span><small>The inclusions per package go here once Manpreet confirms them.</small></span></div>
+        <div class="pkg">
+          <div class="pkg-h"><span>Pre-bridal — essential</span><b>₹5,999</b></div>
+          <p>Threading · Facial glow · Premium waxing, full arms · Premium waxing, full legs · Pedicure lotus · Manicure lotus · Body scrubbing · Haircut, wash and styling</p>
+        </div>
+        <div class="pkg">
+          <div class="pkg-h"><span>Pre-bridal — advanced</span><b>₹8,999</b></div>
+          <p>Threading · Facial insta glow · Premium waxing, full arms · Premium waxing, full legs · Pedicure crystal · Manicure crystal · Body polish fruit splendour · Hair spa · Cut and style</p>
+        </div>
+        <div class="pkg">
+          <div class="pkg-h"><span>Pre-bridal — premium</span><b>₹14,999</b></div>
+          <p>Face de-tan · Facial bridal glow dazzle · Premium waxing, full arms · Premium waxing, full legs · Pedicure ice cream · Manicure ice cream · Body polish kamayani · Hair spa luxe oil reflection · Haircut, wash and blow-dry styling</p>
+        </div>
+        <div class="pkg">
+          <div class="pkg-h"><span>Casmara pre-bridal</span><b>₹21,000</b></div>
+          <p>Premium waxing, full · Full body gold bleach · Casmara body polish · AVL manicure · AVL pedicure · Nail extensions · Hair spa premium · Haircut with blow-dry styling</p>
+        </div>
       </div>
       <div class="panel" id="p-hair" hidden>
-        <div class="prow"><span>Hair cut</span><i class="dots"></i><b>₹499</b></div>
+        <div class="prow"><span>Haircut — gents</span><i class="dots"></i><b>₹299</b></div>
+        <div class="prow"><span>Hair trim</span><i class="dots"></i><b>₹499</b></div>
+        <div class="prow"><span>Haircut — ladies</span><i class="dots"></i><b>₹799</b></div>
         <div class="prow"><span>Colour touch-up</span><i class="dots"></i><b>₹1,400</b></div>
-        <div class="prow"><span>Balayage</span><i class="dots"></i><b>₹4,499</b></div>
         <div class="prow"><span>Hair colour</span><i class="dots"></i><b>₹4,499</b></div>
-        <div class="prow"><span>Global colour</span><i class="dots"></i><b>₹4,999</b></div>
+        <div class="prow"><span>Global colour — base shades</span><i class="dots"></i><b>₹4,999</b></div>
         <div class="prow"><span>Keratin</span><i class="dots"></i><b>₹5,599</b></div>
+        <div class="prow"><span>Global colour — fashion shades</span><i class="dots"></i><b>₹5,999</b></div>
+        <div class="prow"><span>Balayage</span><i class="dots"></i><b>₹5,999</b></div>
         <div class="prow"><span>Highlights</span><i class="dots"></i><b>₹5,999</b></div>
         <div class="prow"><span>Hair treatment</span><i class="dots"></i><b>₹5,999</b></div>
       </div>
@@ -820,9 +892,7 @@ html{scroll-behavior:smooth}
       </div>
     </div>
     <p style="margin-top:var(--s3); color:var(--muted); font-size:.9rem">Bridal bookings are held against a date. Trials, travel and party sizes are quoted on the call.</p>
-    <p class="ph" style="margin-top:12px; color:var(--muted); font-size:.9rem; border:1px dashed var(--line); border-radius:8px; padding:10px 14px; display:inline-block">
-      All prices are inclusive of GST <span class="tbc">to confirm</span>
-    </p>
+    <p style="margin-top:10px; color:var(--muted); font-size:.9rem">All prices are inclusive of GST.</p>
   </div>
 </section>
 
@@ -833,25 +903,34 @@ html{scroll-behavior:smooth}
     <div class="shead rv" style="margin-bottom:var(--s4)">
       <p class="eyebrow">The second door</p>
       <h2>The <em>Academy.</em></h2>
-      <p class="lede">The studio teaches as well as it books. Small groups, real brides in the chair, and the same kit the professionals use — taught by the artist whose work is on this page.</p>
+      <p class="lede">The studio teaches as well as it books — makeup only, taught by the artist whose work is on this page. Four courses, from a single afternoon to twenty-five days.</p>
     </div>
 
     <div class="acad">
       <div class="rv">
         <div class="courses">
-          <article class="course ph">
-            <h3 class="course-t">Professional bridal makeup <span class="tbc">to confirm</span></h3>
-            <p>Course length, fee and certification to be filled in from Manpreet's own course card.</p>
+          <article class="course">
+            <div class="course-h"><h3>Basic to Advance Makeup</h3><b>₹25,000</b></div>
+            <p class="course-m">25 days · 11:00 – 14:00 · certificate included</p>
+            <p>Skin, tone and undertone · product knowledge and international brands · waterproof mineral makeup · HD and airbrush · red carpet, haldi, sangeet, mehndi, cocktail and reception looks · bridal airbrush and subtle nude bridal · mature skin · contouring, baking and highlighting · eye makeup by eye shape.</p>
+            <p class="course-n">Makeup products provided. Bring your own brushes and C.T.M products.</p>
           </article>
-          <article class="course ph">
-            <h3 class="course-t">Self-makeup &amp; personal grooming <span class="tbc">to confirm</span></h3>
-            <p>Course length, fee and certification to be filled in.</p>
+          <article class="course">
+            <div class="course-h"><h3>Advance Makeup</h3><b>₹20,000</b></div>
+            <p class="course-m">5 days · 11:00 – 17:00 · certificate included</p>
+            <p>Skin knowledge and different skin tones · product knowledge · international soft glam · cocktail glam · haldi and sangeet · the Anand Karaj bridal look · the South Indian bride · eye makeup by eye shape · baking and highlighting · glossy and matte finishes.</p>
+            <p class="course-n">Bring your own vanity, brushes, C.T.M and hair products.</p>
           </article>
-          <article class="course ph">
-            <h3 class="course-t">Hair styling &amp; advanced techniques <span class="tbc">to confirm</span></h3>
-            <p>Course length, fee and certification to be filled in.</p>
+          <article class="course course-sm">
+            <div class="course-h"><h3>Self grooming &amp; self makeup</h3><b>₹4,999</b></div>
+            <p class="course-m">3 days</p>
+          </article>
+          <article class="course course-sm">
+            <div class="course-h"><h3>Self makeup — one day</h3><b>₹2,500</b></div>
+            <p class="course-m">For working professionals, corporate employees and new brides</p>
           </article>
         </div>
+        <p style="color:var(--muted); font-size:.9rem; margin:0 0 var(--s3)">Registration on <a href="tel:+919810819297" style="color:var(--gold-lite)">98108 19297</a>. The academy teaches makeup only — there is no separate hair course.</p>
         <div class="hero-cta">
           <a class="btn solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20would%20like%20details%20of%20the%20academy%20courses." target="_blank" rel="noopener">
             Ask about the next batch
@@ -860,14 +939,14 @@ html{scroll-behavior:smooth}
         </div>
       </div>
       <div class="rv">
-        <div class="acad-media"><img src="assets/img/academy-teaching-560.webp" srcset="assets/img/academy-teaching-560.webp 560w, assets/img/academy-teaching-1000.webp 1000w" sizes="(max-width:900px) 92vw, 44vw" width="560" height="420" loading="lazy" alt="Makeup being applied in the studio during a teaching session"></div>
+        <div class="acad-media"><img src="assets/img/academy-class-560.webp" srcset="assets/img/academy-class-560.webp 560w, assets/img/academy-class-1000.webp 1000w" sizes="(max-width:900px) 92vw, 44vw" width="560" height="420" loading="lazy" alt="Manpreet Bhasin teaching a student in the academy"></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===================== REVIEWS ===================== -->
-<section style="background:var(--panel); border-block:1px solid var(--line)">
+<section>
   <div class="wrap">
     <div class="shead rv">
       <p class="eyebrow">In their words</p>
@@ -883,33 +962,51 @@ html{scroll-behavior:smooth}
 </section>
 
 <!-- ===================== VISIT ===================== -->
-<section id="visit">
+<section id="visit" style="background:var(--panel); border-block:1px solid var(--line)">
   <div class="wrap">
     <div class="shead rv">
       <p class="eyebrow">Visit</p>
-      <h2>Valley Souk, <em>Gurugram.</em></h2>
-      <p class="lede">Bridal bookings travel — Gurugram and Delhi both.</p>
+      <h2>Three studios, <em>one</em> Gurugram.</h2>
+      <p class="lede">Gwal Pahari is the main studio. Bridal bookings travel — Gurugram and Delhi both.</p>
     </div>
     <div class="visit">
       <div class="rv">
+        <div class="branches">
+          <article class="branch">
+            <p class="branch-t">Gwal Pahari <span>main studio</span></p>
+            <p>Shop 26, 27, 28 &amp; 30, Valley Souk<br>Ansals Valley View Estate<br>Gwal Pahari, Gurugram 122003</p>
+            <a href="https://maps.app.goo.gl/Q7FBQhtBsnQ4YMX8A" target="_blank" rel="noopener">Get directions →</a>
+          </article>
+          <article class="branch">
+            <p class="branch-t">Sector 56</p>
+            <p>Hall 1, First Floor<br>Community Centre, Devinder Vihar<br>Sector 56, Gurugram 122011</p>
+            <a href="https://maps.app.goo.gl/coKACyqwgb93YJnL9" target="_blank" rel="noopener">Get directions →</a>
+          </article>
+          <article class="branch">
+            <p class="branch-t">Sector 49</p>
+            <p>Park View City 2, Badshahpur Sohna Road<br>Vatika City, Block W<br>Sector 49, Gurugram 122018</p>
+            <a href="https://maps.app.goo.gl/hYm3PnqPTHqNHmf97" target="_blank" rel="noopener">Get directions →</a>
+          </article>
+        </div>
         <dl>
-          <dt>Studio</dt>
-          <dd>Shop 27, 28 &amp; 30, Valley Souk<br>Ansals Valley View Estate<br>Gurugram 122001, Haryana</dd>
-          <dt>Serving</dt>
-          <dd>Gurugram and Delhi</dd>
+          <dt>Hours</dt>
+          <dd>10:00 – 20:00, all seven days</dd>
           <dt>Call</dt>
           <dd><a href="tel:+919810819297">+91 98108 19297</a></dd>
           <dt>WhatsApp</dt>
           <dd><a href="https://wa.me/919810819297" target="_blank" rel="noopener">Message the studio</a></dd>
-          <dt>Hours</dt>
-          <dd class="ph" style="border:1px dashed var(--line); border-radius:8px; padding:10px 14px">Opening hours <span class="tbc">to confirm</span><br><small style="color:var(--muted)">Including the day the studio is closed.</small></dd>
+          <dt>Serving</dt>
+          <dd>Gurugram and Delhi</dd>
           <dt>Instagram</dt>
           <dd><a href="https://www.instagram.com/manpreetbhasinspeachesandcream/" target="_blank" rel="noopener">@manpreetbhasins<wbr>peachesandcream</a></dd>
         </dl>
         <div class="hero-cta">
           <a class="btn solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Book on WhatsApp</a>
-          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Manpreet+Bhasin's+Peaches+And+Cream+SALON+Valley+Souk+Valley+View+Estate+Gwal+Pahari+Gurugram" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn ghost" href="https://maps.app.goo.gl/Q7FBQhtBsnQ4YMX8A" target="_blank" rel="noopener">Directions to the main studio</a>
         </div>
+      </div>
+      <div class="rv">
+        <figure class="studio-shot"><img src="assets/img/studio-interior-560.webp" srcset="assets/img/studio-interior-560.webp 560w, assets/img/studio-interior-1000.webp 1000w" sizes="(max-width:880px) 92vw, 46vw" width="560" height="420" loading="lazy" alt="Inside the Gwal Pahari studio"></figure>
       </div>
       <div class="map rv">
         <iframe title="Map to Manpreet Bhasin's Peaches &amp; Cream, Valley Souk, Gurugram" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
@@ -923,9 +1020,9 @@ html{scroll-behavior:smooth}
 <footer class="f">
   <div class="wrap f-top">
     <div style="max-width:34ch">
-      <img src="assets/monogram.svg" alt="" width="52" height="52" style="opacity:.9">
+      <img src="assets/img/logo-badge-120.webp" srcset="assets/img/logo-badge-120.webp 120w, assets/img/logo-badge-240.webp 240w" sizes="112px" width="112" height="112" loading="lazy" alt="Manpreet Bhasin's Peaches &amp; Cream" style="border-radius:50%">
       <p style="margin:16px 0 0; color:var(--ink); font-size:1rem">Manpreet Bhasin's Peaches &amp; Cream</p>
-      <p style="margin:4px 0 0">Unisex Salon · Makeup Studio · Academy<br>Valley Souk, Ansals Valley View Estate, Gurugram</p>
+      <p style="margin:4px 0 0">Unisex Salon · Makeup Studio · Academy<br>Gwal Pahari · Sector 56 · Sector 49, Gurugram</p>
     </div>
     <div class="links">
       <p style="color:var(--gold); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase">Book</p>
@@ -967,7 +1064,12 @@ html{scroll-behavior:smooth}
   "url":"https://example.com",
   "image":"assets/img/hero-poster-1100.webp",
   "priceRange":"₹₹",
-  "address":{"@type":"PostalAddress","streetAddress":"Shop 27, 28 & 30, Valley Souk, Ansals Valley View Estate","addressLocality":"Gurugram","addressRegion":"Haryana","postalCode":"122001","addressCountry":"IN"},
+  "address":{"@type":"PostalAddress","streetAddress":"Shop 26, 27, 28 & 30, Valley Souk, Ansals Valley View Estate, Gwal Pahari","addressLocality":"Gurugram","addressRegion":"Haryana","postalCode":"122003","addressCountry":"IN"},
+  "openingHours":"Mo-Su 10:00-20:00",
+  "subOrganization":[
+    {"@type":"BeautySalon","name":"Manpreet Bhasin's Peaches & Cream — Sector 56","address":{"@type":"PostalAddress","streetAddress":"Hall 1, First Floor, Community Centre, Devinder Vihar, Sector 56","addressLocality":"Gurugram","addressRegion":"Haryana","postalCode":"122011","addressCountry":"IN"},"telephone":"+91-98108-19297"},
+    {"@type":"BeautySalon","name":"Manpreet Bhasin's Peaches & Cream — Sector 49","address":{"@type":"PostalAddress","streetAddress":"Park View City 2, Badshahpur Sohna Road, Vatika City, Block W, Sector 49","addressLocality":"Gurugram","addressRegion":"Haryana","postalCode":"122018","addressCountry":"IN"},"telephone":"+91-98108-19297"}
+  ],
   "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"103"},
   "areaServed":[{"@type":"City","name":"Gurugram"},{"@type":"City","name":"Delhi"}],
   "sameAs":["https://www.instagram.com/manpreetbhasinspeachesandcream/"],
