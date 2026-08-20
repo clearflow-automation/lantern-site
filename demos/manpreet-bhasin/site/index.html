@@ -110,7 +110,7 @@ header.stuck::before{opacity:0}
 header.stuck{background:rgba(11,10,9,.82); backdrop-filter:blur(14px); border-bottom-color:var(--line)}
 .bar{display:flex; align-items:center; gap:clamp(20px,3vw,48px); justify-content:space-between}
 .brand{display:flex; align-items:center; gap:12px; text-decoration:none; min-width:0; flex:0 1 auto; overflow:hidden}
-.brand .mark{width:42px; height:42px; flex:none; border-radius:50%; object-fit:cover}
+.brand .mark{width:42px; height:42px; flex:none; object-fit:contain}
 .brand b{font-weight:400; font-size:.98rem; letter-spacing:.01em; display:block; white-space:nowrap}
 .brand span{display:block; font-size:.63rem; letter-spacing:.24em; text-transform:uppercase; color:rgba(246,240,230,.62)}
 .brand .short{display:none}
@@ -539,7 +539,7 @@ html{scroll-behavior:smooth}
 <header id="hdr">
   <div class="wrap bar">
     <a class="brand" href="#top">
-      <img class="mark" src="assets/img/mark-96.webp" srcset="assets/img/mark-96.webp 96w, assets/img/mark-176.webp 176w" sizes="44px" width="44" height="44" alt="" fetchpriority="high">
+      <img class="mark" src="assets/img/ring-88.png" srcset="assets/img/ring-88.png 88w, assets/img/ring-176.png 176w" sizes="44px" width="88" height="97" alt="" fetchpriority="high">
       <span class="t">
         <b class="full">Manpreet Bhasin's Peaches &amp; Cream</b>
         <b class="short">Peaches &amp; Cream</b>
@@ -1024,7 +1024,7 @@ html{scroll-behavior:smooth}
 <footer class="f">
   <div class="wrap f-top">
     <div style="max-width:34ch">
-      <img src="assets/img/logo-badge-120.webp" srcset="assets/img/logo-badge-120.webp 120w, assets/img/logo-badge-240.webp 240w" sizes="112px" width="112" height="112" loading="lazy" alt="Manpreet Bhasin's Peaches &amp; Cream" style="border-radius:50%">
+      <img src="assets/img/crest-440.png" srcset="assets/img/crest-440.png 440w, assets/img/crest-880.png 880w" sizes="(max-width:600px) 260px, 300px" width="440" height="197" loading="lazy" alt="Manpreet Bhasin's Peaches &amp; Cream" style="width:min(300px,78%); height:auto; display:block">
       <p style="margin:16px 0 0; color:var(--ink); font-size:1rem">Manpreet Bhasin's Peaches &amp; Cream</p>
       <p style="margin:4px 0 0">Unisex Salon · Makeup Studio · Academy<br>Gwal Pahari · Sector 56 · Sector 49, Gurugram</p>
     </div>
