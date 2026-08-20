@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Punya's Kriti — Website Review &amp; Growth Plan">
 <meta property="og:description" content="Seven things on punyaskriti.com quietly costing sales, with the evidence for each — plus the position nobody in Indian loungewear has taken yet.">
-<meta property="og:url" content="https://clearflow-automation.github.io/lantern-site/demos/punyas-kriti/">
+<meta property="og:url" content="https://airlantern.com/work/punyas-kriti/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -131,7 +131,11 @@ ul.arrow li::before{content:"→";position:absolute;left:0;top:0;color:var(--amb
 ul.arrow li strong{color:var(--ink)}
 
 /* ---------- tables ---------- */
-.tbl{overflow-x:auto;border:1px solid var(--rule);border-radius:4px;background:var(--paper-2);margin-top:22px;-webkit-overflow-scrolling:touch}
+.tbl{overflow-x:auto;border:1px solid var(--rule);border-radius:4px;background:var(--paper-2);margin-top:22px;-webkit-overflow-scrolling:touch;
+  /* a phone clips these 560px tables silently — fade the cut edge so it reads as scrollable */
+  background-image:linear-gradient(to right,var(--paper-2) 30%,transparent),linear-gradient(to left,var(--paper-2) 30%,transparent),linear-gradient(to right,rgba(0,0,0,.11),transparent 14px),linear-gradient(to left,rgba(0,0,0,.11),transparent 14px);
+  background-position:0 0,100% 0,0 0,100% 0;background-repeat:no-repeat;
+  background-size:36px 100%,36px 100%,14px 100%,14px 100%;background-attachment:local,local,scroll,scroll}
 table{border-collapse:collapse;width:100%;font-size:.87rem;min-width:560px}
 th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink-2)}
 thead th{font-family:var(--data);font-size:.63rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);font-weight:600;background:rgba(22,19,15,.04)}
@@ -201,6 +205,22 @@ a:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:
   .nums{grid-template-columns:repeat(4,1fr)}
   .cards{grid-template-columns:1fr 1fr}
   .sticky .txt{font-size:.86rem}
+}
+
+@media (max-width:640px){
+  /* 3- and 4-column tables cannot fit a 375px phone; a horizontal scroll inside a
+     column of prose gets missed, so each row becomes a labelled block instead. */
+  .tbl{overflow-x:visible;background-image:none}
+  .tbl table{min-width:0;display:block;font-size:.9rem}
+  .tbl thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .tbl tbody,.tbl tr{display:block}
+  .tbl tr{padding:14px 0;border-top:1px solid var(--rule)}
+  .tbl tbody tr:first-child{border-top:0}
+  .tbl td{display:block;border:0;padding:2px 16px 2px 16px}
+  .tbl td[data-l]::before{content:attr(data-l);display:block;font-family:var(--data,inherit);
+    font-size:.63rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1px}
+  .tbl td:first-child{font-weight:600;font-size:1rem;padding-bottom:6px}
+  .tbl td:first-child[data-l]::before{display:none}
 }
 </style>
 </head>
@@ -428,11 +448,11 @@ Social links in your site code        blank</div>
     <table>
       <thead><tr><th>Segment</th><th>Who she is</th><th>The hook that lands</th><th>Priority</th></tr></thead>
       <tbody>
-        <tr><td><strong>The work-from-home regular</strong></td><td>28–40, metro and tier-2, hybrid or home-based, buys for herself</td><td>"Comfortable enough to sleep in. Presentable enough to open the door." Bra-free as the headline.</td><td class="n">1 — core</td></tr>
-        <tr><td><strong>Sizes 2XL–4XL</strong></td><td>30–50, badly served by every mainstream ethnic brand, buys again once fit is proven</td><td>"Sizes M to 4XL — cut properly, not just scaled up." Real models at every size.</td><td class="n">2 — best returns</td></tr>
-        <tr><td><strong>The gifter</strong></td><td>25–45, buying for mother, sister, mother-in-law. Festive-driven, pays upfront.</td><td>"The gift she'll actually wear every day." Gift box, handwritten note, delivery-by date.</td><td class="n">3 — seasonal</td></tr>
-        <tr><td><strong>Bridal &amp; bridesmaids</strong></td><td>Trousseau buyers and bride squads, November–February. Bulk orders.</td><td>Matching co-ords for the bride's team; personalised trousseau nightwear.</td><td class="n">4 — Q4</td></tr>
-        <tr><td><strong>Indians abroad</strong></td><td>US, UK, UAE, Canada. Three to four times the order value, no COD risk.</td><td>"Pure Indian cotton, shipped worldwide." Nostalgia plus fabric quality.</td><td class="n">5 — needs shipping</td></tr>
+        <tr><td data-l="Segment"><strong>The work-from-home regular</strong></td><td data-l="Who she is">28–40, metro and tier-2, hybrid or home-based, buys for herself</td><td data-l="The hook that lands">"Comfortable enough to sleep in. Presentable enough to open the door." Bra-free as the headline.</td><td class="n" data-l="Priority">1 — core</td></tr>
+        <tr><td data-l="Segment"><strong>Sizes 2XL–4XL</strong></td><td data-l="Who she is">30–50, badly served by every mainstream ethnic brand, buys again once fit is proven</td><td data-l="The hook that lands">"Sizes M to 4XL — cut properly, not just scaled up." Real models at every size.</td><td class="n" data-l="Priority">2 — best returns</td></tr>
+        <tr><td data-l="Segment"><strong>The gifter</strong></td><td data-l="Who she is">25–45, buying for mother, sister, mother-in-law. Festive-driven, pays upfront.</td><td data-l="The hook that lands">"The gift she'll actually wear every day." Gift box, handwritten note, delivery-by date.</td><td class="n" data-l="Priority">3 — seasonal</td></tr>
+        <tr><td data-l="Segment"><strong>Bridal &amp; bridesmaids</strong></td><td data-l="Who she is">Trousseau buyers and bride squads, November–February. Bulk orders.</td><td data-l="The hook that lands">Matching co-ords for the bride's team; personalised trousseau nightwear.</td><td class="n" data-l="Priority">4 — Q4</td></tr>
+        <tr><td data-l="Segment"><strong>Indians abroad</strong></td><td data-l="Who she is">US, UK, UAE, Canada. Three to four times the order value, no COD risk.</td><td data-l="The hook that lands">"Pure Indian cotton, shipped worldwide." Nostalgia plus fabric quality.</td><td class="n" data-l="Priority">5 — needs shipping</td></tr>
       </tbody>
     </table>
   </div>
@@ -484,12 +504,12 @@ Social links in your site code        blank</div>
     <table>
       <thead><tr><th>Channel</th><th class="n">Share</th><th>What it's for</th></tr></thead>
       <tbody>
-        <tr><td>Instagram &amp; Facebook — new customers</td><td class="n">40%</td><td>Cold reach on the doorbell and bra-free creative</td></tr>
-        <tr><td>Instagram &amp; Facebook — retargeting</td><td class="n">15%</td><td>Bringing back the visitors who browsed and left</td></tr>
-        <tr><td>Google Shopping</td><td class="n">20%</td><td>Catching "farshi co-ord set", "cotton nightsuit" searches — blocked until product names are cleaned</td></tr>
-        <tr><td>Small creators</td><td class="n">15%</td><td>15–20 creators at 10k–50k followers, product plus a small fee</td></tr>
-        <tr><td>WhatsApp &amp; email</td><td class="n">7%</td><td>Second-purchase flow and abandoned-cart recovery</td></tr>
-        <tr><td>Blog &amp; search content</td><td class="n">3%</td><td>Four posts a month against what people actually search</td></tr>
+        <tr><td data-l="Channel">Instagram &amp; Facebook — new customers</td><td class="n" data-l="Share">40%</td><td data-l="What it&#x27;s for">Cold reach on the doorbell and bra-free creative</td></tr>
+        <tr><td data-l="Channel">Instagram &amp; Facebook — retargeting</td><td class="n" data-l="Share">15%</td><td data-l="What it&#x27;s for">Bringing back the visitors who browsed and left</td></tr>
+        <tr><td data-l="Channel">Google Shopping</td><td class="n" data-l="Share">20%</td><td data-l="What it&#x27;s for">Catching "farshi co-ord set", "cotton nightsuit" searches — blocked until product names are cleaned</td></tr>
+        <tr><td data-l="Channel">Small creators</td><td class="n" data-l="Share">15%</td><td data-l="What it&#x27;s for">15–20 creators at 10k–50k followers, product plus a small fee</td></tr>
+        <tr><td data-l="Channel">WhatsApp &amp; email</td><td class="n" data-l="Share">7%</td><td data-l="What it&#x27;s for">Second-purchase flow and abandoned-cart recovery</td></tr>
+        <tr><td data-l="Channel">Blog &amp; search content</td><td class="n" data-l="Share">3%</td><td data-l="What it&#x27;s for">Four posts a month against what people actually search</td></tr>
       </tbody>
     </table>
   </div>
@@ -505,14 +525,14 @@ Social links in your site code        blank</div>
     <table>
       <thead><tr><th>Lever</th><th>Today</th><th>Move to</th><th>Why it compounds</th></tr></thead>
       <tbody>
-        <tr><td><strong>Order value</strong></td><td>~₹2,600, one item</td><td>~₹3,800, 1.4 items</td><td>Bundle pricing, free shipping at ₹1,499, a ₹399 matching pouch or eye-mask at checkout. No extra ad spend needed.</td></tr>
-        <tr><td><strong>Repeat customers</strong></td><td>Not measured</td><td>25–30% within 90 days</td><td>Nightwear is consumable and bought in pairs. A day-21 WhatsApp message and a seasonal drop calendar are the whole mechanism.</td></tr>
-        <tr><td><strong>Where you sell</strong></td><td>Your site only</td><td>Site + Amazon + Myntra</td><td>Marketplaces cost margin but buy credibility, absorb overflow demand, and protect you if an ad account ever gets blocked.</td></tr>
-        <tr><td><strong>Returns</strong></td><td>Hidden behind "no refunds"</td><td>Measured and managed</td><td>The no-refund rule doesn't remove the cost — it turns it into refused deliveries and disputes. A size chart costs less than the returns it prevents.</td></tr>
-        <tr><td><strong>Measurement</strong></td><td>Facebook pixel only; no Google Analytics found on the page</td><td>Analytics + Search Console</td><td>You can't improve spending you can't measure. One day of setup, and it gates every other decision here.</td></tr>
-        <tr><td><strong>Product ladder</strong></td><td>₹999 and ₹2,900, unconnected</td><td>Entry → core → gift</td><td>Use ₹999 nightsuits to win the first order, then move her up to ₹2,900 co-ords over WhatsApp and email. Right now they're just two shelves.</td></tr>
-        <tr><td><strong>Where you ship</strong></td><td>India, up to 12 days</td><td>India in 4–6 days, plus overseas</td><td>Indians abroad order at three to four times the value, pay upfront, and aren't price sensitive about Indian cotton.</td></tr>
-        <tr><td><strong>Content</strong></td><td>1 blog post, dormant since 2025</td><td>4 posts a month</td><td>Search is the only channel whose cost falls over time. Every post is a permanent asset; every ad is a rental.</td></tr>
+        <tr><td data-l="Lever"><strong>Order value</strong></td><td data-l="Today">~₹2,600, one item</td><td data-l="Move to">~₹3,800, 1.4 items</td><td data-l="Why it compounds">Bundle pricing, free shipping at ₹1,499, a ₹399 matching pouch or eye-mask at checkout. No extra ad spend needed.</td></tr>
+        <tr><td data-l="Lever"><strong>Repeat customers</strong></td><td data-l="Today">Not measured</td><td data-l="Move to">25–30% within 90 days</td><td data-l="Why it compounds">Nightwear is consumable and bought in pairs. A day-21 WhatsApp message and a seasonal drop calendar are the whole mechanism.</td></tr>
+        <tr><td data-l="Lever"><strong>Where you sell</strong></td><td data-l="Today">Your site only</td><td data-l="Move to">Site + Amazon + Myntra</td><td data-l="Why it compounds">Marketplaces cost margin but buy credibility, absorb overflow demand, and protect you if an ad account ever gets blocked.</td></tr>
+        <tr><td data-l="Lever"><strong>Returns</strong></td><td data-l="Today">Hidden behind "no refunds"</td><td data-l="Move to">Measured and managed</td><td data-l="Why it compounds">The no-refund rule doesn't remove the cost — it turns it into refused deliveries and disputes. A size chart costs less than the returns it prevents.</td></tr>
+        <tr><td data-l="Lever"><strong>Measurement</strong></td><td data-l="Today">Facebook pixel only; no Google Analytics found on the page</td><td data-l="Move to">Analytics + Search Console</td><td data-l="Why it compounds">You can't improve spending you can't measure. One day of setup, and it gates every other decision here.</td></tr>
+        <tr><td data-l="Lever"><strong>Product ladder</strong></td><td data-l="Today">₹999 and ₹2,900, unconnected</td><td data-l="Move to">Entry → core → gift</td><td data-l="Why it compounds">Use ₹999 nightsuits to win the first order, then move her up to ₹2,900 co-ords over WhatsApp and email. Right now they're just two shelves.</td></tr>
+        <tr><td data-l="Lever"><strong>Where you ship</strong></td><td data-l="Today">India, up to 12 days</td><td data-l="Move to">India in 4–6 days, plus overseas</td><td data-l="Why it compounds">Indians abroad order at three to four times the value, pay upfront, and aren't price sensitive about Indian cotton.</td></tr>
+        <tr><td data-l="Lever"><strong>Content</strong></td><td data-l="Today">1 blog post, dormant since 2025</td><td data-l="Move to">4 posts a month</td><td data-l="Why it compounds">Search is the only channel whose cost falls over time. Every post is a permanent asset; every ad is a rental.</td></tr>
       </tbody>
     </table>
   </div>
@@ -574,11 +594,11 @@ Social links in your site code        blank</div>
   <div class="cta">
     <h3>Want us to just fix it?</h3>
     <p>We build fast, mobile-first websites for Indian businesses, and we do exactly this kind of clean-up. Send a message and we'll walk you through the list — free, whether or not you work with us.</p>
-    <a class="btn" href="https://wa.me/919999999999?text=Hi%20Lantern%20%E2%80%94%20we%20saw%20your%20review%20of%20punyaskriti.com.%20Can%20we%20talk%3F" target="_blank" rel="noopener">
+    <a class="btn" href="https://wa.me/919711105497?text=Hi%20Nandit%20%E2%80%94%20we%20saw%20your%20review%20of%20punyaskriti.com.%20Can%20we%20talk%3F" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.13c-.25.69-1.44 1.32-1.99 1.4-.51.08-1.15.11-1.86-.12-.43-.13-.98-.32-1.69-.62-2.97-1.28-4.91-4.27-5.06-4.47-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.48.27-.3.59-.37.79-.37h.57c.18 0 .43-.07.67.51.25.6.85 2.06.92 2.21.08.15.13.32.02.52-.1.2-.15.32-.3.5-.15.17-.32.39-.45.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.65-.08.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
       Message us on WhatsApp
     </a>
-    <p class="alt">Or email <a href="mailto:hello@lantern.studio">hello@lantern.studio</a></p>
+    <p class="alt">Or email <a href="mailto:vaishnandit@airlantern.com">vaishnandit@airlantern.com</a></p>
   </div>
 </section>
 
@@ -593,7 +613,7 @@ Social links in your site code        blank</div>
 
 <div class="sticky">
   <div class="txt"><b>Questions about any of this?</b>We'll explain it in plain language — free.</div>
-  <a href="https://wa.me/919999999999?text=Hi%20Lantern%20%E2%80%94%20we%20saw%20your%20review%20of%20punyaskriti.com.%20Can%20we%20talk%3F" target="_blank" rel="noopener" aria-label="Message Lantern on WhatsApp">
+  <a href="https://wa.me/919711105497?text=Hi%20Nandit%20%E2%80%94%20we%20saw%20your%20review%20of%20punyaskriti.com.%20Can%20we%20talk%3F" target="_blank" rel="noopener" aria-label="Message Lantern on WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.13c-.25.69-1.44 1.32-1.99 1.4-.51.08-1.15.11-1.86-.12-.43-.13-.98-.32-1.69-.62-2.97-1.28-4.91-4.27-5.06-4.47-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.48.27-.3.59-.37.79-.37h.57c.18 0 .43-.07.67.51.25.6.85 2.06.92 2.21.08.15.13.32.02.52-.1.2-.15.32-.3.5-.15.17-.32.39-.45.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.65-.08.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.72-.18 1.41Z"/></svg>
     WhatsApp
   </a>
