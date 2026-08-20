@@ -101,14 +101,20 @@ header{
   transition:background .4s var(--ease), border-color .4s, backdrop-filter .4s;
   border-bottom:1px solid transparent;
 }
+header::before{
+  content:""; position:absolute; inset:-14px 0 auto 0; height:150%; z-index:-1;
+  background:linear-gradient(180deg,rgba(11,10,9,.86) 0%,rgba(11,10,9,.55) 45%,rgba(11,10,9,0) 100%);
+  transition:opacity .4s var(--ease); pointer-events:none;
+}
+header.stuck::before{opacity:0}
 header.stuck{background:rgba(11,10,9,.82); backdrop-filter:blur(14px); border-bottom-color:var(--line)}
-.bar{display:flex; align-items:center; gap:var(--s3); justify-content:space-between}
-.brand{display:flex; align-items:center; gap:12px; text-decoration:none; min-width:0}
+.bar{display:flex; align-items:center; gap:clamp(20px,3vw,48px); justify-content:space-between}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; min-width:0; flex:0 1 auto; overflow:hidden}
 .brand .mark{width:42px; height:42px; flex:none; border-radius:50%; object-fit:cover}
-.brand b{font-weight:400; font-size:1.02rem; letter-spacing:.01em; display:block; white-space:nowrap}
-.brand span{display:block; font-size:.63rem; letter-spacing:.24em; text-transform:uppercase; color:var(--muted)}
+.brand b{font-weight:400; font-size:.98rem; letter-spacing:.01em; display:block; white-space:nowrap}
+.brand span{display:block; font-size:.63rem; letter-spacing:.24em; text-transform:uppercase; color:rgba(246,240,230,.62)}
 .brand .short{display:none}
-@media(max-width:860px){
+@media(max-width:1000px){
   .brand .mark{width:36px; height:36px}
   .brand .full{display:none}
   .brand .short{display:block; font-weight:400; font-size:.98rem; white-space:nowrap}
@@ -119,9 +125,9 @@ header.stuck{background:rgba(11,10,9,.82); backdrop-filter:blur(14px); border-bo
   .eyebrow{letter-spacing:.2em; font-size:.68rem}
 }
 @media(min-width:561px){.brand span .tag-short{display:none}}
-nav{display:flex; gap:26px; align-items:center}
+nav{display:flex; gap:clamp(16px,1.8vw,26px); align-items:center; flex:0 0 auto}
 nav a{
-  text-decoration:none; font-size:.92rem; color:var(--muted); position:relative; padding:4px 0;
+  text-decoration:none; font-size:.92rem; color:rgba(246,240,230,.80); position:relative; padding:4px 0;
   transition:color .3s;
 }
 nav a::after{
@@ -129,8 +135,8 @@ nav a::after{
   transition:width .35s var(--ease);
 }
 nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
-@media(max-width:960px){nav{display:none}}
-.hbtns{display:flex; gap:10px; align-items:center}
+@media(max-width:1140px){nav{display:none}}
+.hbtns{display:flex; gap:10px; align-items:center; flex:0 0 auto}
 .ig{
   display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px;
   border-radius:999px; color:var(--gold-lite); border:1px solid rgba(214,177,95,.45); flex:none;
@@ -543,8 +549,6 @@ html{scroll-behavior:smooth}
     <nav>
       <a href="#work">The work</a>
       <a href="#hair">Hair</a>
-      <a href="#artist">The artist</a>
-      <a href="#bridal">Airbrush or HD</a>
       <a href="#prices">Prices</a>
       <a href="#academy">Academy</a>
       <a href="#visit">Visit</a>
