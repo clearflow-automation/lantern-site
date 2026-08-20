@@ -110,17 +110,21 @@ header.stuck::before{opacity:0}
 header.stuck{background:rgba(11,10,9,.82); backdrop-filter:blur(14px); border-bottom-color:var(--line)}
 .bar{display:flex; align-items:center; gap:clamp(20px,3vw,48px); justify-content:space-between}
 .brand{display:flex; align-items:center; gap:12px; text-decoration:none; min-width:0; flex:0 1 auto; overflow:hidden}
-.brand .mark{width:42px; height:42px; flex:none; object-fit:contain}
+.brand .mark{height:43px; width:auto; flex:none; object-fit:contain}
 .brand b{font-weight:400; font-size:.98rem; letter-spacing:.01em; display:block; white-space:nowrap}
 .brand span{display:block; font-size:.63rem; letter-spacing:.24em; text-transform:uppercase; color:rgba(246,240,230,.62)}
 .brand .short{display:none}
 @media(max-width:1000px){
-  .brand .mark{width:36px; height:36px}
+  .brand .mark{height:37px}
   .brand .full{display:none}
   .brand .short{display:block; font-weight:400; font-size:.98rem; white-space:nowrap}
   .brand span{font-size:.55rem; letter-spacing:.16em}
 }
 @media(max-width:560px){
+  .brand{gap:8px}
+  .brand .mark{height:33px}
+  .brand .short{font-size:.86rem}
+  .brand span{font-size:.5rem; letter-spacing:.12em}
   .brand span .tag-long{display:none}
   .eyebrow{letter-spacing:.2em; font-size:.68rem}
 }
@@ -539,7 +543,7 @@ html{scroll-behavior:smooth}
 <header id="hdr">
   <div class="wrap bar">
     <a class="brand" href="#top">
-      <img class="mark" src="assets/img/ring-88.png" srcset="assets/img/ring-88.png 88w, assets/img/ring-176.png 176w" sizes="44px" width="88" height="97" alt="" fetchpriority="high">
+      <img class="mark" src="assets/img/crest-220.png" srcset="assets/img/crest-220.png 220w, assets/img/crest-440.png 440w" sizes="(max-width:560px) 74px, (max-width:1000px) 82px, 96px" width="220" height="99" alt="" fetchpriority="high">
       <span class="t">
         <b class="full">Manpreet Bhasin's Peaches &amp; Cream</b>
         <b class="short">Peaches &amp; Cream</b>
