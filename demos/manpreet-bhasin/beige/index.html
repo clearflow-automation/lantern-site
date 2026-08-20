@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Manpreet Bhasin's Peaches &amp; Cream — Bridal Makeup, Salon &amp; Academy, Gurugram &amp; Delhi</title>
+<title>Peaches &amp; Cream — gold &amp; beige option</title>
 <meta name="description" content="Makeup that enhances, never overpowers. Airbrush and HD bridal makeup, hair, skin and nails at Manpreet Bhasin's Peaches &amp; Cream, Valley View Estate, Gurugram — serving Gurugram and Delhi. Every price published. Makeup academy enrolling now.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Manpreet Bhasin's Peaches &amp; Cream — Bridal Makeup, Salon &amp; Academy">
@@ -30,26 +30,14 @@
    signboard, repeated as frames, dividers and keylines.
    ============================================================ */
 :root{
-  --bg:#0B0A09; --panel:#141110; --panel-2:#1B1714;
-  --ink:#F6F0E6; --muted:#A79A8B;
-  --gold:#D6B15F; --gold-lite:#F3E0AE; --gold-deep:#8A6B22;
-  --line:rgba(214,177,95,.20); --line-soft:rgba(246,240,230,.09);
+  --bg:#F8F2E8; --panel:#F1E7D8; --panel-2:#EADFCC;
+  --ink:#221C15; --muted:#6B5E4E;
+  --gold:#775A20; --gold-lite:#9C7830; --gold-deep:#5A4416;
+  --line:rgba(119,90,32,.32); --line-soft:rgba(34,28,21,.12);
   --r:14px;
   --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:96px;
-  --shadow:0 1px 2px rgba(0,0,0,.5), 0 12px 28px -12px rgba(0,0,0,.7), 0 40px 80px -40px rgba(0,0,0,.9);
+  --shadow:0 1px 2px rgba(74,58,32,.10), 0 12px 28px -14px rgba(74,58,32,.22), 0 40px 80px -44px rgba(74,58,32,.30);
   --ease:cubic-bezier(.22,.61,.36,1);
-}
-/* A metrics-matched stand-in for Newsreader. Georgia is re-scaled so its
-   advance widths and line box match, which means the swap when the web font
-   arrives moves nothing. Measured against Newsreader, not guessed:
-   width 2298 vs 2401 at 100px, ascent 74/26 vs 92/22. */
-@font-face{
-  font-family:"Newsreader Fallback";
-  src:local("Georgia"),local("Times New Roman"),local("serif");
-  size-adjust:95.71%;
-  ascent-override:77.32%;
-  descent-override:27.17%;
-  line-gap-override:0%;
 }
 *{box-sizing:border-box}
 html{
@@ -83,9 +71,9 @@ section{padding:clamp(52px,7vw,84px) 0; position:relative; overflow-x:clip}
 
 /* ---------- ambience: grain + gold aurora ---------- */
 .grain{
-  position:fixed; inset:0; pointer-events:none; z-index:60; opacity:.32;
+  position:fixed; inset:0; pointer-events:none; z-index:60; opacity:.10;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='140' height='140' filter='url(%23n)' opacity='.42'/></svg>");
-  mix-blend-mode:overlay; transform:translateZ(0); will-change:transform;
+  mix-blend-mode:multiply; opacity:.5; transform:translateZ(0); will-change:transform;
 }
 .glow{position:absolute; border-radius:50%; filter:blur(90px); pointer-events:none; z-index:0}
 .progress{
@@ -99,7 +87,7 @@ header{
   transition:background .4s var(--ease), border-color .4s, backdrop-filter .4s;
   border-bottom:1px solid transparent;
 }
-header.stuck{background:rgba(11,10,9,.82); backdrop-filter:blur(14px); border-bottom-color:var(--line)}
+header.stuck{background:rgba(248,242,232,.88); backdrop-filter:blur(14px); border-bottom-color:var(--line)}
 .bar{display:flex; align-items:center; gap:var(--s3); justify-content:space-between}
 .brand{display:flex; align-items:center; gap:12px; text-decoration:none; min-width:0}
 .brand svg{width:38px; height:38px; flex:none}
@@ -131,8 +119,8 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 .hbtns{display:flex; gap:10px; align-items:center}
 .ig{
   display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px;
-  border-radius:999px; color:var(--gold-lite); border:1px solid rgba(214,177,95,.45); flex:none;
-  background:rgba(11,10,9,.55); backdrop-filter:blur(8px);
+  border-radius:999px; color:var(--gold); border:1px solid var(--line); flex:none;
+  background:rgba(255,248,236,.72); backdrop-filter:blur(8px);
   transition:color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease), background .3s;
 }
 .ig svg{width:20px; height:20px}
@@ -152,13 +140,13 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
   content:""; position:absolute; inset:0; z-index:-1; background:var(--fill);
   transform:translateY(101%); transition:transform .42s var(--ease);
 }
-.btn:hover{color:#120E08} .btn:hover::before{transform:translateY(0)}
+.btn:hover{color:#FFF8EC} .btn:hover::before{transform:translateY(0)}
 .btn:active{transform:scale(.97)}
-.btn.solid{background:var(--gold); color:#120E08; border-color:var(--gold)}
-.btn.solid::before{background:var(--gold-lite)}
-.btn.ghost{border-color:var(--line-soft); color:var(--ink)}
+.btn.solid{background:var(--gold); color:#FFF8EC; border-color:var(--gold)}
+.btn.solid::before{background:var(--gold-deep)}
+.btn.ghost{border-color:var(--line); color:var(--ink)}
 .btn.ghost::before{background:var(--ink)}
-.btn.ghost:hover{color:#120E08; border-color:var(--ink)}
+.btn.ghost:hover{color:#FFF8EC; border-color:var(--ink)}
 .btn svg{width:16px; height:16px; transition:transform .35s var(--ease)}
 .btn:hover svg{transform:translateX(3px)}
 
@@ -172,14 +160,14 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 .hero-media::after{
   content:""; position:absolute; inset:0;
   background:
-    linear-gradient(180deg,rgba(11,10,9,.88) 0%,rgba(11,10,9,.34) 26%,rgba(11,10,9,.80) 58%,rgba(11,10,9,.95) 82%,var(--bg) 99%),
-    radial-gradient(80% 55% at 50% 100%,rgba(11,10,9,.9),transparent 72%);
+    linear-gradient(180deg,rgba(248,242,232,.96) 0%,rgba(248,242,232,.70) 7%,rgba(248,242,232,.10) 24%,rgba(248,242,232,.72) 56%,rgba(248,242,232,.94) 80%,var(--bg) 99%),
+    radial-gradient(80% 55% at 50% 100%,rgba(248,242,232,.92),transparent 72%);
 }
 @media(max-width:900px){
   .hero-media video,.hero-media img{object-position:50% 12%}
   .hero-media::after{
     background:
-      linear-gradient(180deg,rgba(11,10,9,.88) 0%,rgba(11,10,9,.20) 18%,rgba(11,10,9,.62) 36%,rgba(11,10,9,.92) 56%,rgba(11,10,9,.99) 74%,var(--bg) 99%);
+      linear-gradient(180deg,rgba(248,242,232,.97) 0%,rgba(248,242,232,.66) 8%,rgba(248,242,232,.08) 20%,rgba(248,242,232,.55) 34%,rgba(248,242,232,.90) 54%,rgba(248,242,232,.99) 74%,var(--bg) 99%);
   }
 }
 .hero-inner{position:relative; z-index:2; padding-bottom:clamp(20px,4.5vh,54px); padding-top:120px}
@@ -193,6 +181,7 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 @keyframes heroIn{from{transform:translateY(16px)}to{transform:none}}
 .hero h1{margin:18px 0 0; max-width:15ch}
 .hero .lede{margin-top:18px}
+.hero .eyebrow{color:var(--gold-deep)}
 .hero-cta{display:flex; gap:12px; margin-top:26px; flex-wrap:wrap}
 .hero-trust{
   display:flex; gap:16px; align-items:center; flex-wrap:wrap; margin-top:26px;
@@ -271,9 +260,9 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 .sig-media img{width:100%; height:100%; object-fit:cover}
 .chip{
   position:absolute; right:-10px; bottom:26px; z-index:3;
-  background:rgba(11,10,9,.72); backdrop-filter:blur(10px);
+  background:rgba(255,248,236,.86); backdrop-filter:blur(10px);
   border:1px solid var(--line); border-radius:999px; padding:10px 20px;
-  font-size:.82rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-lite);
+  font-size:.82rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold);
 }
 .toggle{
   display:inline-flex; padding:5px; border:1px solid var(--line); border-radius:999px;
@@ -284,10 +273,10 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
   background:none; border:0; padding:11px 26px; border-radius:999px; cursor:pointer;
   position:relative; z-index:2; transition:color .35s var(--ease);
 }
-.toggle button[aria-pressed=true]{color:#120E08}
+.toggle button[aria-pressed=true]{color:#FFF8EC}
 .toggle .thumb{
   position:absolute; z-index:1; top:5px; bottom:5px; border-radius:999px;
-  background:linear-gradient(180deg,var(--gold-lite),var(--gold));
+  background:linear-gradient(180deg,var(--gold-lite),var(--gold-deep));
   transition:left .45s var(--ease), width .45s var(--ease);
 }
 .sig-price{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
@@ -307,7 +296,7 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
   cursor:pointer; transition:.3s var(--ease);
 }
 .filters button:hover{color:var(--ink); border-color:var(--gold)}
-.filters button.on{background:var(--gold); border-color:var(--gold); color:#120E08}
+.filters button.on{background:var(--gold); border-color:var(--gold); color:#FFF8EC}
 .grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
 @media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:720px){.grid{grid-template-columns:repeat(2,1fr); gap:10px}}
@@ -323,7 +312,7 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 .tile figcaption{
   position:absolute; left:0; right:0; bottom:0; padding:34px 14px 12px;
   font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-lite);
-  background:linear-gradient(180deg,transparent,rgba(11,10,9,.86));
+  background:linear-gradient(180deg,transparent,rgba(34,28,21,.80));
   opacity:0; transform:translateY(8px); transition:.42s var(--ease);
 }
 .tile:hover figcaption{opacity:1; transform:none}
@@ -338,7 +327,7 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 .igcard:hover{border-color:var(--gold); transform:translateY(-2px); background:var(--panel-2)}
 .igcard-ic{
   display:flex; align-items:center; justify-content:center; width:46px; height:46px; flex:none;
-  border-radius:14px; color:#120E08; background:linear-gradient(140deg,var(--gold-lite),var(--gold));
+  border-radius:14px; color:#FFF8EC; background:linear-gradient(140deg,var(--gold-lite),var(--gold-deep));
 }
 .igcard-ic svg{width:24px; height:24px}
 .igcard-t{flex:1; min-width:0}
@@ -406,7 +395,7 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 /* ---------- placeholder marker ---------- */
 .tbc{
   display:inline-block; font-size:.62rem; letter-spacing:.18em; text-transform:uppercase;
-  color:#0B0A09; background:var(--gold); border-radius:4px; padding:2px 7px; vertical-align:middle;
+  color:#FFF8EC; background:var(--gold); border-radius:4px; padding:2px 7px; vertical-align:middle;
   margin-left:8px; font-weight:400;
 }
 .ph{border-style:dashed !important}
@@ -433,7 +422,7 @@ nav a:hover{color:var(--ink)} nav a:hover::after{width:100%}
 }
 .visit a{color:var(--gold-lite)}
 .map{border-radius:var(--r); overflow:hidden; border:1px solid var(--line); min-height:340px; background:var(--panel-2)}
-.map iframe{width:100%; height:100%; min-height:340px; border:0; filter:grayscale(.4) invert(.92) hue-rotate(180deg) contrast(.9)}
+.map iframe{width:100%; height:100%; min-height:340px; border:0; filter:grayscale(.25) sepia(.12) contrast(.96)}
 
 /* ---------- footer ---------- */
 footer.f{border-top:1px solid var(--line); padding:var(--s5) 0 var(--s4); color:var(--muted); font-size:.9rem}
@@ -455,20 +444,20 @@ footer.f{border-top:1px solid var(--line); padding:var(--s5) 0 var(--s4); color:
   flex:1; display:flex; align-items:center; justify-content:center; gap:9px;
   padding:16px 8px; text-decoration:none; font-size:.98rem; background:var(--bg); color:var(--ink);
 }
-.dock a.wa{background:var(--gold); color:#120E08}
+.dock a.wa{background:var(--gold); color:#FFF8EC}
 .dock svg{width:19px; height:19px}
 @media(max-width:900px){.dock{display:flex}}
 
 /* ---------- lightbox ---------- */
 .lb{
-  position:fixed; inset:0; z-index:80; background:rgba(8,7,6,.95); display:none;
+  position:fixed; inset:0; z-index:80; background:rgba(38,31,22,.92); display:none;
   align-items:center; justify-content:center; padding:20px;
 }
 .lb.open{display:flex; animation:fadein .3s var(--ease)}
 .lb img{max-width:min(92vw,760px); max-height:88vh; border-radius:var(--r); object-fit:contain}
 .lb button{
   position:absolute; top:18px; right:18px; width:44px; height:44px; border-radius:50%;
-  border:1px solid var(--line); background:rgba(11,10,9,.6); color:var(--ink); cursor:pointer; font-size:1.3rem;
+  border:1px solid var(--line); background:rgba(255,248,236,.9); color:var(--ink); cursor:pointer; font-size:1.3rem;
 }
 
 /* ---------- scroll reveal ---------- */
@@ -494,7 +483,7 @@ html{scroll-behavior:smooth}
     <a class="brand" href="#top">
       <svg viewBox="0 0 200 200" aria-hidden="true">
         <defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#F3E0AE"/><stop offset=".45" stop-color="#D6B15F"/><stop offset="1" stop-color="#A87F2C"/>
+          <stop offset="0" stop-color="#C9A24E"/><stop offset=".45" stop-color="#8A6A28"/><stop offset="1" stop-color="#5E4715"/>
         </linearGradient></defs>
         <g fill="none" stroke="url(#hg)" stroke-linecap="round">
           <circle cx="100" cy="100" r="94" stroke-width="4"/><circle cx="100" cy="100" r="82" stroke-width="2"/>
@@ -592,7 +581,7 @@ html{scroll-behavior:smooth}
 
 <!-- ===================== THE WORK ===================== -->
 <section id="work" style="background:var(--panel); border-block:1px solid var(--line)">
-  <div class="glow" style="width:520px;height:520px;background:rgba(214,177,95,.10); top:-120px; right:-120px"></div>
+  <div class="glow" style="width:520px;height:520px;background:rgba(119,90,32,.07); top:-120px; right:-120px"></div>
   <div class="wrap" style="position:relative;z-index:1">
     <div class="shead rv">
       <p class="eyebrow">The work</p>
@@ -826,7 +815,7 @@ html{scroll-behavior:smooth}
 
 <!-- ===================== ACADEMY ===================== -->
 <section class="academy" id="academy">
-  <div class="glow" style="width:460px;height:460px;background:rgba(214,177,95,.09); bottom:-140px; left:-140px"></div>
+  <div class="glow" style="width:460px;height:460px;background:rgba(119,90,32,.06); bottom:-140px; left:-140px"></div>
   <div class="wrap" style="position:relative;z-index:1">
     <div class="shead rv" style="margin-bottom:var(--s4)">
       <p class="eyebrow">The second door</p>
