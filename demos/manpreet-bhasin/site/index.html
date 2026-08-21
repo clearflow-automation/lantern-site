@@ -114,16 +114,21 @@ header.stuck{background:rgba(11,10,9,.82); backdrop-filter:blur(14px); border-bo
 .brand b{font-weight:400; font-size:.98rem; letter-spacing:.01em; display:block; white-space:nowrap}
 .brand span{display:block; font-size:.63rem; letter-spacing:.24em; text-transform:uppercase; color:rgba(246,240,230,.62)}
 .brand .short{display:none}
+.brand .owner{display:none}
 @media(max-width:1000px){
   .brand .mark{height:37px}
   .brand .full{display:none}
   .brand .short{display:block; font-weight:400; font-size:.98rem; white-space:nowrap}
+  .brand .owner{display:block; font-style:normal; font-size:.55rem; letter-spacing:.2em;
+    text-transform:uppercase; color:rgba(246,240,230,.66); white-space:nowrap; margin-bottom:2px}
+  .brand .tags{display:none}
   .brand span{font-size:.55rem; letter-spacing:.16em}
 }
 @media(max-width:560px){
   .brand{gap:8px}
   .brand .mark{height:33px}
   .brand .short{font-size:.86rem}
+  .brand .owner{font-size:.48rem; letter-spacing:.16em; margin-bottom:1px}
   .brand span{font-size:.5rem; letter-spacing:.12em}
   .brand span .tag-long{display:none}
   .eyebrow{letter-spacing:.2em; font-size:.68rem}
@@ -545,9 +550,10 @@ html{scroll-behavior:smooth}
     <a class="brand" href="#top">
       <img class="mark" src="assets/img/crest-220.png" srcset="assets/img/crest-220.png 220w, assets/img/crest-440.png 440w" sizes="(max-width:560px) 74px, (max-width:1000px) 82px, 96px" width="220" height="99" alt="" fetchpriority="high">
       <span class="t">
+        <i class="owner">Manpreet Bhasin's</i>
         <b class="full">Manpreet Bhasin's Peaches &amp; Cream</b>
         <b class="short">Peaches &amp; Cream</b>
-        <span><span class="tag-long">Unisex Salon · Makeup Studio · Academy</span><span class="tag-short">Salon · Studio · Academy</span></span>
+        <span class="tags"><span class="tag-long">Unisex Salon · Makeup Studio · Academy</span><span class="tag-short">Salon · Studio · Academy</span></span>
       </span>
     </a>
     <nav>
@@ -911,7 +917,7 @@ html{scroll-behavior:smooth}
     <div class="shead rv" style="margin-bottom:var(--s4)">
       <p class="eyebrow">The second door</p>
       <h2>The <em>Academy.</em></h2>
-      <p class="lede">The studio teaches as well as it books — makeup only, taught by the artist whose work is on this page. Four courses, from a single afternoon to twenty-five days.</p>
+      <p class="lede">The studio teaches as well as it books, by the artist whose work is on this page. Five courses, from a single afternoon to twenty-five days.</p>
     </div>
 
     <div class="acad">
@@ -929,6 +935,11 @@ html{scroll-behavior:smooth}
             <p>Skin knowledge and different skin tones · product knowledge · international soft glam · cocktail glam · haldi and sangeet · the Anand Karaj bridal look · the South Indian bride · eye makeup by eye shape · baking and highlighting · glossy and matte finishes.</p>
             <p class="course-n">Bring your own vanity, brushes, C.T.M and hair products.</p>
           </article>
+          <article class="course">
+            <div class="course-h"><h3>Trending Hairstyling</h3><b>₹7,999</b></div>
+            <p class="course-m">5 days</p>
+            <p>The hairstyles brides and their families actually ask for — taught hands-on, on real hair.</p>
+          </article>
           <article class="course course-sm">
             <div class="course-h"><h3>Self grooming &amp; self makeup</h3><b>₹4,999</b></div>
             <p class="course-m">3 days</p>
@@ -938,7 +949,7 @@ html{scroll-behavior:smooth}
             <p class="course-m">For working professionals, corporate employees and new brides</p>
           </article>
         </div>
-        <p style="color:var(--muted); font-size:.9rem; margin:0 0 var(--s3)">Registration on <a href="tel:+919810819297" style="color:var(--gold-lite)">98108 19297</a>. The academy teaches makeup only — there is no separate hair course.</p>
+        <p style="color:var(--muted); font-size:.9rem; margin:0 0 var(--s3)">Registration on <a href="tel:+919810819297" style="color:var(--gold-lite)">98108 19297</a>. Small batches, so ask early which dates are open.</p>
         <div class="hero-cta">
           <a class="btn solid" href="https://wa.me/919810819297?text=Hello%20Manpreet%2C%20I%20would%20like%20details%20of%20the%20academy%20courses." target="_blank" rel="noopener">
             Ask about the next batch
